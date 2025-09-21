@@ -1,0 +1,795 @@
+{
+    "lastupdated": "20250921123746",
+    "version": "1.16.x",
+    "last_commit": "[b3426008d3c3a256fcfaf9d780682c45ab1d1fdb] Fix ForgeDev run configs, and bump ForgeGradle (#10613)",
+    "data": {
+        "net.minecraftforge.event": [
+            {
+                "event": "AddReloadListenerEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/AddReloadListenerEvent.java"
+            },
+            {
+                "event": "AnvilUpdateEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/AnvilUpdateEvent.java"
+            },
+            {
+                "event": "AttachCapabilitiesEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/AttachCapabilitiesEvent.java"
+            },
+            {
+                "event": "CommandEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/CommandEvent.java"
+            },
+            {
+                "event": "DifficultyChangeEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/DifficultyChangeEvent.java"
+            },
+            {
+                "event": "ItemAttributeModifierEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/ItemAttributeModifierEvent.java"
+            },
+            {
+                "event": "LootTableLoadEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/LootTableLoadEvent.java"
+            },
+            {
+                "event": "OnDatapackSyncEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/OnDatapackSyncEvent.java"
+            },
+            {
+                "event": "RegisterCommandsEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/RegisterCommandsEvent.java"
+            },
+            {
+                "event": "RegistryEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/RegistryEvent.java"
+            },
+            {
+                "event": "ServerChatEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/ServerChatEvent.java"
+            },
+            {
+                "event": "TagsUpdatedEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/TagsUpdatedEvent.java"
+            },
+            {
+                "event": "TagsUpdatedEvent.VanillaTagTypes",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/TagsUpdatedEvent.java"
+            },
+            {
+                "event": "TagsUpdatedEvent.CustomTagTypes",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/TagsUpdatedEvent.java"
+            },
+            {
+                "event": "TickEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/TickEvent.java"
+            },
+            {
+                "event": "TickEvent.ServerTickEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/TickEvent.java"
+            },
+            {
+                "event": "TickEvent.ClientTickEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/TickEvent.java"
+            },
+            {
+                "event": "TickEvent.WorldTickEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/TickEvent.java"
+            },
+            {
+                "event": "TickEvent.PlayerTickEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/TickEvent.java"
+            },
+            {
+                "event": "TickEvent.RenderTickEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/TickEvent.java"
+            }
+        ],
+        "net.minecraftforge.event.brewing": [
+            {
+                "event": "PlayerBrewedPotionEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/brewing/PlayerBrewedPotionEvent.java"
+            },
+            {
+                "event": "PotionBrewEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/brewing/PotionBrewEvent.java"
+            },
+            {
+                "event": "PotionBrewEvent.Pre",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/brewing/PotionBrewEvent.java"
+            },
+            {
+                "event": "PotionBrewEvent.Post",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/brewing/PotionBrewEvent.java"
+            }
+        ],
+        "net.minecraftforge.event.enchanting": [
+            {
+                "event": "EnchantmentLevelSetEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/enchanting/EnchantmentLevelSetEvent.java"
+            }
+        ],
+        "net.minecraftforge.event.entity": [
+            {
+                "event": "EntityAttributeCreationEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/EntityAttributeCreationEvent.java"
+            },
+            {
+                "event": "EntityAttributeModificationEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/EntityAttributeModificationEvent.java"
+            },
+            {
+                "event": "EntityEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/EntityEvent.java"
+            },
+            {
+                "event": "EntityEvent.EntityConstructing",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/EntityEvent.java"
+            },
+            {
+                "event": "EntityEvent.CanUpdate",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/EntityEvent.java"
+            },
+            {
+                "event": "EntityEvent.EnteringChunk",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/EntityEvent.java"
+            },
+            {
+                "event": "EntityEvent.Size",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/EntityEvent.java"
+            },
+            {
+                "event": "EntityJoinWorldEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/EntityJoinWorldEvent.java"
+            },
+            {
+                "event": "EntityLeaveWorldEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/EntityLeaveWorldEvent.java"
+            },
+            {
+                "event": "EntityMobGriefingEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/EntityMobGriefingEvent.java"
+            },
+            {
+                "event": "EntityMountEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/EntityMountEvent.java"
+            },
+            {
+                "event": "EntityStruckByLightningEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/EntityStruckByLightningEvent.java"
+            },
+            {
+                "event": "EntityTravelToDimensionEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/EntityTravelToDimensionEvent.java"
+            },
+            {
+                "event": "PlaySoundAtEntityEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/PlaySoundAtEntityEvent.java"
+            },
+            {
+                "event": "ProjectileImpactEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/ProjectileImpactEvent.java"
+            },
+            {
+                "event": "ProjectileImpactEvent.Arrow",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/ProjectileImpactEvent.java"
+            },
+            {
+                "event": "ProjectileImpactEvent.Fireball",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/ProjectileImpactEvent.java"
+            },
+            {
+                "event": "ProjectileImpactEvent.Throwable",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/ProjectileImpactEvent.java"
+            },
+            {
+                "event": "ProjectileImpactEvent.FireworkRocket",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/ProjectileImpactEvent.java"
+            },
+            {
+                "event": "ProjectileImpactEvent.FishingBobber",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/ProjectileImpactEvent.java"
+            }
+        ],
+        "net.minecraftforge.event.entity.item": [
+            {
+                "event": "ItemEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/item/ItemEvent.java"
+            },
+            {
+                "event": "ItemExpireEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/item/ItemExpireEvent.java"
+            },
+            {
+                "event": "ItemTossEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/item/ItemTossEvent.java"
+            }
+        ],
+        "net.minecraftforge.event.entity.living": [
+            {
+                "event": "AnimalTameEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/AnimalTameEvent.java"
+            },
+            {
+                "event": "BabyEntitySpawnEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/BabyEntitySpawnEvent.java"
+            },
+            {
+                "event": "EnderTeleportEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/EnderTeleportEvent.java"
+            },
+            {
+                "event": "EntityTeleportEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/EntityTeleportEvent.java"
+            },
+            {
+                "event": "EntityTeleportEvent.TeleportCommand",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/EntityTeleportEvent.java"
+            },
+            {
+                "event": "EntityTeleportEvent.SpreadPlayersCommand",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/EntityTeleportEvent.java"
+            },
+            {
+                "event": "EntityTeleportEvent.EnderEntity",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/EntityTeleportEvent.java"
+            },
+            {
+                "event": "EntityTeleportEvent.EnderPearl",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/EntityTeleportEvent.java"
+            },
+            {
+                "event": "EntityTeleportEvent.ChorusFruit",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/EntityTeleportEvent.java"
+            },
+            {
+                "event": "LivingAttackEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/LivingAttackEvent.java"
+            },
+            {
+                "event": "LivingConversionEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/LivingConversionEvent.java"
+            },
+            {
+                "event": "LivingConversionEvent.Pre",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/LivingConversionEvent.java"
+            },
+            {
+                "event": "LivingConversionEvent.Post",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/LivingConversionEvent.java"
+            },
+            {
+                "event": "LivingDamageEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/LivingDamageEvent.java"
+            },
+            {
+                "event": "LivingDeathEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/LivingDeathEvent.java"
+            },
+            {
+                "event": "LivingDestroyBlockEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/LivingDestroyBlockEvent.java"
+            },
+            {
+                "event": "LivingDropsEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/LivingDropsEvent.java"
+            },
+            {
+                "event": "LivingEntityUseItemEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/LivingEntityUseItemEvent.java"
+            },
+            {
+                "event": "LivingEntityUseItemEvent.Start",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/LivingEntityUseItemEvent.java"
+            },
+            {
+                "event": "LivingEntityUseItemEvent.Tick",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/LivingEntityUseItemEvent.java"
+            },
+            {
+                "event": "LivingEntityUseItemEvent.Stop",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/LivingEntityUseItemEvent.java"
+            },
+            {
+                "event": "LivingEntityUseItemEvent.Finish",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/LivingEntityUseItemEvent.java"
+            },
+            {
+                "event": "LivingEquipmentChangeEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/LivingEquipmentChangeEvent.java"
+            },
+            {
+                "event": "LivingEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/LivingEvent.java"
+            },
+            {
+                "event": "LivingEvent.LivingUpdateEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/LivingEvent.java"
+            },
+            {
+                "event": "LivingEvent.LivingJumpEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/LivingEvent.java"
+            },
+            {
+                "event": "LivingEvent.LivingVisibilityEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/LivingEvent.java"
+            },
+            {
+                "event": "LivingExperienceDropEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/LivingExperienceDropEvent.java"
+            },
+            {
+                "event": "LivingFallEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/LivingFallEvent.java"
+            },
+            {
+                "event": "LivingHealEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/LivingHealEvent.java"
+            },
+            {
+                "event": "LivingHurtEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/LivingHurtEvent.java"
+            },
+            {
+                "event": "LivingKnockBackEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/LivingKnockBackEvent.java"
+            },
+            {
+                "event": "LivingPackSizeEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/LivingPackSizeEvent.java"
+            },
+            {
+                "event": "LivingSetAttackTargetEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/LivingSetAttackTargetEvent.java"
+            },
+            {
+                "event": "LivingSpawnEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/LivingSpawnEvent.java"
+            },
+            {
+                "event": "LivingSpawnEvent.CheckSpawn",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/LivingSpawnEvent.java"
+            },
+            {
+                "event": "LivingSpawnEvent.SpecialSpawn",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/LivingSpawnEvent.java"
+            },
+            {
+                "event": "LivingSpawnEvent.AllowDespawn",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/LivingSpawnEvent.java"
+            },
+            {
+                "event": "LootingLevelEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/LootingLevelEvent.java"
+            },
+            {
+                "event": "PotionColorCalculationEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/PotionColorCalculationEvent.java"
+            },
+            {
+                "event": "PotionEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/PotionEvent.java"
+            },
+            {
+                "event": "PotionEvent.PotionRemoveEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/PotionEvent.java"
+            },
+            {
+                "event": "PotionEvent.PotionApplicableEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/PotionEvent.java"
+            },
+            {
+                "event": "PotionEvent.PotionAddedEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/PotionEvent.java"
+            },
+            {
+                "event": "PotionEvent.PotionExpiryEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/PotionEvent.java"
+            },
+            {
+                "event": "ZombieEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/ZombieEvent.java"
+            },
+            {
+                "event": "ZombieEvent.SummonAidEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/living/ZombieEvent.java"
+            }
+        ],
+        "net.minecraftforge.event.entity.player": [
+            {
+                "event": "AdvancementEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/AdvancementEvent.java"
+            },
+            {
+                "event": "AnvilRepairEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/AnvilRepairEvent.java"
+            },
+            {
+                "event": "ArrowLooseEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/ArrowLooseEvent.java"
+            },
+            {
+                "event": "ArrowNockEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/ArrowNockEvent.java"
+            },
+            {
+                "event": "AttackEntityEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/AttackEntityEvent.java"
+            },
+            {
+                "event": "BonemealEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/BonemealEvent.java"
+            },
+            {
+                "event": "CriticalHitEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/CriticalHitEvent.java"
+            },
+            {
+                "event": "EntityItemPickupEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/EntityItemPickupEvent.java"
+            },
+            {
+                "event": "FillBucketEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/FillBucketEvent.java"
+            },
+            {
+                "event": "ItemFishedEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/ItemFishedEvent.java"
+            },
+            {
+                "event": "ItemTooltipEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/ItemTooltipEvent.java"
+            },
+            {
+                "event": "PlayerContainerEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerContainerEvent.java"
+            },
+            {
+                "event": "PlayerContainerEvent.Open",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerContainerEvent.java"
+            },
+            {
+                "event": "PlayerContainerEvent.Close",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerContainerEvent.java"
+            },
+            {
+                "event": "PlayerDestroyItemEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerDestroyItemEvent.java"
+            },
+            {
+                "event": "PlayerEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.HarvestCheck",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.BreakSpeed",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.NameFormat",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.TabListNameFormat",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.Clone",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.StartTracking",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.StopTracking",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.LoadFromFile",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.SaveToFile",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.Visibility",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.ItemPickupEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.ItemCraftedEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.ItemSmeltedEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.PlayerLoggedInEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.PlayerLoggedOutEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.PlayerRespawnEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.PlayerChangedDimensionEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.PlayerChangeGameModeEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerFlyableFallEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerFlyableFallEvent.java"
+            },
+            {
+                "event": "PlayerInteractEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerInteractEvent.java"
+            },
+            {
+                "event": "PlayerInteractEvent.EntityInteractSpecific",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerInteractEvent.java"
+            },
+            {
+                "event": "PlayerInteractEvent.EntityInteract",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerInteractEvent.java"
+            },
+            {
+                "event": "PlayerInteractEvent.RightClickBlock",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerInteractEvent.java"
+            },
+            {
+                "event": "PlayerInteractEvent.RightClickItem",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerInteractEvent.java"
+            },
+            {
+                "event": "PlayerInteractEvent.RightClickEmpty",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerInteractEvent.java"
+            },
+            {
+                "event": "PlayerInteractEvent.LeftClickBlock",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerInteractEvent.java"
+            },
+            {
+                "event": "PlayerInteractEvent.LeftClickEmpty",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerInteractEvent.java"
+            },
+            {
+                "event": "PlayerSetSpawnEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerSetSpawnEvent.java"
+            },
+            {
+                "event": "PlayerSleepInBedEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerSleepInBedEvent.java"
+            },
+            {
+                "event": "PlayerWakeUpEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerWakeUpEvent.java"
+            },
+            {
+                "event": "PlayerXpEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerXpEvent.java"
+            },
+            {
+                "event": "PlayerXpEvent.PickupXp",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerXpEvent.java"
+            },
+            {
+                "event": "PlayerXpEvent.XpChange",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerXpEvent.java"
+            },
+            {
+                "event": "PlayerXpEvent.LevelChange",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/PlayerXpEvent.java"
+            },
+            {
+                "event": "SleepingLocationCheckEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/SleepingLocationCheckEvent.java"
+            },
+            {
+                "event": "SleepingTimeCheckEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/SleepingTimeCheckEvent.java"
+            },
+            {
+                "event": "UseHoeEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/entity/player/UseHoeEvent.java"
+            }
+        ],
+        "net.minecraftforge.event.furnace": [
+            {
+                "event": "FurnaceFuelBurnTimeEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/furnace/FurnaceFuelBurnTimeEvent.java"
+            }
+        ],
+        "net.minecraftforge.event.village": [
+            {
+                "event": "VillageSiegeEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/village/VillageSiegeEvent.java"
+            },
+            {
+                "event": "VillagerTradesEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/village/VillagerTradesEvent.java"
+            },
+            {
+                "event": "WandererTradesEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/village/WandererTradesEvent.java"
+            }
+        ],
+        "net.minecraftforge.event.world": [
+            {
+                "event": "BiomeLoadingEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/BiomeLoadingEvent.java"
+            },
+            {
+                "event": "BlockEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/BlockEvent.java"
+            },
+            {
+                "event": "BlockEvent.BreakEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/BlockEvent.java"
+            },
+            {
+                "event": "BlockEvent.EntityPlaceEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/BlockEvent.java"
+            },
+            {
+                "event": "EntityPlaceEvent.EntityMultiPlaceEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/BlockEvent.java"
+            },
+            {
+                "event": "BlockEvent.NeighborNotifyEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/BlockEvent.java"
+            },
+            {
+                "event": "BlockEvent.FluidPlaceBlockEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/BlockEvent.java"
+            },
+            {
+                "event": "BlockEvent.CropGrowEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/BlockEvent.java"
+            },
+            {
+                "event": "CropGrowEvent.Pre",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/BlockEvent.java"
+            },
+            {
+                "event": "CropGrowEvent.Post",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/BlockEvent.java"
+            },
+            {
+                "event": "BlockEvent.FarmlandTrampleEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/BlockEvent.java"
+            },
+            {
+                "event": "BlockEvent.PortalSpawnEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/BlockEvent.java"
+            },
+            {
+                "event": "BlockEvent.BlockToolInteractEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/BlockEvent.java"
+            },
+            {
+                "event": "ChunkDataEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/ChunkDataEvent.java"
+            },
+            {
+                "event": "ChunkDataEvent.Load",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/ChunkDataEvent.java"
+            },
+            {
+                "event": "ChunkDataEvent.Save",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/ChunkDataEvent.java"
+            },
+            {
+                "event": "ChunkEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/ChunkEvent.java"
+            },
+            {
+                "event": "ChunkEvent.Load",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/ChunkEvent.java"
+            },
+            {
+                "event": "ChunkEvent.Unload",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/ChunkEvent.java"
+            },
+            {
+                "event": "ChunkWatchEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/ChunkWatchEvent.java"
+            },
+            {
+                "event": "ChunkWatchEvent.Watch",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/ChunkWatchEvent.java"
+            },
+            {
+                "event": "ChunkWatchEvent.UnWatch",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/ChunkWatchEvent.java"
+            },
+            {
+                "event": "ExplosionEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/ExplosionEvent.java"
+            },
+            {
+                "event": "ExplosionEvent.Start",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/ExplosionEvent.java"
+            },
+            {
+                "event": "ExplosionEvent.Detonate",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/ExplosionEvent.java"
+            },
+            {
+                "event": "NoteBlockEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/NoteBlockEvent.java"
+            },
+            {
+                "event": "NoteBlockEvent.Play",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/NoteBlockEvent.java"
+            },
+            {
+                "event": "NoteBlockEvent.Change",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/NoteBlockEvent.java"
+            },
+            {
+                "event": "PistonEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/PistonEvent.java"
+            },
+            {
+                "event": "PistonEvent.Post",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/PistonEvent.java"
+            },
+            {
+                "event": "PistonEvent.Pre",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/PistonEvent.java"
+            },
+            {
+                "event": "SaplingGrowTreeEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/SaplingGrowTreeEvent.java"
+            },
+            {
+                "event": "SleepFinishedTimeEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/SleepFinishedTimeEvent.java"
+            },
+            {
+                "event": "StructureSpawnListGatherEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/StructureSpawnListGatherEvent.java"
+            },
+            {
+                "event": "WorldEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/WorldEvent.java"
+            },
+            {
+                "event": "WorldEvent.Load",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/WorldEvent.java"
+            },
+            {
+                "event": "WorldEvent.Unload",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/WorldEvent.java"
+            },
+            {
+                "event": "WorldEvent.Save",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/WorldEvent.java"
+            },
+            {
+                "event": "WorldEvent.PotentialSpawns",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/WorldEvent.java"
+            },
+            {
+                "event": "WorldEvent.CreateSpawnPosition",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.16.x/src/main/java/net/minecraftforge/event/world/WorldEvent.java"
+            }
+        ]
+    }
+}

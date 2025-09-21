@@ -1,0 +1,893 @@
+{
+    "lastupdated": "20250921121817",
+    "version": "1.20.2",
+    "last_commit": "[3d41619f0c11f71bfc26689e28cfc0a786445720] Update dependency gradle to v8.13 and NeoGradle to fix installers (#2206)\n\nCo-authored-by: Matyrobbrt <65940752+Matyrobbrt@users.noreply.github.com>",
+    "data": {
+        "net.neoforged.neoforge.event": [
+            {
+                "event": "AddPackFindersEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/AddPackFindersEvent.java"
+            },
+            {
+                "event": "AddReloadListenerEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/AddReloadListenerEvent.java"
+            },
+            {
+                "event": "AnvilUpdateEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/AnvilUpdateEvent.java"
+            },
+            {
+                "event": "AttachCapabilitiesEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/AttachCapabilitiesEvent.java"
+            },
+            {
+                "event": "BuildCreativeModeTabContentsEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/BuildCreativeModeTabContentsEvent.java"
+            },
+            {
+                "event": "CommandEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/CommandEvent.java"
+            },
+            {
+                "event": "DifficultyChangeEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/DifficultyChangeEvent.java"
+            },
+            {
+                "event": "GameShuttingDownEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/GameShuttingDownEvent.java"
+            },
+            {
+                "event": "GrindstoneEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/GrindstoneEvent.java"
+            },
+            {
+                "event": "GrindstoneEvent.OnPlaceItem",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/GrindstoneEvent.java"
+            },
+            {
+                "event": "GrindstoneEvent.OnTakeItem",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/GrindstoneEvent.java"
+            },
+            {
+                "event": "ItemAttributeModifierEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/ItemAttributeModifierEvent.java"
+            },
+            {
+                "event": "ItemStackedOnOtherEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/ItemStackedOnOtherEvent.java"
+            },
+            {
+                "event": "LootTableLoadEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/LootTableLoadEvent.java"
+            },
+            {
+                "event": "ModMismatchEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/ModMismatchEvent.java"
+            },
+            {
+                "event": "OnDatapackSyncEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/OnDatapackSyncEvent.java"
+            },
+            {
+                "event": "PlayLevelSoundEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/PlayLevelSoundEvent.java"
+            },
+            {
+                "event": "PlayLevelSoundEvent.AtEntity",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/PlayLevelSoundEvent.java"
+            },
+            {
+                "event": "PlayLevelSoundEvent.AtPosition",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/PlayLevelSoundEvent.java"
+            },
+            {
+                "event": "RegisterCommandsEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/RegisterCommandsEvent.java"
+            },
+            {
+                "event": "RegisterGameTestsEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/RegisterGameTestsEvent.java"
+            },
+            {
+                "event": "RegisterStructureConversionsEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/RegisterStructureConversionsEvent.java"
+            },
+            {
+                "event": "ServerChatEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/ServerChatEvent.java"
+            },
+            {
+                "event": "TagsUpdatedEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/TagsUpdatedEvent.java"
+            },
+            {
+                "event": "TickEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/TickEvent.java"
+            },
+            {
+                "event": "TickEvent.ServerTickEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/TickEvent.java"
+            },
+            {
+                "event": "TickEvent.ClientTickEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/TickEvent.java"
+            },
+            {
+                "event": "TickEvent.LevelTickEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/TickEvent.java"
+            },
+            {
+                "event": "TickEvent.PlayerTickEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/TickEvent.java"
+            },
+            {
+                "event": "TickEvent.RenderTickEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/TickEvent.java"
+            },
+            {
+                "event": "VanillaGameEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/VanillaGameEvent.java"
+            }
+        ],
+        "net.neoforged.neoforge.event.brewing": [
+            {
+                "event": "PlayerBrewedPotionEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/brewing/PlayerBrewedPotionEvent.java"
+            },
+            {
+                "event": "PotionBrewEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/brewing/PotionBrewEvent.java"
+            },
+            {
+                "event": "PotionBrewEvent.Pre",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/brewing/PotionBrewEvent.java"
+            },
+            {
+                "event": "PotionBrewEvent.Post",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/brewing/PotionBrewEvent.java"
+            }
+        ],
+        "net.neoforged.neoforge.event.enchanting": [
+            {
+                "event": "EnchantmentLevelSetEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/enchanting/EnchantmentLevelSetEvent.java"
+            }
+        ],
+        "net.neoforged.neoforge.event.entity": [
+            {
+                "event": "EntityAttributeCreationEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/EntityAttributeCreationEvent.java"
+            },
+            {
+                "event": "EntityAttributeModificationEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/EntityAttributeModificationEvent.java"
+            },
+            {
+                "event": "EntityEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/EntityEvent.java"
+            },
+            {
+                "event": "EntityEvent.EntityConstructing",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/EntityEvent.java"
+            },
+            {
+                "event": "EntityEvent.EnteringSection",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/EntityEvent.java"
+            },
+            {
+                "event": "EntityEvent.Size",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/EntityEvent.java"
+            },
+            {
+                "event": "EntityJoinLevelEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/EntityJoinLevelEvent.java"
+            },
+            {
+                "event": "EntityLeaveLevelEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/EntityLeaveLevelEvent.java"
+            },
+            {
+                "event": "EntityMobGriefingEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/EntityMobGriefingEvent.java"
+            },
+            {
+                "event": "EntityMountEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/EntityMountEvent.java"
+            },
+            {
+                "event": "EntityStruckByLightningEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/EntityStruckByLightningEvent.java"
+            },
+            {
+                "event": "EntityTeleportEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/EntityTeleportEvent.java"
+            },
+            {
+                "event": "EntityTeleportEvent.TeleportCommand",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/EntityTeleportEvent.java"
+            },
+            {
+                "event": "EntityTeleportEvent.SpreadPlayersCommand",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/EntityTeleportEvent.java"
+            },
+            {
+                "event": "EntityTeleportEvent.EnderEntity",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/EntityTeleportEvent.java"
+            },
+            {
+                "event": "EntityTeleportEvent.EnderPearl",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/EntityTeleportEvent.java"
+            },
+            {
+                "event": "EntityTeleportEvent.ChorusFruit",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/EntityTeleportEvent.java"
+            },
+            {
+                "event": "EntityTravelToDimensionEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/EntityTravelToDimensionEvent.java"
+            },
+            {
+                "event": "ProjectileImpactEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/ProjectileImpactEvent.java"
+            },
+            {
+                "event": "SpawnPlacementRegisterEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/SpawnPlacementRegisterEvent.java"
+            }
+        ],
+        "net.neoforged.neoforge.event.entity.item": [
+            {
+                "event": "ItemEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/item/ItemEvent.java"
+            },
+            {
+                "event": "ItemExpireEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/item/ItemExpireEvent.java"
+            },
+            {
+                "event": "ItemTossEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/item/ItemTossEvent.java"
+            }
+        ],
+        "net.neoforged.neoforge.event.entity.living": [
+            {
+                "event": "AnimalTameEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/AnimalTameEvent.java"
+            },
+            {
+                "event": "BabyEntitySpawnEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/BabyEntitySpawnEvent.java"
+            },
+            {
+                "event": "EnderManAngerEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/EnderManAngerEvent.java"
+            },
+            {
+                "event": "LivingAttackEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingAttackEvent.java"
+            },
+            {
+                "event": "LivingBreatheEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingBreatheEvent.java"
+            },
+            {
+                "event": "LivingChangeTargetEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingChangeTargetEvent.java"
+            },
+            {
+                "event": "LivingConversionEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingConversionEvent.java"
+            },
+            {
+                "event": "LivingConversionEvent.Pre",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingConversionEvent.java"
+            },
+            {
+                "event": "LivingConversionEvent.Post",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingConversionEvent.java"
+            },
+            {
+                "event": "LivingDamageEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingDamageEvent.java"
+            },
+            {
+                "event": "LivingDeathEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingDeathEvent.java"
+            },
+            {
+                "event": "LivingDestroyBlockEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingDestroyBlockEvent.java"
+            },
+            {
+                "event": "LivingDropsEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingDropsEvent.java"
+            },
+            {
+                "event": "LivingDrownEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingDrownEvent.java"
+            },
+            {
+                "event": "LivingEntityUseItemEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingEntityUseItemEvent.java"
+            },
+            {
+                "event": "LivingEntityUseItemEvent.Start",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingEntityUseItemEvent.java"
+            },
+            {
+                "event": "LivingEntityUseItemEvent.Tick",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingEntityUseItemEvent.java"
+            },
+            {
+                "event": "LivingEntityUseItemEvent.Stop",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingEntityUseItemEvent.java"
+            },
+            {
+                "event": "LivingEntityUseItemEvent.Finish",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingEntityUseItemEvent.java"
+            },
+            {
+                "event": "LivingEquipmentChangeEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingEquipmentChangeEvent.java"
+            },
+            {
+                "event": "LivingEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingEvent.java"
+            },
+            {
+                "event": "LivingEvent.LivingTickEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingEvent.java"
+            },
+            {
+                "event": "LivingEvent.LivingJumpEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingEvent.java"
+            },
+            {
+                "event": "LivingEvent.LivingVisibilityEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingEvent.java"
+            },
+            {
+                "event": "LivingExperienceDropEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingExperienceDropEvent.java"
+            },
+            {
+                "event": "LivingFallEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingFallEvent.java"
+            },
+            {
+                "event": "LivingGetProjectileEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingGetProjectileEvent.java"
+            },
+            {
+                "event": "LivingHealEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingHealEvent.java"
+            },
+            {
+                "event": "LivingHurtEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingHurtEvent.java"
+            },
+            {
+                "event": "LivingKnockBackEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingKnockBackEvent.java"
+            },
+            {
+                "event": "LivingPackSizeEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingPackSizeEvent.java"
+            },
+            {
+                "event": "LivingSwapItemsEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingSwapItemsEvent.java"
+            },
+            {
+                "event": "LivingSwapItemsEvent.Hands",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingSwapItemsEvent.java"
+            },
+            {
+                "event": "LivingUseTotemEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LivingUseTotemEvent.java"
+            },
+            {
+                "event": "LootingLevelEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/LootingLevelEvent.java"
+            },
+            {
+                "event": "MobEffectEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/MobEffectEvent.java"
+            },
+            {
+                "event": "MobEffectEvent.Remove",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/MobEffectEvent.java"
+            },
+            {
+                "event": "MobEffectEvent.Applicable",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/MobEffectEvent.java"
+            },
+            {
+                "event": "MobEffectEvent.Added",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/MobEffectEvent.java"
+            },
+            {
+                "event": "MobEffectEvent.Expired",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/MobEffectEvent.java"
+            },
+            {
+                "event": "MobSpawnEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/MobSpawnEvent.java"
+            },
+            {
+                "event": "MobSpawnEvent.PositionCheck",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/MobSpawnEvent.java"
+            },
+            {
+                "event": "MobSpawnEvent.FinalizeSpawn",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/MobSpawnEvent.java"
+            },
+            {
+                "event": "MobSpawnEvent.AllowDespawn",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/MobSpawnEvent.java"
+            },
+            {
+                "event": "PotionColorCalculationEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/PotionColorCalculationEvent.java"
+            },
+            {
+                "event": "ShieldBlockEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/ShieldBlockEvent.java"
+            },
+            {
+                "event": "ZombieEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/ZombieEvent.java"
+            },
+            {
+                "event": "ZombieEvent.SummonAidEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/living/ZombieEvent.java"
+            }
+        ],
+        "net.neoforged.neoforge.event.entity.player": [
+            {
+                "event": "AdvancementEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/AdvancementEvent.java"
+            },
+            {
+                "event": "AdvancementEvent.AdvancementEarnEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/AdvancementEvent.java"
+            },
+            {
+                "event": "AdvancementEvent.AdvancementProgressEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/AdvancementEvent.java"
+            },
+            {
+                "event": "AnvilRepairEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/AnvilRepairEvent.java"
+            },
+            {
+                "event": "ArrowLooseEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/ArrowLooseEvent.java"
+            },
+            {
+                "event": "ArrowNockEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/ArrowNockEvent.java"
+            },
+            {
+                "event": "AttackEntityEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/AttackEntityEvent.java"
+            },
+            {
+                "event": "BonemealEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/BonemealEvent.java"
+            },
+            {
+                "event": "CriticalHitEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/CriticalHitEvent.java"
+            },
+            {
+                "event": "EntityItemPickupEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/EntityItemPickupEvent.java"
+            },
+            {
+                "event": "FillBucketEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/FillBucketEvent.java"
+            },
+            {
+                "event": "ItemFishedEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/ItemFishedEvent.java"
+            },
+            {
+                "event": "ItemTooltipEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/ItemTooltipEvent.java"
+            },
+            {
+                "event": "PermissionsChangedEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PermissionsChangedEvent.java"
+            },
+            {
+                "event": "PlayerContainerEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerContainerEvent.java"
+            },
+            {
+                "event": "PlayerContainerEvent.Open",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerContainerEvent.java"
+            },
+            {
+                "event": "PlayerContainerEvent.Close",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerContainerEvent.java"
+            },
+            {
+                "event": "PlayerDestroyItemEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerDestroyItemEvent.java"
+            },
+            {
+                "event": "PlayerEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.HarvestCheck",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.BreakSpeed",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.NameFormat",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.TabListNameFormat",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.Clone",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.StartTracking",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.StopTracking",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.LoadFromFile",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.SaveToFile",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.ItemPickupEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.ItemCraftedEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.ItemSmeltedEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.PlayerLoggedInEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.PlayerLoggedOutEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.PlayerRespawnEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.PlayerChangedDimensionEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerEvent.PlayerChangeGameModeEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java"
+            },
+            {
+                "event": "PlayerFlyableFallEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerFlyableFallEvent.java"
+            },
+            {
+                "event": "PlayerInteractEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerInteractEvent.java"
+            },
+            {
+                "event": "PlayerInteractEvent.EntityInteractSpecific",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerInteractEvent.java"
+            },
+            {
+                "event": "PlayerInteractEvent.EntityInteract",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerInteractEvent.java"
+            },
+            {
+                "event": "PlayerInteractEvent.RightClickBlock",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerInteractEvent.java"
+            },
+            {
+                "event": "PlayerInteractEvent.RightClickItem",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerInteractEvent.java"
+            },
+            {
+                "event": "PlayerInteractEvent.RightClickEmpty",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerInteractEvent.java"
+            },
+            {
+                "event": "PlayerInteractEvent.LeftClickBlock",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerInteractEvent.java"
+            },
+            {
+                "event": "PlayerInteractEvent.LeftClickEmpty",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerInteractEvent.java"
+            },
+            {
+                "event": "PlayerNegotiationEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerNegotiationEvent.java"
+            },
+            {
+                "event": "PlayerSetSpawnEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerSetSpawnEvent.java"
+            },
+            {
+                "event": "PlayerSleepInBedEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerSleepInBedEvent.java"
+            },
+            {
+                "event": "PlayerSpawnPhantomsEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerSpawnPhantomsEvent.java"
+            },
+            {
+                "event": "PlayerWakeUpEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerWakeUpEvent.java"
+            },
+            {
+                "event": "PlayerXpEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerXpEvent.java"
+            },
+            {
+                "event": "PlayerXpEvent.PickupXp",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerXpEvent.java"
+            },
+            {
+                "event": "PlayerXpEvent.XpChange",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerXpEvent.java"
+            },
+            {
+                "event": "PlayerXpEvent.LevelChange",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerXpEvent.java"
+            },
+            {
+                "event": "SleepingLocationCheckEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/SleepingLocationCheckEvent.java"
+            },
+            {
+                "event": "SleepingTimeCheckEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/SleepingTimeCheckEvent.java"
+            },
+            {
+                "event": "TradeWithVillagerEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/TradeWithVillagerEvent.java"
+            },
+            {
+                "event": "UseItemOnBlockEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/entity/player/UseItemOnBlockEvent.java"
+            }
+        ],
+        "net.neoforged.neoforge.event.furnace": [
+            {
+                "event": "FurnaceFuelBurnTimeEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/furnace/FurnaceFuelBurnTimeEvent.java"
+            }
+        ],
+        "net.neoforged.neoforge.event.level": [
+            {
+                "event": "AlterGroundEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/AlterGroundEvent.java"
+            },
+            {
+                "event": "BlockEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/BlockEvent.java"
+            },
+            {
+                "event": "BlockEvent.BreakEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/BlockEvent.java"
+            },
+            {
+                "event": "BlockEvent.EntityPlaceEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/BlockEvent.java"
+            },
+            {
+                "event": "EntityPlaceEvent.EntityMultiPlaceEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/BlockEvent.java"
+            },
+            {
+                "event": "BlockEvent.NeighborNotifyEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/BlockEvent.java"
+            },
+            {
+                "event": "BlockEvent.FluidPlaceBlockEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/BlockEvent.java"
+            },
+            {
+                "event": "BlockEvent.CropGrowEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/BlockEvent.java"
+            },
+            {
+                "event": "CropGrowEvent.Pre",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/BlockEvent.java"
+            },
+            {
+                "event": "CropGrowEvent.Post",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/BlockEvent.java"
+            },
+            {
+                "event": "BlockEvent.FarmlandTrampleEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/BlockEvent.java"
+            },
+            {
+                "event": "BlockEvent.PortalSpawnEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/BlockEvent.java"
+            },
+            {
+                "event": "BlockEvent.BlockToolModificationEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/BlockEvent.java"
+            },
+            {
+                "event": "ChunkDataEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/ChunkDataEvent.java"
+            },
+            {
+                "event": "ChunkDataEvent.Load",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/ChunkDataEvent.java"
+            },
+            {
+                "event": "ChunkDataEvent.Save",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/ChunkDataEvent.java"
+            },
+            {
+                "event": "ChunkEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/ChunkEvent.java"
+            },
+            {
+                "event": "ChunkEvent.Load",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/ChunkEvent.java"
+            },
+            {
+                "event": "ChunkEvent.Unload",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/ChunkEvent.java"
+            },
+            {
+                "event": "ChunkTicketLevelUpdatedEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/ChunkTicketLevelUpdatedEvent.java"
+            },
+            {
+                "event": "ChunkWatchEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/ChunkWatchEvent.java"
+            },
+            {
+                "event": "ChunkWatchEvent.Watch",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/ChunkWatchEvent.java"
+            },
+            {
+                "event": "ChunkWatchEvent.Sent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/ChunkWatchEvent.java"
+            },
+            {
+                "event": "ChunkWatchEvent.UnWatch",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/ChunkWatchEvent.java"
+            },
+            {
+                "event": "ExplosionEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/ExplosionEvent.java"
+            },
+            {
+                "event": "ExplosionEvent.Start",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/ExplosionEvent.java"
+            },
+            {
+                "event": "ExplosionEvent.Detonate",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/ExplosionEvent.java"
+            },
+            {
+                "event": "LevelEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/LevelEvent.java"
+            },
+            {
+                "event": "LevelEvent.Load",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/LevelEvent.java"
+            },
+            {
+                "event": "LevelEvent.Unload",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/LevelEvent.java"
+            },
+            {
+                "event": "LevelEvent.Save",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/LevelEvent.java"
+            },
+            {
+                "event": "LevelEvent.CreateSpawnPosition",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/LevelEvent.java"
+            },
+            {
+                "event": "LevelEvent.PotentialSpawns",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/LevelEvent.java"
+            },
+            {
+                "event": "NoteBlockEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/NoteBlockEvent.java"
+            },
+            {
+                "event": "NoteBlockEvent.Play",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/NoteBlockEvent.java"
+            },
+            {
+                "event": "NoteBlockEvent.Change",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/NoteBlockEvent.java"
+            },
+            {
+                "event": "PistonEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/PistonEvent.java"
+            },
+            {
+                "event": "PistonEvent.Post",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/PistonEvent.java"
+            },
+            {
+                "event": "PistonEvent.Pre",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/PistonEvent.java"
+            },
+            {
+                "event": "SaplingGrowTreeEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/SaplingGrowTreeEvent.java"
+            },
+            {
+                "event": "SleepFinishedTimeEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/level/SleepFinishedTimeEvent.java"
+            }
+        ],
+        "net.neoforged.neoforge.event.server": [
+            {
+                "event": "ServerAboutToStartEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/server/ServerAboutToStartEvent.java"
+            },
+            {
+                "event": "ServerLifecycleEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/server/ServerLifecycleEvent.java"
+            },
+            {
+                "event": "ServerStartedEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/server/ServerStartedEvent.java"
+            },
+            {
+                "event": "ServerStartingEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/server/ServerStartingEvent.java"
+            },
+            {
+                "event": "ServerStoppedEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/server/ServerStoppedEvent.java"
+            },
+            {
+                "event": "ServerStoppingEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/server/ServerStoppingEvent.java"
+            }
+        ],
+        "net.neoforged.neoforge.event.village": [
+            {
+                "event": "VillageSiegeEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/village/VillageSiegeEvent.java"
+            },
+            {
+                "event": "VillagerTradesEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/village/VillagerTradesEvent.java"
+            },
+            {
+                "event": "WandererTradesEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.20.2/src/main/java/net/neoforged/neoforge/event/village/WandererTradesEvent.java"
+            }
+        ]
+    }
+}
