@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20250921123538",
+    "lastupdated": "20250921112445",
     "version": "1.12.x",
-    "last_commit": "[d3f01843f7e7a4f613b5e8113d381fd8747b4343] Don'tt download log4j-slf4j18-impl (#8293)",
+    "last_commit": "[d3f01843f7e7a4f613b5e8113d381fd8747b4343] Don't download log4j-slf4j18-impl (#8293)",
     "data": {
         "net.minecraftforge.event": [
             {
