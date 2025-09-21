@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20250921115427",
+    "lastupdated": "20250921112748",
     "version": "1.18.2",
-    "last_commit": "[db2d6da33365f95d834be1f140916b069772264d] Bumpp version",
+    "last_commit": "[db2d6da33365f95d834be1f140916b069772264d] Bump version",
     "data": {
         "fabric-entity-events-v1": [
             {
