@@ -38,7 +38,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
-          FILES_CHANGED=$(git diff --cached --name-only | sed 's|^modloaders/data/||' | tr '\n' ',' | sed 's/,$//')
+          FILES_CHANGED=$(git diff --cached --name-only | sed 's|^modloaders/data/||' | paste -sd ', ' -)
           if [ -z "$FILES_CHANGED" ]; then
               echo "No changes to commit"
           else
