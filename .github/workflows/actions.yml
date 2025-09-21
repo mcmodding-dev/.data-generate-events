@@ -37,8 +37,13 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add -A
-          git commit -m "Updated data" || echo "No changes to commit"
+          if git diff --cached --quiet && git diff --quiet; then
+              echo "No changes to commit"
+          else
+              CHANGES=$(git diff --name-only)
+              git add -A
+              git commit -m "${CHANGES}"
+          fi
 
       - name: push changes
         uses: ad-m/github-push-action@v0.6.0
