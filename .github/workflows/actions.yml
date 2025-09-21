@@ -37,12 +37,12 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          if git diff --cached --quiet && git diff --quiet; then
+          git add -A
+          FILES_CHANGED=$(git diff --cached --name-only | tr '\n' ',' | sed 's/,$//')
+          if [ -z "$FILES_CHANGED" ]; then
               echo "No changes to commit"
           else
-              CHANGES=$(git diff --name-only)
-              git add -A
-              git commit -m "${CHANGES}"
+              git commit -m "Updated: $FILES_CHANGED"
           fi
 
       - name: push changes
