@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20250921122513",
+    "lastupdated": "20250921113047",
     "version": "1.7.10",
-    "last_commit": "[9274e4fe435cb415099a8216c1b42235f185443e] Fixx log4j configuration",
+    "last_commit": "[9274e4fe435cb415099a8216c1b42235f185443e] Fix log4j configuration",
     "data": {
         "net.minecraftforge.event": [
             {
