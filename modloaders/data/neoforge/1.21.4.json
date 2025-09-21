@@ -1,7 +1,7 @@
 {
     "lastupdated": "20250921122157",
     "version": "1.21.4",
-    "last_commit": "[99c99dd5cfda7355b3356b83f4dde043d786dbdc] Backport to 1.21.4: Include remove entries when copying block tags (#2622)\n\nCo-authored-by: sciwhiz12 <21304337+sciwhiz12@users.noreply.github.com>",
+    "last_commit": "[99c99dd5cfda7355b3356b83f4dde043d786dbdc] Backportt to 1.21.4: Include remove entries when copying block tags (#2622)\n\nCo-authored-by: sciwhiz12 <21304337+sciwhiz12@users.noreply.github.com>",
     "data": {
         "net.neoforged.neoforge.event": [
             {
