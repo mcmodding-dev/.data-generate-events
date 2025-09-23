@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20250921120219",
+    "lastupdated": "20250923004612",
     "version": "1.21.9",
-    "last_commit": "[153471f32de46b79b11ded7c9f1a55e10d836ebb] Bump version",
+    "last_commit": "[a8ce887fda876b7d4aaf457b0a29e9a898458488] Bump version",
     "data": {
         "deprecated": [
             {
@@ -139,7 +139,7 @@
                 "package": "net.fabricmc.fabric.api.entity.event.v1",
                 "interface": "AfterKilledOtherEntity",
                 "variable": "AFTER_KILLED_OTHER_ENTITY",
-                "function": "void afterKilledOtherEntity(ServerWorld world, Entity entity, LivingEntity killedEntity);",
+                "function": "void afterKilledOtherEntity(ServerWorld world, Entity entity, LivingEntity killedEntity, DamageSource damageSource);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.9/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/ServerEntityCombatEvents.java"
             },
             {
@@ -1183,86 +1183,6 @@
                 "variable": "EVENT",
                 "function": "TooltipComponent getComponent(TooltipData data);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.9/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/TooltipComponentCallback.java"
-            },
-            {
-                "file": "WorldRenderEvents.java",
-                "package": "net.fabricmc.fabric.api.client.rendering.v1",
-                "interface": "Start",
-                "variable": "START",
-                "function": "void onStart(WorldRenderContext context);",
-                "url": "https://github.com/FabricMC/fabric/blob/1.21.9/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/WorldRenderEvents.java"
-            },
-            {
-                "file": "WorldRenderEvents.java",
-                "package": "net.fabricmc.fabric.api.client.rendering.v1",
-                "interface": "AfterSetup",
-                "variable": "AFTER_SETUP",
-                "function": "void afterSetup(WorldRenderContext context);",
-                "url": "https://github.com/FabricMC/fabric/blob/1.21.9/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/WorldRenderEvents.java"
-            },
-            {
-                "file": "WorldRenderEvents.java",
-                "package": "net.fabricmc.fabric.api.client.rendering.v1",
-                "interface": "BeforeEntities",
-                "variable": "BEFORE_ENTITIES",
-                "function": "void beforeEntities(WorldRenderContext context);",
-                "url": "https://github.com/FabricMC/fabric/blob/1.21.9/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/WorldRenderEvents.java"
-            },
-            {
-                "file": "WorldRenderEvents.java",
-                "package": "net.fabricmc.fabric.api.client.rendering.v1",
-                "interface": "AfterEntities",
-                "variable": "AFTER_ENTITIES",
-                "function": "void afterEntities(WorldRenderContext context);",
-                "url": "https://github.com/FabricMC/fabric/blob/1.21.9/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/WorldRenderEvents.java"
-            },
-            {
-                "file": "WorldRenderEvents.java",
-                "package": "net.fabricmc.fabric.api.client.rendering.v1",
-                "interface": "BeforeBlockOutline",
-                "variable": "BEFORE_BLOCK_OUTLINE",
-                "function": "boolean beforeBlockOutline(WorldRenderContext context, @Nullable HitResult hitResult);",
-                "url": "https://github.com/FabricMC/fabric/blob/1.21.9/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/WorldRenderEvents.java"
-            },
-            {
-                "file": "WorldRenderEvents.java",
-                "package": "net.fabricmc.fabric.api.client.rendering.v1",
-                "interface": "BlockOutline",
-                "variable": "BLOCK_OUTLINE",
-                "function": "boolean onBlockOutline(WorldRenderContext worldRenderContext, OutlineRenderState outlineState);",
-                "url": "https://github.com/FabricMC/fabric/blob/1.21.9/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/WorldRenderEvents.java"
-            },
-            {
-                "file": "WorldRenderEvents.java",
-                "package": "net.fabricmc.fabric.api.client.rendering.v1",
-                "interface": "DebugRender",
-                "variable": "DEBUG_RENDER",
-                "function": "void beforeDebugRender(WorldRenderContext context);",
-                "url": "https://github.com/FabricMC/fabric/blob/1.21.9/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/WorldRenderEvents.java"
-            },
-            {
-                "file": "WorldRenderEvents.java",
-                "package": "net.fabricmc.fabric.api.client.rendering.v1",
-                "interface": "AfterTranslucent",
-                "variable": "AFTER_TRANSLUCENT",
-                "function": "void afterTranslucent(WorldRenderContext context);",
-                "url": "https://github.com/FabricMC/fabric/blob/1.21.9/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/WorldRenderEvents.java"
-            },
-            {
-                "file": "WorldRenderEvents.java",
-                "package": "net.fabricmc.fabric.api.client.rendering.v1",
-                "interface": "Last",
-                "variable": "LAST",
-                "function": "void onLast(WorldRenderContext context);",
-                "url": "https://github.com/FabricMC/fabric/blob/1.21.9/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/WorldRenderEvents.java"
-            },
-            {
-                "file": "WorldRenderEvents.java",
-                "package": "net.fabricmc.fabric.api.client.rendering.v1",
-                "interface": "End",
-                "variable": "END",
-                "function": "void onEnd(WorldRenderContext context);",
-                "url": "https://github.com/FabricMC/fabric/blob/1.21.9/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/WorldRenderEvents.java"
             }
         ],
         "fabric-screen-api-v1": [

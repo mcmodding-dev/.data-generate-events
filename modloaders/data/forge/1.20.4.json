@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20250921124121",
+    "lastupdated": "20250923004651",
     "version": "1.20.4",
-    "last_commit": "[3cd49ed58d8346819b07d0ed3f4816ec2d52b488] Ignore item equality when checking shouldCauseBlockBreakReset, fixes #10645 (#10648)",
+    "last_commit": "[27fb189b0d50d5d97f9a9d0fa311213aebdf4995] Bump ASM to 9.8 for Java 25 runtime support",
     "data": {
         "net.minecraftforge.event": [
             {

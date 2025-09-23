@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20250921124415",
+    "lastupdated": "20250923004836",
     "version": "1.21.4",
-    "last_commit": "[284710527ca395183a23b5a7ca794d37c9d27719] Update MDK to fix OOM error and aid getting Mixin setup (#10582)\n\nBackport of #10559 to 1.21.4.\nCo-authored-by: Paint_Ninja <PaintNinja@users.noreply.github.com>",
+    "last_commit": "[01a4d503adb13f1f7765fc283e1d88d802cc03e7] Bump ASM to 9.8 for Java 25 runtime support",
     "data": {
         "net.minecraftforge.event": [
             {

@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20250921124335",
+    "lastupdated": "20250923004810",
     "version": "1.21.3",
-    "last_commit": "[c73c954e467cde25ffdc90ced1cdd9f1bace00e6] Add ForgeLayeredDraw & AddGuiOverlayLayersEvent as API for gui overlay management. (#10580)",
+    "last_commit": "[aee3baf4ce40b517db90b352faddfcba876635cf] Bump ASM to 9.8 for Java 25 runtime support",
     "data": {
         "net.minecraftforge.event": [
             {

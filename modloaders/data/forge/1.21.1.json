@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20250921111916",
+    "lastupdated": "20250923004744",
     "version": "1.21.1",
-    "last_commit": "[e2a81d278c677bd8a77f8ac8cbd9cbc93b1030ea] Allow command suggestions/autocomplete to search all modded paths at once without namespace provided (#10594)",
+    "last_commit": "[fe8684891c46152c98af3ffaa3712c83dea956cc] Update ASM version from 9.7.1 to 9.8",
     "data": {
         "net.minecraftforge.event": [
             {

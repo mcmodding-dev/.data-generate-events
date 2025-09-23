@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20250921115518",
+    "lastupdated": "20250923004610",
     "version": "1.21.8",
-    "last_commit": "[ad2b0542fdf1167e7e6e0f1599a727e674fc4fa3] Bump version",
+    "last_commit": "[2e1c6d3247e8f5726b325c846681a316a9868d9a] Fix Datagen API's FMJ and build.gradle not correctly declaring dependencies (#4861)",
     "data": {
         "deprecated": [
             {

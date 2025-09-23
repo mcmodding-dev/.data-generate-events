@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20250921124458",
+    "lastupdated": "20250923004902",
     "version": "1.21.5",
-    "last_commit": "[9ccfaf481267ec9ec1dfe980f82d96d4331eecb3] 1.21.5 RB 1",
+    "last_commit": "[fe64775f0941fe3704713d7af3ce4aa059a0b08e] Bump ASM to 9.8 for Java 25 runtime support\n\nNote: Forge for 1.21.8 already has ASM 9.8",
     "data": {
         "net.minecraftforge.event": [
             {
