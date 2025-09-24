@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20250921124538",
+    "lastupdated": "20250924004803",
     "version": "1.21.x",
-    "last_commit": "[0a885a77e7d201012d77294598bfe911c194620a] [1.21.8] Deprecate global `IExtensibleEnum` support (#10662)\n\nThis is intended for use with Minecraft classes only. Mod devs can support extending enums through other, more efficient means, such as converting their enum to a record and having static final fields of instances that correspond to each enum value.",
+    "last_commit": "[c1d703e395dfc4f6b1f7041c4307010e3d7ebb75] Fix Crafters not inserting into IItemHandlers. Closes #10667",
     "data": {
         "net.minecraftforge.event": [
             {
