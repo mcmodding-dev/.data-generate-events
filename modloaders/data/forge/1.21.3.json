@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20250923004810",
+    "lastupdated": "20250926004650",
     "version": "1.21.3",
-    "last_commit": "[aee3baf4ce40b517db90b352faddfcba876635cf] Bump ASM to 9.8 for Java 25 runtime support",
+    "last_commit": "[29f1a5c1176c7e8cc3f9665e26bcf0ea169f1159] [1.21.3] Fix crafter not inserting into iitemhandler (#10667) (#10670)\n\nCo-authored-by: LexManos <lexmanos@gmail.com>",
     "data": {
         "net.minecraftforge.event": [
             {

@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20250923004744",
+    "lastupdated": "20250926004630",
     "version": "1.21.1",
-    "last_commit": "[fe8684891c46152c98af3ffaa3712c83dea956cc] Update ASM version from 9.7.1 to 9.8",
+    "last_commit": "[86a00f61222d70d3a551146d9ff69f9532e7ae14] Fix crafter not inserting into iitemhandler (#10667) (#10669)\n\nCo-authored-by: LexManos <lexmanos@gmail.com>",
     "data": {
         "net.minecraftforge.event": [
             {
