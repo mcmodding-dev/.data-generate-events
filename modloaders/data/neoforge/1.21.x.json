@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20250921122327",
+    "lastupdated": "20251001005533",
     "version": "1.21.x",
-    "last_commit": "[448e19fb957a2386f15bd9d8e98a60ce7f838de0] [1.21.x] Fix the bug that some blocks do not catch fire from lava when they should (#2627)",
+    "last_commit": "[0ec0bb6914309564c4434b72b34b15e009fd3aba] Update dependency gradle to v9.1.0 (1.21.x) (#2671)\n\nCo-authored-by: neoforged-renovate[bot] <174042230+neoforged-renovate[bot]@users.noreply.github.com>",
     "data": {
         "net.neoforged.neoforge.event": [
             {
