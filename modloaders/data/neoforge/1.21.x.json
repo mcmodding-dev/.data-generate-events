@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251001005533",
+    "lastupdated": "20251002004718",
     "version": "1.21.x",
-    "last_commit": "[0ec0bb6914309564c4434b72b34b15e009fd3aba] Update dependency gradle to v9.1.0 (1.21.x) (#2671)\n\nCo-authored-by: neoforged-renovate[bot] <174042230+neoforged-renovate[bot]@users.noreply.github.com>",
+    "last_commit": "[0d7c25e9563147b49be5f82147b2ca837bb457a8] [1.21.9] Fix and expand context of RenderNameTagEvent (#2678)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
