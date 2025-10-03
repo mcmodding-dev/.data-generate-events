@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251002004718",
+    "lastupdated": "20251003004700",
     "version": "1.21.x",
-    "last_commit": "[0d7c25e9563147b49be5f82147b2ca837bb457a8] [1.21.9] Fix and expand context of RenderNameTagEvent (#2678)",
+    "last_commit": "[0ea8a817a200b8479cc416d69185e8dc230e9591] [1.21.9] Give custom sprite sources access to set of additional metadata sections (#2645)",
     "data": {
         "net.neoforged.neoforge.event": [
             {

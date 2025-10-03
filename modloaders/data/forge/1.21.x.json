@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251002004640",
+    "lastupdated": "20251003004628",
     "version": "1.21.x",
-    "last_commit": "[b0ccf1a48006594408df32d8f9e7ef1021bfe711] Minecraft 1.21.9 update.\n\nThere a lot of performance improvements related to events.\n  No more InheritableEvent for abstract events that you shouldn't add listeners to anyway, like EntityEvent. Use their sub-events.\n  Made a lot more events records and interfaces. Mostly just a binary break, but has better performance.\n  Mod bus posting methods are now static, no more ModLoader.get() for those.\n\nObjectHolder was removed, use RegistryObject.\nChanged RuntimeEnumExtender to only target Minecraft classes. If you want other modders to interact with your API, use an Interface instead of Enum.\nMoved some abstract event methods to only the relevant sub-events now, e.g. can no longer check the side of a ClientTickEvent, because it'll always be client\n\nRendering has changed a lot, they now batch most things together so that the game will render faster.\nRenderHighlightEvent changed a lot\n\nSee https://github.com/MinecraftForge/MinecraftForge-Experimental/tree/1.21.9-dev for unsquashed commits.\n\nCo-authored-by: Paint_Ninja <PaintNinja@users.noreply.github.com>",
+    "last_commit": "[58aa3b276c2812d541c3706634f11a42f5e64462] Add the new vanilla info object to Keyboard and Mouse related events.",
     "data": {
         "net.minecraftforge.event": [
             {

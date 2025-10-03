@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20250923004610",
+    "lastupdated": "20251003004548",
     "version": "1.21.8",
-    "last_commit": "[2e1c6d3247e8f5726b325c846681a316a9868d9a] Fix Datagen API's FMJ and build.gradle not correctly declaring dependencies (#4861)",
+    "last_commit": "[060c7037d9131d03ac076029e2d225ecb2c5635a] Bump version",
     "data": {
         "deprecated": [
             {
@@ -1312,6 +1312,14 @@
                 "interface": "BeforeRender",
                 "variable": "BEFORE_RENDER",
                 "function": "void beforeRender(Screen screen, DrawContext drawContext, int mouseX, int mouseY, float tickDelta);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.21.8/fabric-screen-api-v1/src/client/java/net/fabricmc/fabric/api/client/screen/v1/ScreenEvents.java"
+            },
+            {
+                "file": "ScreenEvents.java",
+                "package": "net.fabricmc.fabric.api.client.screen.v1",
+                "interface": "AfterBackground",
+                "variable": "AFTER_BACKGROUND",
+                "function": "void afterBackground(Screen screen, DrawContext drawContext, int mouseX, int mouseY, float tickDelta);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.8/fabric-screen-api-v1/src/client/java/net/fabricmc/fabric/api/client/screen/v1/ScreenEvents.java"
             },
             {
