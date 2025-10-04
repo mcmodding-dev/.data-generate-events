@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251003004700",
+    "lastupdated": "20251004004456",
     "version": "1.21.x",
-    "last_commit": "[0ea8a817a200b8479cc416d69185e8dc230e9591] [1.21.9] Give custom sprite sources access to set of additional metadata sections (#2645)",
+    "last_commit": "[faa6bf4578c9809a6788fee355651c558094a462] [1.21.9] Handle custom chest textures in extract phase (#2661)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
