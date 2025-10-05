@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251004004456",
+    "lastupdated": "20251005005318",
     "version": "1.21.x",
-    "last_commit": "[faa6bf4578c9809a6788fee355651c558094a462] [1.21.9] Handle custom chest textures in extract phase (#2661)",
+    "last_commit": "[464344df7906197d3e41c138065e33917bc9d68e] [1.21.9] [Breaking] Update for FML transformation changes and package reorganization (#2655)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
