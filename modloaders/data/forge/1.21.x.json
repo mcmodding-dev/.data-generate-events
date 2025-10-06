@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251003004628",
+    "lastupdated": "20251006004926",
     "version": "1.21.x",
-    "last_commit": "[58aa3b276c2812d541c3706634f11a42f5e64462] Add the new vanilla info object to Keyboard and Mouse related events.",
+    "last_commit": "[0bffcb83c57957ad81e4631cceb38d89f23832ab] Fix CustomizeGuiOverlayEvent mistakenly being a RecordEvent",
     "data": {
         "net.minecraftforge.event": [
             {

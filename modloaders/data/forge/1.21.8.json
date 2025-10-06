@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251001005506",
+    "lastupdated": "20251006004901",
     "version": "1.21.8",
-    "last_commit": "[c1d703e395dfc4f6b1f7041c4307010e3d7ebb75] Fix Crafters not inserting into IItemHandlers. Closes #10667",
+    "last_commit": "[60110cd916eb682594a5068628b32cda072b3b97] Fix implicit Bus.BOTH not working in `@EventBusSubscriber`, add additional validation in strict mode, partial backport of #10676",
     "data": {
         "net.minecraftforge.event": [
             {
