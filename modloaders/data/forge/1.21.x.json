@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251006004926",
+    "lastupdated": "20251007004728",
     "version": "1.21.x",
-    "last_commit": "[0bffcb83c57957ad81e4631cceb38d89f23832ab] Fix CustomizeGuiOverlayEvent mistakenly being a RecordEvent",
+    "last_commit": "[0404d2d776c5d448e364bb1ffbd7e0aad333417e] Bump EventBus for more javadocs",
     "data": {
         "net.minecraftforge.event": [
             {
