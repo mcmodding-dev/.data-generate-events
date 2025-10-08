@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251007004805",
+    "lastupdated": "20251008004635",
     "version": "1.21.x",
-    "last_commit": "[2dc3d99e67efeafc469da24e3906ad303254e924] Add an `isEmpty` check in the hopper hook before extracting (#2694)",
+    "last_commit": "[f960af4afd3d29420f5b6f53aa0dca2745b71a06] Collect sortable mod list into a mutable collection (#2705)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
