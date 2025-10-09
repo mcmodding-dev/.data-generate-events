@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251008004635",
+    "lastupdated": "20251009004822",
     "version": "1.21.x",
-    "last_commit": "[f960af4afd3d29420f5b6f53aa0dca2745b71a06] Collect sortable mod list into a mutable collection (#2705)",
+    "last_commit": "[f260f417392c078bfdf8fa9a82a0e1be70f5b9ce] Add `c:nuggets/copper` item tag (#2711)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
