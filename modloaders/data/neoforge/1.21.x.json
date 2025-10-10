@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251009004822",
+    "lastupdated": "20251010004725",
     "version": "1.21.x",
-    "last_commit": "[f260f417392c078bfdf8fa9a82a0e1be70f5b9ce] Add `c:nuggets/copper` item tag (#2711)",
+    "last_commit": "[35a92200376e68c9f6e51e028638ce358d448125] Introduce Transaction#openRoot() to have a more readable way of opening a root transaction (#2710)",
     "data": {
         "net.neoforged.neoforge.event": [
             {

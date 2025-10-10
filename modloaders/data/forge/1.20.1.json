@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20250921124042",
+    "lastupdated": "20251010004657",
     "version": "1.20.1",
-    "last_commit": "[e9ce8a6cc6541a43d6837eadc851f6433d73cc26] Bump ASM to 9.8 for Java 25 runtime support  (#10664)",
+    "last_commit": "[132704e5f23dbee28d776738eb1c0c42fefc0bf6] Work around mixins targeting IForgePlayer#canReach (#10680)",
     "data": {
         "net.minecraftforge.event": [
             {
