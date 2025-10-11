@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251008004616",
+    "lastupdated": "20251011004457",
     "version": "1.21.x",
-    "last_commit": "[8e09d47cd6de9a4f5dc858326d02079635baec1a] 1.21.10",
+    "last_commit": "[ec405958c940b91e723a7a56e4d4c0c5bd611c14] Skip processing vanilla classes in RuntimeDistCleaner when running on a client (#10682)",
     "data": {
         "net.minecraftforge.event": [
             {
