@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20250921122025",
+    "lastupdated": "20251012005141",
     "version": "1.21.1",
-    "last_commit": "[3b741364782a5f8e47a0c9218c518ba4739fd6a6] Backport to 1.21.1: Expand the context of GrindstoneEvent.OnTakeItem (#2635)",
+    "last_commit": "[c8758d62e04c679793547084832ab530cf77bd19] Update mdg to v2.0.115 (1.21.1) (#2720)\n\nCo-authored-by: neoforged-renovate[bot] <174042230+neoforged-renovate[bot]@users.noreply.github.com>\nCo-authored-by: Technici4n <13494793+Technici4n@users.noreply.github.com>",
     "data": {
         "net.neoforged.neoforge.event": [
             {

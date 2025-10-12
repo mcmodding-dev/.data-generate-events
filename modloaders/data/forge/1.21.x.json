@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251011004457",
+    "lastupdated": "20251012005108",
     "version": "1.21.x",
-    "last_commit": "[ec405958c940b91e723a7a56e4d4c0c5bd611c14] Skip processing vanilla classes in RuntimeDistCleaner when running on a client (#10682)",
+    "last_commit": "[8f7fbc76e1dc0747c7ebcf40a1fbaad4a9b555f3] Simplify ModLoader#hasCompletedState, some more cleanup to FML internals",
     "data": {
         "net.minecraftforge.event": [
             {

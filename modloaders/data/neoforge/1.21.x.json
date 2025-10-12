@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251011004603",
+    "lastupdated": "20251012005212",
     "version": "1.21.x",
-    "last_commit": "[7fdfb20cb98a5a8eae55fbe803df3777ed8bde15] Update fancy_mod_loader_version to v10.0.21 (1.21.x) (#2702)\n\nCo-authored-by: neoforged-renovate[bot] <174042230+neoforged-renovate[bot]@users.noreply.github.com>",
+    "last_commit": "[94d364b0e6914e9534a542c85b3e0210bcc786b8] [1.21.9] Add support for loading conditions in sprite sources (#2704)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
