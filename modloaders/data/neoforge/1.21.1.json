@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251012005141",
+    "lastupdated": "20251013005256",
     "version": "1.21.1",
-    "last_commit": "[c8758d62e04c679793547084832ab530cf77bd19] Update mdg to v2.0.115 (1.21.1) (#2720)\n\nCo-authored-by: neoforged-renovate[bot] <174042230+neoforged-renovate[bot]@users.noreply.github.com>\nCo-authored-by: Technici4n <13494793+Technici4n@users.noreply.github.com>",
+    "last_commit": "[a9a8f46c05f70bdf85f5ba587af83d2b507de449] Update fancy_mod_loader_version to v4.0.42 (1.21.1) (#2727)\n\nCo-authored-by: neoforged-renovate[bot] <174042230+neoforged-renovate[bot]@users.noreply.github.com>",
     "data": {
         "net.neoforged.neoforge.event": [
             {

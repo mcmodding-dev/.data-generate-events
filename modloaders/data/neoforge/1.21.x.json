@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251012005212",
+    "lastupdated": "20251013005320",
     "version": "1.21.x",
-    "last_commit": "[94d364b0e6914e9534a542c85b3e0210bcc786b8] [1.21.9] Add support for loading conditions in sprite sources (#2704)",
+    "last_commit": "[1f40c22948caa21519d7003c23acf1e8bda16ea9] Update dependency net.fabricmc:sponge-mixin to v0.16.5+mixin.0.8.7 (1.21.x) (#2726)\n\nCo-authored-by: neoforged-renovate[bot] <174042230+neoforged-renovate[bot]@users.noreply.github.com>",
     "data": {
         "net.neoforged.neoforge.event": [
             {
