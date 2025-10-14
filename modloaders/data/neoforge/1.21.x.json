@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251013005320",
+    "lastupdated": "20251014004728",
     "version": "1.21.x",
-    "last_commit": "[1f40c22948caa21519d7003c23acf1e8bda16ea9] Update dependency net.fabricmc:sponge-mixin to v0.16.5+mixin.0.8.7 (1.21.x) (#2726)\n\nCo-authored-by: neoforged-renovate[bot] <174042230+neoforged-renovate[bot]@users.noreply.github.com>",
+    "last_commit": "[4ccd283383d0ed3d7b976eb3d48afe711206438f] [1.21.9] Add `Holder` variant for supplying a `SoundEvent` in definitions provider (#2689)\n\nCo-authored-by: Dennis C <xfacthd@gmx.de>",
     "data": {
         "net.neoforged.neoforge.event": [
             {
