@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251014004728",
+    "lastupdated": "20251016004952",
     "version": "1.21.x",
-    "last_commit": "[4ccd283383d0ed3d7b976eb3d48afe711206438f] [1.21.9] Add `Holder` variant for supplying a `SoundEvent` in definitions provider (#2689)\n\nCo-authored-by: Dennis C <xfacthd@gmx.de>",
+    "last_commit": "[496d785fdd248df13dd73bba6299fb8d1f82a0a7] Rewrite transaction state management to allow opening transactions from onRootCommit (#2714)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
