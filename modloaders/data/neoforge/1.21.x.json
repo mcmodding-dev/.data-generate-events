@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251016004952",
+    "lastupdated": "20251017004827",
     "version": "1.21.x",
-    "last_commit": "[496d785fdd248df13dd73bba6299fb8d1f82a0a7] Rewrite transaction state management to allow opening transactions from onRootCommit (#2714)",
+    "last_commit": "[8ff2057ba93e5e673dac0e90cee6694455fc8451] Fix player remaining in swimming animation when head is above fluid surface (#2662)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
