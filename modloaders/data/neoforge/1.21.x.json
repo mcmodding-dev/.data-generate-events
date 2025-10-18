@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251017004827",
+    "lastupdated": "20251018004524",
     "version": "1.21.x",
-    "last_commit": "[8ff2057ba93e5e673dac0e90cee6694455fc8451] Fix player remaining in swimming animation when head is above fluid surface (#2662)",
+    "last_commit": "[0043d3536553decb64b1e03cf14634093f73c73b] [1.21.10] Add missing needs_netherite_tool tag to incorrect_for_copper_tools (#2733)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
