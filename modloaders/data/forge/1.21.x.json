@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251013005231",
+    "lastupdated": "20251020005358",
     "version": "1.21.x",
-    "last_commit": "[ecd1491f96dd81cf58ec7500d6462ebe5c993778] Fix Manually created RegistryObjects not being populated. Closes #10686\nThis partially reverts commit 1268d4c3a8acd9f780d2048d5a527206707f8e35.\nBut makes the classes package private so nobody can access.",
+    "last_commit": "[17ce723edf3f8e53c206db0c0d8838f041db5a04] Fix universal jar missing Forge version (#10699)",
     "data": {
         "net.minecraftforge.event": [
             {
