@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251011004543",
+    "lastupdated": "20251021005123",
     "version": "1.21.8",
-    "last_commit": "[448e19fb957a2386f15bd9d8e98a60ce7f838de0] [1.21.x] Fix the bug that some blocks do not catch fire from lava when they should (#2627)",
+    "last_commit": "[d72c37f870c3b3742ac4c1d5d0b64e5b8d7d8166] Backport to 1.21.8: Fix unregistered SuggestionProviders for client commands being ignored (#2747)\n\nCo-authored-by: Gegy <5172118+Gegy@users.noreply.github.com>",
     "data": {
         "net.neoforged.neoforge.event": [
             {

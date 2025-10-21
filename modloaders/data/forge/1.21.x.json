@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251020005358",
+    "lastupdated": "20251021005047",
     "version": "1.21.x",
-    "last_commit": "[17ce723edf3f8e53c206db0c0d8838f041db5a04] Fix universal jar missing Forge version (#10699)",
+    "last_commit": "[4ef6695a30d1d9b15bcd305c4b0c9cf175a19e0b] Add support for custom particle groups (#10692)",
     "data": {
         "net.minecraftforge.event": [
             {

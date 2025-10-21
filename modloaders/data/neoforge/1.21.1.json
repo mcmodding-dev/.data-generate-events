@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251013005256",
+    "lastupdated": "20251021005105",
     "version": "1.21.1",
-    "last_commit": "[a9a8f46c05f70bdf85f5ba587af83d2b507de449] Update fancy_mod_loader_version to v4.0.42 (1.21.1) (#2727)\n\nCo-authored-by: neoforged-renovate[bot] <174042230+neoforged-renovate[bot]@users.noreply.github.com>",
+    "last_commit": "[7b76fff2b80f87fc10831dcda2f94cbf99fd0b2d] [1.21.1] Fix some armor trims not being tracked by ExistingFileHelper in ItemModelBuilder (#2675)",
     "data": {
         "net.neoforged.neoforge.event": [
             {

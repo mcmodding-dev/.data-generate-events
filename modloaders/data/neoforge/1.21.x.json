@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251018004524",
+    "lastupdated": "20251021005139",
     "version": "1.21.x",
-    "last_commit": "[0043d3536553decb64b1e03cf14634093f73c73b] [1.21.10] Add missing needs_netherite_tool tag to incorrect_for_copper_tools (#2733)",
+    "last_commit": "[ce6f40c33f4a3189dd2649d0dc1b73a36a3005bc] Default fake players to survival (#2730)",
     "data": {
         "net.neoforged.neoforge.event": [
             {

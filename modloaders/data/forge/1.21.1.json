@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20250926004630",
+    "lastupdated": "20251021005031",
     "version": "1.21.1",
-    "last_commit": "[86a00f61222d70d3a551146d9ff69f9532e7ae14] Fix crafter not inserting into iitemhandler (#10667) (#10669)\n\nCo-authored-by: LexManos <lexmanos@gmail.com>",
+    "last_commit": "[444d4a94daf8c6ca20289902dfbc40c906d8e302] Fix incorrect blend state for blur effects, followup to #10115 and fix for 10541 (#10678)",
     "data": {
         "net.minecraftforge.event": [
             {
