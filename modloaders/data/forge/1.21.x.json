@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251021005047",
+    "lastupdated": "20251022005204",
     "version": "1.21.x",
-    "last_commit": "[4ef6695a30d1d9b15bcd305c4b0c9cf175a19e0b] Add support for custom particle groups (#10692)",
+    "last_commit": "[1b99b2cea41834c47940802d6881c98ee25990cf] Revert \"Remove runtime mods.toml string substitution (#10698)\" (#10701)\n\nThis reverts commit fc80e3028943237e60024d513f274a30c8457e71, 17ce723edf3f8e53c206db0c0d8838f041db5a04, and 0e6341a23eb206aa946fde648b6429d09e1c8481.",
     "data": {
         "net.minecraftforge.event": [
             {
