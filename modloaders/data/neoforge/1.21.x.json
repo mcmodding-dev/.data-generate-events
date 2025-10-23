@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251021005139",
+    "lastupdated": "20251023005113",
     "version": "1.21.x",
-    "last_commit": "[ce6f40c33f4a3189dd2649d0dc1b73a36a3005bc] Default fake players to survival (#2730)",
+    "last_commit": "[b220456668ba39e47a3b2b90db6ec1220245ee8f] Fix fluid-pushing being performed twice (#2750)",
     "data": {
         "net.neoforged.neoforge.event": [
             {

@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251021005105",
+    "lastupdated": "20251023005031",
     "version": "1.21.1",
-    "last_commit": "[7b76fff2b80f87fc10831dcda2f94cbf99fd0b2d] [1.21.1] Fix some armor trims not being tracked by ExistingFileHelper in ItemModelBuilder (#2675)",
+    "last_commit": "[de978d2edd638d6c4c74b0f654a68269e798cca1] Backport to 1.21.1: Add Deprecation Message for `IdMappingEvent` (#2717)\n\nCo-authored-by: ChampionAsh5357 <19510740+ChampionAsh5357@users.noreply.github.com>",
     "data": {
         "net.neoforged.neoforge.event": [
             {

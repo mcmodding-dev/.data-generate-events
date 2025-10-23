@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20250921121856",
+    "lastupdated": "20251023004950",
     "version": "1.20.4",
-    "last_commit": "[9df3de0384d57a65eb822c3b4c2adfc0d5c4d59c] Backport to 1.20.4: Allow command suggestions/autocomplete to search all modded paths at once without namespace provided (#2563)",
+    "last_commit": "[0231aaa5428ab51452952a62d4d0b9b3b18cbc9e] Backport to 1.20.4: Add Deprecation Message for `IdMappingEvent` (#2718)\n\nCo-authored-by: ChampionAsh5357 <19510740+ChampionAsh5357@users.noreply.github.com>",
     "data": {
         "net.neoforged.neoforge.event": [
             {
