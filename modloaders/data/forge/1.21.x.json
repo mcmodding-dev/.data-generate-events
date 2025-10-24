@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251022005204",
+    "lastupdated": "20251024004535",
     "version": "1.21.x",
-    "last_commit": "[1b99b2cea41834c47940802d6881c98ee25990cf] Revert \"Remove runtime mods.toml string substitution (#10698)\" (#10701)\n\nThis reverts commit fc80e3028943237e60024d513f274a30c8457e71, 17ce723edf3f8e53c206db0c0d8838f041db5a04, and 0e6341a23eb206aa946fde648b6429d09e1c8481.",
+    "last_commit": "[d17a111dc0e5a056cf51532937cc5fe746703a23] Fix misaligned patch in DedicatedServer",
     "data": {
         "net.minecraftforge.event": [
             {

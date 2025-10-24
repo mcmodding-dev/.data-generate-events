@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251023005113",
+    "lastupdated": "20251024004557",
     "version": "1.21.x",
-    "last_commit": "[b220456668ba39e47a3b2b90db6ec1220245ee8f] Fix fluid-pushing being performed twice (#2750)",
+    "last_commit": "[59eedd63ab20ba9862da51e54e31e20d530b831b] Automatically assume `offlineDeveloperMode` when running in dev without an access token (#2667)\n\nCo-authored-by: Sebastian Hartte <shartte@users.noreply.github.com>",
     "data": {
         "net.neoforged.neoforge.event": [
             {
