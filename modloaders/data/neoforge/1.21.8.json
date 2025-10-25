@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251021005123",
+    "lastupdated": "20251025004756",
     "version": "1.21.8",
-    "last_commit": "[d72c37f870c3b3742ac4c1d5d0b64e5b8d7d8166] Backport to 1.21.8: Fix unregistered SuggestionProviders for client commands being ignored (#2747)\n\nCo-authored-by: Gegy <5172118+Gegy@users.noreply.github.com>",
+    "last_commit": "[caa429ad9f3bce45872c41044cc3e974e748bd79] [1.21.8] Fix for shearing leads with custom shears (#2759)",
     "data": {
         "net.neoforged.neoforge.event": [
             {

@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251024004557",
+    "lastupdated": "20251025004815",
     "version": "1.21.x",
-    "last_commit": "[59eedd63ab20ba9862da51e54e31e20d530b831b] Automatically assume `offlineDeveloperMode` when running in dev without an access token (#2667)\n\nCo-authored-by: Sebastian Hartte <shartte@users.noreply.github.com>",
+    "last_commit": "[eeb74c13d34503614f3c330df38ff25380daa345] [1.21.10] Fix for shearing leads with custom shears (#2757)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
