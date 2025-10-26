@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251025004815",
+    "lastupdated": "20251026005345",
     "version": "1.21.x",
-    "last_commit": "[eeb74c13d34503614f3c330df38ff25380daa345] [1.21.10] Fix for shearing leads with custom shears (#2757)",
+    "last_commit": "[813e0cb8f40b360e257e3a38b1c288939c398de9] Fix creation of compat Jars from installers that produce combined MC jars (#2764)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
