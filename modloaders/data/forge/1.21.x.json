@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251024004535",
+    "lastupdated": "20251028004828",
     "version": "1.21.x",
-    "last_commit": "[d17a111dc0e5a056cf51532937cc5fe746703a23] Fix misaligned patch in DedicatedServer",
+    "last_commit": "[4376cd6b8518c735e9b242abf13c948c7d66f9b2] Remove generic from AttachCapabilitiesEvent to help prevent modders from having unchecked casts. Closes #10707",
     "data": {
         "net.minecraftforge.event": [
             {
@@ -18,6 +18,26 @@
             },
             {
                 "event": "AttachCapabilitiesEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.x/src/main/java/net/minecraftforge/event/AttachCapabilitiesEvent.java"
+            },
+            {
+                "event": "AttachCapabilitiesEvent.Entities",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.x/src/main/java/net/minecraftforge/event/AttachCapabilitiesEvent.java"
+            },
+            {
+                "event": "AttachCapabilitiesEvent.BlockEntities",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.x/src/main/java/net/minecraftforge/event/AttachCapabilitiesEvent.java"
+            },
+            {
+                "event": "AttachCapabilitiesEvent.ItemStacks",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.x/src/main/java/net/minecraftforge/event/AttachCapabilitiesEvent.java"
+            },
+            {
+                "event": "AttachCapabilitiesEvent.Levels",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.x/src/main/java/net/minecraftforge/event/AttachCapabilitiesEvent.java"
+            },
+            {
+                "event": "AttachCapabilitiesEvent.LevelChunks",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.x/src/main/java/net/minecraftforge/event/AttachCapabilitiesEvent.java"
             },
             {
