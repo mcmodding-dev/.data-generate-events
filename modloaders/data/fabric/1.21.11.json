@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251022005119",
+    "lastupdated": "20251029005254",
     "version": "1.21.11",
-    "last_commit": "[35c69dd4cddc3144300b7df55396331136bf12b9] 25w43a",
+    "last_commit": "[f577ed0a7525677aab565841253f4a619eca3ab8] Bump version",
     "data": {
         "deprecated": [
             {
@@ -51,7 +51,7 @@
                 "package": "net.fabricmc.fabric.api.entity.event.v1",
                 "interface": "AllowSleeping",
                 "variable": "ALLOW_SLEEPING",
-                "function": "PlayerEntity.SleepFailureReason allowSleep(PlayerEntity player, BlockPos sleepingPos);",
+                "function": "PlayerEntity.@Nullable SleepFailureReason allowSleep(PlayerEntity player, BlockPos sleepingPos);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.11/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/EntitySleepEvents.java"
             },
             {

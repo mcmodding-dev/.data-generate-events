@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251026005345",
+    "lastupdated": "20251029005351",
     "version": "1.21.x",
-    "last_commit": "[813e0cb8f40b360e257e3a38b1c288939c398de9] Fix creation of compat Jars from installers that produce combined MC jars (#2764)",
+    "last_commit": "[5f7e91960965afa3fba84f1e99a030a6ebca8820] Prevent unnecessary slot changes in StackCopySlot (#2754)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
