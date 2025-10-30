@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251029005351",
+    "lastupdated": "20251030005249",
     "version": "1.21.x",
-    "last_commit": "[5f7e91960965afa3fba84f1e99a030a6ebca8820] Prevent unnecessary slot changes in StackCopySlot (#2754)",
+    "last_commit": "[5dfbde0383191c281b5383977972086758b3b31f] Fix loading crash when early loading window is kept minimized (#2763)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
