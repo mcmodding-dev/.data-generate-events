@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251028004828",
+    "lastupdated": "20251031005101",
     "version": "1.21.x",
-    "last_commit": "[4376cd6b8518c735e9b242abf13c948c7d66f9b2] Remove generic from AttachCapabilitiesEvent to help prevent modders from having unchecked casts. Closes #10707",
+    "last_commit": "[6a615f1a4b1053fe3d8c39a8ca1f802e403dfcff] Add support for Forge shipping with JarInJar options. (#10683)\n\nThese are optional libraries that are only loaded when requested by mods.\nIncludes new ReadOnlyInMemoryFileSystem to improve performance of JarInJar parsing.",
     "data": {
         "net.minecraftforge.event": [
             {

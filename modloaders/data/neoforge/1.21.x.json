@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251030005249",
+    "lastupdated": "20251031005131",
     "version": "1.21.x",
-    "last_commit": "[5dfbde0383191c281b5383977972086758b3b31f] Fix loading crash when early loading window is kept minimized (#2763)",
+    "last_commit": "[4866cacb4bd80c9342cf878dfb7c55d1b70f3408] Update fancy_mod_loader_version to v10.0.29 (1.21.x) (#2774)\n\nCo-authored-by: neoforged-renovate[bot] <174042230+neoforged-renovate[bot]@users.noreply.github.com>",
     "data": {
         "net.neoforged.neoforge.event": [
             {
