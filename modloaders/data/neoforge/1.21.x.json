@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251031005131",
+    "lastupdated": "20251101005426",
     "version": "1.21.x",
-    "last_commit": "[4866cacb4bd80c9342cf878dfb7c55d1b70f3408] Update fancy_mod_loader_version to v10.0.29 (1.21.x) (#2774)\n\nCo-authored-by: neoforged-renovate[bot] <174042230+neoforged-renovate[bot]@users.noreply.github.com>",
+    "last_commit": "[e34d637b4f2db40bd30604382d5491eb11d76d33] [1.21.10] Add Tears to music disc tag (#2777)",
     "data": {
         "net.neoforged.neoforge.event": [
             {

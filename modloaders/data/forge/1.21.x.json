@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251031005101",
+    "lastupdated": "20251101005407",
     "version": "1.21.x",
-    "last_commit": "[6a615f1a4b1053fe3d8c39a8ca1f802e403dfcff] Add support for Forge shipping with JarInJar options. (#10683)\n\nThese are optional libraries that are only loaded when requested by mods.\nIncludes new ReadOnlyInMemoryFileSystem to improve performance of JarInJar parsing.",
+    "last_commit": "[f05ad3afd09321eee9fe2c946dcd872e28ff2cdf] Fix ROIMFS not being on boot classloader for dedicated server.",
     "data": {
         "net.minecraftforge.event": [
             {
