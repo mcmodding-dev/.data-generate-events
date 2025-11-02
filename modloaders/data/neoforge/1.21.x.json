@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251101005426",
+    "lastupdated": "20251102005447",
     "version": "1.21.x",
-    "last_commit": "[e34d637b4f2db40bd30604382d5491eb11d76d33] [1.21.10] Add Tears to music disc tag (#2777)",
+    "last_commit": "[c3161793df1ca365f499a96cdb6b92cefeaf93a4] Mods screen bugfixes (#2771)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
