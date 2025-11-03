@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251025004756",
+    "lastupdated": "20251103005424",
     "version": "1.21.8",
-    "last_commit": "[caa429ad9f3bce45872c41044cc3e974e748bd79] [1.21.8] Fix for shearing leads with custom shears (#2759)",
+    "last_commit": "[e8c2e4d54dca9d3a5252dc36b2d08a4c2127c8d2] Backport to 1.21.8: Add Tears to music disc tag (#2779)",
     "data": {
         "net.neoforged.neoforge.event": [
             {

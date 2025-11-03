@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251102005447",
+    "lastupdated": "20251103005441",
     "version": "1.21.x",
-    "last_commit": "[c3161793df1ca365f499a96cdb6b92cefeaf93a4] Mods screen bugfixes (#2771)",
+    "last_commit": "[c29661b1e559221afd664d70318a1075241d98f8] Added `c:natural_logs`, `c:natural_logs/overworld`, `c:natural_logs/nether`, `c:natural_woods` item and block tags (#2772)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
