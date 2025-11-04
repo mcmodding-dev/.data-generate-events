@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251101005407",
+    "lastupdated": "20251104005054",
     "version": "1.21.x",
-    "last_commit": "[f05ad3afd09321eee9fe2c946dcd872e28ff2cdf] Fix ROIMFS not being on boot classloader for dedicated server.",
+    "last_commit": "[9b8e5c710947836a3122835679a7a4bfdaa56b3d] Add workaround for Mixin bug. Closes #10710",
     "data": {
         "net.minecraftforge.event": [
             {
