@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251103005441",
+    "lastupdated": "20251107005218",
     "version": "1.21.x",
-    "last_commit": "[c29661b1e559221afd664d70318a1075241d98f8] Added `c:natural_logs`, `c:natural_logs/overworld`, `c:natural_logs/nether`, `c:natural_woods` item and block tags (#2772)",
+    "last_commit": "[8a596374f4eee9de53d70c2c6051100d33b0738a] [1.21.10] Expand context provided to ExtractBlockOutlineRenderStateEvent (#2789)",
     "data": {
         "net.neoforged.neoforge.event": [
             {

@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251023005031",
+    "lastupdated": "20251107005201",
     "version": "1.21.1",
-    "last_commit": "[de978d2edd638d6c4c74b0f654a68269e798cca1] Backport to 1.21.1: Add Deprecation Message for `IdMappingEvent` (#2717)\n\nCo-authored-by: ChampionAsh5357 <19510740+ChampionAsh5357@users.noreply.github.com>",
+    "last_commit": "[941187639422741d57ac3685e7d5ce7653fc8f04] Backport to 1.21.1: Expose damage source to ArmorHurtEvent (#2792)\n\nCo-authored-by: Satherov <63814891+Satherov@users.noreply.github.com>",
     "data": {
         "net.neoforged.neoforge.event": [
             {
