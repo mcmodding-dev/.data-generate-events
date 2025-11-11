@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251106005156",
+    "lastupdated": "20251111005236",
     "version": "1.21.x",
-    "last_commit": "[3449217c655dd7c5fe84b469335b13220802ddd6] Expand hooks for custom shears (#10704)\n\nFix shearing leads with custom shears (interacting with entity & leash knot)\nFix shearing poppy from copper golem for custom shears",
+    "last_commit": "[aa55a6a8313e32ee811710c6dff6fc0ffe659490] Make Mixin dev mode check a little looser (#10713)",
     "data": {
         "net.minecraftforge.event": [
             {
