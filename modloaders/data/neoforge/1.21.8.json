@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251103005424",
+    "lastupdated": "20251112005306",
     "version": "1.21.8",
-    "last_commit": "[e8c2e4d54dca9d3a5252dc36b2d08a4c2127c8d2] Backport to 1.21.8: Add Tears to music disc tag (#2779)",
+    "last_commit": "[4bf3218b0ae112ae12f60dcbc31cb7eb8f2b06d3] Backport to 1.21.8: Update Underwater field by checking if the eye is in the fluid (#2791)\n\nCo-authored-by: ChampionAsh5357 <19510740+ChampionAsh5357@users.noreply.github.com>",
     "data": {
         "net.neoforged.neoforge.event": [
             {

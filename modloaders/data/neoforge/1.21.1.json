@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251107005201",
+    "lastupdated": "20251112005239",
     "version": "1.21.1",
-    "last_commit": "[941187639422741d57ac3685e7d5ce7653fc8f04] Backport to 1.21.1: Expose damage source to ArmorHurtEvent (#2792)\n\nCo-authored-by: Satherov <63814891+Satherov@users.noreply.github.com>",
+    "last_commit": "[67844a6760340b3dfd3403fe1dc891a996501ab2] [1.21.1] Fix the bug that some blocks do not catch fire from lava when they should (#2626)",
     "data": {
         "net.neoforged.neoforge.event": [
             {

@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251107005218",
+    "lastupdated": "20251112005329",
     "version": "1.21.x",
-    "last_commit": "[8a596374f4eee9de53d70c2c6051100d33b0738a] [1.21.10] Expand context provided to ExtractBlockOutlineRenderStateEvent (#2789)",
+    "last_commit": "[036306ec6cc1034b9a2f5871039cc01f201e60c2] [1.21.10] Add properties supplier variants for item registration methods (#2768)",
     "data": {
         "net.neoforged.neoforge.event": [
             {

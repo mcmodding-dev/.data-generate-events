@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251110005424",
+    "lastupdated": "20251112005157",
     "version": "1.21.11",
-    "last_commit": "[b54bdfaed98855bb54f36c0b726ea9d818575603] Bump version",
+    "last_commit": "[c38f9e28475ffbb3b65017867db0dff6bd96b786] Early FRAPI fixes (#4995)\n\n- Allow SpriteGetter.spriteFinder() to return the item atlas' sprite finder\n- Fix SpriteGetter.spriteFinder() accepting definition ID instead of texture ID\n- Fix RenderLayerHelper.getEntityBlockLayer() and ItemRenderContext.getVertexConsumer() using the wrong translucent layer",
     "data": {
         "deprecated": [
             {
