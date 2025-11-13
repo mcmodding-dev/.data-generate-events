@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251112005329",
+    "lastupdated": "20251113005235",
     "version": "1.21.x",
-    "last_commit": "[036306ec6cc1034b9a2f5871039cc01f201e60c2] [1.21.10] Add properties supplier variants for item registration methods (#2768)",
+    "last_commit": "[22cdf1e69889244f6173370a98a358b165ae74d0] Fix framebuffer incompleteness caused by conflicting stencil attachments (#2798)",
     "data": {
         "net.neoforged.neoforge.event": [
             {

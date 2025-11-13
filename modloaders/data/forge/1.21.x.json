@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251111005236",
+    "lastupdated": "20251113005216",
     "version": "1.21.x",
-    "last_commit": "[aa55a6a8313e32ee811710c6dff6fc0ffe659490] Make Mixin dev mode check a little looser (#10713)",
+    "last_commit": "[f3d16621c05a21cd57e511cd9881c96affee08e9] Provide LevelRenderState during frame pass construction  Addresses #10867 (#10688)",
     "data": {
         "net.minecraftforge.event": [
             {
