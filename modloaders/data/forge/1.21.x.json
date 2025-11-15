@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251113005216",
+    "lastupdated": "20251115005110",
     "version": "1.21.x",
-    "last_commit": "[f3d16621c05a21cd57e511cd9881c96affee08e9] Provide LevelRenderState during frame pass construction  Addresses #10867 (#10688)",
+    "last_commit": "[7ea0a41fe2b782cb84f84e90807aefa7967bf997] Fix ItemStack in RenderTooltipEvent always EMPTY, merges RenderTooltipEvent.Background into .Pre (#10655) (#10702)",
     "data": {
         "net.minecraftforge.event": [
             {

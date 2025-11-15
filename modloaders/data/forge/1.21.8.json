@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251006004901",
+    "lastupdated": "20251115005057",
     "version": "1.21.8",
-    "last_commit": "[60110cd916eb682594a5068628b32cda072b3b97] Fix implicit Bus.BOTH not working in `@EventBusSubscriber`, add additional validation in strict mode, partial backport of #10676",
+    "last_commit": "[fae5c92daf58374d0b6cf34c1fd9cabf1b1c67a4] Fix ItemStack context in RenderTooltipEvent.Pre (#10655) (#10658)",
     "data": {
         "net.minecraftforge.event": [
             {
