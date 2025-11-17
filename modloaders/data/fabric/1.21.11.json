@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251113005150",
+    "lastupdated": "20251117005301",
     "version": "1.21.11",
-    "last_commit": "[be66d255e05833fabed4604fd8e43a49df374079] Gen resources",
+    "last_commit": "[a00626fd5c3c283fa801278cb16cb4f397df8941] Bump version",
     "data": {
         "deprecated": [
             {
