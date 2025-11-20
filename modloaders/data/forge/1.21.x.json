@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251115005110",
+    "lastupdated": "20251120005109",
     "version": "1.21.x",
-    "last_commit": "[7ea0a41fe2b782cb84f84e90807aefa7967bf997] Fix ItemStack in RenderTooltipEvent always EMPTY, merges RenderTooltipEvent.Background into .Pre (#10655) (#10702)",
+    "last_commit": "[b518c804fbfe56a614281014521eedca562670c5] 1.21.10 RB",
     "data": {
         "net.minecraftforge.event": [
             {
