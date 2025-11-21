@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251115005057",
+    "lastupdated": "20251121005128",
     "version": "1.21.8",
-    "last_commit": "[fae5c92daf58374d0b6cf34c1fd9cabf1b1c67a4] Fix ItemStack context in RenderTooltipEvent.Pre (#10655) (#10658)",
+    "last_commit": "[e75f0b67fe96c53b8667e1f0501ca75e6331b9d0] Fixes shearing leads for custom shears (interacting with entity & leash knot) (#10706)",
     "data": {
         "net.minecraftforge.event": [
             {
