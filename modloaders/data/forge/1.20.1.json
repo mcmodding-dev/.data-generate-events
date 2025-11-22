@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251010004657",
+    "lastupdated": "20251122004908",
     "version": "1.20.1",
-    "last_commit": "[132704e5f23dbee28d776738eb1c0c42fefc0bf6] Work around mixins targeting IForgePlayer#canReach (#10680)",
+    "last_commit": "[1837d8c36c61754290ddc74b4ef1454182500ec4] Allow loading ImmediateWindowProvider from mods dir (#10718)",
     "data": {
         "net.minecraftforge.event": [
             {
