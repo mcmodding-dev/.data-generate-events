@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251115005128",
+    "lastupdated": "20251123005938",
     "version": "1.21.x",
-    "last_commit": "[61e879c840f6e529dc35e21a4843fb8e5c72b0c4] [1.21.10] Set missing texture for still and flowing if not specified (#2805)",
+    "last_commit": "[080f0b0820f91d4f3372033f255e758c17f75de1] Fix cross-dimension example in chunk generate command help (#2824)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
