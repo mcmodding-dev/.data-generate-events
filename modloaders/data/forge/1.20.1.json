@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251122004908",
+    "lastupdated": "20251125005056",
     "version": "1.20.1",
-    "last_commit": "[1837d8c36c61754290ddc74b4ef1454182500ec4] Allow loading ImmediateWindowProvider from mods dir (#10718)",
+    "last_commit": "[f20ab8e6ce81bec982cfe7e1d8cab9b2a4769b73] Fix loading ImmediateWindowHandler services from the wrong Module Layer. Closes #10719\nFix errors not logging to log files when early loading screen errors.\nFix generics compile issue in ConctendatedListView.",
     "data": {
         "net.minecraftforge.event": [
             {
