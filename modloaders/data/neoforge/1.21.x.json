@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251123005938",
+    "lastupdated": "20251126005244",
     "version": "1.21.x",
-    "last_commit": "[080f0b0820f91d4f3372033f255e758c17f75de1] Fix cross-dimension example in chunk generate command help (#2824)",
+    "last_commit": "[9a1dccc1fd22b74bb5de01854984da292136fda7] Fix EphemeralTestServerProvider trying to class-load when it shuts down after FML in tests (#2832)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
