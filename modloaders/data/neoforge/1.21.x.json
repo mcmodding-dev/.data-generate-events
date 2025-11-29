@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251128005024",
+    "lastupdated": "20251129005059",
     "version": "1.21.x",
-    "last_commit": "[fe817368ecfd7b7d2b26934784fe6ee8f3b017f7] Rename patches in installer to /data/client.lzma to try work around CurseForge Launcher limitations (#2836)",
+    "last_commit": "[8fb8872c5aa440c5e3e2de8e774c08069f354958] Fix CLI args for binary patch application in userdev (#2839)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
