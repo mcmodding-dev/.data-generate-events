@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251129005059",
+    "lastupdated": "20251130010209",
     "version": "1.21.x",
-    "last_commit": "[8fb8872c5aa440c5e3e2de8e774c08069f354958] Fix CLI args for binary patch application in userdev (#2839)",
+    "last_commit": "[57813e54fc700c20c667e624b7698fb7a98904d5] 1.21.10 Stable",
     "data": {
         "net.neoforged.neoforge.event": [
             {

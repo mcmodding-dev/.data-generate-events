@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251112005306",
+    "lastupdated": "20251130010137",
     "version": "1.21.8",
-    "last_commit": "[4bf3218b0ae112ae12f60dcbc31cb7eb8f2b06d3] Backport to 1.21.8: Update Underwater field by checking if the eye is in the fluid (#2791)\n\nCo-authored-by: ChampionAsh5357 <19510740+ChampionAsh5357@users.noreply.github.com>",
+    "last_commit": "[bc44904c54b3bedfbb9d2278aaf712f2df133115] Backport to 1.21.8: Revert #2095 due to Leader Zombie health bugfix breaking vanilla farms (#2845)\n\nCo-authored-by: TelepathicGrunt <40846040+TelepathicGrunt@users.noreply.github.com>",
     "data": {
         "net.neoforged.neoforge.event": [
             {

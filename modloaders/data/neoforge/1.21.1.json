@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251112005239",
+    "lastupdated": "20251130005930",
     "version": "1.21.1",
-    "last_commit": "[67844a6760340b3dfd3403fe1dc891a996501ab2] [1.21.1] Fix the bug that some blocks do not catch fire from lava when they should (#2626)",
+    "last_commit": "[037d84584585fe7d5fc545325b92c5a16c57d3cc] Backport to 1.21.1: Revert #2095 due to Leader Zombie health bugfix breaking vanilla farms (#2841)\n\nCo-authored-by: TelepathicGrunt <40846040+TelepathicGrunt@users.noreply.github.com>",
     "data": {
         "net.neoforged.neoforge.event": [
             {

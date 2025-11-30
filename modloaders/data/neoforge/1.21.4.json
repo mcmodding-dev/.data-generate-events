@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251011004522",
+    "lastupdated": "20251130010033",
     "version": "1.21.4",
-    "last_commit": "[28b7490e5863f57281f778e40654c710a5306151] [1.21.4] Add Deprecation Message for `IdMappingEvent` (#2706)",
+    "last_commit": "[5cd706524fd90046e2d6e66814cb8a71b082dbb3] Backport to 1.21.4: Revert #2095 due to Leader Zombie health bugfix breaking vanilla farms (#2842)\n\nCo-authored-by: TelepathicGrunt <40846040+TelepathicGrunt@users.noreply.github.com>",
     "data": {
         "net.neoforged.neoforge.event": [
             {

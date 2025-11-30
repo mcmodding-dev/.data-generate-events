@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20250921122243",
+    "lastupdated": "20251130010106",
     "version": "1.21.5",
-    "last_commit": "[ab770be1626b9832db2a4119e22cecede38bfefd] [1.21.5] Include remove entries when copying block tags (#2619)",
+    "last_commit": "[b950b64388f3570660abc1bf3e17103358ceb3a3] Backport to 1.21.5: Revert #2095 due to Leader Zombie health bugfix breaking vanilla farms (#2844)\n\nCo-authored-by: TelepathicGrunt <40846040+TelepathicGrunt@users.noreply.github.com>",
     "data": {
         "net.neoforged.neoforge.event": [
             {
