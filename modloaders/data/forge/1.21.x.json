@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251120005109",
+    "lastupdated": "20251203005717",
     "version": "1.21.x",
-    "last_commit": "[b518c804fbfe56a614281014521eedca562670c5] 1.21.10 RB",
+    "last_commit": "[42bbe44a345ab25c1aacbce664733a33e8f49afa] Split setup and publish commands in actions",
     "data": {
         "net.minecraftforge.event": [
             {

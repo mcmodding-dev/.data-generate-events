@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251125005056",
+    "lastupdated": "20251203005432",
     "version": "1.20.1",
-    "last_commit": "[f20ab8e6ce81bec982cfe7e1d8cab9b2a4769b73] Fix loading ImmediateWindowHandler services from the wrong Module Layer. Closes #10719\nFix errors not logging to log files when early loading screen errors.\nFix generics compile issue in ConctendatedListView.",
+    "last_commit": "[7187d8d97fb667dc478d0e6af9285483db48949c] Migrate to Github Actions",
     "data": {
         "net.minecraftforge.event": [
             {

@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20250921123851",
+    "lastupdated": "20251203005335",
     "version": "1.18.x",
-    "last_commit": "[e70dc0a4b7526a4b54de5ed9ae9f0effb9d62b8e] Fix Material#isFlammable not being accounted for in flammability (#10573)",
+    "last_commit": "[9c5d527d71553d297d6ad684211929f66f596ae1] Migrate to Github Actions",
     "data": {
         "net.minecraftforge.event": [
             {

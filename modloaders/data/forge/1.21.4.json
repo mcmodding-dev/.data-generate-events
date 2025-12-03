@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20250926004709",
+    "lastupdated": "20251203005616",
     "version": "1.21.4",
-    "last_commit": "[e52740058ace4ab8444818e850b02257fea28cb4] Fix crafter not inserting into iitemhandler (#10667) (#10671)",
+    "last_commit": "[485e93d6522482d529531b728f09a951d2109c0e] Fix license headers",
     "data": {
         "net.minecraftforge.event": [
             {

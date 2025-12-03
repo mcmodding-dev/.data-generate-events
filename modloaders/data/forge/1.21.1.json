@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251021005031",
+    "lastupdated": "20251203005535",
     "version": "1.21.1",
-    "last_commit": "[444d4a94daf8c6ca20289902dfbc40c906d8e302] Fix incorrect blend state for blur effects, followup to #10115 and fix for 10541 (#10678)",
+    "last_commit": "[d2f441ed41989cc61707020c2a2bfe7ab20613b1] Migrate to Github Actions",
     "data": {
         "net.minecraftforge.event": [
             {

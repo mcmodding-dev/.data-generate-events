@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20250923004651",
+    "lastupdated": "20251203005453",
     "version": "1.20.4",
-    "last_commit": "[27fb189b0d50d5d97f9a9d0fa311213aebdf4995] Bump ASM to 9.8 for Java 25 runtime support",
+    "last_commit": "[592ca2897c3cedc8a0160afa64c3df3f2983eefa] Migrate to Github Actions",
     "data": {
         "net.minecraftforge.event": [
             {

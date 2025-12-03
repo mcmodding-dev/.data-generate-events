@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20250921112809",
+    "lastupdated": "20251203005314",
     "version": "1.14.x",
-    "last_commit": "[97bd9d7fd02c78c80229b3fbe43f5ecd7829fd1e] [1.14.x] Update Installer to 2.1.+ (#8289)\n\n* Update Installer to 2.1.+\r\n\r\nSigned-off-by: SizableShrimp <sizableshrimp@sizableshrimp.me>\r\n\r\n* Update references of files.mcf.net/maven to maven.mcf.net\r\n\r\nSigned-off-by: SizableShrimp <sizableshrimp@sizableshrimp.me>",
+    "last_commit": "[638196175cde11041dff0a73b4a842e06954b420] Migrate to Github Actions",
     "data": {
         "net.minecraftforge.event": [
             {

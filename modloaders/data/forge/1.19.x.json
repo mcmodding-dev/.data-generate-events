@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20250921124003",
+    "lastupdated": "20251203005412",
     "version": "1.19.x",
-    "last_commit": "[f5f134aa9fbcbfa392133e227d18269601ca2ba8] Allow command suggestions/autocomplete to search all modded paths at once without namespace provided (#10615)",
+    "last_commit": "[448ba8b5d24b377e7ff15b289c2773c12cdad144] Migrate to Github Actions",
     "data": {
         "net.minecraftforge.event": [
             {

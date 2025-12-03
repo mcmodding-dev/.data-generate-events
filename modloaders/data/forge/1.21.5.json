@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20250926004729",
+    "lastupdated": "20251203005637",
     "version": "1.21.5",
-    "last_commit": "[6585db991d2c7a4f5bf9abdb83dc4ae415d17380] Fix crafter not inserting into iitemhandler (#10667) (#10672)",
+    "last_commit": "[d97e796c5695c2d7a72053b97309bb0a3541f4a3] Migrate to Github Actions",
     "data": {
         "net.minecraftforge.event": [
             {
