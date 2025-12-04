@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251201010256",
+    "lastupdated": "20251204005320",
     "version": "1.12.x",
-    "last_commit": "[dbd6c296f2ebef24cdfb1c89c5b6f8c9e7bfd25f] Migrate to Github Actions",
+    "last_commit": "[4d0705370f37f98f7c1b82f645aa75a98eb0805f] Fix MDK run configs, and add fix for IntelliJ issues.",
     "data": {
         "net.minecraftforge.event": [
             {
