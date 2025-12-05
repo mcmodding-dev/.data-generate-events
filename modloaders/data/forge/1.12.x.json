@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251204005320",
+    "lastupdated": "20251205005406",
     "version": "1.12.x",
-    "last_commit": "[4d0705370f37f98f7c1b82f645aa75a98eb0805f] Fix MDK run configs, and add fix for IntelliJ issues.",
+    "last_commit": "[3effde4f1fc9d14d6ed1dbf6bebc39c2b18780e1] Enable promotion from actions",
     "data": {
         "net.minecraftforge.event": [
             {

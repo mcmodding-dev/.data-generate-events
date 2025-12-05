@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251203005556",
+    "lastupdated": "20251205005554",
     "version": "1.21.3",
-    "last_commit": "[75650bde6b2397ef0f8e5a1126f696ea07190ff8] Migrate to Github Actions",
+    "last_commit": "[0bee88f4c09e93b00fe30688c21eeeda3f957040] Mark applyServerBinpatches as a dependency of BundleList. Fixes: #10729",
     "data": {
         "net.minecraftforge.event": [
             {

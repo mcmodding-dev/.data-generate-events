@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251203005616",
+    "lastupdated": "20251205005619",
     "version": "1.21.4",
-    "last_commit": "[485e93d6522482d529531b728f09a951d2109c0e] Fix license headers",
+    "last_commit": "[5b82b16ad20bf1b53d0258440e5fe7927e8a97b1] Mark applyServerBinpatches as a dependency of BundleList. Fixes: #10729",
     "data": {
         "net.minecraftforge.event": [
             {
