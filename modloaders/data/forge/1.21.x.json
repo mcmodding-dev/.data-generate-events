@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251204005340",
+    "lastupdated": "20251207005919",
     "version": "1.21.x",
-    "last_commit": "[da1b8f4efaeb1a2442cd190e43a73e2b284d2837] Mark applyServerBinpatches as a dependency of BundleList.\nFixes shim jar config",
+    "last_commit": "[17e1002e8666583e3290ef6cd20c60b72b71a08f] Expose movevector field for usage with MovementInputUpdateEvent (#10732)",
     "data": {
         "net.minecraftforge.event": [
             {

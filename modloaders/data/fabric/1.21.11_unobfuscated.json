@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251111005211",
+    "lastupdated": "20251207005839",
     "version": "1.21.11_unobfuscated",
-    "last_commit": "[36a5116592042c6e81c9a5eb68cc5c96dc194636] Port to 25w45a_unobfuscated (#4990)\n\n* Try to build with debof loom\n\n* Remap AWs\n\n* Game runs\n\n* Update loom again\n\n* Fix local build\n\n* Update loom\n\n* Remove prod run tasks\n\n* AW generation fixes\n\n* Devlibs no more\n\n* Update loom fix res-loader testmod\n\n* disable curseforge + modrinth publishing",
+    "last_commit": "[81748cc88180aee93ede25744f17d6b5cf2bb6c9] Merge remote-tracking branch 'origin/1.21.11' into 1.21.11_unobfuscated\n\n# Conflicts:\n#\tbuild.gradle\n#\tfabric-client-gametest-api-v1/src/client/resources/fabric.mod.json\n#\tfabric-gametest-api-v1/src/main/resources/fabric.mod.json\n#\tfabric-resource-loader-v0/build.gradle\n#\tfabric-resource-loader-v0/src/main/resources/fabric-resource-loader-v0.accesswidener\n#\tgradle.properties",
     "data": {
         "deprecated": [
             {

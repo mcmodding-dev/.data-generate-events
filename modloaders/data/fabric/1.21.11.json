@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251202005313",
+    "lastupdated": "20251207005837",
     "version": "1.21.11",
-    "last_commit": "[bfe9fcf4f2fe5ca2b8e83d03e0d6c5cce724420e] Fix client tests for pre4 (#5024)\n\n* Fix client tests for pre4\n\n* Bump version",
+    "last_commit": "[dafb9388c88ff0a4ab7a6a8d88f42e18d298959c] 1.21.11-rc2",
     "data": {
         "deprecated": [
             {
