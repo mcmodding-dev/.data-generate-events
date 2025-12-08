@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251207005837",
+    "lastupdated": "20251208005351",
     "version": "1.21.11",
-    "last_commit": "[dafb9388c88ff0a4ab7a6a8d88f42e18d298959c] 1.21.11-rc2",
+    "last_commit": "[43c963c53f039068ab5c813ea1f9f4d214e8bb3f] Add 'ModifyReceiver' to checkstyle rules (#5026)",
     "data": {
         "deprecated": [
             {
