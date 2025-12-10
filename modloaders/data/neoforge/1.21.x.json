@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251204005400",
+    "lastupdated": "20251210005516",
     "version": "1.21.x",
-    "last_commit": "[b333f6afea7f82e5059f2094ab45c6ebc22d2b46] When creating the joined patches, use the clean jar as base. (#2849)",
+    "last_commit": "[28c765fc63a63336042b8c2ac40ece046a36bc78] Release 1.21.11",
     "data": {
         "net.neoforged.neoforge.event": [
             {
