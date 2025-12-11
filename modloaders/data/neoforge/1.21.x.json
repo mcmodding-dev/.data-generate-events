@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251210005516",
+    "lastupdated": "20251211005659",
     "version": "1.21.x",
-    "last_commit": "[28c765fc63a63336042b8c2ac40ece046a36bc78] Release 1.21.11",
+    "last_commit": "[50e97810aa645b1d8de3a5892ca7ccc79a2a8e91] Reimplement rejected hunk for Player regarding attack ticker (#2858)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
