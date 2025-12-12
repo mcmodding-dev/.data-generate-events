@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251211005624",
+    "lastupdated": "20251212005510",
     "version": "1.21.11",
-    "last_commit": "[6f4f60e213a068e2458481b4897088a9c9156faa] Bump S2S, fixes patches in UserDev. Closes #1011",
+    "last_commit": "[f5d4fbbee54f045b09e68fa128183bd7ff4ba4cb] Fix AT lines which didn't work on some old dev environments. Closes #10735",
     "data": {
         "net.minecraftforge.event": [
             {

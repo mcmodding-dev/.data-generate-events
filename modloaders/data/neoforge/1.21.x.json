@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251211005659",
+    "lastupdated": "20251212005545",
     "version": "1.21.x",
-    "last_commit": "[50e97810aa645b1d8de3a5892ca7ccc79a2a8e91] Reimplement rejected hunk for Player regarding attack ticker (#2858)",
+    "last_commit": "[aeedd7409b1f6efc39bec83b4def76132a656267] Update mdg to v2.0.124 (1.21.x) (#2866)\n\nCo-authored-by: neoforged-renovate[bot] <174042230+neoforged-renovate[bot]@users.noreply.github.com>",
     "data": {
         "net.neoforged.neoforge.event": [
             {
