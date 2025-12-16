@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251212005510",
+    "lastupdated": "20251216005545",
     "version": "1.21.11",
-    "last_commit": "[f5d4fbbee54f045b09e68fa128183bd7ff4ba4cb] Fix AT lines which didn't work on some old dev environments. Closes #10735",
+    "last_commit": "[8b8d3fdef79a17ed4b4d4c0f1490427dde3647d8] Fix not being able to sleep. Steve is very tired. (#10736)",
     "data": {
         "net.minecraftforge.event": [
             {

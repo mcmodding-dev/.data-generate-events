@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251212005545",
+    "lastupdated": "20251216005605",
     "version": "1.21.x",
-    "last_commit": "[aeedd7409b1f6efc39bec83b4def76132a656267] Update mdg to v2.0.124 (1.21.x) (#2866)\n\nCo-authored-by: neoforged-renovate[bot] <174042230+neoforged-renovate[bot]@users.noreply.github.com>",
+    "last_commit": "[b93282b532b4093a538b7156a52679e4e340d570] [1.21.11] Fix baked colors in quads applying incorrectly (#2875)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
