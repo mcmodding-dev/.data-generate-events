@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251216005605",
+    "lastupdated": "20251218005236",
     "version": "1.21.x",
-    "last_commit": "[b93282b532b4093a538b7156a52679e4e340d570] [1.21.11] Fix baked colors in quads applying incorrectly (#2875)",
+    "last_commit": "[289c906eeaae544ebe6e72f51394538573994f11] Update plugin org.gradle.toolchains.foojay-resolver-convention to v1 (1.21.x) (#2881)\n\nCo-authored-by: neoforged-renovate[bot] <174042230+neoforged-renovate[bot]@users.noreply.github.com>",
     "data": {
         "net.neoforged.neoforge.event": [
             {

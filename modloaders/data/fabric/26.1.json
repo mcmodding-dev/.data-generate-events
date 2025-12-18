@@ -1,34 +1,8 @@
 {
-    "lastupdated": "20251217005036",
+    "lastupdated": "20251218005138",
     "version": "26.1",
-    "last_commit": "[e29e459ce4db6b38dc6a91de335ad8d1c6d6285b] Update Fabric Loader to 0.18.2",
+    "last_commit": "[3e7aa8de447dd8ee882894d525ffd64a17864e12] Fix javadoc errors resulting from the migration to official names",
     "data": {
-        "deprecated": [
-            {
-                "file": "LootTableEvents.java",
-                "package": "net.fabricmc.fabric.api.loot.v2",
-                "interface": "Replace",
-                "variable": "REPLACE",
-                "function": "LootTable replaceLootTable(ResourceKey<LootTable> key, LootTable original, LootTableSource source);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/deprecated/fabric-loot-api-v2/src/main/java/net/fabricmc/fabric/api/loot/v2/LootTableEvents.java"
-            },
-            {
-                "file": "LootTableEvents.java",
-                "package": "net.fabricmc.fabric.api.loot.v2",
-                "interface": "Modify",
-                "variable": "MODIFY",
-                "function": "void modifyLootTable(ResourceKey<LootTable> key, LootTable.Builder tableBuilder, LootTableSource source);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/deprecated/fabric-loot-api-v2/src/main/java/net/fabricmc/fabric/api/loot/v2/LootTableEvents.java"
-            },
-            {
-                "file": "LootTableEvents.java",
-                "package": "net.fabricmc.fabric.api.loot.v2",
-                "interface": "Loaded",
-                "variable": "LOADED",
-                "function": "void onLootTablesLoaded(ResourceManager resourceManager, Registry<LootTable> lootRegistry);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/deprecated/fabric-loot-api-v2/src/main/java/net/fabricmc/fabric/api/loot/v2/LootTableEvents.java"
-            }
-        ],
         "fabric-entity-events-v1": [
             {
                 "file": "EntityElytraEvents.java",
