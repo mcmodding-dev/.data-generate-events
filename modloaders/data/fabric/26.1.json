@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251218005138",
+    "lastupdated": "20251219005450",
     "version": "26.1",
-    "last_commit": "[3e7aa8de447dd8ee882894d525ffd64a17864e12] Fix javadoc errors resulting from the migration to official names",
+    "last_commit": "[c9b8f125c1e9737352164753adbd1086a9f3df57] Bump version",
     "data": {
         "fabric-entity-events-v1": [
             {
