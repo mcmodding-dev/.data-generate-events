@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251218005236",
+    "lastupdated": "20251220005228",
     "version": "1.21.x",
-    "last_commit": "[289c906eeaae544ebe6e72f51394538573994f11] Update plugin org.gradle.toolchains.foojay-resolver-convention to v1 (1.21.x) (#2881)\n\nCo-authored-by: neoforged-renovate[bot] <174042230+neoforged-renovate[bot]@users.noreply.github.com>",
+    "last_commit": "[da05e7000fa09e7f8f7f46e7ac6533de4b980a30] [1.21.11] Remove remaining mip level reduction suppression patches (#2882)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
@@ -807,6 +807,10 @@
             {
                 "event": "ExplosionKnockbackEvent",
                 "url": "https://github.com/neoforged/NeoForge/blob/1.21.x/src/main/java/net/neoforged/neoforge/event/level/ExplosionKnockbackEvent.java"
+            },
+            {
+                "event": "GameRuleChangedEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.21.x/src/main/java/net/neoforged/neoforge/event/level/GameRuleChangedEvent.java"
             },
             {
                 "event": "LevelEvent",
