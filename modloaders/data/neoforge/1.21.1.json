@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251130005930",
+    "lastupdated": "20251221005859",
     "version": "1.21.1",
-    "last_commit": "[037d84584585fe7d5fc545325b92c5a16c57d3cc] Backport to 1.21.1: Revert #2095 due to Leader Zombie health bugfix breaking vanilla farms (#2841)\n\nCo-authored-by: TelepathicGrunt <40846040+TelepathicGrunt@users.noreply.github.com>",
+    "last_commit": "[ceff3d20430e6a6653a83adae68ca11464e6335b] Match MC-273464 fix to implemented fix in 24w33a (#2883)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
