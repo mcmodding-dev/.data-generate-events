@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251220005228",
+    "lastupdated": "20251223005514",
     "version": "1.21.x",
-    "last_commit": "[da05e7000fa09e7f8f7f46e7ac6533de4b980a30] [1.21.11] Remove remaining mip level reduction suppression patches (#2882)",
+    "last_commit": "[4ab3cd89d914d59eb53648023d4abb83233f6718] [1.21.11] Separate the key modifiers for Command and Control keys on OSX (#2872)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
