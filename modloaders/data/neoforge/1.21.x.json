@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251223005514",
+    "lastupdated": "20251227005424",
     "version": "1.21.x",
-    "last_commit": "[4ab3cd89d914d59eb53648023d4abb83233f6718] [1.21.11] Separate the key modifiers for Command and Control keys on OSX (#2872)",
+    "last_commit": "[d82baaa2065b1dbef6799c334093434243fc5360] Fix StacksResourceHandler crash when changing size (#2891)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
