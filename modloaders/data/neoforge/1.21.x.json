@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251227005424",
+    "lastupdated": "20251228010244",
     "version": "1.21.x",
-    "last_commit": "[d82baaa2065b1dbef6799c334093434243fc5360] Fix StacksResourceHandler crash when changing size (#2891)",
+    "last_commit": "[48a4b3b089894300e9ae7cdaf065cdaeab3f56cf] Add resource handler utilities for moveStacking/moveFirstStacking (#2895)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
