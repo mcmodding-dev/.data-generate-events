@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251228010244",
+    "lastupdated": "20251229010050",
     "version": "1.21.x",
-    "last_commit": "[48a4b3b089894300e9ae7cdaf065cdaeab3f56cf] Add resource handler utilities for moveStacking/moveFirstStacking (#2895)",
+    "last_commit": "[9bf54a80a04637afd2abe9290213e9b69dbcae3f] Return an empty fluid stack for empty itemstacks in FluidUtil#getFirstStackContained (#2898)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
