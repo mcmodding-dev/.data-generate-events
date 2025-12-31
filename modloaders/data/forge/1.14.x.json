@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251203005314",
+    "lastupdated": "20251231005649",
     "version": "1.14.x",
-    "last_commit": "[638196175cde11041dff0a73b4a842e06954b420] Migrate to Github Actions",
+    "last_commit": "[cd1fa60337a796d04386912695b2bd922f47d180] Validate packet directions for Forge packets. Closes #10740",
     "data": {
         "net.minecraftforge.event": [
             {
