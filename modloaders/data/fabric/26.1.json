@@ -1,8 +1,26 @@
 {
-    "lastupdated": "20251222005737",
+    "lastupdated": "20260101010159",
     "version": "26.1",
-    "last_commit": "[80d9a2c913d22270e39c47ab898a09ea4f3d6c96] Bump version",
+    "last_commit": "[7053354728ece4a68d098b07b2526eb4303fbac1] Bump version",
     "data": {
+        "fabric-creative-tab-api-v1": [
+            {
+                "file": "CreativeModeTabEvents.java",
+                "package": "net.fabricmc.fabric.api.creativetab.v1",
+                "interface": "ModifyOutput",
+                "variable": "MODIFY_OUTPUT",
+                "function": "void modifyOutput(FabricCreativeModeTabOutput output);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-creative-tab-api-v1/src/main/java/net/fabricmc/fabric/api/creativetab/v1/CreativeModeTabEvents.java"
+            },
+            {
+                "file": "CreativeModeTabEvents.java",
+                "package": "net.fabricmc.fabric.api.creativetab.v1",
+                "interface": "ModifyOutputAll",
+                "variable": "MODIFY_OUTPUT_ALL",
+                "function": "void modifyOutput(CreativeModeTab tab, FabricCreativeModeTabOutput output);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-creative-tab-api-v1/src/main/java/net/fabricmc/fabric/api/creativetab/v1/CreativeModeTabEvents.java"
+            }
+        ],
         "fabric-entity-events-v1": [
             {
                 "file": "EntityElytraEvents.java",
@@ -113,24 +131,24 @@
                 "package": "net.fabricmc.fabric.api.entity.event.v1",
                 "interface": "AfterKilledOtherEntity",
                 "variable": "AFTER_KILLED_OTHER_ENTITY",
-                "function": "void afterKilledOtherEntity(ServerLevel world, Entity entity, LivingEntity killedEntity, DamageSource damageSource);",
+                "function": "void afterKilledOtherEntity(ServerLevel level, Entity entity, LivingEntity killedEntity, DamageSource damageSource);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/ServerEntityCombatEvents.java"
             },
             {
-                "file": "ServerEntityWorldChangeEvents.java",
+                "file": "ServerEntityLevelChangeEvents.java",
                 "package": "net.fabricmc.fabric.api.entity.event.v1",
                 "interface": "AfterEntityChange",
                 "variable": "AFTER_ENTITY_CHANGE",
-                "function": "void afterChangeWorld(Entity originalEntity, Entity newEntity, ServerLevel origin, ServerLevel destination);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/ServerEntityWorldChangeEvents.java"
+                "function": "void afterChangeLevel(Entity originalEntity, Entity newEntity, ServerLevel origin, ServerLevel destination);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/ServerEntityLevelChangeEvents.java"
             },
             {
-                "file": "ServerEntityWorldChangeEvents.java",
+                "file": "ServerEntityLevelChangeEvents.java",
                 "package": "net.fabricmc.fabric.api.entity.event.v1",
                 "interface": "AfterPlayerChange",
                 "variable": "AFTER_PLAYER_CHANGE",
-                "function": "void afterChangeWorld(ServerPlayer player, ServerLevel origin, ServerLevel destination);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/ServerEntityWorldChangeEvents.java"
+                "function": "void afterChangeLevel(ServerPlayer player, ServerLevel origin, ServerLevel destination);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/ServerEntityLevelChangeEvents.java"
             },
             {
                 "file": "ServerLivingEntityEvents.java",
@@ -219,7 +237,7 @@
                 "package": "net.fabricmc.fabric.api.event.client.player",
                 "interface": "After",
                 "variable": "AFTER",
-                "function": "void afterBlockBreak(ClientLevel world, LocalPlayer player, BlockPos pos, BlockState state);",
+                "function": "void afterBlockBreak(ClientLevel level, LocalPlayer player, BlockPos pos, BlockState state);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-events-interaction-v0/src/client/java/net/fabricmc/fabric/api/event/client/player/ClientPlayerBlockBreakEvents.java"
             },
             {
@@ -235,7 +253,7 @@
                 "package": "net.fabricmc.fabric.api.event.player",
                 "interface": "AttackBlockCallback",
                 "variable": "EVENT",
-                "function": "InteractionResult interact(Player player, Level world, InteractionHand hand, BlockPos pos, Direction direction);",
+                "function": "InteractionResult interact(Player player, Level level, InteractionHand hand, BlockPos pos, Direction direction);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-events-interaction-v0/src/main/java/net/fabricmc/fabric/api/event/player/AttackBlockCallback.java"
             },
             {
@@ -243,7 +261,7 @@
                 "package": "net.fabricmc.fabric.api.event.player",
                 "interface": "AttackEntityCallback",
                 "variable": "EVENT",
-                "function": "InteractionResult interact(Player player, Level world, InteractionHand hand, Entity entity, @Nullable EntityHitResult hitResult);",
+                "function": "InteractionResult interact(Player player, Level level, InteractionHand hand, Entity entity, @Nullable EntityHitResult hitResult);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-events-interaction-v0/src/main/java/net/fabricmc/fabric/api/event/player/AttackEntityCallback.java"
             },
             {
@@ -251,7 +269,7 @@
                 "package": "net.fabricmc.fabric.api.event.player",
                 "interface": "Before",
                 "variable": "BEFORE",
-                "function": "boolean beforeBlockBreak(Level world, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity);",
+                "function": "boolean beforeBlockBreak(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-events-interaction-v0/src/main/java/net/fabricmc/fabric/api/event/player/PlayerBlockBreakEvents.java"
             },
             {
@@ -259,7 +277,7 @@
                 "package": "net.fabricmc.fabric.api.event.player",
                 "interface": "After",
                 "variable": "AFTER",
-                "function": "void afterBlockBreak(Level world, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity);",
+                "function": "void afterBlockBreak(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-events-interaction-v0/src/main/java/net/fabricmc/fabric/api/event/player/PlayerBlockBreakEvents.java"
             },
             {
@@ -267,7 +285,7 @@
                 "package": "net.fabricmc.fabric.api.event.player",
                 "interface": "Canceled",
                 "variable": "CANCELED",
-                "function": "void onBlockBreakCanceled(Level world, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity);",
+                "function": "void onBlockBreakCanceled(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-events-interaction-v0/src/main/java/net/fabricmc/fabric/api/event/player/PlayerBlockBreakEvents.java"
             },
             {
@@ -291,7 +309,7 @@
                 "package": "net.fabricmc.fabric.api.event.player",
                 "interface": "UseBlockCallback",
                 "variable": "EVENT",
-                "function": "InteractionResult interact(Player player, Level world, InteractionHand hand, BlockHitResult hitResult);",
+                "function": "InteractionResult interact(Player player, Level level, InteractionHand hand, BlockHitResult hitResult);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-events-interaction-v0/src/main/java/net/fabricmc/fabric/api/event/player/UseBlockCallback.java"
             },
             {
@@ -299,7 +317,7 @@
                 "package": "net.fabricmc.fabric.api.event.player",
                 "interface": "UseEntityCallback",
                 "variable": "EVENT",
-                "function": "InteractionResult interact(Player player, Level world, InteractionHand hand, Entity entity, @Nullable EntityHitResult hitResult);",
+                "function": "InteractionResult interact(Player player, Level level, InteractionHand hand, Entity entity, @Nullable EntityHitResult hitResult);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-events-interaction-v0/src/main/java/net/fabricmc/fabric/api/event/player/UseEntityCallback.java"
             },
             {
@@ -307,7 +325,7 @@
                 "package": "net.fabricmc.fabric.api.event.player",
                 "interface": "UseItemCallback",
                 "variable": "EVENT",
-                "function": "InteractionResult interact(Player player, Level world, InteractionHand hand);",
+                "function": "InteractionResult interact(Player player, Level level, InteractionHand hand);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-events-interaction-v0/src/main/java/net/fabricmc/fabric/api/event/player/UseItemCallback.java"
             }
         ],
@@ -345,31 +363,13 @@
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-item-api-v1/src/main/java/net/fabricmc/fabric/api/item/v1/EnchantmentEvents.java"
             }
         ],
-        "fabric-item-group-api-v1": [
-            {
-                "file": "ItemGroupEvents.java",
-                "package": "net.fabricmc.fabric.api.itemgroup.v1",
-                "interface": "ModifyEntries",
-                "variable": "MODIFY_ENTRIES",
-                "function": "void modifyEntries(FabricItemGroupEntries entries);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-item-group-api-v1/src/main/java/net/fabricmc/fabric/api/itemgroup/v1/ItemGroupEvents.java"
-            },
-            {
-                "file": "ItemGroupEvents.java",
-                "package": "net.fabricmc.fabric.api.itemgroup.v1",
-                "interface": "ModifyEntriesAll",
-                "variable": "MODIFY_ENTRIES_ALL",
-                "function": "void modifyEntries(CreativeModeTab group, FabricItemGroupEntries entries);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-item-group-api-v1/src/main/java/net/fabricmc/fabric/api/itemgroup/v1/ItemGroupEvents.java"
-            }
-        ],
         "fabric-lifecycle-events-v1": [
             {
                 "file": "ClientBlockEntityEvents.java",
                 "package": "net.fabricmc.fabric.api.client.event.lifecycle.v1",
                 "interface": "Load",
                 "variable": "BLOCK_ENTITY_LOAD",
-                "function": "void onLoad(BlockEntity blockEntity, ClientLevel world);",
+                "function": "void onLoad(BlockEntity blockEntity, ClientLevel level);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-lifecycle-events-v1/src/client/java/net/fabricmc/fabric/api/client/event/lifecycle/v1/ClientBlockEntityEvents.java"
             },
             {
@@ -377,7 +377,7 @@
                 "package": "net.fabricmc.fabric.api.client.event.lifecycle.v1",
                 "interface": "Unload",
                 "variable": "BLOCK_ENTITY_UNLOAD",
-                "function": "void onUnload(BlockEntity blockEntity, ClientLevel world);",
+                "function": "void onUnload(BlockEntity blockEntity, ClientLevel level);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-lifecycle-events-v1/src/client/java/net/fabricmc/fabric/api/client/event/lifecycle/v1/ClientBlockEntityEvents.java"
             },
             {
@@ -385,7 +385,7 @@
                 "package": "net.fabricmc.fabric.api.client.event.lifecycle.v1",
                 "interface": "Load",
                 "variable": "CHUNK_LOAD",
-                "function": "void onChunkLoad(ClientLevel world, LevelChunk chunk);",
+                "function": "void onChunkLoad(ClientLevel level, LevelChunk chunk);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-lifecycle-events-v1/src/client/java/net/fabricmc/fabric/api/client/event/lifecycle/v1/ClientChunkEvents.java"
             },
             {
@@ -393,7 +393,7 @@
                 "package": "net.fabricmc.fabric.api.client.event.lifecycle.v1",
                 "interface": "Unload",
                 "variable": "CHUNK_UNLOAD",
-                "function": "void onChunkUnload(ClientLevel world, LevelChunk chunk);",
+                "function": "void onChunkUnload(ClientLevel level, LevelChunk chunk);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-lifecycle-events-v1/src/client/java/net/fabricmc/fabric/api/client/event/lifecycle/v1/ClientChunkEvents.java"
             },
             {
@@ -401,7 +401,7 @@
                 "package": "net.fabricmc.fabric.api.client.event.lifecycle.v1",
                 "interface": "Load",
                 "variable": "ENTITY_LOAD",
-                "function": "void onLoad(Entity entity, ClientLevel world);",
+                "function": "void onLoad(Entity entity, ClientLevel level);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-lifecycle-events-v1/src/client/java/net/fabricmc/fabric/api/client/event/lifecycle/v1/ClientEntityEvents.java"
             },
             {
@@ -409,8 +409,16 @@
                 "package": "net.fabricmc.fabric.api.client.event.lifecycle.v1",
                 "interface": "Unload",
                 "variable": "ENTITY_UNLOAD",
-                "function": "void onUnload(Entity entity, ClientLevel world);",
+                "function": "void onUnload(Entity entity, ClientLevel level);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-lifecycle-events-v1/src/client/java/net/fabricmc/fabric/api/client/event/lifecycle/v1/ClientEntityEvents.java"
+            },
+            {
+                "file": "ClientLevelEvents.java",
+                "package": "net.fabricmc.fabric.api.client.event.lifecycle.v1",
+                "interface": "AfterClientLevelChange",
+                "variable": "AFTER_CLIENT_LEVEL_CHANGE",
+                "function": "void afterLevelChange(Minecraft client, ClientLevel level);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-lifecycle-events-v1/src/client/java/net/fabricmc/fabric/api/client/event/lifecycle/v1/ClientLevelEvents.java"
             },
             {
                 "file": "ClientLifecycleEvents.java",
@@ -447,26 +455,18 @@
             {
                 "file": "ClientTickEvents.java",
                 "package": "net.fabricmc.fabric.api.client.event.lifecycle.v1",
-                "interface": "StartWorldTick",
-                "variable": "START_WORLD_TICK",
-                "function": "void onStartTick(ClientLevel world);",
+                "interface": "StartLevelTick",
+                "variable": "START_LEVEL_TICK",
+                "function": "void onStartTick(ClientLevel level);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-lifecycle-events-v1/src/client/java/net/fabricmc/fabric/api/client/event/lifecycle/v1/ClientTickEvents.java"
             },
             {
                 "file": "ClientTickEvents.java",
                 "package": "net.fabricmc.fabric.api.client.event.lifecycle.v1",
-                "interface": "EndWorldTick",
-                "variable": "END_WORLD_TICK",
-                "function": "void onEndTick(ClientLevel world);",
+                "interface": "EndLevelTick",
+                "variable": "END_LEVEL_TICK",
+                "function": "void onEndTick(ClientLevel level);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-lifecycle-events-v1/src/client/java/net/fabricmc/fabric/api/client/event/lifecycle/v1/ClientTickEvents.java"
-            },
-            {
-                "file": "ClientWorldEvents.java",
-                "package": "net.fabricmc.fabric.api.client.event.lifecycle.v1",
-                "interface": "AfterClientWorldChange",
-                "variable": "AFTER_CLIENT_WORLD_CHANGE",
-                "function": "void afterWorldChange(Minecraft client, ClientLevel world);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-lifecycle-events-v1/src/client/java/net/fabricmc/fabric/api/client/event/lifecycle/v1/ClientWorldEvents.java"
             },
             {
                 "file": "CommonLifecycleEvents.java",
@@ -481,7 +481,7 @@
                 "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
                 "interface": "Load",
                 "variable": "BLOCK_ENTITY_LOAD",
-                "function": "void onLoad(BlockEntity blockEntity, ServerLevel world);",
+                "function": "void onLoad(BlockEntity blockEntity, ServerLevel level);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerBlockEntityEvents.java"
             },
             {
@@ -489,7 +489,7 @@
                 "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
                 "interface": "Unload",
                 "variable": "UNLOAD",
-                "function": "void onUnload(BlockEntity blockEntity, ServerLevel world);",
+                "function": "void onUnload(BlockEntity blockEntity, ServerLevel level);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerBlockEntityEvents.java"
             },
             {
@@ -497,7 +497,7 @@
                 "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
                 "interface": "Load",
                 "variable": "CHUNK_LOAD",
-                "function": "void onChunkLoad(ServerLevel world, LevelChunk chunk);",
+                "function": "void onChunkLoad(ServerLevel level, LevelChunk chunk);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerChunkEvents.java"
             },
             {
@@ -505,7 +505,7 @@
                 "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
                 "interface": "Generate",
                 "variable": "CHUNK_GENERATE",
-                "function": "void onChunkGenerate(ServerLevel world, LevelChunk chunk);",
+                "function": "void onChunkGenerate(ServerLevel level, LevelChunk chunk);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerChunkEvents.java"
             },
             {
@@ -513,15 +513,15 @@
                 "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
                 "interface": "Unload",
                 "variable": "CHUNK_UNLOAD",
-                "function": "void onChunkUnload(ServerLevel world, LevelChunk chunk);",
+                "function": "void onChunkUnload(ServerLevel level, LevelChunk chunk);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerChunkEvents.java"
             },
             {
                 "file": "ServerChunkEvents.java",
                 "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
-                "interface": "LevelTypeChange",
-                "variable": "LEVEL_TYPE_CHANGE",
-                "function": "void onChunkLevelTypeChange(ServerLevel world, LevelChunk chunk, FullChunkStatus oldLevelType, FullChunkStatus newLevelType);",
+                "interface": "FullChunkStatusChange",
+                "variable": "FULL_CHUNK_STATUS_CHANGE",
+                "function": "void onFullChunkStatusChange(ServerLevel level, LevelChunk chunk, FullChunkStatus oldChunkStatus, FullChunkStatus newChunkStatus);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerChunkEvents.java"
             },
             {
@@ -529,7 +529,7 @@
                 "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
                 "interface": "Load",
                 "variable": "ENTITY_LOAD",
-                "function": "void onLoad(Entity entity, ServerLevel world);",
+                "function": "void onLoad(Entity entity, ServerLevel level);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerEntityEvents.java"
             },
             {
@@ -537,7 +537,7 @@
                 "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
                 "interface": "Unload",
                 "variable": "ENTITY_UNLOAD",
-                "function": "void onUnload(Entity entity, ServerLevel world);",
+                "function": "void onUnload(Entity entity, ServerLevel level);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerEntityEvents.java"
             },
             {
@@ -547,6 +547,22 @@
                 "variable": "EQUIPMENT_CHANGE",
                 "function": "void onChange(LivingEntity livingEntity, EquipmentSlot equipmentSlot, ItemStack previousStack, ItemStack currentStack);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerEntityEvents.java"
+            },
+            {
+                "file": "ServerLevelEvents.java",
+                "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
+                "interface": "Load",
+                "variable": "LOAD",
+                "function": "void onLevelLoad(MinecraftServer server, ServerLevel level);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerLevelEvents.java"
+            },
+            {
+                "file": "ServerLevelEvents.java",
+                "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
+                "interface": "Unload",
+                "variable": "UNLOAD",
+                "function": "void onLevelUnload(MinecraftServer server, ServerLevel level);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerLevelEvents.java"
             },
             {
                 "file": "ServerLifecycleEvents.java",
@@ -639,34 +655,18 @@
             {
                 "file": "ServerTickEvents.java",
                 "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
-                "interface": "StartWorldTick",
-                "variable": "START_WORLD_TICK",
-                "function": "void onStartTick(ServerLevel world);",
+                "interface": "StartLevelTick",
+                "variable": "START_LEVEL_TICK",
+                "function": "void onStartTick(ServerLevel level);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerTickEvents.java"
             },
             {
                 "file": "ServerTickEvents.java",
                 "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
-                "interface": "EndWorldTick",
-                "variable": "END_WORLD_TICK",
-                "function": "void onEndTick(ServerLevel world);",
+                "interface": "EndLevelTick",
+                "variable": "END_LEVEL_TICK",
+                "function": "void onEndTick(ServerLevel level);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerTickEvents.java"
-            },
-            {
-                "file": "ServerWorldEvents.java",
-                "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
-                "interface": "Load",
-                "variable": "LOAD",
-                "function": "void onWorldLoad(MinecraftServer server, ServerLevel world);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerWorldEvents.java"
-            },
-            {
-                "file": "ServerWorldEvents.java",
-                "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
-                "interface": "Unload",
-                "variable": "UNLOAD",
-                "function": "void onWorldUnload(MinecraftServer server, ServerLevel world);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerWorldEvents.java"
             }
         ],
         "fabric-loot-api-v3": [
@@ -675,7 +675,7 @@
                 "package": "net.fabricmc.fabric.api.loot.v3",
                 "interface": "Replace",
                 "variable": "REPLACE",
-                "function": "LootTable replaceLootTable(ResourceKey<LootTable> key, LootTable original, LootTableSource source, HolderLookup.Provider registries);",
+                "function": "LootTable replaceLootTable(ResourceKey<LootTable> key, LootTable original, LootTableSource source, HolderLookup.Provider holder);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-loot-api-v3/src/main/java/net/fabricmc/fabric/api/loot/v3/LootTableEvents.java"
             },
             {
@@ -683,7 +683,7 @@
                 "package": "net.fabricmc.fabric.api.loot.v3",
                 "interface": "Modify",
                 "variable": "MODIFY",
-                "function": "void modifyLootTable(ResourceKey<LootTable> key, LootTable.Builder tableBuilder, LootTableSource source, HolderLookup.Provider registries);",
+                "function": "void modifyLootTable(ResourceKey<LootTable> key, LootTable.Builder tableBuilder, LootTableSource source, HolderLookup.Provider holder);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-loot-api-v3/src/main/java/net/fabricmc/fabric/api/loot/v3/LootTableEvents.java"
             },
             {
@@ -699,7 +699,7 @@
                 "package": "net.fabricmc.fabric.api.loot.v3",
                 "interface": "ModifyDrops",
                 "variable": "MODIFY_DROPS",
-                "function": "void modifyLootTableDrops(Holder<LootTable> entry, LootContext context, List<ItemStack> drops);",
+                "function": "void modifyLootTableDrops(Holder<LootTable> holder, LootContext context, List<ItemStack> drops);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-loot-api-v3/src/main/java/net/fabricmc/fabric/api/loot/v3/LootTableEvents.java"
             }
         ],
@@ -709,7 +709,7 @@
                 "package": "net.fabricmc.fabric.api.client.message.v1",
                 "interface": "AllowChat",
                 "variable": "ALLOW_CHAT",
-                "function": "boolean allowReceiveChatMessage(Component message, @Nullable PlayerChatMessage signedMessage, @Nullable GameProfile sender, ChatType.Bound params, Instant receptionTimestamp);",
+                "function": "boolean allowReceiveChatMessage(Component message, @Nullable PlayerChatMessage playerChatMessage, @Nullable GameProfile sender, ChatType.Bound boundChatType, Instant timeStamp);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-message-api-v1/src/client/java/net/fabricmc/fabric/api/client/message/v1/ClientReceiveMessageEvents.java"
             },
             {
@@ -733,7 +733,7 @@
                 "package": "net.fabricmc.fabric.api.client.message.v1",
                 "interface": "Chat",
                 "variable": "CHAT",
-                "function": "void onReceiveChatMessage(Component message, @Nullable PlayerChatMessage signedMessage, @Nullable GameProfile sender, ChatType.Bound params, Instant receptionTimestamp);",
+                "function": "void onReceiveChatMessage(Component message, @Nullable PlayerChatMessage playerChatMessage, @Nullable GameProfile sender, ChatType.Bound boundChatType, Instant timeStamp);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-message-api-v1/src/client/java/net/fabricmc/fabric/api/client/message/v1/ClientReceiveMessageEvents.java"
             },
             {
@@ -749,7 +749,7 @@
                 "package": "net.fabricmc.fabric.api.client.message.v1",
                 "interface": "ChatCanceled",
                 "variable": "CHAT_CANCELED",
-                "function": "void onReceiveChatMessageCanceled(Component message, @Nullable PlayerChatMessage signedMessage, @Nullable GameProfile sender, ChatType.Bound params, Instant receptionTimestamp);",
+                "function": "void onReceiveChatMessageCanceled(Component message, @Nullable PlayerChatMessage playerChatMessage, @Nullable GameProfile sender, ChatType.Bound boundChatType, Instant timeStamp);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-message-api-v1/src/client/java/net/fabricmc/fabric/api/client/message/v1/ClientReceiveMessageEvents.java"
             },
             {
@@ -829,7 +829,7 @@
                 "package": "net.fabricmc.fabric.api.message.v1",
                 "interface": "AllowChatMessage",
                 "variable": "ALLOW_CHAT_MESSAGE",
-                "function": "boolean allowChatMessage(PlayerChatMessage message, ServerPlayer sender, ChatType.Bound params);",
+                "function": "boolean allowChatMessage(PlayerChatMessage message, ServerPlayer sender, ChatType.Bound boundChatType);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-message-api-v1/src/main/java/net/fabricmc/fabric/api/message/v1/ServerMessageEvents.java"
             },
             {
@@ -845,7 +845,7 @@
                 "package": "net.fabricmc.fabric.api.message.v1",
                 "interface": "AllowCommandMessage",
                 "variable": "ALLOW_COMMAND_MESSAGE",
-                "function": "boolean allowCommandMessage(PlayerChatMessage message, CommandSourceStack source, ChatType.Bound params);",
+                "function": "boolean allowCommandMessage(PlayerChatMessage message, CommandSourceStack source, ChatType.Bound boundChatType);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-message-api-v1/src/main/java/net/fabricmc/fabric/api/message/v1/ServerMessageEvents.java"
             },
             {
@@ -853,7 +853,7 @@
                 "package": "net.fabricmc.fabric.api.message.v1",
                 "interface": "ChatMessage",
                 "variable": "CHAT_MESSAGE",
-                "function": "void onChatMessage(PlayerChatMessage message, ServerPlayer sender, ChatType.Bound params);",
+                "function": "void onChatMessage(PlayerChatMessage message, ServerPlayer sender, ChatType.Bound boundChatType);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-message-api-v1/src/main/java/net/fabricmc/fabric/api/message/v1/ServerMessageEvents.java"
             },
             {
@@ -869,49 +869,17 @@
                 "package": "net.fabricmc.fabric.api.message.v1",
                 "interface": "CommandMessage",
                 "variable": "COMMAND_MESSAGE",
-                "function": "void onCommandMessage(PlayerChatMessage message, CommandSourceStack source, ChatType.Bound params);",
+                "function": "void onCommandMessage(PlayerChatMessage message, CommandSourceStack source, ChatType.Bound boundChatType);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-message-api-v1/src/main/java/net/fabricmc/fabric/api/message/v1/ServerMessageEvents.java"
             }
         ],
         "fabric-networking-api-v1": [
             {
-                "file": "C2SConfigurationChannelEvents.java",
-                "package": "net.fabricmc.fabric.api.client.networking.v1",
-                "interface": "Register",
-                "variable": "REGISTER",
-                "function": "void onChannelRegister(ClientConfigurationPacketListenerImpl handler, PacketSender sender, Minecraft client, List<Identifier> channels);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/client/java/net/fabricmc/fabric/api/client/networking/v1/C2SConfigurationChannelEvents.java"
-            },
-            {
-                "file": "C2SConfigurationChannelEvents.java",
-                "package": "net.fabricmc.fabric.api.client.networking.v1",
-                "interface": "Unregister",
-                "variable": "UNREGISTER",
-                "function": "void onChannelUnregister(ClientConfigurationPacketListenerImpl handler, PacketSender sender, Minecraft client, List<Identifier> channels);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/client/java/net/fabricmc/fabric/api/client/networking/v1/C2SConfigurationChannelEvents.java"
-            },
-            {
-                "file": "C2SPlayChannelEvents.java",
-                "package": "net.fabricmc.fabric.api.client.networking.v1",
-                "interface": "Register",
-                "variable": "REGISTER",
-                "function": "void onChannelRegister(ClientPacketListener handler, PacketSender sender, Minecraft client, List<Identifier> channels);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/client/java/net/fabricmc/fabric/api/client/networking/v1/C2SPlayChannelEvents.java"
-            },
-            {
-                "file": "C2SPlayChannelEvents.java",
-                "package": "net.fabricmc.fabric.api.client.networking.v1",
-                "interface": "Unregister",
-                "variable": "UNREGISTER",
-                "function": "void onChannelUnregister(ClientPacketListener handler, PacketSender sender, Minecraft client, List<Identifier> channels);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/client/java/net/fabricmc/fabric/api/client/networking/v1/C2SPlayChannelEvents.java"
-            },
-            {
                 "file": "ClientConfigurationConnectionEvents.java",
                 "package": "net.fabricmc.fabric.api.client.networking.v1",
                 "interface": "Init",
                 "variable": "INIT",
-                "function": "void onConfigurationInit(ClientConfigurationPacketListenerImpl handler, Minecraft client);",
+                "function": "void onConfigurationInit(ClientConfigurationPacketListenerImpl listener, Minecraft client);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/client/java/net/fabricmc/fabric/api/client/networking/v1/ClientConfigurationConnectionEvents.java"
             },
             {
@@ -919,7 +887,7 @@
                 "package": "net.fabricmc.fabric.api.client.networking.v1",
                 "interface": "Start",
                 "variable": "START",
-                "function": "void onConfigurationStart(ClientConfigurationPacketListenerImpl handler, Minecraft client);",
+                "function": "void onConfigurationStart(ClientConfigurationPacketListenerImpl listener, Minecraft client);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/client/java/net/fabricmc/fabric/api/client/networking/v1/ClientConfigurationConnectionEvents.java"
             },
             {
@@ -927,7 +895,7 @@
                 "package": "net.fabricmc.fabric.api.client.networking.v1",
                 "interface": "Complete",
                 "variable": "COMPLETE",
-                "function": "void onConfigurationComplete(ClientConfigurationPacketListenerImpl handler, Minecraft client);",
+                "function": "void onConfigurationComplete(ClientConfigurationPacketListenerImpl listener, Minecraft client);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/client/java/net/fabricmc/fabric/api/client/networking/v1/ClientConfigurationConnectionEvents.java"
             },
             {
@@ -935,7 +903,7 @@
                 "package": "net.fabricmc.fabric.api.client.networking.v1",
                 "interface": "Disconnect",
                 "variable": "DISCONNECT",
-                "function": "void onConfigurationDisconnect(ClientConfigurationPacketListenerImpl handler, Minecraft client);",
+                "function": "void onConfigurationDisconnect(ClientConfigurationPacketListenerImpl listener, Minecraft client);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/client/java/net/fabricmc/fabric/api/client/networking/v1/ClientConfigurationConnectionEvents.java"
             },
             {
@@ -943,7 +911,7 @@
                 "package": "net.fabricmc.fabric.api.client.networking.v1",
                 "interface": "Ready",
                 "variable": "READY",
-                "function": "void onConfigurationReady(ClientConfigurationPacketListenerImpl handler, Minecraft client);",
+                "function": "void onConfigurationReady(ClientConfigurationPacketListenerImpl listener, Minecraft client);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/client/java/net/fabricmc/fabric/api/client/networking/v1/ClientConfigurationConnectionEvents.java"
             },
             {
@@ -951,7 +919,7 @@
                 "package": "net.fabricmc.fabric.api.client.networking.v1",
                 "interface": "Init",
                 "variable": "INIT",
-                "function": "void onLoginStart(ClientHandshakePacketListenerImpl handler, Minecraft client);",
+                "function": "void onLoginStart(ClientHandshakePacketListenerImpl listener, Minecraft client);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/client/java/net/fabricmc/fabric/api/client/networking/v1/ClientLoginConnectionEvents.java"
             },
             {
@@ -959,7 +927,7 @@
                 "package": "net.fabricmc.fabric.api.client.networking.v1",
                 "interface": "QueryStart",
                 "variable": "QUERY_START",
-                "function": "void onLoginQueryStart(ClientHandshakePacketListenerImpl handler, Minecraft client);",
+                "function": "void onLoginQueryStart(ClientHandshakePacketListenerImpl listener, Minecraft client);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/client/java/net/fabricmc/fabric/api/client/networking/v1/ClientLoginConnectionEvents.java"
             },
             {
@@ -967,7 +935,7 @@
                 "package": "net.fabricmc.fabric.api.client.networking.v1",
                 "interface": "Disconnect",
                 "variable": "DISCONNECT",
-                "function": "void onLoginDisconnect(ClientHandshakePacketListenerImpl handler, Minecraft client);",
+                "function": "void onLoginDisconnect(ClientHandshakePacketListenerImpl listener, Minecraft client);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/client/java/net/fabricmc/fabric/api/client/networking/v1/ClientLoginConnectionEvents.java"
             },
             {
@@ -975,7 +943,7 @@
                 "package": "net.fabricmc.fabric.api.client.networking.v1",
                 "interface": "Init",
                 "variable": "INIT",
-                "function": "void onPlayInit(ClientPacketListener handler, Minecraft client);",
+                "function": "void onPlayInit(ClientPacketListener listener, Minecraft client);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/client/java/net/fabricmc/fabric/api/client/networking/v1/ClientPlayConnectionEvents.java"
             },
             {
@@ -983,7 +951,7 @@
                 "package": "net.fabricmc.fabric.api.client.networking.v1",
                 "interface": "Join",
                 "variable": "JOIN",
-                "function": "void onPlayReady(ClientPacketListener handler, PacketSender sender, Minecraft client);",
+                "function": "void onPlayReady(ClientPacketListener listener, PacketSender sender, Minecraft client);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/client/java/net/fabricmc/fabric/api/client/networking/v1/ClientPlayConnectionEvents.java"
             },
             {
@@ -991,8 +959,72 @@
                 "package": "net.fabricmc.fabric.api.client.networking.v1",
                 "interface": "Disconnect",
                 "variable": "DISCONNECT",
-                "function": "void onPlayDisconnect(ClientPacketListener handler, Minecraft client);",
+                "function": "void onPlayDisconnect(ClientPacketListener listener, Minecraft client);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/client/java/net/fabricmc/fabric/api/client/networking/v1/ClientPlayConnectionEvents.java"
+            },
+            {
+                "file": "ServerboundConfigurationChannelEvents.java",
+                "package": "net.fabricmc.fabric.api.client.networking.v1",
+                "interface": "Register",
+                "variable": "REGISTER",
+                "function": "void onChannelRegister(ClientConfigurationPacketListenerImpl listener, PacketSender sender, Minecraft client, List<Identifier> channels);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/client/java/net/fabricmc/fabric/api/client/networking/v1/ServerboundConfigurationChannelEvents.java"
+            },
+            {
+                "file": "ServerboundConfigurationChannelEvents.java",
+                "package": "net.fabricmc.fabric.api.client.networking.v1",
+                "interface": "Unregister",
+                "variable": "UNREGISTER",
+                "function": "void onChannelUnregister(ClientConfigurationPacketListenerImpl listener, PacketSender sender, Minecraft client, List<Identifier> channels);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/client/java/net/fabricmc/fabric/api/client/networking/v1/ServerboundConfigurationChannelEvents.java"
+            },
+            {
+                "file": "ServerboundPlayChannelEvents.java",
+                "package": "net.fabricmc.fabric.api.client.networking.v1",
+                "interface": "Register",
+                "variable": "REGISTER",
+                "function": "void onChannelRegister(ClientPacketListener listener, PacketSender sender, Minecraft client, List<Identifier> channels);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/client/java/net/fabricmc/fabric/api/client/networking/v1/ServerboundPlayChannelEvents.java"
+            },
+            {
+                "file": "ServerboundPlayChannelEvents.java",
+                "package": "net.fabricmc.fabric.api.client.networking.v1",
+                "interface": "Unregister",
+                "variable": "UNREGISTER",
+                "function": "void onChannelUnregister(ClientPacketListener listener, PacketSender sender, Minecraft client, List<Identifier> channels);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/client/java/net/fabricmc/fabric/api/client/networking/v1/ServerboundPlayChannelEvents.java"
+            },
+            {
+                "file": "ClientboundConfigurationChannelEvents.java",
+                "package": "net.fabricmc.fabric.api.networking.v1",
+                "interface": "Register",
+                "variable": "REGISTER",
+                "function": "void onChannelRegister(ServerConfigurationPacketListenerImpl listener, PacketSender sender, MinecraftServer server, List<Identifier> channels);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/ClientboundConfigurationChannelEvents.java"
+            },
+            {
+                "file": "ClientboundConfigurationChannelEvents.java",
+                "package": "net.fabricmc.fabric.api.networking.v1",
+                "interface": "Unregister",
+                "variable": "UNREGISTER",
+                "function": "void onChannelUnregister(ServerConfigurationPacketListenerImpl listener, PacketSender sender, MinecraftServer server, List<Identifier> channels);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/ClientboundConfigurationChannelEvents.java"
+            },
+            {
+                "file": "ClientboundPlayChannelEvents.java",
+                "package": "net.fabricmc.fabric.api.networking.v1",
+                "interface": "Register",
+                "variable": "REGISTER",
+                "function": "void onChannelRegister(ServerGamePacketListenerImpl listener, PacketSender sender, MinecraftServer server, List<Identifier> channels);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/ClientboundPlayChannelEvents.java"
+            },
+            {
+                "file": "ClientboundPlayChannelEvents.java",
+                "package": "net.fabricmc.fabric.api.networking.v1",
+                "interface": "Unregister",
+                "variable": "UNREGISTER",
+                "function": "void onChannelUnregister(ServerGamePacketListenerImpl listener, PacketSender sender, MinecraftServer server, List<Identifier> channels);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/ClientboundPlayChannelEvents.java"
             },
             {
                 "file": "EntityTrackingEvents.java",
@@ -1011,43 +1043,11 @@
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/EntityTrackingEvents.java"
             },
             {
-                "file": "S2CConfigurationChannelEvents.java",
-                "package": "net.fabricmc.fabric.api.networking.v1",
-                "interface": "Register",
-                "variable": "REGISTER",
-                "function": "void onChannelRegister(ServerConfigurationPacketListenerImpl handler, PacketSender sender, MinecraftServer server, List<Identifier> channels);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/S2CConfigurationChannelEvents.java"
-            },
-            {
-                "file": "S2CConfigurationChannelEvents.java",
-                "package": "net.fabricmc.fabric.api.networking.v1",
-                "interface": "Unregister",
-                "variable": "UNREGISTER",
-                "function": "void onChannelUnregister(ServerConfigurationPacketListenerImpl handler, PacketSender sender, MinecraftServer server, List<Identifier> channels);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/S2CConfigurationChannelEvents.java"
-            },
-            {
-                "file": "S2CPlayChannelEvents.java",
-                "package": "net.fabricmc.fabric.api.networking.v1",
-                "interface": "Register",
-                "variable": "REGISTER",
-                "function": "void onChannelRegister(ServerGamePacketListenerImpl handler, PacketSender sender, MinecraftServer server, List<Identifier> channels);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/S2CPlayChannelEvents.java"
-            },
-            {
-                "file": "S2CPlayChannelEvents.java",
-                "package": "net.fabricmc.fabric.api.networking.v1",
-                "interface": "Unregister",
-                "variable": "UNREGISTER",
-                "function": "void onChannelUnregister(ServerGamePacketListenerImpl handler, PacketSender sender, MinecraftServer server, List<Identifier> channels);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/S2CPlayChannelEvents.java"
-            },
-            {
                 "file": "ServerConfigurationConnectionEvents.java",
                 "package": "net.fabricmc.fabric.api.networking.v1",
                 "interface": "Configure",
                 "variable": "CONFIGURE",
-                "function": "void onSendConfiguration(ServerConfigurationPacketListenerImpl handler, MinecraftServer server);",
+                "function": "void onSendConfiguration(ServerConfigurationPacketListenerImpl listener, MinecraftServer server);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/ServerConfigurationConnectionEvents.java"
             },
             {
@@ -1055,7 +1055,7 @@
                 "package": "net.fabricmc.fabric.api.networking.v1",
                 "interface": "Disconnect",
                 "variable": "DISCONNECT",
-                "function": "void onConfigureDisconnect(ServerConfigurationPacketListenerImpl handler, MinecraftServer server);",
+                "function": "void onConfigureDisconnect(ServerConfigurationPacketListenerImpl listener, MinecraftServer server);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/ServerConfigurationConnectionEvents.java"
             },
             {
@@ -1063,7 +1063,7 @@
                 "package": "net.fabricmc.fabric.api.networking.v1",
                 "interface": "Init",
                 "variable": "INIT",
-                "function": "void onLoginInit(ServerLoginPacketListenerImpl handler, MinecraftServer server);",
+                "function": "void onLoginInit(ServerLoginPacketListenerImpl listener, MinecraftServer server);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/ServerLoginConnectionEvents.java"
             },
             {
@@ -1071,7 +1071,7 @@
                 "package": "net.fabricmc.fabric.api.networking.v1",
                 "interface": "QueryStart",
                 "variable": "QUERY_START",
-                "function": "void onLoginStart(ServerLoginPacketListenerImpl handler, MinecraftServer server, LoginPacketSender sender, ServerLoginNetworking.LoginSynchronizer synchronizer);",
+                "function": "void onLoginStart(ServerLoginPacketListenerImpl listener, MinecraftServer server, LoginPacketSender sender, ServerLoginNetworking.LoginSynchronizer synchronizer);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/ServerLoginConnectionEvents.java"
             },
             {
@@ -1079,7 +1079,7 @@
                 "package": "net.fabricmc.fabric.api.networking.v1",
                 "interface": "Disconnect",
                 "variable": "DISCONNECT",
-                "function": "void onLoginDisconnect(ServerLoginPacketListenerImpl handler, MinecraftServer server);",
+                "function": "void onLoginDisconnect(ServerLoginPacketListenerImpl listener, MinecraftServer server);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/ServerLoginConnectionEvents.java"
             },
             {
@@ -1087,7 +1087,7 @@
                 "package": "net.fabricmc.fabric.api.networking.v1",
                 "interface": "Init",
                 "variable": "INIT",
-                "function": "void onPlayInit(ServerGamePacketListenerImpl handler, MinecraftServer server);",
+                "function": "void onPlayInit(ServerGamePacketListenerImpl listener, MinecraftServer server);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/ServerPlayConnectionEvents.java"
             },
             {
@@ -1095,7 +1095,7 @@
                 "package": "net.fabricmc.fabric.api.networking.v1",
                 "interface": "Join",
                 "variable": "JOIN",
-                "function": "void onPlayReady(ServerGamePacketListenerImpl handler, PacketSender sender, MinecraftServer server);",
+                "function": "void onPlayReady(ServerGamePacketListenerImpl listener, PacketSender sender, MinecraftServer server);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/ServerPlayConnectionEvents.java"
             },
             {
@@ -1103,7 +1103,7 @@
                 "package": "net.fabricmc.fabric.api.networking.v1",
                 "interface": "Disconnect",
                 "variable": "DISCONNECT",
-                "function": "void onPlayDisconnect(ServerGamePacketListenerImpl handler, MinecraftServer server);",
+                "function": "void onPlayDisconnect(ServerGamePacketListenerImpl listener, MinecraftServer server);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/ServerPlayConnectionEvents.java"
             }
         ],
@@ -1111,9 +1111,9 @@
             {
                 "file": "ParticleRenderEvents.java",
                 "package": "net.fabricmc.fabric.api.client.particle.v1",
-                "interface": "AllowBlockDustTint",
-                "variable": "ALLOW_BLOCK_DUST_TINT",
-                "function": "boolean allowBlockDustTint(BlockState state, ClientLevel world, BlockPos pos);",
+                "interface": "AllowTerrainParticleTint",
+                "variable": "ALLOW_TERRAIN_PARTICLE_TINT",
+                "function": "boolean allowTerrainParticleTint(BlockState state, ClientLevel level, BlockPos pos);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-particles-v1/src/client/java/net/fabricmc/fabric/api/client/particle/v1/ParticleRenderEvents.java"
             }
         ],
@@ -1129,19 +1129,19 @@
         ],
         "fabric-rendering-v1": [
             {
-                "file": "DrawItemStackOverlayCallback.java",
+                "file": "ClientTooltipComponentCallback.java",
                 "package": "net.fabricmc.fabric.api.client.rendering.v1",
-                "interface": "DrawItemStackOverlayCallback",
+                "interface": "ClientTooltipComponentCallback",
                 "variable": "EVENT",
-                "function": "void onDrawItemStackOverlay(GuiGraphics context, Font textRenderer, ItemStack stack, int x, int y);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/DrawItemStackOverlayCallback.java"
+                "function": "ClientTooltipComponent getClientComponent(TooltipComponent component);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/ClientTooltipComponentCallback.java"
             },
             {
                 "file": "HudRenderCallback.java",
                 "package": "net.fabricmc.fabric.api.client.rendering.v1",
                 "interface": "HudRenderCallback",
                 "variable": "EVENT",
-                "function": "void onHudRender(GuiGraphics drawContext, DeltaTracker tickCounter);",
+                "function": "void onHudRender(GuiGraphics graphics, DeltaTracker deltaTracker);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/HudRenderCallback.java"
             },
             {
@@ -1161,84 +1161,84 @@
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/LivingEntityFeatureRenderEvents.java"
             },
             {
-                "file": "TooltipComponentCallback.java",
+                "file": "RenderItemDecorationsCallback.java",
                 "package": "net.fabricmc.fabric.api.client.rendering.v1",
-                "interface": "TooltipComponentCallback",
+                "interface": "RenderItemDecorationsCallback",
                 "variable": "EVENT",
-                "function": "ClientTooltipComponent getComponent(TooltipComponent data);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/TooltipComponentCallback.java"
+                "function": "void onRenderItemDecorations(GuiGraphics graphics, Font font, ItemStack stack, int x, int y);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/RenderItemDecorationsCallback.java"
             },
             {
-                "file": "WorldRenderEvents.java",
-                "package": "net.fabricmc.fabric.api.client.rendering.v1.world",
+                "file": "LevelRenderEvents.java",
+                "package": "net.fabricmc.fabric.api.client.rendering.v1.level",
                 "interface": "AfterBlockOutlineExtraction",
                 "variable": "AFTER_BLOCK_OUTLINE_EXTRACTION",
-                "function": "void afterBlockOutlineExtraction(WorldExtractionContext context, @Nullable HitResult result);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/world/WorldRenderEvents.java"
+                "function": "void afterBlockOutlineExtraction(LevelExtractionContext context, @Nullable HitResult result);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java"
             },
             {
-                "file": "WorldRenderEvents.java",
-                "package": "net.fabricmc.fabric.api.client.rendering.v1.world",
+                "file": "LevelRenderEvents.java",
+                "package": "net.fabricmc.fabric.api.client.rendering.v1.level",
                 "interface": "EndExtraction",
                 "variable": "END_EXTRACTION",
-                "function": "void endExtraction(WorldExtractionContext context);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/world/WorldRenderEvents.java"
+                "function": "void endExtraction(LevelExtractionContext context);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java"
             },
             {
-                "file": "WorldRenderEvents.java",
-                "package": "net.fabricmc.fabric.api.client.rendering.v1.world",
+                "file": "LevelRenderEvents.java",
+                "package": "net.fabricmc.fabric.api.client.rendering.v1.level",
                 "interface": "StartMain",
                 "variable": "START_MAIN",
-                "function": "void startMain(WorldTerrainRenderContext context);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/world/WorldRenderEvents.java"
+                "function": "void startMain(LevelTerrainRenderContext context);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java"
             },
             {
-                "file": "WorldRenderEvents.java",
-                "package": "net.fabricmc.fabric.api.client.rendering.v1.world",
+                "file": "LevelRenderEvents.java",
+                "package": "net.fabricmc.fabric.api.client.rendering.v1.level",
                 "interface": "BeforeEntities",
                 "variable": "BEFORE_ENTITIES",
-                "function": "void beforeEntities(WorldRenderContext context);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/world/WorldRenderEvents.java"
+                "function": "void beforeEntities(LevelRenderContext context);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java"
             },
             {
-                "file": "WorldRenderEvents.java",
-                "package": "net.fabricmc.fabric.api.client.rendering.v1.world",
+                "file": "LevelRenderEvents.java",
+                "package": "net.fabricmc.fabric.api.client.rendering.v1.level",
                 "interface": "AfterEntities",
                 "variable": "AFTER_ENTITIES",
-                "function": "void afterEntities(WorldRenderContext context);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/world/WorldRenderEvents.java"
+                "function": "void afterEntities(LevelRenderContext context);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java"
             },
             {
-                "file": "WorldRenderEvents.java",
-                "package": "net.fabricmc.fabric.api.client.rendering.v1.world",
+                "file": "LevelRenderEvents.java",
+                "package": "net.fabricmc.fabric.api.client.rendering.v1.level",
                 "interface": "DebugRender",
                 "variable": "DEBUG_RENDER",
-                "function": "void beforeDebugRender(WorldRenderContext context);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/world/WorldRenderEvents.java"
+                "function": "void beforeDebugRender(LevelRenderContext context);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java"
             },
             {
-                "file": "WorldRenderEvents.java",
-                "package": "net.fabricmc.fabric.api.client.rendering.v1.world",
+                "file": "LevelRenderEvents.java",
+                "package": "net.fabricmc.fabric.api.client.rendering.v1.level",
                 "interface": "BeforeTranslucent",
                 "variable": "BEFORE_TRANSLUCENT",
-                "function": "void beforeTranslucent(WorldRenderContext context);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/world/WorldRenderEvents.java"
+                "function": "void beforeTranslucent(LevelRenderContext context);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java"
             },
             {
-                "file": "WorldRenderEvents.java",
-                "package": "net.fabricmc.fabric.api.client.rendering.v1.world",
+                "file": "LevelRenderEvents.java",
+                "package": "net.fabricmc.fabric.api.client.rendering.v1.level",
                 "interface": "BeforeBlockOutline",
                 "variable": "BEFORE_BLOCK_OUTLINE",
-                "function": "boolean beforeBlockOutline(WorldRenderContext context, BlockOutlineRenderState outlineRenderState);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/world/WorldRenderEvents.java"
+                "function": "boolean beforeBlockOutline(LevelRenderContext context, BlockOutlineRenderState outlineRenderState);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java"
             },
             {
-                "file": "WorldRenderEvents.java",
-                "package": "net.fabricmc.fabric.api.client.rendering.v1.world",
+                "file": "LevelRenderEvents.java",
+                "package": "net.fabricmc.fabric.api.client.rendering.v1.level",
                 "interface": "EndMain",
                 "variable": "END_MAIN",
-                "function": "void endMain(WorldRenderContext context);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/world/WorldRenderEvents.java"
+                "function": "void endMain(LevelRenderContext context);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java"
             }
         ],
         "fabric-screen-api-v1": [
@@ -1271,7 +1271,7 @@
                 "package": "net.fabricmc.fabric.api.client.screen.v1",
                 "interface": "BeforeRender",
                 "variable": "BEFORE_RENDER",
-                "function": "void beforeRender(Screen screen, GuiGraphics drawContext, int mouseX, int mouseY, float tickDelta);",
+                "function": "void beforeRender(Screen screen, GuiGraphics graphics, int mouseX, int mouseY, float tickProgress);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-screen-api-v1/src/client/java/net/fabricmc/fabric/api/client/screen/v1/ScreenEvents.java"
             },
             {
@@ -1279,7 +1279,7 @@
                 "package": "net.fabricmc.fabric.api.client.screen.v1",
                 "interface": "AfterBackground",
                 "variable": "AFTER_BACKGROUND",
-                "function": "void afterBackground(Screen screen, GuiGraphics drawContext, int mouseX, int mouseY, float tickDelta);",
+                "function": "void afterBackground(Screen screen, GuiGraphics graphics, int mouseX, int mouseY, float tickProgress);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-screen-api-v1/src/client/java/net/fabricmc/fabric/api/client/screen/v1/ScreenEvents.java"
             },
             {
@@ -1287,7 +1287,7 @@
                 "package": "net.fabricmc.fabric.api.client.screen.v1",
                 "interface": "AfterRender",
                 "variable": "AFTER_RENDER",
-                "function": "void afterRender(Screen screen, GuiGraphics drawContext, int mouseX, int mouseY, float tickDelta);",
+                "function": "void afterRender(Screen screen, GuiGraphics graphics, int mouseX, int mouseY, float tickProgress);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-screen-api-v1/src/client/java/net/fabricmc/fabric/api/client/screen/v1/ScreenEvents.java"
             },
             {
