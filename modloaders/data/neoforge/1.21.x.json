@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251229010050",
+    "lastupdated": "20260103005356",
     "version": "1.21.x",
-    "last_commit": "[9bf54a80a04637afd2abe9290213e9b69dbcae3f] Return an empty fluid stack for empty itemstacks in FluidUtil#getFirstStackContained (#2898)",
+    "last_commit": "[7d2038e246de046593a6086bc3d79202ba63c96d] New Crowdin updates (#2826)\n\nCo-authored-by: Matyrobbrt <65940752+Matyrobbrt@users.noreply.github.com>",
     "data": {
         "net.neoforged.neoforge.event": [
             {
