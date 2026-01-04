@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251216005545",
+    "lastupdated": "20260104010258",
     "version": "1.21.11",
-    "last_commit": "[8b8d3fdef79a17ed4b4d4c0f1490427dde3647d8] Fix not being able to sleep. Steve is very tired. (#10736)",
+    "last_commit": "[d61de63482f780de40cd3c337fd8e4a874da6b59] Allow accessing Registry context from TagValueOutput",
     "data": {
         "net.minecraftforge.event": [
             {

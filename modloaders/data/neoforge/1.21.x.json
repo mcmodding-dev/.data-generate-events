@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260103005356",
+    "lastupdated": "20260104010333",
     "version": "1.21.x",
-    "last_commit": "[7d2038e246de046593a6086bc3d79202ba63c96d] New Crowdin updates (#2826)\n\nCo-authored-by: Matyrobbrt <65940752+Matyrobbrt@users.noreply.github.com>",
+    "last_commit": "[05f7593232be68a609af3e48f556842d1a43e695] Fix RenderNameTagEvent.CanRender not being posted to event bus (#2905)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
