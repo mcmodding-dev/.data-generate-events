@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260104010333",
+    "lastupdated": "20260105010201",
     "version": "1.21.x",
-    "last_commit": "[05f7593232be68a609af3e48f556842d1a43e695] Fix RenderNameTagEvent.CanRender not being posted to event bus (#2905)",
+    "last_commit": "[4193f0b112b9c7f941aac0cab92c96e3c4f31e5f] [1.21.x] Add tooltip support for FluidStack (#2887)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
@@ -503,6 +503,10 @@
             {
                 "event": "CriticalHitEvent",
                 "url": "https://github.com/neoforged/NeoForge/blob/1.21.x/src/main/java/net/neoforged/neoforge/event/entity/player/CriticalHitEvent.java"
+            },
+            {
+                "event": "FluidTooltipEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.21.x/src/main/java/net/neoforged/neoforge/event/entity/player/FluidTooltipEvent.java"
             },
             {
                 "event": "ItemEntityPickupEvent",
