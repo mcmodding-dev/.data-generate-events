@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260105010201",
+    "lastupdated": "20260106005649",
     "version": "1.21.x",
-    "last_commit": "[4193f0b112b9c7f941aac0cab92c96e3c4f31e5f] [1.21.x] Add tooltip support for FluidStack (#2887)",
+    "last_commit": "[afb1f20813b8ec23051f495348c73e4e57ec8dab] Fix stencil (#2855)",
     "data": {
         "net.neoforged.neoforge.event": [
             {

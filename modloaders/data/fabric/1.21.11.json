@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251222005735",
+    "lastupdated": "20260106005610",
     "version": "1.21.11",
-    "last_commit": "[0e37d2403eac075cde0f52476077b9d6c2d21244] Bump version",
+    "last_commit": "[21225b48421d4bb3ca5fa04e8d9ae31661adb7e3] Bump version",
     "data": {
         "deprecated": [
             {
@@ -237,6 +237,54 @@
                 "variable": "ALLOW_DEATH",
                 "function": "boolean allowDeath(ServerPlayer player, DamageSource damageSource, float damageAmount);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.11/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/ServerPlayerEvents.java"
+            },
+            {
+                "file": "ServerMobEffectEvents.java",
+                "package": "net.fabricmc.fabric.api.entity.event.v1.effect",
+                "interface": "AllowAdd",
+                "variable": "ALLOW_ADD",
+                "function": "boolean allowAdd(MobEffectInstance effectInstance, LivingEntity entity, EffectEventContext ctx);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.21.11/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/effect/ServerMobEffectEvents.java"
+            },
+            {
+                "file": "ServerMobEffectEvents.java",
+                "package": "net.fabricmc.fabric.api.entity.event.v1.effect",
+                "interface": "BeforeAdd",
+                "variable": "BEFORE_ADD",
+                "function": "void beforeAdd(MobEffectInstance effectInstance, LivingEntity entity, EffectEventContext ctx);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.21.11/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/effect/ServerMobEffectEvents.java"
+            },
+            {
+                "file": "ServerMobEffectEvents.java",
+                "package": "net.fabricmc.fabric.api.entity.event.v1.effect",
+                "interface": "AfterAdd",
+                "variable": "AFTER_ADD",
+                "function": "void afterAdd(MobEffectInstance effectInstance, LivingEntity entity, EffectEventContext ctx);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.21.11/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/effect/ServerMobEffectEvents.java"
+            },
+            {
+                "file": "ServerMobEffectEvents.java",
+                "package": "net.fabricmc.fabric.api.entity.event.v1.effect",
+                "interface": "AllowEarlyRemove",
+                "variable": "ALLOW_EARLY_REMOVE",
+                "function": "boolean allowEarlyRemove(MobEffectInstance effectInstance, LivingEntity entity, EffectEventContext ctx);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.21.11/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/effect/ServerMobEffectEvents.java"
+            },
+            {
+                "file": "ServerMobEffectEvents.java",
+                "package": "net.fabricmc.fabric.api.entity.event.v1.effect",
+                "interface": "BeforeRemove",
+                "variable": "BEFORE_REMOVE",
+                "function": "void beforeRemove(MobEffectInstance effectInstance, LivingEntity entity, EffectEventContext ctx);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.21.11/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/effect/ServerMobEffectEvents.java"
+            },
+            {
+                "file": "ServerMobEffectEvents.java",
+                "package": "net.fabricmc.fabric.api.entity.event.v1.effect",
+                "interface": "AfterRemove",
+                "variable": "AFTER_REMOVE",
+                "function": "void afterRemove(MobEffectInstance effectInstance, LivingEntity entity, EffectEventContext ctx);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.21.11/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/effect/ServerMobEffectEvents.java"
             }
         ],
         "fabric-events-interaction-v0": [
