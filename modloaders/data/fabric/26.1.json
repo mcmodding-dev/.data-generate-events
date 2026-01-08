@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260106005612",
+    "lastupdated": "20260108005629",
     "version": "26.1",
-    "last_commit": "[179ccdadea823b37b710952c88788a6325475cd7] Bump version",
+    "last_commit": "[3c1b63dccfda47b988134afb5300c28fabfdb24a] 26.1-snapshot-2",
     "data": {
         "fabric-creative-tab-api-v1": [
             {
