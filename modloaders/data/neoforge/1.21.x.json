@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260106005649",
+    "lastupdated": "20260109005800",
     "version": "1.21.x",
-    "last_commit": "[afb1f20813b8ec23051f495348c73e4e57ec8dab] Fix stencil (#2855)",
+    "last_commit": "[9ee39352d66bddfbc1aad225bb43908316602d6c] Fix magic absorb not being applied to witch correctly (#2863)",
     "data": {
         "net.neoforged.neoforge.event": [
             {

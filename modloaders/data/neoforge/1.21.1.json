@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251221005859",
+    "lastupdated": "20260109005743",
     "version": "1.21.1",
-    "last_commit": "[ceff3d20430e6a6653a83adae68ca11464e6335b] Match MC-273464 fix to implemented fix in 24w33a (#2883)",
+    "last_commit": "[e949dafebfce1f08d1fdfdda9a7769ad574e067d] Backport to 1.21.1: Fix magic absorb not being applied to witch correctly (#2914)\n\nCo-authored-by: pynickle <47242104+pynickle@users.noreply.github.com>",
     "data": {
         "net.neoforged.neoforge.event": [
             {
