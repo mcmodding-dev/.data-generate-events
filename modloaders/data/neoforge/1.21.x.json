@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260109005800",
+    "lastupdated": "20260111010244",
     "version": "1.21.x",
-    "last_commit": "[9ee39352d66bddfbc1aad225bb43908316602d6c] Fix magic absorb not being applied to witch correctly (#2863)",
+    "last_commit": "[656a45bac15677767102426863e371f12717a9dd] [1.21.11] Add support for non-quad vertex format modes in UI rendering (#2917)",
     "data": {
         "net.neoforged.neoforge.event": [
             {

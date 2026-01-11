@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260104010258",
+    "lastupdated": "20260111010223",
     "version": "1.21.11",
-    "last_commit": "[d61de63482f780de40cd3c337fd8e4a874da6b59] Allow accessing Registry context from TagValueOutput",
+    "last_commit": "[ef811aebe8cfc1f8c43fe455f58156107a371bbe] Optimize memory allocation for checking entity fluid collisions. Closes #10745",
     "data": {
         "net.minecraftforge.event": [
             {
