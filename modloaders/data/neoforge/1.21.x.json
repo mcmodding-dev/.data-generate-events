@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260111010244",
+    "lastupdated": "20260112010029",
     "version": "1.21.x",
-    "last_commit": "[656a45bac15677767102426863e371f12717a9dd] [1.21.11] Add support for non-quad vertex format modes in UI rendering (#2917)",
+    "last_commit": "[7e69d487b8ac503ce96f3b653daab955054870cd] [1.21.11] Allow custom `GameRuleType`s to be defined (#2877)\n\nCo-authored-by: Dennis C <xfacthd@gmx.de>",
     "data": {
         "net.neoforged.neoforge.event": [
             {
@@ -95,6 +95,10 @@
             {
                 "event": "RegisterCommandsEvent",
                 "url": "https://github.com/neoforged/NeoForge/blob/1.21.x/src/main/java/net/neoforged/neoforge/event/RegisterCommandsEvent.java"
+            },
+            {
+                "event": "RegisterGameRuleCategoryEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/1.21.x/src/main/java/net/neoforged/neoforge/event/RegisterGameRuleCategoryEvent.java"
             },
             {
                 "event": "RegisterGameTestsEvent",
