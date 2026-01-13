@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260112010029",
+    "lastupdated": "20260113005255",
     "version": "1.21.x",
-    "last_commit": "[7e69d487b8ac503ce96f3b653daab955054870cd] [1.21.11] Allow custom `GameRuleType`s to be defined (#2877)\n\nCo-authored-by: Dennis C <xfacthd@gmx.de>",
+    "last_commit": "[e9c3d54c6f6f831137460b4ad36dd6250544fdbb] [1.21.11] Fix UI elements with connected primitives not getting flushed separately (#2922)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
