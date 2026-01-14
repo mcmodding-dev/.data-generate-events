@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260113005255",
+    "lastupdated": "20260114005915",
     "version": "1.21.x",
-    "last_commit": "[e9c3d54c6f6f831137460b4ad36dd6250544fdbb] [1.21.11] Fix UI elements with connected primitives not getting flushed separately (#2922)",
+    "last_commit": "[8a348322318ebcd76fbb1a265f6b12e08574cc47] Broaden acceptable return types for Level.dragonParts() (#2925)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
