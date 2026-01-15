@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260114005915",
+    "lastupdated": "20260115005459",
     "version": "1.21.x",
-    "last_commit": "[8a348322318ebcd76fbb1a265f6b12e08574cc47] Broaden acceptable return types for Level.dragonParts() (#2925)",
+    "last_commit": "[d6982431d909a2e31f2245fd4587550de1e271b2] [1.21.11] Expose debug renderer/subscription flag registration (#2907)\n\nCo-authored-by: Dennis C <xfacthd@gmx.de>",
     "data": {
         "net.neoforged.neoforge.event": [
             {
