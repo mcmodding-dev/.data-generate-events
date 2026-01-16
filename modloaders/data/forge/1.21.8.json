@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251205005706",
+    "lastupdated": "20260116005746",
     "version": "1.21.8",
-    "last_commit": "[eb884f4f61934df768c31df8a26b076279a08ec4] Mark applyServerBinpatches as a dependency of BundleList. Fixes: #10729",
+    "last_commit": "[9441128b1a5b74d93e603bcc6db4e34370902a0e] Fix Entity patch line numbers",
     "data": {
         "net.minecraftforge.event": [
             {

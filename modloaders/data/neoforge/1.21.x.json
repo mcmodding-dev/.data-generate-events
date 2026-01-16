@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260115005459",
+    "lastupdated": "20260116005828",
     "version": "1.21.x",
-    "last_commit": "[d6982431d909a2e31f2245fd4587550de1e271b2] [1.21.11] Expose debug renderer/subscription flag registration (#2907)\n\nCo-authored-by: Dennis C <xfacthd@gmx.de>",
+    "last_commit": "[fbdccc7e0b0b0a8c76ba3c62f730bb398a8de59f] Cleanup and improve javadocs around entity related events, remove broken javadoc references to removed Event#hasResult (#2833)",
     "data": {
         "net.neoforged.neoforge.event": [
             {

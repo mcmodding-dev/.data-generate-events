@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251211005601",
+    "lastupdated": "20260116005802",
     "version": "1.21.10",
-    "last_commit": "[51af4b1f957fb256311d5b81d9d3aba610c21034] Make 1.21.10 branch",
+    "last_commit": "[aadc5158149f331f084ee8ee4b014b1ccf7f29aa] Optimize memory allocation for checking entity fluid collisions. Backport of #10745 (#10748)\n\nCo-authored-by: LexManos <lexmanos@gmail.com>",
     "data": {
         "net.minecraftforge.event": [
             {
