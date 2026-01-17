@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251205005530",
+    "lastupdated": "20260117005517",
     "version": "1.21.1",
-    "last_commit": "[0cf398c5098ec19045c042d046fc0b0745e31fe6] Mark applyServerBinpatches as a dependency of BundleList. Fixes: #10729",
+    "last_commit": "[879a5d32454ebdab9f5b046dc94e15f65ca959a4] Optimize memory allocation for checking entity fluid collisions. Backport of #10745 (#10752)\n\nCo-authored-by: LexManos <lexmanos@gmail.com>",
     "data": {
         "net.minecraftforge.event": [
             {

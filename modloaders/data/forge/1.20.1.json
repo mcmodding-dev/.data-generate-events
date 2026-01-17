@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251203005432",
+    "lastupdated": "20260117005500",
     "version": "1.20.1",
-    "last_commit": "[7187d8d97fb667dc478d0e6af9285483db48949c] Migrate to Github Actions",
+    "last_commit": "[e7629d5ae4f22a828994d83ee34324453adfd9df] Optimize memory allocation for checking entity fluid collisions. Backport of #10745\n\n\nCo-authored-by: LexManos <LexManos@gmail.com>",
     "data": {
         "net.minecraftforge.event": [
             {
