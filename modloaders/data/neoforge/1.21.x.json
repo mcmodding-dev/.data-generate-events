@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260117005558",
+    "lastupdated": "20260118010232",
     "version": "1.21.x",
-    "last_commit": "[69012d3477ad77e35e2031eee9a1edd08d629246] Enforce format compatibility for texture copies (#2803)",
+    "last_commit": "[417531c7622c68d12faf6b3b892c563a53f8bd55] Implement `#c:foods/dough` (#2912)",
     "data": {
         "net.neoforged.neoforge.event": [
             {

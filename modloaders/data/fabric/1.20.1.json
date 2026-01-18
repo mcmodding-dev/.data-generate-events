@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20250921115444",
+    "lastupdated": "20260118010101",
     "version": "1.20.1",
-    "last_commit": "[761f669d0a6fbfe2ae6d71d767651f32a13d37fc] Bump version",
+    "last_commit": "[d97e32dc2cf268c5a35d6f0e92a8201ff188f36c] Fix release workflow",
     "data": {
         "deprecated": [
             {
