@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260118010232",
+    "lastupdated": "20260119010148",
     "version": "1.21.x",
-    "last_commit": "[417531c7622c68d12faf6b3b892c563a53f8bd55] Implement `#c:foods/dough` (#2912)",
+    "last_commit": "[9a7290d8f0d3c209bb630b7f4a0dd4ffcdb172d6] Component-based Language Data Generation (#2862)\n\nSigned-off-by: TheSilkMiner <thesilkminer@outlook.com>",
     "data": {
         "net.neoforged.neoforge.event": [
             {
