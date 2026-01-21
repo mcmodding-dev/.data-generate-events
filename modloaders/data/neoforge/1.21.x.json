@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260119010148",
+    "lastupdated": "20260121005926",
     "version": "1.21.x",
-    "last_commit": "[9a7290d8f0d3c209bb630b7f4a0dd4ffcdb172d6] Component-based Language Data Generation (#2862)\n\nSigned-off-by: TheSilkMiner <thesilkminer@outlook.com>",
+    "last_commit": "[8023141305118247e2ba0f1e5ce39b45826bddfb] Added capabilities for copper chests, shelves, and bundles (#2797)\n\nCo-authored-by: Bruno Ploumhans <13494793+Technici4n@users.noreply.github.com>",
     "data": {
         "net.neoforged.neoforge.event": [
             {

@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260118010152",
+    "lastupdated": "20260121005845",
     "version": "1.20.1",
-    "last_commit": "[d6b2bf7ca3ed8ccd7ea776f04402edb70d6a736d] Re-trigger build due to Github Actions Issue",
+    "last_commit": "[8dffec4dbca95bf710f74620438b388e0fa3c570] Bump EventBus to 6.2.32 (#10744)\n\nBrings all the improvements made to EventBus 6 over the past 2+ years to Forge 1.20.1. Highlights:\n- Lower memory usage, faster event posting and listener registration (EventBus#98, #85, #84, #70, #65, #64, #62, #60)\n- EventBus#fire(), Event#cancel() and Event.Result convenience methods (EventBus#57, #94, e2a19cb)\n- New monitor phase for read-only event listeners that want to run last (EventBus c510e2c)\n- Fixed memory leak after unregistering listeners in some cases (EventBus#65, #39)\n- Factors in bus phase tracking and event class modifiers (final/sealed) to enable further optimisations (EventBus#98, #85, #70)",
     "data": {
         "net.minecraftforge.event": [
             {

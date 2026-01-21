@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260118010117",
+    "lastupdated": "20260121005809",
     "version": "26.1",
-    "last_commit": "[9f78a5a8a3483f83e2c16e8da2502166ccb7e675] Update Fabric Loader",
+    "last_commit": "[1074095f3c400b04031b3a78e875bde0f8656110] 26.1-snapshot-4",
     "data": {
         "fabric-creative-tab-api-v1": [
             {
