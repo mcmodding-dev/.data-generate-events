@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251205005554",
+    "lastupdated": "20260122005731",
     "version": "1.21.3",
-    "last_commit": "[0bee88f4c09e93b00fe30688c21eeeda3f957040] Mark applyServerBinpatches as a dependency of BundleList. Fixes: #10729",
+    "last_commit": "[e6318f8793537eb6f5177e7c2258ba973d3dd111] Update SecureModules to address ZipPath bug with brackets. Closes #10755",
     "data": {
         "net.minecraftforge.event": [
             {

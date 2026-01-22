@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260116005802",
+    "lastupdated": "20260122005826",
     "version": "1.21.10",
-    "last_commit": "[aadc5158149f331f084ee8ee4b014b1ccf7f29aa] Optimize memory allocation for checking entity fluid collisions. Backport of #10745 (#10748)\n\nCo-authored-by: LexManos <lexmanos@gmail.com>",
+    "last_commit": "[a953d2df3df0b4d064f0e61ddb55b028c5313442] Update SecureModules to address ZipPath bug with brackets. Closes #10755",
     "data": {
         "net.minecraftforge.event": [
             {

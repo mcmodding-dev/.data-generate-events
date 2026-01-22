@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260116005746",
+    "lastupdated": "20260122005812",
     "version": "1.21.8",
-    "last_commit": "[9441128b1a5b74d93e603bcc6db4e34370902a0e] Fix Entity patch line numbers",
+    "last_commit": "[19f6b6c294d282242072c6f15f86faf0e40c2a21] Update SecureModules to address ZipPath bug with brackets. Closes #10755",
     "data": {
         "net.minecraftforge.event": [
             {

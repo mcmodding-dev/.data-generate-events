@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260121005926",
+    "lastupdated": "20260122005901",
     "version": "1.21.x",
-    "last_commit": "[8023141305118247e2ba0f1e5ce39b45826bddfb] Added capabilities for copper chests, shelves, and bundles (#2797)\n\nCo-authored-by: Bruno Ploumhans <13494793+Technici4n@users.noreply.github.com>",
+    "last_commit": "[fb6401a7a19946c38a328b5d549f30e0a0940868] Allow ItemModelOutput to datagen ClientItems for arbitrary identifiers (#2934)\n\nCo-authored-by: Dennis C <xfacthd@gmx.de>",
     "data": {
         "net.neoforged.neoforge.event": [
             {
