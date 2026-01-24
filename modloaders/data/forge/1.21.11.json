@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260122005840",
+    "lastupdated": "20260124005542",
     "version": "1.21.11",
-    "last_commit": "[236842f2101364440df7cd7e24edbfe6af7dc140] Update SecureModules to address ZipPath bug with brackets. Closes #10755",
+    "last_commit": "[07f64991431d7a2c088ee7ee3172ac9400d5b9bc] Remove JavaScript CoreMods and Nashorn (#10746)\n\nThe ASMAPI helper methods have been split off into a separate dep which is included with Forge for Java transformers to use.",
     "data": {
         "net.minecraftforge.event": [
             {
