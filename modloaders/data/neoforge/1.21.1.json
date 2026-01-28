@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260109005743",
+    "lastupdated": "20260128005820",
     "version": "1.21.1",
-    "last_commit": "[e949dafebfce1f08d1fdfdda9a7769ad574e067d] Backport to 1.21.1: Fix magic absorb not being applied to witch correctly (#2914)\n\nCo-authored-by: pynickle <47242104+pynickle@users.noreply.github.com>",
+    "last_commit": "[2c401e643df320e869d4aae60307af40cf6f5e1d] Backport to 1.21.1: Implement `#c:foods/dough` (#2928)\n\nCo-authored-by: IThundxr <74031881+IThundxr@users.noreply.github.com>\nCo-authored-by: TelepathicGrunt <40846040+TelepathicGrunt@users.noreply.github.com>",
     "data": {
         "net.neoforged.neoforge.event": [
             {
