@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260128005736",
+    "lastupdated": "20260130010531",
     "version": "26.1",
-    "last_commit": "[c779aa619d95d4ffd80faa4d257e21cebf7fc515] 26.1-snapshot-5",
+    "last_commit": "[da59c676fcae4240cbc2ec22a6abc95e69bd4128] Bump version",
     "data": {
         "fabric-creative-tab-api-v1": [
             {
@@ -19,6 +19,16 @@
                 "variable": "MODIFY_OUTPUT_ALL",
                 "function": "void modifyOutput(CreativeModeTab tab, FabricCreativeModeTabOutput output);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-creative-tab-api-v1/src/main/java/net/fabricmc/fabric/api/creativetab/v1/CreativeModeTabEvents.java"
+            }
+        ],
+        "fabric-dimensions-v1": [
+            {
+                "file": "DimensionEvents.java",
+                "package": "net.fabricmc.fabric.api.dimension.v1",
+                "interface": "ModifyAttributes",
+                "variable": "MODIFY_ATTRIBUTES",
+                "function": "void modifyDimensionAttributes(Holder<DimensionType> dimension, EnvironmentAttributeMap.Builder attributes, HolderLookup.Provider registries);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-dimensions-v1/src/main/java/net/fabricmc/fabric/api/dimension/v1/DimensionEvents.java"
             }
         ],
         "fabric-entity-events-v1": [
@@ -67,7 +77,7 @@
                 "package": "net.fabricmc.fabric.api.entity.event.v1",
                 "interface": "AllowBed",
                 "variable": "ALLOW_BED",
-                "function": "InteractionResult allowBed(LivingEntity entity, BlockPos sleepingPos, BlockState state, boolean vanillaResult);",
+                "function": "EventResult allowBed(LivingEntity entity, BlockPos sleepingPos, BlockState state, boolean vanillaResult);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/EntitySleepEvents.java"
             },
             {
@@ -75,7 +85,7 @@
                 "package": "net.fabricmc.fabric.api.entity.event.v1",
                 "interface": "AllowSleepTime",
                 "variable": "ALLOW_SLEEP_TIME",
-                "function": "InteractionResult allowSleepTime(Player player, BlockPos sleepingPos, boolean vanillaResult);",
+                "function": "EventResult allowSleepTime(Player player, BlockPos sleepingPos, boolean vanillaResult);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/EntitySleepEvents.java"
             },
             {
@@ -83,7 +93,7 @@
                 "package": "net.fabricmc.fabric.api.entity.event.v1",
                 "interface": "AllowNearbyMonsters",
                 "variable": "ALLOW_NEARBY_MONSTERS",
-                "function": "InteractionResult allowNearbyMonsters(Player player, BlockPos sleepingPos, boolean vanillaResult);",
+                "function": "EventResult allowNearbyMonsters(Player player, BlockPos sleepingPos, boolean vanillaResult);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/EntitySleepEvents.java"
             },
             {
