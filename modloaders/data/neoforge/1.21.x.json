@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260122005901",
+    "lastupdated": "20260204010542",
     "version": "1.21.x",
-    "last_commit": "[fb6401a7a19946c38a328b5d549f30e0a0940868] Allow ItemModelOutput to datagen ClientItems for arbitrary identifiers (#2934)\n\nCo-authored-by: Dennis C <xfacthd@gmx.de>",
+    "last_commit": "[3f86c8c82dd7993ce1aaaf7dee0802031a99f740] Fix when BlockEvent.EntityPlaceEvent is canceled on server not updating client inventory (#2935)\n\nThis PR causes a `ClientboundSetPlayerInventoryPacket` to be sent to the client when an `EntityPlaceEvent` is cancelled on the server, ensuring that if the stack was not consumed on the server, it is still present on the client.",
     "data": {
         "net.neoforged.neoforge.event": [
             {
