@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260124005542",
+    "lastupdated": "20260210012008",
     "version": "1.21.11",
-    "last_commit": "[07f64991431d7a2c088ee7ee3172ac9400d5b9bc] Remove JavaScript CoreMods and Nashorn (#10746)\n\nThe ASMAPI helper methods have been split off into a separate dep which is included with Forge for Java transformers to use.",
+    "last_commit": "[b4024a788443c6106d6cc93b33e957ccf0c06aef] Update discord links in issue templates",
     "data": {
         "net.minecraftforge.event": [
             {
