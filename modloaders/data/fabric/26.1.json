@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260209011100",
+    "lastupdated": "20260211011750",
     "version": "26.1",
-    "last_commit": "[0d8ba4cdcae7b9c8416af193e1801f0a9365d904] Fix client game tests not creating a valid dedicated server world. (#5194)",
+    "last_commit": "[13d23d8ad62b986772f3e2d17866101e330be555] Bump version",
     "data": {
         "fabric-creative-tab-api-v1": [
             {
@@ -1253,33 +1253,33 @@
             {
                 "file": "LevelRenderEvents.java",
                 "package": "net.fabricmc.fabric.api.client.rendering.v1.level",
-                "interface": "BeforeEntities",
-                "variable": "BEFORE_ENTITIES",
-                "function": "void beforeEntities(LevelRenderContext context);",
+                "interface": "AfterOpaqueTerrain",
+                "variable": "AFTER_OPAQUE_TERRAIN",
+                "function": "void afterOpaqueTerrain(LevelTerrainRenderContext context);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java"
             },
             {
                 "file": "LevelRenderEvents.java",
                 "package": "net.fabricmc.fabric.api.client.rendering.v1.level",
-                "interface": "AfterEntities",
-                "variable": "AFTER_ENTITIES",
-                "function": "void afterEntities(LevelRenderContext context);",
+                "interface": "CollectSubmits",
+                "variable": "COLLECT_SUBMITS",
+                "function": "void collectSubmits(LevelRenderContext context);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java"
             },
             {
                 "file": "LevelRenderEvents.java",
                 "package": "net.fabricmc.fabric.api.client.rendering.v1.level",
-                "interface": "DebugRender",
-                "variable": "DEBUG_RENDER",
-                "function": "void beforeDebugRender(LevelRenderContext context);",
+                "interface": "AfterSolidFeatures",
+                "variable": "AFTER_SOLID_FEATURES",
+                "function": "void afterSolidFeatures(LevelRenderContext context);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java"
             },
             {
                 "file": "LevelRenderEvents.java",
                 "package": "net.fabricmc.fabric.api.client.rendering.v1.level",
-                "interface": "BeforeTranslucent",
-                "variable": "BEFORE_TRANSLUCENT",
-                "function": "void beforeTranslucent(LevelRenderContext context);",
+                "interface": "AfterTranslucentFeatures",
+                "variable": "AFTER_TRANSLUCENT_FEATURES",
+                "function": "void afterTranslucentFeatures(LevelRenderContext context);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java"
             },
             {
@@ -1288,6 +1288,30 @@
                 "interface": "BeforeBlockOutline",
                 "variable": "BEFORE_BLOCK_OUTLINE",
                 "function": "boolean beforeBlockOutline(LevelRenderContext context, BlockOutlineRenderState outlineRenderState);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java"
+            },
+            {
+                "file": "LevelRenderEvents.java",
+                "package": "net.fabricmc.fabric.api.client.rendering.v1.level",
+                "interface": "BeforeGizmos",
+                "variable": "BEFORE_GIZMOS",
+                "function": "void beforeGizmos(LevelRenderContext context);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java"
+            },
+            {
+                "file": "LevelRenderEvents.java",
+                "package": "net.fabricmc.fabric.api.client.rendering.v1.level",
+                "interface": "BeforeTranslucentTerrain",
+                "variable": "BEFORE_TRANSLUCENT_TERRAIN",
+                "function": "void beforeTranslucentTerrain(LevelRenderContext context);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java"
+            },
+            {
+                "file": "LevelRenderEvents.java",
+                "package": "net.fabricmc.fabric.api.client.rendering.v1.level",
+                "interface": "AfterTranslucentTerrain",
+                "variable": "AFTER_TRANSLUCENT_TERRAIN",
+                "function": "void afterTranslucentTerrain(LevelRenderContext context);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java"
             },
             {
