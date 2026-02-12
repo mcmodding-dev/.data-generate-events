@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260210012008",
+    "lastupdated": "20260212011122",
     "version": "1.21.11",
-    "last_commit": "[b4024a788443c6106d6cc93b33e957ccf0c06aef] Update discord links in issue templates",
+    "last_commit": "[929064ee69573ccdca396cdd483a1e2481631619] Add support for multiple access transformer configs. Closes #10758",
     "data": {
         "net.minecraftforge.event": [
             {
