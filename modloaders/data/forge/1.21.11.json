@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260216011035",
+    "lastupdated": "20260219011115",
     "version": "1.21.11",
-    "last_commit": "[c71ba862cf155796a91d6308f1fdc90f1d13a888] 1.20.11 RB 1",
+    "last_commit": "[e1c2add3703ee3b6b5ce6361ff0b69833775e8de] Skip runtime annotation scanning for MC itself, blacklist common inconsequential annotations (#10773)\n\nThe results of scan data for MC itself aren't useful nor needed in practice. Skipping this speeds up the scanner and saves a bunch of memory. Also blacklisted common inconsequential annotations and cached common super types for further memory usage savings.",
     "data": {
         "net.minecraftforge.event": [
             {
