@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260219011044",
+    "lastupdated": "20260225011318",
     "version": "26.1",
-    "last_commit": "[e462ae43c0c47a5ec7aa9b2e86ae353c5235e645] Snapshot 9 and client test fixes (#5211)\n\n* Snapshot 9 and client test fixes\n\n* sound_button.png",
+    "last_commit": "[b04e7de2601c8e89e2b42731fc0f22d35e051879] Bump version",
     "data": {
         "fabric-creative-tab-api-v1": [
             {
