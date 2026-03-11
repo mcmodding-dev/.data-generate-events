@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260306011218",
+    "lastupdated": "20260311010406",
     "version": "26.1",
-    "last_commit": "[b24f50f431bc7118257a2dce2d12d73d79896fbf] Bump version",
+    "last_commit": "[14b21beedf21c2a1c6cb6e7e425d6eca5cf7b4f6] Add global data attachments (#5231)\n\n* initial implementation\n\n* fix AttachmentTargetsMixin error\n\n* add some tests\n\n* fix tests\n\n* remove transitive interface injection for ClientPacketListener\n\n* use IdentityHashMap for player connections\n\n* woops readd ClientboundCustomPayloadPacketAccessor to mixins.json\n\n* add proper docs to new API\n\n* incremental sync global attachments using ServerConnectionListener",
     "data": {
         "fabric-creative-tab-api-v1": [
             {
