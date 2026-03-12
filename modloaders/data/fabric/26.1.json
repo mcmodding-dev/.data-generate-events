@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260311010406",
+    "lastupdated": "20260312010133",
     "version": "26.1",
-    "last_commit": "[14b21beedf21c2a1c6cb6e7e425d6eca5cf7b4f6] Add global data attachments (#5231)\n\n* initial implementation\n\n* fix AttachmentTargetsMixin error\n\n* add some tests\n\n* fix tests\n\n* remove transitive interface injection for ClientPacketListener\n\n* use IdentityHashMap for player connections\n\n* woops readd ClientboundCustomPayloadPacketAccessor to mixins.json\n\n* add proper docs to new API\n\n* incremental sync global attachments using ServerConnectionListener",
+    "last_commit": "[d871b99e8276438a21641c4207115770f4201d1f] Port to 26.1-pre-1 (#5250)\n\nBreaking changes:\n- Mostly rewritten fluid rendering api\n  - `FluidRenderHandlerRegistry` -> `FluidRenderingRegistry`\n  - All fluids must now have a FluidModel registered with FluidRenderingRegistry.register\n  - `FluidRenderHandler` are optional for modded fluids.\n  - `FluidRenderHandler` now only has  a `tessalte` method, everything else is handled by the vanilla FluidModel\n- Remove previously deprecated HudRenderCallback\n- AdvancementRenderer:\n  - `renderAdvancementIcon` -> `extractAdvancementIcon`\n  - `renderAdvancementFrame` -> `extractAdvancementFrame`\n  - `renderAdvancementBackground` -> `extractAdvancementBackground`\n- HudElement `render` -> `extractRenderState`\n- `RenderItemDecorationsCallback` -> `ExtractItemDecorationsCallback`\n  -  `onRenderItemDecorations` -> `onExtractItemDecorations`\n- ScreenEvents\n  - `beforeRender` -> `beforeExtract`\n  - `afterRender` -> `afterExtract`",
     "data": {
         "fabric-creative-tab-api-v1": [
             {
@@ -1195,12 +1195,12 @@
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/ClientTooltipComponentCallback.java"
             },
             {
-                "file": "HudRenderCallback.java",
+                "file": "ExtractItemDecorationsCallback.java",
                 "package": "net.fabricmc.fabric.api.client.rendering.v1",
-                "interface": "HudRenderCallback",
+                "interface": "ExtractItemDecorationsCallback",
                 "variable": "EVENT",
-                "function": "void onHudRender(GuiGraphics graphics, DeltaTracker deltaTracker);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/HudRenderCallback.java"
+                "function": "void onExtractItemDecorations(GuiGraphicsExtractor graphics, Font font, ItemStack stack, int x, int y);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/ExtractItemDecorationsCallback.java"
             },
             {
                 "file": "InvalidateRenderStateCallback.java",
@@ -1217,14 +1217,6 @@
                 "variable": "ALLOW_CAPE_RENDER",
                 "function": "boolean allowCapeRender(AvatarRenderState state);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/LivingEntityFeatureRenderEvents.java"
-            },
-            {
-                "file": "RenderItemDecorationsCallback.java",
-                "package": "net.fabricmc.fabric.api.client.rendering.v1",
-                "interface": "RenderItemDecorationsCallback",
-                "variable": "EVENT",
-                "function": "void onRenderItemDecorations(GuiGraphics graphics, Font font, ItemStack stack, int x, int y);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/RenderItemDecorationsCallback.java"
             },
             {
                 "file": "LevelRenderEvents.java",
@@ -1351,9 +1343,9 @@
             {
                 "file": "ScreenEvents.java",
                 "package": "net.fabricmc.fabric.api.client.screen.v1",
-                "interface": "BeforeRender",
-                "variable": "BEFORE_RENDER",
-                "function": "void beforeRender(Screen screen, GuiGraphics graphics, int mouseX, int mouseY, float tickProgress);",
+                "interface": "BeforeExtract",
+                "variable": "BEFORE_EXTRACT",
+                "function": "void beforeExtract(Screen screen, GuiGraphicsExtractor graphics, int mouseX, int mouseY, float tickProgress);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-screen-api-v1/src/client/java/net/fabricmc/fabric/api/client/screen/v1/ScreenEvents.java"
             },
             {
@@ -1361,15 +1353,15 @@
                 "package": "net.fabricmc.fabric.api.client.screen.v1",
                 "interface": "AfterBackground",
                 "variable": "AFTER_BACKGROUND",
-                "function": "void afterBackground(Screen screen, GuiGraphics graphics, int mouseX, int mouseY, float tickProgress);",
+                "function": "void afterBackground(Screen screen, GuiGraphicsExtractor graphics, int mouseX, int mouseY, float tickProgress);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-screen-api-v1/src/client/java/net/fabricmc/fabric/api/client/screen/v1/ScreenEvents.java"
             },
             {
                 "file": "ScreenEvents.java",
                 "package": "net.fabricmc.fabric.api.client.screen.v1",
-                "interface": "AfterRender",
-                "variable": "AFTER_RENDER",
-                "function": "void afterRender(Screen screen, GuiGraphics graphics, int mouseX, int mouseY, float tickProgress);",
+                "interface": "AfterExtract",
+                "variable": "AFTER_EXTRACT",
+                "function": "void afterExtract(Screen screen, GuiGraphicsExtractor graphics, int mouseX, int mouseY, float tickProgress);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-screen-api-v1/src/client/java/net/fabricmc/fabric/api/client/screen/v1/ScreenEvents.java"
             },
             {
