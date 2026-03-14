@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260312010133",
+    "lastupdated": "20260314010610",
     "version": "26.1",
-    "last_commit": "[d871b99e8276438a21641c4207115770f4201d1f] Port to 26.1-pre-1 (#5250)\n\nBreaking changes:\n- Mostly rewritten fluid rendering api\n  - `FluidRenderHandlerRegistry` -> `FluidRenderingRegistry`\n  - All fluids must now have a FluidModel registered with FluidRenderingRegistry.register\n  - `FluidRenderHandler` are optional for modded fluids.\n  - `FluidRenderHandler` now only has  a `tessalte` method, everything else is handled by the vanilla FluidModel\n- Remove previously deprecated HudRenderCallback\n- AdvancementRenderer:\n  - `renderAdvancementIcon` -> `extractAdvancementIcon`\n  - `renderAdvancementFrame` -> `extractAdvancementFrame`\n  - `renderAdvancementBackground` -> `extractAdvancementBackground`\n- HudElement `render` -> `extractRenderState`\n- `RenderItemDecorationsCallback` -> `ExtractItemDecorationsCallback`\n  -  `onRenderItemDecorations` -> `onExtractItemDecorations`\n- ScreenEvents\n  - `beforeRender` -> `beforeExtract`\n  - `afterRender` -> `afterExtract`",
+    "last_commit": "[b1d622a46dd5dbf964b5eba1ac3597d1ecc16e2b] Bump version\n\nAll modules bumped due to loom upgrade.",
     "data": {
         "fabric-creative-tab-api-v1": [
             {
