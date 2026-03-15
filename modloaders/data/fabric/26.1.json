@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260314010610",
+    "lastupdated": "20260315011748",
     "version": "26.1",
-    "last_commit": "[b1d622a46dd5dbf964b5eba1ac3597d1ecc16e2b] Bump version\n\nAll modules bumped due to loom upgrade.",
+    "last_commit": "[6a700b300c7ab6ad2c3bd5a9064bc5e5b3de5379] Bump version",
     "data": {
         "fabric-creative-tab-api-v1": [
             {
