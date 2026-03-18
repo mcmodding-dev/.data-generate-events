@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260122005826",
+    "lastupdated": "20260318011521",
     "version": "1.21.10",
-    "last_commit": "[a953d2df3df0b4d064f0e61ddb55b028c5313442] Update SecureModules to address ZipPath bug with brackets. Closes #10755",
+    "last_commit": "[ac17d668688ae93c6dff44fdab2fa9cda6cea40c] Migrate the MDK to ForgeGradle 7\n\nBackport of d29524b to 1.21.10.\n\nAlso bumped ASM to 9.9.1, EventBus to 7.0.1 (non-beta) and MixinExtras to 0.5.3",
     "data": {
         "net.minecraftforge.event": [
             {

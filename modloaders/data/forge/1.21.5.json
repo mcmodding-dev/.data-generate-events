@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260122005758",
+    "lastupdated": "20260318011452",
     "version": "1.21.5",
-    "last_commit": "[054c23a59a9540723d4d144d13918ccb3d7a333c] Update SecureModules to address ZipPath bug with brackets. Closes #10755",
+    "last_commit": "[ea7dff02a39ad4152a7cb5836cc380f18716beae] Skip processing vanilla classes in RuntimeDistCleaner when running on a client\n\nBackport of #10682 to 1.21.5. Also bumped ASM to 9.9.1",
     "data": {
         "net.minecraftforge.event": [
             {

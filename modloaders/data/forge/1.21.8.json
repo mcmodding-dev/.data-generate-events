@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260122005812",
+    "lastupdated": "20260318011507",
     "version": "1.21.8",
-    "last_commit": "[19f6b6c294d282242072c6f15f86faf0e40c2a21] Update SecureModules to address ZipPath bug with brackets. Closes #10755",
+    "last_commit": "[ae3985f882194998889339c8446384a27df0a626] Bump ASM to 9.9.1 and EventBus to 7.0.1",
     "data": {
         "net.minecraftforge.event": [
             {

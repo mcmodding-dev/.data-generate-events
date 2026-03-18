@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251205005501",
+    "lastupdated": "20260318011354",
     "version": "1.20.x",
-    "last_commit": "[be1a061bd2bd5a8cd7f75c2c85efbd0bef9038c4] Mark applyServerBinpatches as a dependency of BundleList. Fixes: #10729",
+    "last_commit": "[fac1237023092804dbc193c3501f481a3063d36a] Skip processing vanilla classes in RuntimeDistCleaner when running on a client\n\nBackport of #10682 to 1.20.6",
     "data": {
         "net.minecraftforge.event": [
             {
