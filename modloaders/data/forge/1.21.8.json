@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260318011507",
+    "lastupdated": "20260319011420",
     "version": "1.21.8",
-    "last_commit": "[ae3985f882194998889339c8446384a27df0a626] Bump ASM to 9.9.1 and EventBus to 7.0.1",
+    "last_commit": "[a6f68087b4b855a01a4cce81d23c3795a53be890] Migrate the MDK to ForgeGradle 7\n\nBackport of d29524b to 1.21.8",
     "data": {
         "net.minecraftforge.event": [
             {

@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260318011409",
+    "lastupdated": "20260319011311",
     "version": "1.21.1",
-    "last_commit": "[96a894d3ec1ec60d10126d168a73ece11ddbf0c7] Skip processing vanilla classes in RuntimeDistCleaner when running on a client\n\nBackport of #10682 to 1.21.1",
+    "last_commit": "[0675635b0c65e8114c4b270f3778d02deca16faa] Migrate the MDK to ForgeGradle 7\n\nBackport of d29524b to 1.21.1",
     "data": {
         "net.minecraftforge.event": [
             {

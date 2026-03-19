@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260318011423",
+    "lastupdated": "20260319011328",
     "version": "1.21.3",
-    "last_commit": "[f6867c21510bdef72abfd0ab7ffc2db32f737e66] Bump ASM and EventBus\n\n- ASM 9.9.1 for Java 26 support\n- EventBus 6.2.33 for Event#cancel() convenience method and further performance improvements",
+    "last_commit": "[8bdf29553b12af8d5e2d6eab9d934ea6b7553db7] Migrate the MDK to ForgeGradle 7\n\nBackport of d29524b to 1.21.3",
     "data": {
         "net.minecraftforge.event": [
             {
