@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260318011325",
+    "lastupdated": "20260321010435",
     "version": "1.20.1",
-    "last_commit": "[64caebe63c44582b8164aa7c2a4c72eed3559c1f] Skip processing vanilla classes in RuntimeDistCleaner when running on a client\n\nBackport of #10682 to 1.20.1. Also bumped ASM to 9.9.1 for Java 26 support",
+    "last_commit": "[723799cdb8eaec7928d978ccc9802f42438a0a7a] Fix HandshakeHandler potentially skipping last packet (#10787)",
     "data": {
         "net.minecraftforge.event": [
             {
