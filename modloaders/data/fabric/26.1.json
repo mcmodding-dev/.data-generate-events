@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260321010409",
+    "lastupdated": "20260323011329",
     "version": "26.1",
-    "last_commit": "[688f5130ab3264a60406cd3d67ff3cec9498022c] 26.1-rc-2",
+    "last_commit": "[c9bb25a5013ea3f9a3ed5004be8236a8dddf26bd] Bump version",
     "data": {
         "fabric-creative-tab-api-v1": [
             {
@@ -393,7 +393,7 @@
                 "package": "net.fabricmc.fabric.api.item.v1",
                 "interface": "ModifyContext",
                 "variable": "MODIFY_CONTEXT",
-                "function": "void modify(Predicate<Item> itemPredicate, BiConsumer<DataComponentMap.Builder, Item> builderConsumer);",
+                "function": "void modify(Predicate<Item> itemPredicate, ModifyConsumer builderConsumer);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-item-api-v1/src/main/java/net/fabricmc/fabric/api/item/v1/DefaultItemComponentEvents.java"
             },
             {
@@ -402,6 +402,14 @@
                 "interface": "ModifyCallback",
                 "variable": "MODIFY_CALLBACK",
                 "function": "void modify(ModifyContext context);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-item-api-v1/src/main/java/net/fabricmc/fabric/api/item/v1/DefaultItemComponentEvents.java"
+            },
+            {
+                "file": "DefaultItemComponentEvents.java",
+                "package": "net.fabricmc.fabric.api.item.v1",
+                "interface": "ModifyConsumer",
+                "variable": "MODIFY_CONSUMER",
+                "function": "void modify(DataComponentMap.Builder builder, HolderLookup.Provider lookupProvider, Item item);",
                 "url": "https://github.com/FabricMC/fabric/blob/26.1/fabric-item-api-v1/src/main/java/net/fabricmc/fabric/api/item/v1/DefaultItemComponentEvents.java"
             },
             {

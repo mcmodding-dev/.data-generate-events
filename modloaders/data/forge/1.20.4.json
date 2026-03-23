@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260318011340",
+    "lastupdated": "20260323011408",
     "version": "1.20.4",
-    "last_commit": "[02bbab1f90abb76a1c658416f2de22ac6a5bd996] Skip processing vanilla classes in RuntimeDistCleaner when running on a client\n\nBackport of #10682 to 1.20.4",
+    "last_commit": "[998999412f43894cf7fc388d4c0d3934d05a8697] Add support for multiple access transformer configs. Backport (#10760) (#10788)",
     "data": {
         "net.minecraftforge.event": [
             {
