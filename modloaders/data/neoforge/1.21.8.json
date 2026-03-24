@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20251130010137",
+    "lastupdated": "20260324011116",
     "version": "1.21.8",
-    "last_commit": "[bc44904c54b3bedfbb9d2278aaf712f2df133115] Backport to 1.21.8: Revert #2095 due to Leader Zombie health bugfix breaking vanilla farms (#2845)\n\nCo-authored-by: TelepathicGrunt <40846040+TelepathicGrunt@users.noreply.github.com>",
+    "last_commit": "[48d57d71be40405dc3022b02b9ae9468b7edc795] Backport to 1.21.8: Bump MixinExtras to 0.5.3 (#3012)\n\nCo-authored-by: LlamaLad7 <15244077+LlamaLad7@users.noreply.github.com>",
     "data": {
         "net.neoforged.neoforge.event": [
             {

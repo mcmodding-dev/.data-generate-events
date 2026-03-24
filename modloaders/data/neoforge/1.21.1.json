@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260317010924",
+    "lastupdated": "20260324010923",
     "version": "1.21.1",
-    "last_commit": "[07049d1d15cf559ed3932b5afcf9eba7607ef4fb] Backport to 1.21.1: Fix cross-dimension example in chunk generate command help (#2996)\n\nCo-authored-by: TelepathicGrunt <40846040+TelepathicGrunt@users.noreply.github.com>",
+    "last_commit": "[0577cc364493ad85ce465bb11591fd9d5ec7e3b6] Backport to 1.21.1: Bump MixinExtras to 0.5.3 (#3013)\n\nCo-authored-by: LlamaLad7 <15244077+LlamaLad7@users.noreply.github.com>",
     "data": {
         "net.neoforged.neoforge.event": [
             {

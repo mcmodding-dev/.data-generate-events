@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260319011345",
+    "lastupdated": "20260324010737",
     "version": "1.21.4",
-    "last_commit": "[fbb7507ef1809be7417dd9178df897819f8290b5] Migrate the MDK to ForgeGradle 7\n\nBackport of d29524b to 1.21.4",
+    "last_commit": "[5d4438b0e3e5145ed322f2d3cbe2874c35809190] Add support for multiple access transformer configs.",
     "data": {
         "net.minecraftforge.event": [
             {

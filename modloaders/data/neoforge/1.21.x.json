@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260204010542",
+    "lastupdated": "20260324011144",
     "version": "1.21.x",
-    "last_commit": "[3f86c8c82dd7993ce1aaaf7dee0802031a99f740] Fix when BlockEvent.EntityPlaceEvent is canceled on server not updating client inventory (#2935)\n\nThis PR causes a `ClientboundSetPlayerInventoryPacket` to be sent to the client when an `EntityPlaceEvent` is cancelled on the server, ensuring that if the stack was not consumed on the server, it is still present on the client.",
+    "last_commit": "[065c7a1806c9b3533f638efc544c62e17dbdaab7] Bump MixinExtras to 0.5.3 (#2992)",
     "data": {
         "net.neoforged.neoforge.event": [
             {

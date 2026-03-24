@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260318011535",
+    "lastupdated": "20260324010852",
     "version": "1.21.11",
-    "last_commit": "[b544849f7d665aa6ff92c306d0e65bd946ba317e] Fix wrong color argument for FogColor event\nFix incorrect patch for carving pumpinks",
+    "last_commit": "[5ac2675f8700591a81e39d7414b24dd291818013] Fix server data packs from mods using incorrect version. Closes #10794",
     "data": {
         "net.minecraftforge.event": [
             {
