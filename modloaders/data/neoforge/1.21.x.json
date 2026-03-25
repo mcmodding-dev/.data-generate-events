@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260324011144",
+    "lastupdated": "20260325011202",
     "version": "1.21.x",
-    "last_commit": "[065c7a1806c9b3533f638efc544c62e17dbdaab7] Bump MixinExtras to 0.5.3 (#2992)",
+    "last_commit": "[c5f4dbafcc01593811f8654c784ae6181bf789f3] New Crowdin updates (#2909)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
