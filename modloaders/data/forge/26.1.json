@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260325011138",
+    "lastupdated": "20260326011708",
     "version": "26.1",
-    "last_commit": "[047e5fe252ad5d720b4aee8a6223877aeb19f2d0] 26.1 Update\nMinecraft is now Unobfuscated and requires Java 25\nLots of changes/code cleanup.\nSee https://github.com/MinecraftForge/MinecraftForge-Experimental/tree/26.1-dev for non-squashed commits.\n\nCo-authored-by: Paint_Ninja <PaintNinja@users.noreply.github.com>",
+    "last_commit": "[df271e0265946aa2da108dac280f08e87f5b43ff] Fix loop in LoadingErrorScreen Closes #10795",
     "data": {
         "net.minecraftforge.event": [
             {
