@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260325011221",
+    "lastupdated": "20260327011714",
     "version": "26.1.x",
-    "last_commit": "[84928347e55a104cab25f62bbdc168829d1aabef] Fix 4 version components in CI",
+    "last_commit": "[6081df7b5b843e3179f0623814f1744f35f5a35a] Bump GradleUtils to 5.1.1 (#3029)",
     "data": {
         "net.neoforged.neoforge.event": [
             {

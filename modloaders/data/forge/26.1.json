@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260326011708",
+    "lastupdated": "20260327011654",
     "version": "26.1",
-    "last_commit": "[df271e0265946aa2da108dac280f08e87f5b43ff] Fix loop in LoadingErrorScreen Closes #10795",
+    "last_commit": "[b8168a12df86323769583db916bf2def54f732ef] Fix misaligned PlayerTick hook. Closes #10796",
     "data": {
         "net.minecraftforge.event": [
             {
