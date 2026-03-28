@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260324010923",
+    "lastupdated": "20260328011140",
     "version": "1.21.1",
-    "last_commit": "[0577cc364493ad85ce465bb11591fd9d5ec7e3b6] Backport to 1.21.1: Bump MixinExtras to 0.5.3 (#3013)\n\nCo-authored-by: LlamaLad7 <15244077+LlamaLad7@users.noreply.github.com>",
+    "last_commit": "[ec6995d36e81c859c7e936e991e11d4f115daa49] Backport to 1.21.1: Backport #3035 - Fix visual item cloning bug (#3037)\n\nCo-authored-by: ApexModder <29412632+ApexModder@users.noreply.github.com>",
     "data": {
         "net.neoforged.neoforge.event": [
             {

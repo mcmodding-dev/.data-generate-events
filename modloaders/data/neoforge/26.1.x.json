@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260327011714",
+    "lastupdated": "20260328011255",
     "version": "26.1.x",
-    "last_commit": "[6081df7b5b843e3179f0623814f1744f35f5a35a] Bump GradleUtils to 5.1.1 (#3029)",
+    "last_commit": "[7fea10ad4f303dccb0fdc8bcaad8e6e1ff4785d7] [26.1] Fix visual item cloning bug (#3035)",
     "data": {
         "net.neoforged.neoforge.event": [
             {

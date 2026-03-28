@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260327011654",
+    "lastupdated": "20260328011101",
     "version": "26.1",
-    "last_commit": "[b8168a12df86323769583db916bf2def54f732ef] Fix misaligned PlayerTick hook. Closes #10796",
+    "last_commit": "[2bd132a6f8bf65ee9fa1e550017d9ceee989d1ac] Fix not regaining air bubbles. Closes #10798",
     "data": {
         "net.minecraftforge.event": [
             {

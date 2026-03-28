@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260325011202",
+    "lastupdated": "20260328011219",
     "version": "1.21.x",
-    "last_commit": "[c5f4dbafcc01593811f8654c784ae6181bf789f3] New Crowdin updates (#2909)",
+    "last_commit": "[e4f7e7f711e2d2e82ebb2755d4bf6c47b76b7ae5] [21.11] Backport #3035 - Fix visual item cloning bug (#3036)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
