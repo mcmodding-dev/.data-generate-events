@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260328011255",
+    "lastupdated": "20260329012043",
     "version": "26.1.x",
-    "last_commit": "[7fea10ad4f303dccb0fdc8bcaad8e6e1ff4785d7] [26.1] Fix visual item cloning bug (#3035)",
+    "last_commit": "[57682f76a96497bb082e11ae531b3b42f83e196b] Add missing `includeBoundingBox` call to Beardifier patch (#3031)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
