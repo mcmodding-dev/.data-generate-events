@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260328011101",
+    "lastupdated": "20260330012119",
     "version": "26.1",
-    "last_commit": "[2bd132a6f8bf65ee9fa1e550017d9ceee989d1ac] Fix not regaining air bubbles. Closes #10798",
+    "last_commit": "[38ebbf189ccb21f6727f08ea8656b2e6e89c237c] Fix arrows not being used correctly.",
     "data": {
         "net.minecraftforge.event": [
             {

@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260329012024",
+    "lastupdated": "20260330012157",
     "version": "1.21.11",
-    "last_commit": "[d877fabef010befbe4d5babb0adfe3c0eca78530] 1.21.11 Stable",
+    "last_commit": "[6cb49467014c294e6cd6adae618d516a27c17cb5] [ci skip] New Crowdin updates (#3026)",
     "data": {
         "net.neoforged.neoforge.event": [
             {

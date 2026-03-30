@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260329012043",
+    "lastupdated": "20260330012229",
     "version": "26.1.x",
-    "last_commit": "[57682f76a96497bb082e11ae531b3b42f83e196b] Add missing `includeBoundingBox` call to Beardifier patch (#3031)",
+    "last_commit": "[fba31e38bde216499c4dc160e61e17fdd4dee61b] Generate and populate the json for drink_containing tags (#3044)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
