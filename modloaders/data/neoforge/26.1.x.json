@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260330012229",
+    "lastupdated": "20260331011848",
     "version": "26.1.x",
-    "last_commit": "[fba31e38bde216499c4dc160e61e17fdd4dee61b] Generate and populate the json for drink_containing tags (#3044)",
+    "last_commit": "[576cd590fa22b307c7f0621cf60130709cd511e3] Add optional neoforge:seed_override field to dimension codec (#2977)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
