@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260331011848",
+    "lastupdated": "20260401012601",
     "version": "26.1.x",
-    "last_commit": "[576cd590fa22b307c7f0621cf60130709cd511e3] Add optional neoforge:seed_override field to dimension codec (#2977)",
+    "last_commit": "[f9f86ee335a985e6574c1230cfc358f272190687] Add target level to EntityTeleportEvent (#2942)\n\nThis PR adds `EntityTeleportEvent#getTargetLevel()`, which allows consumers of the teleport event(s) to determine where the target(s) are being sent to.\n\nCloses #1526",
     "data": {
         "net.neoforged.neoforge.event": [
             {
