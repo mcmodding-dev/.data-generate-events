@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260321010435",
+    "lastupdated": "20260402011555",
     "version": "1.20.1",
-    "last_commit": "[723799cdb8eaec7928d978ccc9802f42438a0a7a] Fix HandshakeHandler potentially skipping last packet (#10787)",
+    "last_commit": "[1b26f0c967632a94fe2d2f06f2cf0fd06d4247b0] [no ci] Bump ForgeGradle, disable clean project. Closes #10802",
     "data": {
         "net.minecraftforge.event": [
             {
