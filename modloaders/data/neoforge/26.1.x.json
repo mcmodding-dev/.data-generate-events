@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260402011708",
+    "lastupdated": "20260404011313",
     "version": "26.1.x",
-    "last_commit": "[11b0a67cc80bf3a1bb25852ed2fa445c05d96645] Add ModelDebugName argument to UnbakedStandaloneModel#bake (#3040)",
+    "last_commit": "[0d357044b197baa582f02a2fb5806713761d61d0] [26.1] Fix crash when freezing after applying registry sync with entries unknown to the client (#3049)",
     "data": {
         "net.neoforged.neoforge.event": [
             {

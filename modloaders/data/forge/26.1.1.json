@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260402011629",
+    "lastupdated": "20260404011230",
     "version": "26.1.1",
-    "last_commit": "[5ab792f1d7d9a02ef750d83d20f9e0b915c2c576] 26.1.1",
+    "last_commit": "[5f37e8af53d9483fa372f6aee9c8a9c7d23c525c] Work around 3rd party launchers who build incorrect classpaths Closes #10797",
     "data": {
         "net.minecraftforge.event": [
             {
