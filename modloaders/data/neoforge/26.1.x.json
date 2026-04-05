@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260404011313",
+    "lastupdated": "20260405012152",
     "version": "26.1.x",
-    "last_commit": "[0d357044b197baa582f02a2fb5806713761d61d0] [26.1] Fix crash when freezing after applying registry sync with entries unknown to the client (#3049)",
+    "last_commit": "[a2a27d1b2bab372e249c0f89b47297de6f7b5f96] Create Dynamic Armor Trim System (#3038)\n\nFixed the need to add armor trim palettes and patterns to the `armor_trims.json` atlas, as its now done automatically. This will fix modded trims and palettes not properly working with each other.\n\nAdded a new item model that dynamically renders armor trims on items. Helper methods have been added to vanilla's item model datagen to allow for easy model registration. This removes the need to use vanilla's `TrimMaterialProperty` in the item json and will allow all registered armor trim palettes to work with your item.",
     "data": {
         "net.neoforged.neoforge.event": [
             {
@@ -79,6 +79,10 @@
             {
                 "event": "ModifyDefaultComponentsEvent",
                 "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/ModifyDefaultComponentsEvent.java"
+            },
+            {
+                "event": "ModifyRecipeJsonsEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/ModifyRecipeJsonsEvent.java"
             },
             {
                 "event": "OnDatapackSyncEvent",

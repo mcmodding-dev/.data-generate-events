@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260328011140",
+    "lastupdated": "20260405012121",
     "version": "1.21.1",
-    "last_commit": "[ec6995d36e81c859c7e936e991e11d4f115daa49] Backport to 1.21.1: Backport #3035 - Fix visual item cloning bug (#3037)\n\nCo-authored-by: ApexModder <29412632+ApexModder@users.noreply.github.com>",
+    "last_commit": "[3a04654c1a49b1e6badae623c98018d80e470ae8] Backport to 1.21.1: Fix crash when freezing after applying registry sync with entries unknown to the client (#3066)\n\nCo-authored-by: XFactHD <11262040+XFactHD@users.noreply.github.com>",
     "data": {
         "net.neoforged.neoforge.event": [
             {
