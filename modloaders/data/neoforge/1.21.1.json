@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260405012121",
+    "lastupdated": "20260406012107",
     "version": "1.21.1",
-    "last_commit": "[3a04654c1a49b1e6badae623c98018d80e470ae8] Backport to 1.21.1: Fix crash when freezing after applying registry sync with entries unknown to the client (#3066)\n\nCo-authored-by: XFactHD <11262040+XFactHD@users.noreply.github.com>",
+    "last_commit": "[8af2d3d66eea3d85346179a862d1a7ff2422140e] Backport vanilla tag as `c:loom_patterns` (#3052)",
     "data": {
         "net.neoforged.neoforge.event": [
             {

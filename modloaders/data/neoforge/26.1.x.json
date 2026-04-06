@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260405012152",
+    "lastupdated": "20260406012125",
     "version": "26.1.x",
-    "last_commit": "[a2a27d1b2bab372e249c0f89b47297de6f7b5f96] Create Dynamic Armor Trim System (#3038)\n\nFixed the need to add armor trim palettes and patterns to the `armor_trims.json` atlas, as its now done automatically. This will fix modded trims and palettes not properly working with each other.\n\nAdded a new item model that dynamically renders armor trims on items. Helper methods have been added to vanilla's item model datagen to allow for easy model registration. This removes the need to use vanilla's `TrimMaterialProperty` in the item json and will allow all registered armor trim palettes to work with your item.",
+    "last_commit": "[964afb69ac04256976acbc4f4a83aa8a859d4d89] [ci skip] New Crowdin updates (#3050)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
@@ -99,6 +99,18 @@
             {
                 "event": "PlayLevelSoundEvent.AtPosition",
                 "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/PlayLevelSoundEvent.java"
+            },
+            {
+                "event": "RegisterCauldronInteractionEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/RegisterCauldronInteractionEvent.java"
+            },
+            {
+                "event": "RegisterCauldronInteractionEvent.Dispatcher",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/RegisterCauldronInteractionEvent.java"
+            },
+            {
+                "event": "RegisterCauldronInteractionEvent.Interaction",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/RegisterCauldronInteractionEvent.java"
             },
             {
                 "event": "RegisterCommandsEvent",
