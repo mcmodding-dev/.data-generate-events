@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260406012125",
+    "lastupdated": "20260407011945",
     "version": "26.1.x",
-    "last_commit": "[964afb69ac04256976acbc4f4a83aa8a859d4d89] [ci skip] New Crowdin updates (#3050)",
+    "last_commit": "[b9c2429619e469e0f2f1e5079961bf96f7b78969] Ensure commands are synced when waiting on a GL fence to avoid a deadlock (#3069)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
