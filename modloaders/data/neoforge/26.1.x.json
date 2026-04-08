@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260407011945",
+    "lastupdated": "20260408012014",
     "version": "26.1.x",
-    "last_commit": "[b9c2429619e469e0f2f1e5079961bf96f7b78969] Ensure commands are synced when waiting on a GL fence to avoid a deadlock (#3069)",
+    "last_commit": "[f71adf1102e91da02ac9d0202d56be3c6a13a14a] [26.1] Allow world clocks to ignore paused states (#3057)\n\nCo-authored-by: XFactHD <11262040+XFactHD@users.noreply.github.com>",
     "data": {
         "net.neoforged.neoforge.event": [
             {
