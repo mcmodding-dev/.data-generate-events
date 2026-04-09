@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260408012014",
+    "lastupdated": "20260409011112",
     "version": "26.1.x",
-    "last_commit": "[f71adf1102e91da02ac9d0202d56be3c6a13a14a] [26.1] Allow world clocks to ignore paused states (#3057)\n\nCo-authored-by: XFactHD <11262040+XFactHD@users.noreply.github.com>",
+    "last_commit": "[4349ec4394d00afd7b5854562fac3c11ab678828] [26.1] Add optional player context to Item.TooltipContext (#3075)",
     "data": {
         "net.neoforged.neoforge.event": [
             {

@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260404011230",
+    "lastupdated": "20260409011038",
     "version": "26.1.1",
-    "last_commit": "[5f37e8af53d9483fa372f6aee9c8a9c7d23c525c] Work around 3rd party launchers who build incorrect classpaths Closes #10797",
+    "last_commit": "[5e421e8b8b081ae17cd7efc6b700ec85fd920196] Add `c:tools/trident` item tag, update contents of `c:tools/melee_weapon`, remove `c:tools/spear` (#10808)\n\n- Breaking change: `c:tools/spear` has been renamed to `c:tools/trident` to match other loaders\n- The contents of the `c:tools/melee_weapon` tag now includes spears",
     "data": {
         "net.minecraftforge.event": [
             {
