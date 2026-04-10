@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260408011933",
+    "lastupdated": "20260410012010",
     "version": "26.2",
-    "last_commit": "[b62d7f3699455666e55d53f8a5ed3360181721d3] Fix broken ModelManager mixin.",
+    "last_commit": "[8bb5cfb75ae6c9bd9a80f597956fa6765273b942] 26.2-snapshot-2",
     "data": {
         "fabric-creative-tab-api-v1": [
             {

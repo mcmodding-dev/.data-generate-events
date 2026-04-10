@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260409011112",
+    "lastupdated": "20260410012105",
     "version": "26.1.x",
-    "last_commit": "[4349ec4394d00afd7b5854562fac3c11ab678828] [26.1] Add optional player context to Item.TooltipContext (#3075)",
+    "last_commit": "[70585c7e7c4b1edf8e37a0dcacd2aaba510bcbc0] [26.1] Allow arbitrary categories for the recipe advancement builder (#3072)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
