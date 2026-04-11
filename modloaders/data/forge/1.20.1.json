@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260402011555",
+    "lastupdated": "20260411011554",
     "version": "1.20.1",
-    "last_commit": "[1b26f0c967632a94fe2d2f06f2cf0fd06d4247b0] [no ci] Bump ForgeGradle, disable clean project. Closes #10802",
+    "last_commit": "[9130c27d0583c6bf9227ebe5d70e611a8ed212f5] Add support for multiple access transformer configs. Backport (#10760) (#10786)",
     "data": {
         "net.minecraftforge.event": [
             {
