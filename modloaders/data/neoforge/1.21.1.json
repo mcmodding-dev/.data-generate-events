@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260406012107",
+    "lastupdated": "20260412012455",
     "version": "1.21.1",
-    "last_commit": "[8af2d3d66eea3d85346179a862d1a7ff2422140e] Backport vanilla tag as `c:loom_patterns` (#3052)",
+    "last_commit": "[0a75c666178fd111f4b6a84065596af32e6199a0] Skip invisible children in item_render_order of composite model (#3087)",
     "data": {
         "net.neoforged.neoforge.event": [
             {

@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260411011639",
+    "lastupdated": "20260412012511",
     "version": "26.1.x",
-    "last_commit": "[9ea7a0df5ecc9a43205b00a1374eae4f6694dd73] Remove AbstractContainerScreen#slotColor and rename getters (#3082)",
+    "last_commit": "[82a051279c4cbc2701701754fc5ce912dbb0d829] Clear memoized biome generation settings in FlatLevelSource (#3086)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
