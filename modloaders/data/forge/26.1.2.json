@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260410012042",
+    "lastupdated": "20260413012648",
     "version": "26.1.2",
-    "last_commit": "[77cb0c5c4e9f26bd9cd1104a0981c64a0779c71a] 26.1.2",
+    "last_commit": "[7846d25606704157da89750d294f580ae248466a] Copy fluid and lava still textures to Item atlas for DynamicFluidContainerModel. Fixes #10809",
     "data": {
         "net.minecraftforge.event": [
             {
