@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260410012010",
+    "lastupdated": "20260415012106",
     "version": "26.2",
-    "last_commit": "[8bb5cfb75ae6c9bd9a80f597956fa6765273b942] 26.2-snapshot-2",
+    "last_commit": "[06488ac1f1519e5fd1a4709724869609c211bb75] 26.2-snapshot-3 (#5317)\n\n* Start on 26.2-snapshot-3\n\n* Port conventional tag datagen (#5318)\n\n* Fix some nitpicks with datagen (#5319)\n\n* Fix some nitpicks\n\n* whoops\n\n* Datagen content block ids\n\n* LevelRenderer et al Mixin fixes\n\n* More datagen fixes (#5320)\n\n* Fix datagen classtweaker and test\n\n* fix checkstyle\n\n* spotless and javadoc fixes (#5321)\n\n* Game launches (#5322)\n\n* Remove FabricIntrinsicHolderTagsProvider\n\n* Fixed item api testmod (#5323)\n\n* Build fixes\n\n* Create LevelExtractionEvents\n\n* Fix gametests\n\n* Dont fail fast\n\n* Fix Vulkan client tests\n\n* Bump version\n\n---------\n\nCo-authored-by: Cassian Godsted <cassian@godsted.com>\nCo-authored-by: Shnupbups <shnupbups@gmail.com>",
     "data": {
         "fabric-creative-tab-api-v1": [
             {
@@ -1227,20 +1227,20 @@
                 "url": "https://github.com/FabricMC/fabric/blob/26.2/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/LivingEntityFeatureRenderEvents.java"
             },
             {
-                "file": "LevelRenderEvents.java",
+                "file": "LevelExtractionEvents.java",
                 "package": "net.fabricmc.fabric.api.client.rendering.v1.level",
                 "interface": "AfterBlockOutlineExtraction",
                 "variable": "AFTER_BLOCK_OUTLINE_EXTRACTION",
                 "function": "void afterBlockOutlineExtraction(LevelExtractionContext context, @Nullable HitResult result);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.2/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java"
+                "url": "https://github.com/FabricMC/fabric/blob/26.2/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelExtractionEvents.java"
             },
             {
-                "file": "LevelRenderEvents.java",
+                "file": "LevelExtractionEvents.java",
                 "package": "net.fabricmc.fabric.api.client.rendering.v1.level",
                 "interface": "EndExtraction",
                 "variable": "END_EXTRACTION",
                 "function": "void endExtraction(LevelExtractionContext context);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.2/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java"
+                "url": "https://github.com/FabricMC/fabric/blob/26.2/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelExtractionEvents.java"
             },
             {
                 "file": "LevelRenderEvents.java",
