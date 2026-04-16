@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260415012142",
+    "lastupdated": "20260416012816",
     "version": "26.1.x",
-    "last_commit": "[c17c446c6a38c5e4a5e597a6b88701f7b65d5148] [26.1] Remove broken PoseStack from AddSectionGeometryEvent.SectionRenderingContext (#3090)",
+    "last_commit": "[7793d4adf00020db0dcc9444f8b6cfe26adba5d2] Fix itemStack in RenderTooltipEvent.Texture always returning minecraft:air (#3091)",
     "data": {
         "net.neoforged.neoforge.event": [
             {

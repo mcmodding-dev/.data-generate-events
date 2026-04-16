@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260415012104",
+    "lastupdated": "20260416012653",
     "version": "26.1.2",
-    "last_commit": "[1143df547515c850e1f38d5a903888cf1d2f3aa6] revert: yaml shenanigans (#5324)",
+    "last_commit": "[16245c4fcb50ad4b009124bbdefb8174a046d0dd] fix: crowdin.yaml wildcard (#5333)",
     "data": {
         "fabric-creative-tab-api-v1": [
             {

@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260415012106",
+    "lastupdated": "20260416012654",
     "version": "26.2",
-    "last_commit": "[06488ac1f1519e5fd1a4709724869609c211bb75] 26.2-snapshot-3 (#5317)\n\n* Start on 26.2-snapshot-3\n\n* Port conventional tag datagen (#5318)\n\n* Fix some nitpicks with datagen (#5319)\n\n* Fix some nitpicks\n\n* whoops\n\n* Datagen content block ids\n\n* LevelRenderer et al Mixin fixes\n\n* More datagen fixes (#5320)\n\n* Fix datagen classtweaker and test\n\n* fix checkstyle\n\n* spotless and javadoc fixes (#5321)\n\n* Game launches (#5322)\n\n* Remove FabricIntrinsicHolderTagsProvider\n\n* Fixed item api testmod (#5323)\n\n* Build fixes\n\n* Create LevelExtractionEvents\n\n* Fix gametests\n\n* Dont fail fast\n\n* Fix Vulkan client tests\n\n* Bump version\n\n---------\n\nCo-authored-by: Cassian Godsted <cassian@godsted.com>\nCo-authored-by: Shnupbups <shnupbups@gmail.com>",
+    "last_commit": "[7db5c5e3f84dc198c04bea9c7130f235602f7b36] Bump version",
     "data": {
         "fabric-creative-tab-api-v1": [
             {
