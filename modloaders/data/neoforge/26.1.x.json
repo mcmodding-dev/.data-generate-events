@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260416012816",
+    "lastupdated": "20260418011821",
     "version": "26.1.x",
-    "last_commit": "[7793d4adf00020db0dcc9444f8b6cfe26adba5d2] Fix itemStack in RenderTooltipEvent.Texture always returning minecraft:air (#3091)",
+    "last_commit": "[fb0e4fe4e9251a6191ac52ba3730d1c4bbbcba44] Update FML to v11.0.12 and Mixin to v0.17.1 (#3098)\n\nMixin now has enum extensions",
     "data": {
         "net.neoforged.neoforge.event": [
             {
