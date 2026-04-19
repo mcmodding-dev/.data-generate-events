@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260418011821",
+    "lastupdated": "20260419012845",
     "version": "26.1.x",
-    "last_commit": "[fb0e4fe4e9251a6191ac52ba3730d1c4bbbcba44] Update FML to v11.0.12 and Mixin to v0.17.1 (#3098)\n\nMixin now has enum extensions",
+    "last_commit": "[4bb8c738bc53b437ae88025d5246f1dadb574ef6] Fix chunk type cache being cleared too early during save (#3105)",
     "data": {
         "net.neoforged.neoforge.event": [
             {

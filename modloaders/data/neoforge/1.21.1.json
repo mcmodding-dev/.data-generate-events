@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260412012455",
+    "lastupdated": "20260419012813",
     "version": "1.21.1",
-    "last_commit": "[0a75c666178fd111f4b6a84065596af32e6199a0] Skip invisible children in item_render_order of composite model (#3087)",
+    "last_commit": "[9e9b258ff472977d176ad98a0bf5717d7d7ad3b0] [1.21.1] Fix chunk type cache being cleared too early during save (#3107)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
