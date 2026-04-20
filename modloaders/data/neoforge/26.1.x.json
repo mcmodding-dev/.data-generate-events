@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260419012845",
+    "lastupdated": "20260420012754",
     "version": "26.1.x",
-    "last_commit": "[4bb8c738bc53b437ae88025d5246f1dadb574ef6] Fix chunk type cache being cleared too early during save (#3105)",
+    "last_commit": "[81b17c5464dafeafaad20810b5ec5e06e57d1c99] Replace the GLM master list with a priority system (#3061)\n\nThis MR removes the old `global_loot_modifiers.json` system which was used to dictate GLM execution order, and replaces it with a `priority` field on GLM data files. GLMs with a higher priority will be executed before those with a lower priority. The default priority is 1000. This allows anyone to decide, out of context, when their GLMs need to run, instead of needing to know the names of all GLMs in the environment first.\n\nThis is a breaking change for mods that provide new GLM types, as it changes the constructor signature of `LootModifier`.",
     "data": {
         "net.neoforged.neoforge.event": [
             {
