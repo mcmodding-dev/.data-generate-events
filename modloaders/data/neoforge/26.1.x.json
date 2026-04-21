@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260420012754",
+    "lastupdated": "20260421012453",
     "version": "26.1.x",
-    "last_commit": "[81b17c5464dafeafaad20810b5ec5e06e57d1c99] Replace the GLM master list with a priority system (#3061)\n\nThis MR removes the old `global_loot_modifiers.json` system which was used to dictate GLM execution order, and replaces it with a `priority` field on GLM data files. GLMs with a higher priority will be executed before those with a lower priority. The default priority is 1000. This allows anyone to decide, out of context, when their GLMs need to run, instead of needing to know the names of all GLMs in the environment first.\n\nThis is a breaking change for mods that provide new GLM types, as it changes the constructor signature of `LootModifier`.",
+    "last_commit": "[958a6c4a0540cc1c8ad0d8c6aa25e8906bfdd8bd] Fix TagEmptyCondition working for loaded-but-empty tags (#3114)\n\nThis PR adds back `ICondition$IContext#getTag` and uses it in `TagEmptyCondition` to evaluate if a pending tag's contents are empty, instead of relying on `IContext#isTagLoaded`. This fixes `TagEmptyCondition` not working for loaded-but-empty tags.",
     "data": {
         "net.neoforged.neoforge.event": [
             {
@@ -749,10 +749,6 @@
                 "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/BlockEvent.java"
             },
             {
-                "event": "BlockEvent.BreakEvent",
-                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/BlockEvent.java"
-            },
-            {
                 "event": "BlockEvent.EntityPlaceEvent",
                 "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/BlockEvent.java"
             },
@@ -898,6 +894,10 @@
             }
         ],
         "net.neoforged.neoforge.event.level.block": [
+            {
+                "event": "BreakBlockEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/block/BreakBlockEvent.java"
+            },
             {
                 "event": "CreateFluidSourceEvent",
                 "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/block/CreateFluidSourceEvent.java"
