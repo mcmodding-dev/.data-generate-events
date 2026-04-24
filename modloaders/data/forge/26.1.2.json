@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260416012740",
+    "lastupdated": "20260424012738",
     "version": "26.1.2",
-    "last_commit": "[478d8b3f181220c9be6911311ed2177d07febc08] Add `c:bars/copper` and `c:bars/iron` tags (#10810)",
+    "last_commit": "[3bbdbacb811023db8577c62f92cfe64f1290ddf1] Fix being considered in water when not. Closes #10813",
     "data": {
         "net.minecraftforge.event": [
             {

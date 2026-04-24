@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260421012453",
+    "lastupdated": "20260424012822",
     "version": "26.1.x",
-    "last_commit": "[958a6c4a0540cc1c8ad0d8c6aa25e8906bfdd8bd] Fix TagEmptyCondition working for loaded-but-empty tags (#3114)\n\nThis PR adds back `ICondition$IContext#getTag` and uses it in `TagEmptyCondition` to evaluate if a pending tag's contents are empty, instead of relying on `IContext#isTagLoaded`. This fixes `TagEmptyCondition` not working for loaded-but-empty tags.",
+    "last_commit": "[82752b1d03ddda032cfb9420ce462dbfba7c32d6] Remove unimplemented hooks in IBaseRailBlockExtension (#3084)\n\nThis removes `IBaseRailBlockExtension#getRailMaxSpeed` and `IBaseRailBlockExtension#onMinecartPass`, as re-implementing them effectively requires redesigning them.",
     "data": {
         "net.neoforged.neoforge.event": [
             {

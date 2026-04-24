@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260419012813",
+    "lastupdated": "20260424012759",
     "version": "1.21.1",
-    "last_commit": "[9e9b258ff472977d176ad98a0bf5717d7d7ad3b0] [1.21.1] Fix chunk type cache being cleared too early during save (#3107)",
+    "last_commit": "[751c990308cb2002327d4dd473d029d47dd90528] [1.21.1] Add a data map to replace `AxeItem#STRIPPABLES` (#2941)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
