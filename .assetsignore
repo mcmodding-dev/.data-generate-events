@@ -6,4 +6,5 @@ __pycache__
 *.py
 requirements.txt
 README.md
+LICENSE.md
 badges/templates
