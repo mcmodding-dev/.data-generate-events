@@ -1,0 +1,1289 @@
+{
+    "lastupdated": "20260425193423",
+    "version": "1.18.2",
+    "last_commit": "[db2d6da33365f95d834be1f140916b069772264d] Bump version",
+    "data": {
+        "fabric-command-api-v1": [
+            {
+                "file": "CommandRegistrationCallback.java",
+                "package": "net.fabricmc.fabric.api.command.v1",
+                "interface": "CommandRegistrationCallback",
+                "variable": "EVENT",
+                "function": "void register(CommandDispatcher<ServerCommandSource> dispatcher, boolean dedicated);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-command-api-v1/src/main/java/net/fabricmc/fabric/api/command/v1/CommandRegistrationCallback.java#L39",
+                "description": "Callback for when a server registers all commands. To register some commands, you would register an event listener and implement the callback.\n```\nCommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {\n    // For example, this command is only registered on an integrated server\n    if (!dedicated) dispatcher.register(CommandManager.literal(\"integrated_command\").executes(context -> {...}));\n})};\n```",
+                "side": null,
+                "deprecated": false
+            }
+        ],
+        "fabric-entity-events-v1": [
+            {
+                "file": "EntityElytraEvents.java",
+                "package": "net.fabricmc.fabric.api.entity.event.v1",
+                "interface": "Allow",
+                "variable": "ALLOW",
+                "function": "boolean allowElytraFlight(LivingEntity entity);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/EntityElytraEvents.java#L34",
+                "description": "An event to check if elytra flight (both through normal and custom elytras) is allowed. All listeners need to return true to allow the entity to fly, otherwise elytra flight will be blocked/stopped",
+                "side": null,
+                "deprecated": false
+            },
+            {
+                "file": "EntityElytraEvents.java",
+                "package": "net.fabricmc.fabric.api.entity.event.v1",
+                "interface": "Custom",
+                "variable": "CUSTOM",
+                "function": "boolean useCustomElytra(LivingEntity entity, boolean tickElytra);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/EntityElytraEvents.java#L50",
+                "description": "An event to grant elytra flight to living entities when some condition is met. Will be called when players try to start elytra flight by pressing space in mid-air, and every tick for all flying living entities to check if elytra flight is still allowed. Items that wish to enable custom elytra flight when worn in the chest equipment slot can simply implement FabricElytraItem instead of registering a listener",
+                "side": null,
+                "deprecated": false
+            },
+            {
+                "file": "EntitySleepEvents.java",
+                "package": "net.fabricmc.fabric.api.entity.event.v1",
+                "interface": "AllowSleeping",
+                "variable": "ALLOW_SLEEPING",
+                "function": "PlayerEntity.SleepFailureReason allowSleep(PlayerEntity player, BlockPos sleepingPos);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/EntitySleepEvents.java#L66",
+                "description": "An event that checks whether a player can start to sleep in a bed-like block. This event only applies to sleeping using trySleep(BlockPos). Note: Please use the more detailed events ALLOW_SLEEP_TIME and ALLOW_NEARBY_MONSTERS if they match your use case! This helps with mod compatibility. If this event returns a SleepFailureReason, it is used as the return value of trySleep(BlockPos) and sleeping fails. A null return value means that the player will start sleeping. When this event is called, all vanilla sleeping checks have already succeeded, i.e. this event is used in addition to vanilla checks. The more detailed events ALLOW_SLEEP_TIME and ALLOW_NEARBY_MONSTERS are also checked before this event",
+                "side": null,
+                "deprecated": false
+            },
+            {
+                "file": "EntitySleepEvents.java",
+                "package": "net.fabricmc.fabric.api.entity.event.v1",
+                "interface": "StartSleeping",
+                "variable": "START_SLEEPING",
+                "function": "void onStartSleeping(LivingEntity entity, BlockPos sleepingPos);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/EntitySleepEvents.java#L81",
+                "description": "Checks whether a player can start sleeping in a bed-like block",
+                "side": null,
+                "deprecated": false
+            },
+            {
+                "file": "EntitySleepEvents.java",
+                "package": "net.fabricmc.fabric.api.entity.event.v1",
+                "interface": "StopSleeping",
+                "variable": "STOP_SLEEPING",
+                "function": "void onStopSleeping(LivingEntity entity, BlockPos sleepingPos);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/EntitySleepEvents.java#L90",
+                "description": "Called when an entity starts to sleep",
+                "side": null,
+                "deprecated": false
+            },
+            {
+                "file": "EntitySleepEvents.java",
+                "package": "net.fabricmc.fabric.api.entity.event.v1",
+                "interface": "AllowBed",
+                "variable": "ALLOW_BED",
+                "function": "ActionResult allowBed(LivingEntity entity, BlockPos sleepingPos, BlockState state, boolean vanillaResult);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/EntitySleepEvents.java#L108",
+                "description": "Called when an entity stops sleeping and wakes up",
+                "side": null,
+                "deprecated": false
+            },
+            {
+                "file": "EntitySleepEvents.java",
+                "package": "net.fabricmc.fabric.api.entity.event.v1",
+                "interface": "AllowSleepTime",
+                "variable": "ALLOW_SLEEP_TIME",
+                "function": "ActionResult allowSleepTime(PlayerEntity player, BlockPos sleepingPos, boolean vanillaResult);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/EntitySleepEvents.java#L126",
+                "description": "Checks whether a block is a valid bed for the entity. Non-PASS passing return values cancel further callbacks",
+                "side": null,
+                "deprecated": false
+            },
+            {
+                "file": "EntitySleepEvents.java",
+                "package": "net.fabricmc.fabric.api.entity.event.v1",
+                "interface": "AllowNearbyMonsters",
+                "variable": "ALLOW_NEARBY_MONSTERS",
+                "function": "ActionResult allowNearbyMonsters(PlayerEntity player, BlockPos sleepingPos, boolean vanillaResult);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/EntitySleepEvents.java#L143",
+                "description": "Checks whether the current time of day is valid for sleeping. Non-PASS passing return values cancel further callbacks",
+                "side": null,
+                "deprecated": false
+            },
+            {
+                "file": "EntitySleepEvents.java",
+                "package": "net.fabricmc.fabric.api.entity.event.v1",
+                "interface": "AllowResettingTime",
+                "variable": "ALLOW_RESETTING_TIME",
+                "function": "boolean allowResettingTime(PlayerEntity player);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/EntitySleepEvents.java#L161",
+                "description": "Checks whether a player can sleep when monsters are nearby. Non-PASS passing return values cancel further callbacks",
+                "side": null,
+                "deprecated": false
+            },
+            {
+                "file": "EntitySleepEvents.java",
+                "package": "net.fabricmc.fabric.api.entity.event.v1",
+                "interface": "ModifySleepingDirection",
+                "variable": "MODIFY_SLEEPING_DIRECTION",
+                "function": "Direction modifySleepDirection(LivingEntity entity, BlockPos sleepingPos, @Nullable Direction sleepingDirection);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/EntitySleepEvents.java#L178",
+                "description": "Checks whether a sleeping player counts into skipping the current day and resetting the time to 0",
+                "side": null,
+                "deprecated": false
+            },
+            {
+                "file": "EntitySleepEvents.java",
+                "package": "net.fabricmc.fabric.api.entity.event.v1",
+                "interface": "AllowSettingSpawn",
+                "variable": "ALLOW_SETTING_SPAWN",
+                "function": "boolean allowSettingSpawn(PlayerEntity player, BlockPos sleepingPos);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/EntitySleepEvents.java#L191",
+                "description": "Modifies or provides a sleeping direction for a block. The sleeping direction is where a player's head is pointing when they're sleeping",
+                "side": null,
+                "deprecated": false
+            },
+            {
+                "file": "EntitySleepEvents.java",
+                "package": "net.fabricmc.fabric.api.entity.event.v1",
+                "interface": "SetBedOccupationState",
+                "variable": "SET_BED_OCCUPATION_STATE",
+                "function": "boolean setBedOccupationState(LivingEntity entity, BlockPos sleepingPos, BlockState bedState, boolean occupied);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/EntitySleepEvents.java#L207",
+                "description": "Checks whether a player's spawn can be set when sleeping",
+                "side": null,
+                "deprecated": false
+            },
+            {
+                "file": "EntitySleepEvents.java",
+                "package": "net.fabricmc.fabric.api.entity.event.v1",
+                "interface": "ModifyWakeUpPosition",
+                "variable": "MODIFY_WAKE_UP_POSITION",
+                "function": "Vec3d modifyWakeUpPosition(LivingEntity entity, BlockPos sleepingPos, BlockState bedState, @Nullable Vec3d wakeUpPos);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/EntitySleepEvents.java#L224",
+                "description": "Sets the occupation state of a bed block",
+                "side": null,
+                "deprecated": false
+            },
+            {
+                "file": "ServerEntityCombatEvents.java",
+                "package": "net.fabricmc.fabric.api.entity.event.v1",
+                "interface": "AfterKilledOtherEntity",
+                "variable": "AFTER_KILLED_OTHER_ENTITY",
+                "function": "void afterKilledOtherEntity(ServerWorld world, Entity entity, LivingEntity killedEntity);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/ServerEntityCombatEvents.java#L35",
+                "description": "An event that is called after an entity is directly responsible for killing another entity",
+                "side": "server",
+                "deprecated": false
+            },
+            {
+                "file": "ServerEntityWorldChangeEvents.java",
+                "package": "net.fabricmc.fabric.api.entity.event.v1",
+                "interface": "AfterEntityChange",
+                "variable": "AFTER_ENTITY_CHANGE_WORLD",
+                "function": "void afterChangeWorld(Entity originalEntity, Entity newEntity, ServerWorld origin, ServerWorld destination);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/ServerEntityWorldChangeEvents.java#L42",
+                "description": "An event which is called after an entity has been moved to a different world. All entities are copied to the destination and the old entity removed. This event does not apply to the ServerPlayerEntity since players are physically moved to the new world instead of being copied over. A mod may use this event for reference cleanup if it is tracking an entity's current world",
+                "side": "server",
+                "deprecated": false
+            },
+            {
+                "file": "ServerEntityWorldChangeEvents.java",
+                "package": "net.fabricmc.fabric.api.entity.event.v1",
+                "interface": "AfterPlayerChange",
+                "variable": "AFTER_PLAYER_CHANGE_WORLD",
+                "function": "void afterChangeWorld(ServerPlayerEntity player, ServerWorld origin, ServerWorld destination);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/ServerEntityWorldChangeEvents.java#L56",
+                "description": "Called after an entity has been recreated at the destination when being moved to a different world. Note this event is not called if the entity is a ServerPlayerEntity. AfterPlayerChange should be used to track when a player has changed worlds",
+                "side": "server",
+                "deprecated": false
+            },
+            {
+                "file": "ServerPlayerEvents.java",
+                "package": "net.fabricmc.fabric.api.entity.event.v1",
+                "interface": "CopyFrom",
+                "variable": "COPY_FROM",
+                "function": "void copyFromPlayer(ServerPlayerEntity oldPlayer, ServerPlayerEntity newPlayer, boolean alive);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/ServerPlayerEvents.java#L33",
+                "description": "An event that is called when the data from an old player is copied to a new player. This event is typically called before a player is completely respawned. Mods may use this event to copy old player data to a new player",
+                "side": "server",
+                "deprecated": false
+            },
+            {
+                "file": "ServerPlayerEvents.java",
+                "package": "net.fabricmc.fabric.api.entity.event.v1",
+                "interface": "AfterRespawn",
+                "variable": "AFTER_RESPAWN",
+                "function": "void afterRespawn(ServerPlayerEntity oldPlayer, ServerPlayerEntity newPlayer, boolean alive);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/ServerPlayerEvents.java#L44",
+                "description": "Called when player data is copied to a new player",
+                "side": "server",
+                "deprecated": false
+            },
+            {
+                "file": "ServerPlayerEvents.java",
+                "package": "net.fabricmc.fabric.api.entity.event.v1",
+                "interface": "AllowDeath",
+                "variable": "ALLOW_DEATH",
+                "function": "boolean allowDeath(ServerPlayerEntity player, DamageSource damageSource, float damageAmount);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/ServerPlayerEvents.java#L65",
+                "description": "Called after player a has been respawned",
+                "side": "server",
+                "deprecated": false
+            }
+        ],
+        "fabric-events-interaction-v0": [
+            {
+                "file": "ClientPickBlockApplyCallback.java",
+                "package": "net.fabricmc.fabric.api.event.client.player",
+                "interface": "ClientPickBlockApplyCallback",
+                "variable": "EVENT",
+                "function": "ItemStack pick(PlayerEntity player, HitResult result, ItemStack stack);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-events-interaction-v0/src/main/java/net/fabricmc/fabric/api/event/client/player/ClientPickBlockApplyCallback.java#L32",
+                "description": "This event is emitted during the block-picking process. It can be used to modify the returned ItemStack, as well as nullify it - returning an empty ItemStack will cause the event to leave, and no block to be picked",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "ClientPickBlockGatherCallback.java",
+                "package": "net.fabricmc.fabric.api.event.client.player",
+                "interface": "ClientPickBlockGatherCallback",
+                "variable": "EVENT",
+                "function": "ItemStack pick(PlayerEntity player, HitResult result);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-events-interaction-v0/src/main/java/net/fabricmc/fabric/api/event/client/player/ClientPickBlockGatherCallback.java#L32",
+                "description": "This event is emitted at the beginning of the block picking process in order to find any applicable ItemStack. The first non-empty ItemStack will be returned, overriding vanilla behaviour",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "AttackBlockCallback.java",
+                "package": "net.fabricmc.fabric.api.event.player",
+                "interface": "AttackBlockCallback",
+                "variable": "EVENT",
+                "function": "ActionResult interact(PlayerEntity player, World world, Hand hand, BlockPos pos, Direction direction);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-events-interaction-v0/src/main/java/net/fabricmc/fabric/api/event/player/AttackBlockCallback.java#L41",
+                "description": "Callback for left-clicking (\"attacking\") a block. Is hooked in before the spectator check, so make sure to check for the player's game mode as well! Upon return: SUCCESS cancels further processing and, on the client, sends a packet to the server. PASS falls back to further processing. FAIL cancels further processing and does not send a packet to the server. ATTACK_BLOCK does not let you control the packet sending process yet",
+                "side": null,
+                "deprecated": false
+            },
+            {
+                "file": "AttackEntityCallback.java",
+                "package": "net.fabricmc.fabric.api.event.player",
+                "interface": "AttackEntityCallback",
+                "variable": "EVENT",
+                "function": "ActionResult interact(PlayerEntity player, World world, Hand hand, Entity entity, @Nullable EntityHitResult hitResult);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-events-interaction-v0/src/main/java/net/fabricmc/fabric/api/event/player/AttackEntityCallback.java#L41",
+                "description": "Callback for left-clicking (\"attacking\") an entity. Is hooked in before the spectator check, so make sure to check for the player's game mode as well! Upon return: SUCCESS cancels further processing and, on the client, sends a packet to the server. PASS falls back to further processing. FAIL cancels further processing and does not send a packet to the server",
+                "side": null,
+                "deprecated": false
+            },
+            {
+                "file": "UseBlockCallback.java",
+                "package": "net.fabricmc.fabric.api.event.player",
+                "interface": "UseBlockCallback",
+                "variable": "EVENT",
+                "function": "ActionResult interact(PlayerEntity player, World world, Hand hand, BlockHitResult hitResult);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-events-interaction-v0/src/main/java/net/fabricmc/fabric/api/event/player/UseBlockCallback.java#L38",
+                "description": "Callback for right-clicking (\"using\") a block. Is hooked in before the spectator check, so make sure to check for the player's game mode as well! Upon return: SUCCESS cancels further processing and, on the client, sends a packet to the server. PASS falls back to further processing. FAIL cancels further processing and does not send a packet to the server",
+                "side": null,
+                "deprecated": false
+            },
+            {
+                "file": "UseEntityCallback.java",
+                "package": "net.fabricmc.fabric.api.event.player",
+                "interface": "UseEntityCallback",
+                "variable": "EVENT",
+                "function": "ActionResult interact(PlayerEntity player, World world, Hand hand, Entity entity, @Nullable EntityHitResult hitResult);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-events-interaction-v0/src/main/java/net/fabricmc/fabric/api/event/player/UseEntityCallback.java#L41",
+                "description": "Callback for right-clicking (\"using\") an entity. Is hooked in before the spectator check, so make sure to check for the player's game mode as well! Upon return: SUCCESS cancels further processing and, on the client, sends a packet to the server. PASS falls back to further processing. FAIL cancels further processing and does not send a packet to the server",
+                "side": null,
+                "deprecated": false
+            },
+            {
+                "file": "UseItemCallback.java",
+                "package": "net.fabricmc.fabric.api.event.player",
+                "interface": "UseItemCallback",
+                "variable": "EVENT",
+                "function": "TypedActionResult<ItemStack> interact(PlayerEntity player, World world, Hand hand);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-events-interaction-v0/src/main/java/net/fabricmc/fabric/api/event/player/UseItemCallback.java#L39",
+                "description": "Callback for right-clicking (\"using\") an item. Is hooked in before the spectator check, so make sure to check for the player's game mode as well! Upon return: SUCCESS cancels further processing and, on the client, sends a packet to the server. PASS falls back to further processing. FAIL cancels further processing and does not send a packet to the server",
+                "side": null,
+                "deprecated": false
+            }
+        ],
+        "fabric-events-lifecycle-v0": [
+            {
+                "file": "ClientTickCallback.java",
+                "package": "net.fabricmc.fabric.api.event.client",
+                "interface": "ClientTickCallback",
+                "variable": "EVENT",
+                "function": "void tick(MinecraftClient client);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-events-lifecycle-v0/src/main/java/net/fabricmc/fabric/api/event/client/ClientTickCallback.java#L31",
+                "description": "Deprecated: Please use END_CLIENT_TICK.",
+                "side": "client",
+                "deprecated": true
+            },
+            {
+                "file": "ItemTooltipCallback.java",
+                "package": "net.fabricmc.fabric.api.event.client",
+                "interface": "ItemTooltipCallback",
+                "variable": "EVENT",
+                "function": "void getTooltip(ItemStack stack, TooltipContext tooltipContext, List<Text> lines);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-events-lifecycle-v0/src/main/java/net/fabricmc/fabric/api/event/client/ItemTooltipCallback.java#L37",
+                "description": "Deprecated: Please use ItemTooltipCallback",
+                "side": "client",
+                "deprecated": true
+            },
+            {
+                "file": "ServerStartCallback.java",
+                "package": "net.fabricmc.fabric.api.event.server",
+                "interface": "ServerStartCallback",
+                "variable": "EVENT",
+                "function": "void onStartServer(MinecraftServer server);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-events-lifecycle-v0/src/main/java/net/fabricmc/fabric/api/event/server/ServerStartCallback.java#L30",
+                "description": "Deprecated: Please use SERVER_STARTED",
+                "side": "server",
+                "deprecated": true
+            },
+            {
+                "file": "ServerStopCallback.java",
+                "package": "net.fabricmc.fabric.api.event.server",
+                "interface": "ServerStopCallback",
+                "variable": "EVENT",
+                "function": "void onStopServer(MinecraftServer server);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-events-lifecycle-v0/src/main/java/net/fabricmc/fabric/api/event/server/ServerStopCallback.java#L30",
+                "description": "Deprecated: Please use SERVER_STOPPING",
+                "side": "server",
+                "deprecated": true
+            },
+            {
+                "file": "ServerTickCallback.java",
+                "package": "net.fabricmc.fabric.api.event.server",
+                "interface": "ServerTickCallback",
+                "variable": "EVENT",
+                "function": "void tick(MinecraftServer server);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-events-lifecycle-v0/src/main/java/net/fabricmc/fabric/api/event/server/ServerTickCallback.java#L31",
+                "description": "Deprecated: Please use END_SERVER_TICK",
+                "side": "server",
+                "deprecated": true
+            },
+            {
+                "file": "WorldTickCallback.java",
+                "package": "net.fabricmc.fabric.api.event.world",
+                "interface": "WorldTickCallback",
+                "variable": "EVENT",
+                "function": "void tick(World world);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-events-lifecycle-v0/src/main/java/net/fabricmc/fabric/api/event/world/WorldTickCallback.java#L33",
+                "description": "Deprecated: The new WorldTickCallback has been split into a client and server callback.",
+                "side": null,
+                "deprecated": true
+            }
+        ],
+        "fabric-item-api-v1": [
+            {
+                "file": "ItemTooltipCallback.java",
+                "package": "net.fabricmc.fabric.api.client.item.v1",
+                "interface": "ItemTooltipCallback",
+                "variable": "EVENT",
+                "function": "void getTooltip(ItemStack stack, TooltipContext context, List<Text> lines);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-item-api-v1/src/main/java/net/fabricmc/fabric/api/client/item/v1/ItemTooltipCallback.java#L35",
+                "description": "Fired after the game has appended all base tooltip lines to the list",
+                "side": "client",
+                "deprecated": false
+            }
+        ],
+        "fabric-lifecycle-events-v1": [
+            {
+                "file": "ClientBlockEntityEvents.java",
+                "package": "net.fabricmc.fabric.api.client.event.lifecycle.v1",
+                "interface": "Load",
+                "variable": "BLOCK_ENTITY_LOAD",
+                "function": "void onLoad(BlockEntity blockEntity, ClientWorld world);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/client/event/lifecycle/v1/ClientBlockEntityEvents.java#L38",
+                "description": "Called when a BlockEntity is loaded into a ClientWorld. When this event is called, the block entity is already in the world",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "ClientBlockEntityEvents.java",
+                "package": "net.fabricmc.fabric.api.client.event.lifecycle.v1",
+                "interface": "Unload",
+                "variable": "BLOCK_ENTITY_UNLOAD",
+                "function": "void onUnload(BlockEntity blockEntity, ClientWorld world);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/client/event/lifecycle/v1/ClientBlockEntityEvents.java#L62",
+                "description": "Called when a BlockEntity is about to be unloaded from a ClientWorld. When this event is called, the block entity is still present on the world",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "ClientChunkEvents.java",
+                "package": "net.fabricmc.fabric.api.client.event.lifecycle.v1",
+                "interface": "Load",
+                "variable": "CHUNK_LOAD",
+                "function": "void onChunkLoad(ClientWorld world, WorldChunk chunk);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/client/event/lifecycle/v1/ClientChunkEvents.java#L38",
+                "description": "Called when a chunk is loaded into a ClientWorld. When this event is called, the chunk is already in the world",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "ClientChunkEvents.java",
+                "package": "net.fabricmc.fabric.api.client.event.lifecycle.v1",
+                "interface": "Unload",
+                "variable": "CHUNK_UNLOAD",
+                "function": "void onChunkUnload(ClientWorld world, WorldChunk chunk);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/client/event/lifecycle/v1/ClientChunkEvents.java#L62",
+                "description": "Called when a chunk is about to be unloaded from a ClientWorld. When this event is called, the chunk is still present in the world",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "ClientEntityEvents.java",
+                "package": "net.fabricmc.fabric.api.client.event.lifecycle.v1",
+                "interface": "Load",
+                "variable": "ENTITY_LOAD",
+                "function": "void onLoad(Entity entity, ClientWorld world);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/client/event/lifecycle/v1/ClientEntityEvents.java#L38",
+                "description": "Called when an Entity is loaded into a ClientWorld. When this event is called, the chunk is already in the world",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "ClientEntityEvents.java",
+                "package": "net.fabricmc.fabric.api.client.event.lifecycle.v1",
+                "interface": "Unload",
+                "variable": "ENTITY_UNLOAD",
+                "function": "void onUnload(Entity entity, ClientWorld world);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/client/event/lifecycle/v1/ClientEntityEvents.java#L62",
+                "description": "Called when an Entity is about to be unloaded from a ClientWorld. This event is called before the entity is unloaded from the world",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "ClientLifecycleEvents.java",
+                "package": "net.fabricmc.fabric.api.client.event.lifecycle.v1",
+                "interface": "ClientStarted",
+                "variable": "CLIENT_STARTED",
+                "function": "void onClientStarted(MinecraftClient client);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/client/event/lifecycle/v1/ClientLifecycleEvents.java#L36",
+                "description": "Called when Minecraft has started and it's client about to tick for the first time. This occurs while the splash screen is displayed",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "ClientLifecycleEvents.java",
+                "package": "net.fabricmc.fabric.api.client.event.lifecycle.v1",
+                "interface": "ClientStopping",
+                "variable": "CLIENT_STOPPING",
+                "function": "void onClientStopping(MinecraftClient client);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/client/event/lifecycle/v1/ClientLifecycleEvents.java#L48",
+                "description": "Called when Minecraft's client begins to stop. This is caused by quitting while in game, or closing the game window. This will be called before the integrated server is stopped if it is running",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "ClientTickEvents.java",
+                "package": "net.fabricmc.fabric.api.client.event.lifecycle.v1",
+                "interface": "StartTick",
+                "variable": "START_CLIENT_TICK",
+                "function": "void onStartTick(MinecraftClient client);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/client/event/lifecycle/v1/ClientTickEvents.java#L36",
+                "description": "Called at the start of the client tick",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "ClientTickEvents.java",
+                "package": "net.fabricmc.fabric.api.client.event.lifecycle.v1",
+                "interface": "EndTick",
+                "variable": "END_CLIENT_TICK",
+                "function": "void onEndTick(MinecraftClient client);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/client/event/lifecycle/v1/ClientTickEvents.java#L58",
+                "description": "Called at the end of the client tick",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "ClientTickEvents.java",
+                "package": "net.fabricmc.fabric.api.client.event.lifecycle.v1",
+                "interface": "StartWorldTick",
+                "variable": "START_WORLD_TICK",
+                "function": "void onStartTick(ClientWorld world);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/client/event/lifecycle/v1/ClientTickEvents.java#L80",
+                "description": "Called at the start of a ClientWorld's tick",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "ClientTickEvents.java",
+                "package": "net.fabricmc.fabric.api.client.event.lifecycle.v1",
+                "interface": "EndWorldTick",
+                "variable": "END_WORLD_TICK",
+                "function": "void onEndTick(ClientWorld world);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/client/event/lifecycle/v1/ClientTickEvents.java#L104",
+                "description": "Called at the end of a ClientWorld's tick. End of world tick may be used to start async computations for the next tick",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "CommonLifecycleEvents.java",
+                "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
+                "interface": "TagsLoaded",
+                "variable": "TAGS_LOADED",
+                "function": "void onTagsLoaded(DynamicRegistryManager registries, boolean client);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/CommonLifecycleEvents.java#L31",
+                "description": "Called when tags are loaded or updated",
+                "side": null,
+                "deprecated": false
+            },
+            {
+                "file": "ServerBlockEntityEvents.java",
+                "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
+                "interface": "Load",
+                "variable": "BLOCK_ENTITY_LOAD",
+                "function": "void onLoad(BlockEntity blockEntity, ServerWorld world);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerBlockEntityEvents.java#L35",
+                "description": "Called when an BlockEntity is loaded into a ServerWorld. When this is event is called, the block entity is already in the world",
+                "side": "server",
+                "deprecated": false
+            },
+            {
+                "file": "ServerBlockEntityEvents.java",
+                "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
+                "interface": "Unload",
+                "variable": "BLOCK_ENTITY_UNLOAD",
+                "function": "void onUnload(BlockEntity blockEntity, ServerWorld world);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerBlockEntityEvents.java#L59",
+                "description": "Called when an BlockEntity is about to be unloaded from a ServerWorld. When this event is called, the block entity is still present on the world",
+                "side": "server",
+                "deprecated": false
+            },
+            {
+                "file": "ServerChunkEvents.java",
+                "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
+                "interface": "Load",
+                "variable": "CHUNK_LOAD",
+                "function": "void onChunkLoad(ServerWorld world, WorldChunk chunk);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerChunkEvents.java#L35",
+                "description": "Called when an chunk is loaded into a ServerWorld. When this event is called, the chunk is already in the world",
+                "side": "server",
+                "deprecated": false
+            },
+            {
+                "file": "ServerChunkEvents.java",
+                "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
+                "interface": "Unload",
+                "variable": "CHUNK_UNLOAD",
+                "function": "void onChunkUnload(ServerWorld world, WorldChunk chunk);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerChunkEvents.java#L59",
+                "description": "Called when an chunk is unloaded from a ServerWorld. When this event is called, the chunk is still present in the world",
+                "side": "server",
+                "deprecated": false
+            },
+            {
+                "file": "ServerEntityEvents.java",
+                "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
+                "interface": "Load",
+                "variable": "ENTITY_LOAD",
+                "function": "void onLoad(Entity entity, ServerWorld world);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerEntityEvents.java#L35",
+                "description": "Called when an Entity is loaded into a ServerWorld. When this event is called, the entity is already in the world",
+                "side": "server",
+                "deprecated": false
+            },
+            {
+                "file": "ServerEntityEvents.java",
+                "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
+                "interface": "Unload",
+                "variable": "ENTITY_UNLOAD",
+                "function": "void onUnload(Entity entity, ServerWorld world);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerEntityEvents.java#L59",
+                "description": "Called when an Entity is unloaded from a ServerWorld. This event is called before the entity is removed from the world",
+                "side": "server",
+                "deprecated": false
+            },
+            {
+                "file": "ServerLifecycleEvents.java",
+                "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
+                "interface": "ServerStarting",
+                "variable": "SERVER_STARTING",
+                "function": "void onServerStarting(MinecraftServer server);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerLifecycleEvents.java#L36",
+                "description": "Called when a Minecraft server is starting. This occurs before the PlayerManager player manager and any worlds are loaded",
+                "side": "server",
+                "deprecated": false
+            },
+            {
+                "file": "ServerLifecycleEvents.java",
+                "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
+                "interface": "ServerStarted",
+                "variable": "SERVER_STARTED",
+                "function": "void onServerStarted(MinecraftServer server);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerLifecycleEvents.java#L47",
+                "description": "Called when a Minecraft server has started and is about to tick for the first time. At this stage, all worlds are live",
+                "side": "server",
+                "deprecated": false
+            },
+            {
+                "file": "ServerLifecycleEvents.java",
+                "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
+                "interface": "ServerStopping",
+                "variable": "SERVER_STOPPING",
+                "function": "void onServerStopping(MinecraftServer server);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerLifecycleEvents.java#L61",
+                "description": "Called when a Minecraft server has started shutting down. This occurs before the server's network channel is closed and before any players are disconnected. For example, an integrated server will begin stopping, but it's client may continue to run. All worlds are still present and can be modified",
+                "side": "server",
+                "deprecated": false
+            },
+            {
+                "file": "ServerLifecycleEvents.java",
+                "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
+                "interface": "ServerStopped",
+                "variable": "SERVER_STOPPED",
+                "function": "void onServerStopped(MinecraftServer server);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerLifecycleEvents.java#L74",
+                "description": "Called when a Minecraft server has stopped. All worlds have been closed and all (block)entities and players have been unloaded. For example, an CLIENT integrated server will begin stopping, but it's client may continue to run. Meanwhile for a SERVER dedicated server, this will be the last event called",
+                "side": "server",
+                "deprecated": false
+            },
+            {
+                "file": "ServerLifecycleEvents.java",
+                "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
+                "interface": "SyncDataPackContents",
+                "variable": "SYNC_DATA_PACK_CONTENTS",
+                "function": "void onSyncDataPackContents(ServerPlayerEntity player, boolean joined);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerLifecycleEvents.java#L84",
+                "description": "Called when a Minecraft server is about to send tag and recipe data to a player",
+                "side": "server",
+                "deprecated": false
+            },
+            {
+                "file": "ServerLifecycleEvents.java",
+                "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
+                "interface": "StartDataPackReload",
+                "variable": "START_DATA_PACK_RELOAD",
+                "function": "void startDataPackReload(MinecraftServer server, LifecycledResourceManager resourceManager);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerLifecycleEvents.java#L93",
+                "description": "Called right before tags and recipes are sent to a player, either because the player joined, or because the server reloaded resources. The getResourceManager() server resource manager is up-to-date when this is called. For example, this event can be used to sync data loaded with custom resource reloaders",
+                "side": "server",
+                "deprecated": false
+            },
+            {
+                "file": "ServerLifecycleEvents.java",
+                "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
+                "interface": "EndDataPackReload",
+                "variable": "END_DATA_PACK_RELOAD",
+                "function": "void endDataPackReload(MinecraftServer server, LifecycledResourceManager resourceManager, boolean success);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerLifecycleEvents.java#L104",
+                "description": "Called after a Minecraft server has reloaded data packs. If reloading data packs was unsuccessful, the current data packs will be kept",
+                "side": "server",
+                "deprecated": false
+            },
+            {
+                "file": "ServerTickEvents.java",
+                "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
+                "interface": "StartTick",
+                "variable": "START_SERVER_TICK",
+                "function": "void onStartTick(MinecraftServer server);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerTickEvents.java#L33",
+                "description": "Called at the start of the server tick",
+                "side": "server",
+                "deprecated": false
+            },
+            {
+                "file": "ServerTickEvents.java",
+                "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
+                "interface": "EndTick",
+                "variable": "END_SERVER_TICK",
+                "function": "void onEndTick(MinecraftServer server);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerTickEvents.java#L55",
+                "description": "Called at the end of the server tick",
+                "side": "server",
+                "deprecated": false
+            },
+            {
+                "file": "ServerTickEvents.java",
+                "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
+                "interface": "StartWorldTick",
+                "variable": "START_WORLD_TICK",
+                "function": "void onStartTick(ServerWorld world);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerTickEvents.java#L77",
+                "description": "Called at the start of a ServerWorld's tick",
+                "side": "server",
+                "deprecated": false
+            },
+            {
+                "file": "ServerTickEvents.java",
+                "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
+                "interface": "EndWorldTick",
+                "variable": "END_WORLD_TICK",
+                "function": "void onEndTick(ServerWorld world);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerTickEvents.java#L101",
+                "description": "Called at the end of a ServerWorld's tick. End of world tick may be used to start async computations for the next tick",
+                "side": "server",
+                "deprecated": false
+            },
+            {
+                "file": "ServerWorldEvents.java",
+                "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
+                "interface": "Load",
+                "variable": "LOAD",
+                "function": "void onWorldLoad(MinecraftServer server, ServerWorld world);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerWorldEvents.java#L32",
+                "description": "Called just after a world is loaded by a Minecraft server. This can be used to load world specific metadata or initialize a PersistentState on a server world",
+                "side": "server",
+                "deprecated": false
+            },
+            {
+                "file": "ServerWorldEvents.java",
+                "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
+                "interface": "Unload",
+                "variable": "UNLOAD",
+                "function": "void onWorldUnload(MinecraftServer server, ServerWorld world);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerWorldEvents.java#L44",
+                "description": "Called before a world is unloaded by a Minecraft server. This typically occurs after a server has SERVER_STOPPING started shutting down. Mods which allow dynamic world (un)registration should call this event so mods can let go of world handles when a world is removed",
+                "side": "server",
+                "deprecated": false
+            }
+        ],
+        "fabric-loot-api-v2": [
+            {
+                "file": "LootTableEvents.java",
+                "package": "net.fabricmc.fabric.api.loot.v2",
+                "interface": "Replace",
+                "variable": "REPLACE",
+                "function": "LootTable replaceLootTable(ResourceManager resourceManager, LootManager lootManager, Identifier id, LootTable original, LootTableSource source);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-loot-api-v2/src/main/java/net/fabricmc/fabric/api/loot/v2/LootTableEvents.java#L37",
+                "description": "This event can be used to replace loot tables. If a loot table is replaced, the iteration will stop for that loot table",
+                "side": null,
+                "deprecated": false
+            },
+            {
+                "file": "LootTableEvents.java",
+                "package": "net.fabricmc.fabric.api.loot.v2",
+                "interface": "Modify",
+                "variable": "MODIFY",
+                "function": "void modifyLootTable(ResourceManager resourceManager, LootManager lootManager, Identifier id, LootTable.Builder tableBuilder, LootTableSource source);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-loot-api-v2/src/main/java/net/fabricmc/fabric/api/loot/v2/LootTableEvents.java#L83",
+                "description": "Replaces loot tables",
+                "side": null,
+                "deprecated": false
+            }
+        ],
+        "fabric-loot-tables-v1": [
+            {
+                "file": "LootTableLoadingCallback.java",
+                "package": "net.fabricmc.fabric.api.loot.v1.event",
+                "interface": "LootTableLoadingCallback",
+                "variable": "EVENT",
+                "function": "void onLootTableLoading(ResourceManager resourceManager, LootManager manager, Identifier id, FabricLootSupplierBuilder supplier, LootTableSetter setter);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-loot-tables-v1/src/main/java/net/fabricmc/fabric/api/loot/v1/event/LootTableLoadingCallback.java#L43",
+                "description": "An event handler that is called when loot tables are loaded. Use EVENT to register instances\nDeprecated: Replaced with LootTableEvents.",
+                "side": null,
+                "deprecated": true
+            }
+        ],
+        "fabric-networking-api-v1": [
+            {
+                "file": "C2SPlayChannelEvents.java",
+                "package": "net.fabricmc.fabric.api.client.networking.v1",
+                "interface": "Register",
+                "variable": "REGISTER",
+                "function": "void onChannelRegister(ClientPlayNetworkHandler handler, PacketSender sender, MinecraftClient client, List<Identifier> channels);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/client/networking/v1/C2SPlayChannelEvents.java#L40",
+                "description": "An event for the client play network handler receiving an update indicating the connected server's ability to receive packets in certain channels. This event may be invoked at any time after login and up to disconnection",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "C2SPlayChannelEvents.java",
+                "package": "net.fabricmc.fabric.api.client.networking.v1",
+                "interface": "Unregister",
+                "variable": "UNREGISTER",
+                "function": "void onChannelUnregister(ClientPlayNetworkHandler handler, PacketSender sender, MinecraftClient client, List<Identifier> channels);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/client/networking/v1/C2SPlayChannelEvents.java#L50",
+                "description": "An event for the client play network handler receiving an update indicating the connected server's lack of ability to receive packets in certain channels. This event may be invoked at any time after login and up to disconnection",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "ClientLoginConnectionEvents.java",
+                "package": "net.fabricmc.fabric.api.client.networking.v1",
+                "interface": "Init",
+                "variable": "INIT",
+                "function": "void onLoginStart(ClientLoginNetworkHandler handler, MinecraftClient client);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/client/networking/v1/ClientLoginConnectionEvents.java#L40",
+                "description": "Event indicating a connection entered the LOGIN state, ready for registering query request handlers. This event may be used by mods to prepare their client side state. This event does not guarantee that a login attempt will be successful",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "ClientLoginConnectionEvents.java",
+                "package": "net.fabricmc.fabric.api.client.networking.v1",
+                "interface": "QueryStart",
+                "variable": "QUERY_START",
+                "function": "void onLoginQueryStart(ClientLoginNetworkHandler handler, MinecraftClient client);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/client/networking/v1/ClientLoginConnectionEvents.java#L60",
+                "description": "An event for when the client has started receiving login queries. A client can only start receiving login queries when a server has sent the first login query. Vanilla servers will typically never make the client enter this login phase, but it is not a guarantee that the connected server is a vanilla server since a modded server or proxy may have no login queries to send to the client and therefore bypass the login query phase. If this event is fired then it is a sign that a server is not a vanilla server or the server is behind a proxy which is capable of handling login queries. This event may be used to LoginQueryRequestHandler register login query handlers which may be used to send a response to a server. No packets should be sent when this event is invoked",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "ClientLoginConnectionEvents.java",
+                "package": "net.fabricmc.fabric.api.client.networking.v1",
+                "interface": "Disconnect",
+                "variable": "DISCONNECT",
+                "function": "void onLoginDisconnect(ClientLoginNetworkHandler handler, MinecraftClient client);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/client/networking/v1/ClientLoginConnectionEvents.java#L71",
+                "description": "An event for when the client's login process has ended due to disconnection. No packets should be sent when this event is invoked",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "ClientPlayConnectionEvents.java",
+                "package": "net.fabricmc.fabric.api.client.networking.v1",
+                "interface": "Init",
+                "variable": "INIT",
+                "function": "void onPlayInit(ClientPlayNetworkHandler handler, MinecraftClient client);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/client/networking/v1/ClientPlayConnectionEvents.java#L39",
+                "description": "Event indicating a connection entered the PLAY state, ready for registering channel handlers",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "ClientPlayConnectionEvents.java",
+                "package": "net.fabricmc.fabric.api.client.networking.v1",
+                "interface": "Join",
+                "variable": "JOIN",
+                "function": "void onPlayReady(ClientPlayNetworkHandler handler, PacketSender sender, MinecraftClient client);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/client/networking/v1/ClientPlayConnectionEvents.java#L51",
+                "description": "An event for notification when the client play network handler is ready to send packets to the server. At this stage, the network handler is ready to send packets to the server. Since the client's local state has been setup",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "ClientPlayConnectionEvents.java",
+                "package": "net.fabricmc.fabric.api.client.networking.v1",
+                "interface": "Disconnect",
+                "variable": "DISCONNECT",
+                "function": "void onPlayDisconnect(ClientPlayNetworkHandler handler, MinecraftClient client);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/client/networking/v1/ClientPlayConnectionEvents.java#L62",
+                "description": "An event for the disconnection of the client play network handler. No packets should be sent when this event is invoked",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "EntityTrackingEvents.java",
+                "package": "net.fabricmc.fabric.api.networking.v1",
+                "interface": "StartTracking",
+                "variable": "START_TRACKING",
+                "function": "void onStartTracking(Entity trackedEntity, ServerPlayerEntity player);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/EntityTrackingEvents.java#L34",
+                "description": "An event that is called before player starts tracking an entity. Typically this occurs when an entity enters a client's view distance. This event is called before the player's client is sent the entity's createSpawnPacket() spawn packet",
+                "side": null,
+                "deprecated": false
+            },
+            {
+                "file": "EntityTrackingEvents.java",
+                "package": "net.fabricmc.fabric.api.networking.v1",
+                "interface": "StopTracking",
+                "variable": "STOP_TRACKING",
+                "function": "void onStopTracking(Entity trackedEntity, ServerPlayerEntity player);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/EntityTrackingEvents.java#L45",
+                "description": "Called before an entity starts getting tracked by a player",
+                "side": null,
+                "deprecated": false
+            },
+            {
+                "file": "S2CPlayChannelEvents.java",
+                "package": "net.fabricmc.fabric.api.networking.v1",
+                "interface": "Register",
+                "variable": "REGISTER",
+                "function": "void onChannelRegister(ServerPlayNetworkHandler handler, PacketSender sender, MinecraftServer server, List<Identifier> channels);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/S2CPlayChannelEvents.java#L36",
+                "description": "An event for the server play network handler receiving an update indicating the connected client's ability to receive packets in certain channels. This event may be invoked at any time after login and up to disconnection",
+                "side": null,
+                "deprecated": false
+            },
+            {
+                "file": "S2CPlayChannelEvents.java",
+                "package": "net.fabricmc.fabric.api.networking.v1",
+                "interface": "Unregister",
+                "variable": "UNREGISTER",
+                "function": "void onChannelUnregister(ServerPlayNetworkHandler handler, PacketSender sender, MinecraftServer server, List<Identifier> channels);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/S2CPlayChannelEvents.java#L46",
+                "description": "An event for the server play network handler receiving an update indicating the connected client's lack of ability to receive packets in certain channels. This event may be invoked at any time after login and up to disconnection",
+                "side": null,
+                "deprecated": false
+            },
+            {
+                "file": "ServerLoginConnectionEvents.java",
+                "package": "net.fabricmc.fabric.api.networking.v1",
+                "interface": "Init",
+                "variable": "INIT",
+                "function": "void onLoginInit(ServerLoginNetworkHandler handler, MinecraftServer server);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/ServerLoginConnectionEvents.java#L35",
+                "description": "Event indicating a connection entered the LOGIN state, ready for registering query response handlers",
+                "side": "server",
+                "deprecated": false
+            },
+            {
+                "file": "ServerLoginConnectionEvents.java",
+                "package": "net.fabricmc.fabric.api.networking.v1",
+                "interface": "QueryStart",
+                "variable": "QUERY_START",
+                "function": "void onLoginStart(ServerLoginNetworkHandler handler, MinecraftServer server, PacketSender sender, ServerLoginNetworking.LoginSynchronizer synchronizer);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/ServerLoginConnectionEvents.java#L49",
+                "description": "An event for the start of login queries of the server login network handler. This event may be used to register LoginQueryResponseHandler login query response handlers using registerReceiver(ServerLoginNetworkHandler, Identifier, ServerLoginNetworking.LoginQueryResponseHandler) since this event is fired just before the first login query response is processed. You may send login queries to the connected client using the provided PacketSender",
+                "side": "server",
+                "deprecated": false
+            },
+            {
+                "file": "ServerLoginConnectionEvents.java",
+                "package": "net.fabricmc.fabric.api.networking.v1",
+                "interface": "Disconnect",
+                "variable": "DISCONNECT",
+                "function": "void onLoginDisconnect(ServerLoginNetworkHandler handler, MinecraftServer server);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/ServerLoginConnectionEvents.java#L60",
+                "description": "An event for the disconnection of the server login network handler. No packets should be sent when this event is invoked",
+                "side": "server",
+                "deprecated": false
+            },
+            {
+                "file": "ServerPlayConnectionEvents.java",
+                "package": "net.fabricmc.fabric.api.networking.v1",
+                "interface": "Init",
+                "variable": "INIT",
+                "function": "void onPlayInit(ServerPlayNetworkHandler handler, MinecraftServer server);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/ServerPlayConnectionEvents.java#L35",
+                "description": "Event indicating a connection entered the PLAY state, ready for registering channel handlers",
+                "side": "server",
+                "deprecated": false
+            },
+            {
+                "file": "ServerPlayConnectionEvents.java",
+                "package": "net.fabricmc.fabric.api.networking.v1",
+                "interface": "Join",
+                "variable": "JOIN",
+                "function": "void onPlayReady(ServerPlayNetworkHandler handler, PacketSender sender, MinecraftServer server);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/ServerPlayConnectionEvents.java#L46",
+                "description": "An event for notification when the server play network handler is ready to send packets to the client. At this stage, the network handler is ready to send packets to the client",
+                "side": "server",
+                "deprecated": false
+            },
+            {
+                "file": "ServerPlayConnectionEvents.java",
+                "package": "net.fabricmc.fabric.api.networking.v1",
+                "interface": "Disconnect",
+                "variable": "DISCONNECT",
+                "function": "void onPlayDisconnect(ServerPlayNetworkHandler handler, MinecraftServer server);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/ServerPlayConnectionEvents.java#L57",
+                "description": "An event for the disconnection of the server play network handler. No packets should be sent when this event is invoked",
+                "side": "server",
+                "deprecated": false
+            }
+        ],
+        "fabric-networking-v0": [
+            {
+                "file": "C2SPacketTypeCallback.java",
+                "package": "net.fabricmc.fabric.api.event.network",
+                "interface": "C2SPacketTypeCallback",
+                "variable": "UNREGISTERED",
+                "function": "void accept(PlayerEntity client, Collection<Identifier> types);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-networking-v0/src/main/java/net/fabricmc/fabric/api/event/network/C2SPacketTypeCallback.java#L57",
+                "description": "Event for listening to packet type registration and unregistration notifications (also known as \"minecraft:register\" and \"minecraft:unregister\") sent by a client. Registrations received will be for server -&gt; client packets that the sending client can understand\nDeprecated: Please migrate to S2CPlayChannelEvents since this was incorrectly named.",
+                "side": null,
+                "deprecated": true
+            },
+            {
+                "file": "S2CPacketTypeCallback.java",
+                "package": "net.fabricmc.fabric.api.event.network",
+                "interface": "S2CPacketTypeCallback",
+                "variable": "UNREGISTERED",
+                "function": "void accept(Collection<Identifier> types);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-networking-v0/src/main/java/net/fabricmc/fabric/api/event/network/S2CPacketTypeCallback.java#L56",
+                "description": "Event for listening to packet type registration and unregistration notifications (also known as \"minecraft:register\" and \"minecraft:unregister\") sent by a server. Registrations received will be for client -&gt; server packets that the sending server can understand\nDeprecated: Please migrate to C2SPlayChannelEvents since this was incorrectly named.",
+                "side": null,
+                "deprecated": true
+            }
+        ],
+        "fabric-rendering-v0": [
+            {
+                "file": "InvalidateRenderStateCallback.java",
+                "package": "net.fabricmc.fabric.api.client.render",
+                "interface": "InvalidateRenderStateCallback",
+                "variable": "EVENT",
+                "function": "void onInvalidate();",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-rendering-v0/src/main/java/net/fabricmc/fabric/api/client/render/InvalidateRenderStateCallback.java#L35",
+                "description": "Called when the world renderer reloads, usually as result of changing resource pack or video configuration, or when the player types F3+A in the debug screen. Afterwards all render chunks will be reset and reloaded. Render chunks and other render-related object instances will be made null or invalid after this event so do not use it to capture dependent state. Instead, use it to invalidate state and reinitialize lazily\nDeprecated: Replaced by InvalidateRenderStateCallback",
+                "side": "client",
+                "deprecated": true
+            }
+        ],
+        "fabric-rendering-v1": [
+            {
+                "file": "CoreShaderRegistrationCallback.java",
+                "package": "net.fabricmc.fabric.api.client.rendering.v1",
+                "interface": "CoreShaderRegistrationCallback",
+                "variable": "EVENT",
+                "function": "void registerShaders(RegistrationContext context) throws IOException;",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-rendering-v1/src/main/java/net/fabricmc/fabric/api/client/rendering/v1/CoreShaderRegistrationCallback.java#L42",
+                "description": "Called when core shaders (Shader shader programs loaded from assets//shaders/core) are loaded to register custom modded shaders. Fabric API also modifies the moj_import feature in core shaders to accept arbitrary namespaces for shaders loaded using the glsl> syntax. For example, moj_import would import the shader from glsl",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "HudRenderCallback.java",
+                "package": "net.fabricmc.fabric.api.client.rendering.v1",
+                "interface": "HudRenderCallback",
+                "variable": "EVENT",
+                "function": "void onHudRender(MatrixStack matrixStack, float tickDelta);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-rendering-v1/src/main/java/net/fabricmc/fabric/api/client/rendering/v1/HudRenderCallback.java#L25",
+                "description": "Called after rendering the whole hud, which is displayed in game, in a world",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "InvalidateRenderStateCallback.java",
+                "package": "net.fabricmc.fabric.api.client.rendering.v1",
+                "interface": "InvalidateRenderStateCallback",
+                "variable": "EVENT",
+                "function": "void onInvalidate();",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-rendering-v1/src/main/java/net/fabricmc/fabric/api/client/rendering/v1/InvalidateRenderStateCallback.java#L32",
+                "description": "Called when the world renderer reloads, usually as result of changing resource pack or video configuration, or when the player types F3+A in the debug screen. Afterwards all render chunks will be reset and reloaded. Render chunks and other render-related object instances will be made null or invalid after this event so do not use it to capture dependent state. Instead, use it to invalidate state and reinitialize lazily",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "LivingEntityFeatureRenderEvents.java",
+                "package": "net.fabricmc.fabric.api.client.rendering.v1",
+                "interface": "AllowCapeRender",
+                "variable": "ALLOW_CAPE_RENDER",
+                "function": "boolean allowCapeRender(AbstractClientPlayerEntity player);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-rendering-v1/src/main/java/net/fabricmc/fabric/api/client/rendering/v1/LivingEntityFeatureRenderEvents.java#L33",
+                "description": "An event that can prevent capes from rendering",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "LivingEntityFeatureRendererRegistrationCallback.java",
+                "package": "net.fabricmc.fabric.api.client.rendering.v1",
+                "interface": "LivingEntityFeatureRendererRegistrationCallback",
+                "variable": "EVENT",
+                "function": "void registerRenderers(EntityType<? extends LivingEntity> entityType, LivingEntityRenderer<?, ?> entityRenderer, RegistrationHelper registrationHelper, EntityRendererFactory.Context context);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-rendering-v1/src/main/java/net/fabricmc/fabric/api/client/rendering/v1/LivingEntityFeatureRendererRegistrationCallback.java#L54",
+                "description": "Called when FeatureRenderer feature renderers for a LivingEntityRenderer living entity renderer are registered. Feature renderers are typically used for rendering additional objects on an entity, such as armor, an elytra or Deadmau5FeatureRenderer Deadmau5's ears. This callback lets developers add additional feature renderers for use in entity rendering. Listeners should filter out the specific entity renderer they want to hook into, usually through instanceof checks or filtering by entity type. Once listeners find a suitable entity renderer, they should register their feature renderer via the registration helper. For example, to register a feature renderer for a player model, the example below may used:\n```\n<blockquote>\nLivingEntityFeatureRendererRegistrationCallback.EVENT.register((entityType, entityRenderer, registrationHelper) -> {\n\tif (entityRenderer instanceof PlayerEntityModel) {\n\t\tregistrationHelper.register(new MyFeatureRenderer((PlayerEntityModel) entityRenderer));\n\t}\n});\n</blockquote>\n```",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "TooltipComponentCallback.java",
+                "package": "net.fabricmc.fabric.api.client.rendering.v1",
+                "interface": "TooltipComponentCallback",
+                "variable": "EVENT",
+                "function": "TooltipComponent getComponent(TooltipData data);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-rendering-v1/src/main/java/net/fabricmc/fabric/api/client/rendering/v1/TooltipComponentCallback.java#L40",
+                "description": "Allows registering a mapping from TooltipData to TooltipComponent. This allows custom tooltips for items: first, override getTooltipData and return a custom TooltipData. Second, register a listener to this event and convert the data to your component implementation if it's an instance of your data class. Note that failure to map some data to a component will throw an exception, so make sure that any data you return in getTooltipData will be handled by one of the callbacks",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "WorldRenderEvents.java",
+                "package": "net.fabricmc.fabric.api.client.rendering.v1",
+                "interface": "Start",
+                "variable": "START",
+                "function": "void onStart(WorldRenderContext context);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-rendering-v1/src/main/java/net/fabricmc/fabric/api/client/rendering/v1/WorldRenderEvents.java#L62",
+                "description": "Called before world rendering executes. Input parameters are available but frustum is not. Use this event instead of injecting to the HEAD of render to avoid compatibility problems with 3rd-party renderer implementations. Use for setup of state that is needed during the world render call that does not depend on the view frustum",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "WorldRenderEvents.java",
+                "package": "net.fabricmc.fabric.api.client.rendering.v1",
+                "interface": "AfterSetup",
+                "variable": "AFTER_SETUP",
+                "function": "void afterSetup(WorldRenderContext context);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-rendering-v1/src/main/java/net/fabricmc/fabric/api/client/rendering/v1/WorldRenderEvents.java#L74",
+                "description": "Called after view Frustum is computed and all render chunks to be rendered are identified and rebuilt but before chunks are uploaded to GPU. Use for setup of state that depends on view frustum",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "WorldRenderEvents.java",
+                "package": "net.fabricmc.fabric.api.client.rendering.v1",
+                "interface": "BeforeEntities",
+                "variable": "BEFORE_ENTITIES",
+                "function": "void beforeEntities(WorldRenderContext context);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-rendering-v1/src/main/java/net/fabricmc/fabric/api/client/rendering/v1/WorldRenderEvents.java#L100",
+                "description": "Called after the Solid, Cutout and Cutout Mipped terrain layers have been output to the framebuffer. Use to render non-translucent terrain to the framebuffer. Note that 3rd-party renderers may combine these passes or otherwise alter the rendering pipeline for sake of performance or features. This can break direct writes to the framebuffer. Use this event for cases that cannot be satisfied by FabricBakedModel, BlockEntityRenderer or other existing abstraction. If at all possible, use an existing terrain RenderLayer instead of outputting to the framebuffer directly with GL calls. The consumer is responsible for setup and tear down of GL state appropriate for the intended output. Because solid and cutout quads are depth-tested, order of output does not matter except to improve culling performance, which should not be significant after primary terrain rendering. This means mods that currently hook calls to individual render layers can simply execute them all at once when the event is called. This event fires before entities and block entities are rendered and may be useful to prepare them",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "WorldRenderEvents.java",
+                "package": "net.fabricmc.fabric.api.client.rendering.v1",
+                "interface": "AfterEntities",
+                "variable": "AFTER_ENTITIES",
+                "function": "void afterEntities(WorldRenderContext context);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-rendering-v1/src/main/java/net/fabricmc/fabric/api/client/rendering/v1/WorldRenderEvents.java#L117",
+                "description": "Called after entities are rendered and solid entity layers have been drawn to the main frame buffer target, before block entity rendering begins. Use for global block entity render setup, or to append block-related quads to the entity consumers using the {@VertexConsumerProvider} from the provided context. This will generally give better (if not perfect) results for non-terrain translucency vs. drawing directly later on",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "WorldRenderEvents.java",
+                "package": "net.fabricmc.fabric.api.client.rendering.v1",
+                "interface": "BeforeBlockOutline",
+                "variable": "BEFORE_BLOCK_OUTLINE",
+                "function": "boolean beforeBlockOutline(WorldRenderContext context, @Nullable HitResult hitResult);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-rendering-v1/src/main/java/net/fabricmc/fabric/api/client/rendering/v1/WorldRenderEvents.java#L144",
+                "description": "Called before default block outline rendering and before checks are done to determine if it should happen. Can optionally cancel the default rendering but all event handlers will always be called. Use this to decorate or replace the default block outline rendering for specific modded blocks or when the need for a block outline render would not be detected. Normally, outline rendering will not happen for entities, fluids, or other game objects that do not register a block-type hit. Returning false from any event subscriber will cancel the default block outline render and suppress the BLOCK_RENDER event. This has no effect on other subscribers to this event - all subscribers will always be called. Canceling here is appropriate when there is still a valid block hit (with a fluid, for example) and you don't want the block outline render to appear. This event should NOT be used for general-purpose replacement of the default block outline rendering because it will interfere with mod-specific renders. Mods that replace the default block outline for specific blocks should instead subscribe to BLOCK_OUTLINE",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "WorldRenderEvents.java",
+                "package": "net.fabricmc.fabric.api.client.rendering.v1",
+                "interface": "BlockOutline",
+                "variable": "BLOCK_OUTLINE",
+                "function": "boolean onBlockOutline(WorldRenderContext worldRenderContext, BlockOutlineContext blockOutlineContext);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-rendering-v1/src/main/java/net/fabricmc/fabric/api/client/rendering/v1/WorldRenderEvents.java#L178",
+                "description": "Event signature for BEFORE_BLOCK_OUTLINE",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "WorldRenderEvents.java",
+                "package": "net.fabricmc.fabric.api.client.rendering.v1",
+                "interface": "DebugRender",
+                "variable": "BEFORE_DEBUG_RENDER",
+                "function": "void beforeDebugRender(WorldRenderContext context);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-rendering-v1/src/main/java/net/fabricmc/fabric/api/client/rendering/v1/WorldRenderEvents.java#L202",
+                "description": "Called before vanilla debug renderers are output to the framebuffer. This happens very soon after entities, block breaking and most other non-translucent renders but before translucency is drawn. Unlike most other events, renders in this event are expected to be drawn directly and immediately to the framebuffer. The OpenGL render state view matrix will be transformed to match the camera view before the event is called. Use to drawn lines, overlays and other content similar to vanilla debug renders",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "WorldRenderEvents.java",
+                "package": "net.fabricmc.fabric.api.client.rendering.v1",
+                "interface": "AfterTranslucent",
+                "variable": "AFTER_TRANSLUCENT",
+                "function": "void afterTranslucent(WorldRenderContext context);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-rendering-v1/src/main/java/net/fabricmc/fabric/api/client/rendering/v1/WorldRenderEvents.java#L223",
+                "description": "Called after entity, terrain, and particle translucent layers have been drawn to the framebuffer but before translucency combine has happened in fabulous mode. Use for drawing overlays or other effects on top of those targets (or the main target when fabulous isn't active) before clouds and weather are drawn. However, note that WorldRenderPostEntityCallback will offer better results in most use cases. Vertex consumers are not available in this event because all buffered quads are drawn before this event is called. Any rendering here must be drawn directly to the frame buffer. The render state matrix will not include camera transformation, so LAST may be preferable if that is wanted",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "WorldRenderEvents.java",
+                "package": "net.fabricmc.fabric.api.client.rendering.v1",
+                "interface": "Last",
+                "variable": "LAST",
+                "function": "void onLast(WorldRenderContext context);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-rendering-v1/src/main/java/net/fabricmc/fabric/api/client/rendering/v1/WorldRenderEvents.java#L239",
+                "description": "Called after all framebuffer writes are complete but before all world rendering is torn down. Unlike most other events, renders in this event are expected to be drawn directly and immediately to the framebuffer. The OpenGL render state view matrix will be transformed to match the camera view before the event is called. Use to draw content that should appear on top of the world before hand and GUI rendering occur",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "WorldRenderEvents.java",
+                "package": "net.fabricmc.fabric.api.client.rendering.v1",
+                "interface": "End",
+                "variable": "END",
+                "function": "void onEnd(WorldRenderContext context);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-rendering-v1/src/main/java/net/fabricmc/fabric/api/client/rendering/v1/WorldRenderEvents.java#L252",
+                "description": "Called after all world rendering is complete and changes to GL state are unwound. Use to draw overlays that handle GL state management independently or to tear down transient state in event handlers or as a hook that precedes hand/held item and GUI rendering",
+                "side": "client",
+                "deprecated": false
+            }
+        ],
+        "fabric-screen-api-v1": [
+            {
+                "file": "ScreenEvents.java",
+                "package": "net.fabricmc.fabric.api.client.screen.v1",
+                "interface": "BeforeInit",
+                "variable": "BEFORE_INIT",
+                "function": "void beforeInit(MinecraftClient client, Screen screen, int scaledWidth, int scaledHeight);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-screen-api-v1/src/main/java/net/fabricmc/fabric/api/client/screen/v1/ScreenEvents.java#L74",
+                "description": "An event that is called before init(MinecraftClient, int, int) a screen is initialized to it's default state. It should be noted some of the methods in Screens such as a screen's getTextRenderer(Screen) text renderer may not be initialized yet, and as such their use is discouraged. Typically this event is used to register screen events such as listening to when child elements are added to the screen. ------ Uncomment when child add/remove event is added for elements--> You can still use AFTER_INIT to register events such as keyboard and mouse events. The ScreenExtensions provided by the info parameter may be used to register tick, render events, keyboard, mouse, additional and removal of child elements (including buttons). For example, to register an event on inventory like screens after render, the following code could be used:\n```\n{@code\n&#64;Override\npublic void onInitializeClient() {\n\tScreenEvents.BEFORE_INIT.register((client, screen, scaledWidth, scaledHeight) -> {\n\t\tif (screen instanceof AbstractInventoryScreen) {\n\t\t\tScreenEvents.getAfterRenderEvent(screen).register((matrices, mouseX, mouseY, tickDelta) -> {\n\t\t\t\t...\n\t\t\t});\n\t\t}\n\t});\n}\n}\n```\nThis event indicates a screen has been resized, and therefore is being re-initialized. This event can also indicate that the previous screen has been changed",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "ScreenEvents.java",
+                "package": "net.fabricmc.fabric.api.client.screen.v1",
+                "interface": "AfterInit",
+                "variable": "AFTER_INIT",
+                "function": "void afterInit(MinecraftClient client, Screen screen, int scaledWidth, int scaledHeight);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-screen-api-v1/src/main/java/net/fabricmc/fabric/api/client/screen/v1/ScreenEvents.java#L101",
+                "description": "An event that is called after init(MinecraftClient, int, int) a screen is initialized to it's default state. Typically this event is used to modify a screen after the screen has been initialized. Modifications such as changing sizes of buttons, removing buttons and adding/removing child elements to the screen can be done safely using this event. For example, to add a button to the title screen, the following code could be used:\n```\n{@code\nScreenEvents.AFTER_INIT.register((client, screen, scaledWidth, scaledHeight) -> {\n\tif (screen instanceof TitleScreen) {\n\t\tScreens.getButtons(screen).add(new ButtonWidget(...));\n\t}\n});\n}\n```\nNote that by adding an element to a screen, the element is not automatically TickableElement ticked or Drawable drawn. Unless the element is button, you need to call the specific tick() tick and render(MatrixStack, int, int, float) render methods in the corresponding screen events. This event can also indicate that the previous screen has been closed",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "ScreenEvents.java",
+                "package": "net.fabricmc.fabric.api.client.screen.v1",
+                "interface": "Remove",
+                "variable": "REMOVE",
+                "function": "void onRemove(Screen screen);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-screen-api-v1/src/main/java/net/fabricmc/fabric/api/client/screen/v1/ScreenEvents.java#L178",
+                "description": "An event that is called after removed() is called. This event signifies that the screen is now closed. This event is typically used to undo any screen specific state changes such as setting the keyboard to receive setRepeatEvents(boolean) repeat events or terminate threads spawned by a screen. This event may precede initialization events BEFORE_INIT but there is no guarantee that event will be called immediately afterwards",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "ScreenEvents.java",
+                "package": "net.fabricmc.fabric.api.client.screen.v1",
+                "interface": "BeforeRender",
+                "variable": "BEFORE_RENDER",
+                "function": "void beforeRender(Screen screen, MatrixStack matrices, int mouseX, int mouseY, float tickDelta);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-screen-api-v1/src/main/java/net/fabricmc/fabric/api/client/screen/v1/ScreenEvents.java#L184",
+                "description": "An event that is called before a screen is rendered",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "ScreenEvents.java",
+                "package": "net.fabricmc.fabric.api.client.screen.v1",
+                "interface": "AfterRender",
+                "variable": "AFTER_RENDER",
+                "function": "void afterRender(Screen screen, MatrixStack matrices, int mouseX, int mouseY, float tickDelta);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-screen-api-v1/src/main/java/net/fabricmc/fabric/api/client/screen/v1/ScreenEvents.java#L190",
+                "description": "An event that is called after a screen is rendered",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "ScreenEvents.java",
+                "package": "net.fabricmc.fabric.api.client.screen.v1",
+                "interface": "BeforeTick",
+                "variable": "BEFORE_TICK",
+                "function": "void beforeTick(Screen screen);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-screen-api-v1/src/main/java/net/fabricmc/fabric/api/client/screen/v1/ScreenEvents.java#L196",
+                "description": "An event that is called before a screen is ticked",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "ScreenEvents.java",
+                "package": "net.fabricmc.fabric.api.client.screen.v1",
+                "interface": "AfterTick",
+                "variable": "AFTER_TICK",
+                "function": "void afterTick(Screen screen);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-screen-api-v1/src/main/java/net/fabricmc/fabric/api/client/screen/v1/ScreenEvents.java#L202",
+                "description": "An event that is called after a screen is ticked",
+                "side": "client",
+                "deprecated": false
+            }
+        ],
+        "fabric-textures-v0": [
+            {
+                "file": "ClientSpriteRegistryCallback.java",
+                "package": "net.fabricmc.fabric.api.event.client",
+                "interface": "ClientSpriteRegistryCallback",
+                "variable": "EVENT",
+                "function": "void registerSprites(SpriteAtlasTexture atlasTexture, Registry registry);",
+                "url": "https://github.com/FabricMC/fabric/blob/1.18.2/fabric-textures-v0/src/main/java/net/fabricmc/fabric/api/event/client/ClientSpriteRegistryCallback.java#L35",
+                "description": "Deprecated: Use the event(Identifier) registration method. Since 1.14",
+                "side": "client",
+                "deprecated": true
+            }
+        ]
+    }
+}

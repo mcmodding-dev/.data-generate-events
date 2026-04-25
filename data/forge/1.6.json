@@ -1,0 +1,844 @@
+{
+    "lastupdated": "20260425193607",
+    "version": "1.6",
+    "last_commit": "[ba4637f5a3fbcf99224c5b29023c906037b701f4] Update src distro installer script. Source distro works now!",
+    "data": {
+        "net.minecraftforge.event": [
+            {
+                "event": "CommandEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/CommandEvent.java#L7",
+                "cancellable": true,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "Event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/Event.java#L15",
+                "cancellable": false,
+                "description": "Base Event class that all other events are derived from",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ServerChatEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/ServerChatEvent.java#L7",
+                "cancellable": true,
+                "description": "",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            }
+        ],
+        "net.minecraftforge.event.brewing": [
+            {
+                "event": "PotionBrewedEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/brewing/PotionBrewedEvent.java#L6",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            }
+        ],
+        "net.minecraftforge.event.entity": [
+            {
+                "event": "EntityEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/EntityEvent.java#L7",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EntityEvent.EntityConstructing",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/EntityEvent.java#L16",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EntityEvent.CanUpdate",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/EntityEvent.java#L24",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EntityEvent.EnteringChunk",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/EntityEvent.java#L33",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EntityJoinWorldEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/EntityJoinWorldEvent.java#L8",
+                "cancellable": true,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlaySoundAtEntityEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/PlaySoundAtEntityEvent.java#L7",
+                "cancellable": true,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            }
+        ],
+        "net.minecraftforge.event.entity.item": [
+            {
+                "event": "ItemEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/item/ItemEvent.java#L12",
+                "cancellable": false,
+                "description": "Base class for all EntityItem events. Contains a reference to the EntityItem of interest. For most EntityItem events, there's little to no additional useful data from the firing method that isn't already contained within the EntityItem instance",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ItemExpireEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/item/ItemExpireEvent.java#L14",
+                "cancellable": true,
+                "description": "Event that is fired when an EntityItem's age has reached its maximum lifespan. Canceling this event will prevent the EntityItem from being flagged as dead, thus staying it's removal from the world. If canceled it will add more time to the entitie's life equal to extraLife",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ItemTossEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/item/ItemTossEvent.java#L15",
+                "cancellable": true,
+                "description": "Event that is fired whenever a player tosses (Q) an item or drag-n-drops a stack of items outside the inventory GUI screens. Canceling the event will stop the items from entering the world, but will not prevent them being removed from the inventory - and thus removed from the system",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            }
+        ],
+        "net.minecraftforge.event.entity.living": [
+            {
+                "event": "EnderTeleportEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/living/EnderTeleportEvent.java#L14",
+                "cancellable": true,
+                "description": "Event for when an Enderman teleports or an ender pearl is used. Can be used to either modify the target position, or cancel the teleport outright",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingAttackEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/living/LivingAttackEvent.java#L8",
+                "cancellable": true,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingDeathEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/living/LivingDeathEvent.java#L8",
+                "cancellable": true,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingDropsEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/living/LivingDropsEvent.java#L11",
+                "cancellable": true,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/living/LivingEvent.java#L7",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingEvent.LivingUpdateEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/living/LivingEvent.java#L17",
+                "cancellable": true,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingEvent.LivingJumpEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/living/LivingEvent.java#L22",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingFallEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/living/LivingFallEvent.java#L7",
+                "cancellable": true,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingHurtEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/living/LivingHurtEvent.java#L8",
+                "cancellable": true,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingPackSizeEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/living/LivingPackSizeEvent.java#L7",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": true
+            },
+            {
+                "event": "LivingSetAttackTargetEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/living/LivingSetAttackTargetEvent.java#L5",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingSpawnEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/living/LivingSpawnEvent.java#L8",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingSpawnEvent.CheckSpawn",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/living/LivingSpawnEvent.java#L34",
+                "cancellable": false,
+                "description": "Fires before mob spawn events. Result is significant: DEFAULT: use vanilla spawn rules ALLOW: allow the spawn DENY: deny the spawn",
+                "side": null,
+                "deprecated": false,
+                "hasResult": true
+            },
+            {
+                "event": "LivingSpawnEvent.SpecialSpawn",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/living/LivingSpawnEvent.java#L43",
+                "cancellable": true,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            }
+        ],
+        "net.minecraftforge.event.entity.minecart": [
+            {
+                "event": "MinecartCollisionEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/minecart/MinecartCollisionEvent.java#L6",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "MinecartEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/minecart/MinecartEvent.java#L7",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "MinecartInteractEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/minecart/MinecartInteractEvent.java#L8",
+                "cancellable": true,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "MinecartUpdateEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/minecart/MinecartUpdateEvent.java#L5",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            }
+        ],
+        "net.minecraftforge.event.entity.player": [
+            {
+                "event": "ArrowLooseEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/player/ArrowLooseEvent.java#L8",
+                "cancellable": true,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ArrowNockEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/player/ArrowNockEvent.java#L8",
+                "cancellable": true,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "AttackEntityEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/player/AttackEntityEvent.java#L8",
+                "cancellable": true,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "BonemealEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/player/BonemealEvent.java#L10",
+                "cancellable": true,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": true
+            },
+            {
+                "event": "EntityInteractEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/player/EntityInteractEvent.java#L8",
+                "cancellable": true,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EntityItemPickupEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/player/EntityItemPickupEvent.java#L11",
+                "cancellable": true,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": true
+            },
+            {
+                "event": "FillBucketEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/player/FillBucketEvent.java#L12",
+                "cancellable": true,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": true
+            },
+            {
+                "event": "PlayerDestroyItemEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/player/PlayerDestroyItemEvent.java#L6",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerDropsEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/player/PlayerDropsEvent.java#L18",
+                "cancellable": true,
+                "description": "Child class of LivingDropEvent that is fired specifically when a player dies. Canceling the event will prevent ALL drops from entering the world",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/player/PlayerEvent.java#L9",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerEvent.HarvestCheck",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/player/PlayerEvent.java#L18",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerEvent.BreakSpeed",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/player/PlayerEvent.java#L32",
+                "cancellable": true,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerFlyableFallEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/player/PlayerFlyableFallEvent.java#L11",
+                "cancellable": false,
+                "description": "Occurs when a player falls, but is able to fly. Doesn't need to be cancelable, this is mainly for notification purposes",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerInteractEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/player/PlayerInteractEvent.java#L11",
+                "cancellable": true,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerSleepInBedEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/player/PlayerSleepInBedEvent.java#L6",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "UseHoeEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/entity/player/UseHoeEvent.java#L11",
+                "cancellable": true,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": true
+            }
+        ],
+        "net.minecraftforge.event.terraingen": [
+            {
+                "event": "BiomeEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/BiomeEvent.java#L9",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "BiomeEvent.CreateDecorator",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/BiomeEvent.java#L18",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "BiomeEvent.BlockReplacement",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/BiomeEvent.java#L31",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "BiomeEvent.BiomeColor",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/BiomeEvent.java#L46",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "BlockReplacement.GetVillageBlockID",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/BiomeEvent.java#L66",
+                "cancellable": false,
+                "description": "This event is fired when the village generator attempts to choose a block ID based on the village's biome. You can set the result to DENY to prevent the default block ID selection",
+                "side": null,
+                "deprecated": false,
+                "hasResult": true
+            },
+            {
+                "event": "BlockReplacement.GetVillageBlockMeta",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/BiomeEvent.java#L81",
+                "cancellable": false,
+                "description": "This event is fired when the village generator attempts to choose a block metadata based on the village's biome. You can set the result to DENY to prevent the default block metadata selection",
+                "side": null,
+                "deprecated": false,
+                "hasResult": true
+            },
+            {
+                "event": "BiomeColor.GetGrassColor",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/BiomeEvent.java#L94",
+                "cancellable": false,
+                "description": "This event is fired when a biome is queried for its grass color",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "BiomeColor.GetFoliageColor",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/BiomeEvent.java#L106",
+                "cancellable": false,
+                "description": "This event is fired when a biome is queried for its grass color",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "BiomeColor.GetWaterColor",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/BiomeEvent.java#L118",
+                "cancellable": false,
+                "description": "This event is fired when a biome is queried for its water color",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ChunkProviderEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/ChunkProviderEvent.java#L7",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ChunkProviderEvent.ReplaceBiomeBlocks",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/ChunkProviderEvent.java#L24",
+                "cancellable": false,
+                "description": "This event is fired when a chunks blocks are replaced by a biomes top and filler blocks. You can set the result to DENY to prevent the default replacement",
+                "side": null,
+                "deprecated": false,
+                "hasResult": true
+            },
+            {
+                "event": "ChunkProviderEvent.InitNoiseField",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/ChunkProviderEvent.java#L48",
+                "cancellable": false,
+                "description": "This event is fired before a chunks terrain noise field is initialized. You can set the result to DENY to substitute your own noise field",
+                "side": null,
+                "deprecated": false,
+                "hasResult": true
+            },
+            {
+                "event": "DecorateBiomeEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/DecorateBiomeEvent.java#L8",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "DecorateBiomeEvent.Pre",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/DecorateBiomeEvent.java#L23",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "DecorateBiomeEvent.Post",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/DecorateBiomeEvent.java#L31",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "DecorateBiomeEvent.Decorate",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/DecorateBiomeEvent.java#L45",
+                "cancellable": false,
+                "description": "This event is fired when a chunk is decorated with a biome feature. You can set the result to DENY to prevent the default biome decoration",
+                "side": null,
+                "deprecated": false,
+                "hasResult": true
+            },
+            {
+                "event": "InitMapGenEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/InitMapGenEvent.java#L6",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "InitNoiseGensEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/InitNoiseGensEvent.java#L9",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "OreGenEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/OreGenEvent.java#L9",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "OreGenEvent.Pre",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/OreGenEvent.java#L24",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "OreGenEvent.Post",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/OreGenEvent.java#L32",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "OreGenEvent.GenerateMinable",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/OreGenEvent.java#L46",
+                "cancellable": false,
+                "description": "This event is fired when an ore is generated in a chunk. You can set the result to DENY to prevent the default ore generation",
+                "side": null,
+                "deprecated": false,
+                "hasResult": true
+            },
+            {
+                "event": "PopulateChunkEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/PopulateChunkEvent.java#L9",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PopulateChunkEvent.Pre",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/PopulateChunkEvent.java#L27",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PopulateChunkEvent.Post",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/PopulateChunkEvent.java#L35",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PopulateChunkEvent.Populate",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/PopulateChunkEvent.java#L50",
+                "cancellable": false,
+                "description": "This event is fired when a chunk is populated with a terrain feature. You can set the result to DENY to prevent the default generation of a terrain feature",
+                "side": null,
+                "deprecated": false,
+                "hasResult": true
+            },
+            {
+                "event": "SaplingGrowTreeEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/SaplingGrowTreeEvent.java#L15",
+                "cancellable": false,
+                "description": "This event is fired when a sapling grows a tree. You can set the result to DENY to prevent the default tree growth",
+                "side": null,
+                "deprecated": false,
+                "hasResult": true
+            },
+            {
+                "event": "WorldTypeEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/WorldTypeEvent.java#L7",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "WorldTypeEvent.BiomeSize",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/WorldTypeEvent.java#L16",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "WorldTypeEvent.InitBiomeGens",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/WorldTypeEvent.java#L29",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            }
+        ],
+        "net.minecraftforge.event.world": [
+            {
+                "event": "ChunkDataEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/world/ChunkDataEvent.java#L6",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ChunkDataEvent.Load",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/world/ChunkDataEvent.java#L21",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ChunkDataEvent.Save",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/world/ChunkDataEvent.java#L29",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ChunkEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/world/ChunkEvent.java#L7",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ChunkEvent.Load",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/world/ChunkEvent.java#L22",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ChunkEvent.Unload",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/world/ChunkEvent.java#L30",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ChunkWatchEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/world/ChunkWatchEvent.java#L9",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ChunkWatchEvent.Watch",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/world/ChunkWatchEvent.java#L20",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ChunkWatchEvent.UnWatch",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/world/ChunkWatchEvent.java#L25",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "WorldEvent",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/world/WorldEvent.java#L12",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "WorldEvent.Load",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/world/WorldEvent.java#L21",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "WorldEvent.Unload",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/world/WorldEvent.java#L26",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "WorldEvent.Save",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/world/WorldEvent.java#L31",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "WorldEvent.PotentialSpawns",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/world/WorldEvent.java#L41",
+                "cancellable": true,
+                "description": "Called by WorldServer to gather a list of all possible entities that can spawn at the specified location. Canceling the event will result in a empty list, meaning no entity will be spawned",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            }
+        ]
+    }
+}

@@ -1,0 +1,2238 @@
+{
+    "lastupdated": "20260425193754",
+    "version": "26.1.x",
+    "last_commit": "[27a63806a2781afa602e1e083dce2f178f1080c6] Add client config for skipping modded splashes when vanilla is modified (#3081)",
+    "data": {
+        "net.neoforged.neoforge.event": [
+            {
+                "event": "AddAttributeTooltipsEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/AddAttributeTooltipsEvent.java#L23",
+                "cancellable": false,
+                "description": "This event is fired after attribute tooltip lines have been added to an item stack's tooltip in addAttributeTooltips. It can be used to add additional tooltip lines adjacent to the attribute lines without having to manually locate the inject point. This event may be fired on both the logical client and logical server",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "AddPackFindersEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/AddPackFindersEvent.java#L29",
+                "cancellable": false,
+                "description": "Fired on PackRepository creation to allow mods to add new pack finders",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "AddServerReloadListenersEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/AddServerReloadListenersEvent.java#L23",
+                "cancellable": false,
+                "description": "The main ResourceManager is recreated on each reload, just after ReloadableServerResources's creation. The event is fired on each reload and lets modders add their own ReloadListeners, for server-side resources. The event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "AnvilUpdateEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/AnvilUpdateEvent.java#L21",
+                "cancellable": true,
+                "description": "This event is fired when an anvil's left input is not empty, and any of the inputs (left, right, or name) are changed. It is fired after the vanilla result has been computed, and allows for modification (or overriding) of the result. This event is fired on both the logical server and logical client",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "BlockEntityTypeAddBlocksEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/BlockEntityTypeAddBlocksEvent.java#L39",
+                "cancellable": false,
+                "description": "Allows injecting new blocks into a block entity's validBlocks field in a safe manner. The class of the newly injected block should share the highest common class that all existing blocks in the targeted validBlocks has. Please use this event instead of manipulating BlockEntityType directly. Example: If the valid blocks list has StandingSignBlock entry and WallSignBlock entry, the common class is SignBlock, the given block must be a SignBlock or have SignBlock as a parent class in its hierarchy. Example: {@snippet : public static void onBlockEntityValidBlocks(BlockEntityTypeAddBlocksEvent event) { event.modify(BlockEntityType.SIGN, MODDED_SIGN_BLOCK.get()); } }",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "BuildCreativeModeTabContentsEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/BuildCreativeModeTabContentsEvent.java#L25",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "CommandEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/CommandEvent.java#L27",
+                "cancellable": true,
+                "description": "CommandEvent is fired after a command is parsed, but before it is executed. This event is fired during the invocation of performCommand(ParseResults, String). This event is ICancellableEvent cancellable, and does not HasResult have a result. If the event is cancelled, the command will not be executed. This event is fired on the EVENT_BUS main Forge event bus, only on the SERVER logical server",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "DefaultDataComponentsBoundEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/DefaultDataComponentsBoundEvent.java#L17",
+                "cancellable": false,
+                "description": "This event is emitted after data components have been bound to holders in a registry. This can occur on the server when datapacks are reloaded or when the client receives this data upon joining a world. This event signals when areComponentsBound() becomes true",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "DifficultyChangeEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/DifficultyChangeEvent.java#L20",
+                "cancellable": false,
+                "description": "DifficultyChangeEvent is fired when difficulty is changing. This event is fired via the onDifficultyChange(Difficulty, Difficulty). This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "GameShuttingDownEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/GameShuttingDownEvent.java#L20",
+                "cancellable": false,
+                "description": "A simple marker event that notifies when the game is about to close. Fires once on the physical client and physical server. Does not fire for the Integrated Server on a physical Client. On the client, the GL Context is still valid when the event is fired. Fired on the FORGE event bus",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "GatherSkippedAttributeTooltipsEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/GatherSkippedAttributeTooltipsEvent.java#L25",
+                "cancellable": false,
+                "description": "This event is used to collect the IDs of attribute modifiers that will not be displayed in item tooltips. It allows hiding some (or all) of the modifiers, potentially for displaying them in an alternative way (or for hiding information from the player). This event may be fired on both the logical client and logical server",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "GrindstoneEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/GrindstoneEvent.java#L16",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "GrindstoneEvent.OnPlaceItem",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/GrindstoneEvent.java#L79",
+                "cancellable": true,
+                "description": "This event is ICancellableEvent OnPlaceItem is fired when the inputs to a grindstone are changed. The following rules apply: If the event is canceled, vanilla behavior will not run, and the output will be EMPTY empty. If the event is not canceled and the output is empty, the output will be determined by vanilla. and the output is not empty, the output will be set, without running vanilla behavior. Vanilla XP calculation logic will be used unless all of the following criterias are met: the amount of experience is greater than or equal to 0; the event is not isCanceled() canceled; the getOutput() output is not empty",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "GrindstoneEvent.OnTakeItem",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/GrindstoneEvent.java#L116",
+                "cancellable": true,
+                "description": "This event is ICancellableEvent OnTakeItem is fired when the output in a grindstone are is taken. It is called from GrindstoneMenu(int, Inventory). If the event is canceled, vanilla behavior will not run, and no inputs will be consumed. if the amount of experience is larger than or equal 0, the vanilla behavior for calculating experience will not run",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ItemAttributeModifierEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/ItemAttributeModifierEvent.java#L35",
+                "cancellable": false,
+                "description": "This event is fired when the attributes for an item stack are queried (for any reason) through getAttributeModifiers(). This event is fired regardless of if the stack has ATTRIBUTE_MODIFIERS or not. If your attribute should be ignored when attributes are overridden, you can check for the presence of the component. This event may be fired on both the logical server and logical client",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ItemStackedOnOtherEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/ItemStackedOnOtherEvent.java#L34",
+                "cancellable": true,
+                "description": "This event provides the functionality of the pair of functions used for the Bundle, in one event: overrideOtherStackedOnMe(ItemStack, ItemStack, Slot, ClickAction, Player, SlotAccess) overrideStackedOnOther(ItemStack, Slot, ClickAction, Player) This event is fired before either of the above are called, when a carried item is clicked on top of another in a GUI slot. This event (and items stacking on others in general) is fired on both LogicalSide sides, but only on CLIENT the client in the creative menu. Practically, that means that listeners of this event should require the player to be in survival mode if using capabilities that are not synced. This event is ICancellableEvent cancellable, and does not HasResult have a result. If the event is cancelled, the container's logic halts, the carried item and the slot will not be swapped, and handling is assumed to have been done by the mod. This also means that the two vanilla checks described above will not be called",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LootTableLoadEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/LootTableLoadEvent.java#L33",
+                "cancellable": true,
+                "description": "Fired when a LootTable is loaded from JSON. Can be used to modify the loot table, cancel loading it, or outright replace it. This event is currently fired for all loot tables coming from vanilla, mods, and user datapacks. This event is fired whenever server resources are loaded or reloaded. This event is ICancellableEvent cancellable, and does not HasResult have a result. If the event is cancelled, the loot table will be made empty. This event is fired on the EVENT_BUS main Forge event bus, only on the SERVER logical server",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ModMismatchEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/ModMismatchEvent.java#L39",
+                "cancellable": false,
+                "description": "Fires when the mod loader is in the process of loading a world that was last saved with mod versions that differ from the currently-loaded versions. This can be used to enqueue work to run at a later point, such as multi-file migration of data. Note that level and world information has not yet been fully loaded; as such, it is unsafe to access server or level information during handling of this event. This event is not ICancellableEvent cancellable, and does not HasResult have a result. This event is fired on the mod-specific event bus, on both LogicalSide logical sides",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ModifyDefaultComponentsEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/ModifyDefaultComponentsEvent.java#L42",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ModifyRecipeJsonsEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/ModifyRecipeJsonsEvent.java#L36",
+                "cancellable": false,
+                "description": "Fired after recipe JSON files have been loaded from disk but before deserialization begins. This event allows mods to modify the raw JSON data directly, avoiding the need to intercept and reprocess already-deserialized recipe instances. This event exists primarily for mods that need to perform bulk modifications to recipes, such as for modpack integration in a broadly compatible way. For typical use cases, defining or overriding recipes via standard JSON files is strongly preferred. The provided map must be modified in-place to affect the upcoming deserialization process. Note that at this stage it is not guaranteed that all recipes will be deserialized, as their conditions have not yet been evaluated. Condition evaluation is performed via ConditionalOps, which is exposed for convenience. Fired on the logical server via the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "OnDatapackSyncEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/OnDatapackSyncEvent.java#L24",
+                "cancellable": false,
+                "description": "Fires when a player joins the server or when the reload command is ran, before tags and crafting recipes are sent to the client. Send datapack data to clients when this event fires",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayLevelSoundEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/PlayLevelSoundEvent.java#L38",
+                "cancellable": true,
+                "description": "PlayLevelSoundEvent is fired when a sound is played on a Level. This event is fired from playSound, playSeededSound, and playSound. getLevel() contains the level the sound is being played in. getSound() contains the sound event to be played. getOriginalVolume() contains the original volume for the sound to be played at. getOriginalPitch() contains the original pitch for the sound to be played at. getNewVolume() contains the volume the sound will be played at. getNewPitch() contains the pitch the sound will be played at. This event is ICancellableEvent cancelable. If this event is canceled, the sound is not played. This event does not have a result. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayLevelSoundEvent.AtEntity",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/PlayLevelSoundEvent.java#L147",
+                "cancellable": true,
+                "description": "PlayLevelSoundEvent.AtEntity is fired when a sound is played on the Level at an Entity Entity's position. This event is fired from playSound, playSeededSound, and playSound. This event is ICancellableEvent cancelable. If this event is canceled, the sound is not played. This event does not have a result. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayLevelSoundEvent.AtPosition",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/PlayLevelSoundEvent.java#L174",
+                "cancellable": true,
+                "description": "PlayLevelSoundEvent.AtPosition is fired when a sound is played on the Level at a specific position. This event is fired from playSound and playSeededSound. This event is ICancellableEvent cancelable. If this event is canceled, the sound is not played. This event does not have a result. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "RegisterCauldronInteractionEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/RegisterCauldronInteractionEvent.java#L17",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "RegisterCauldronInteractionEvent.Dispatcher",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/RegisterCauldronInteractionEvent.java#L27",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "RegisterCauldronInteractionEvent.Interaction",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/RegisterCauldronInteractionEvent.java#L42",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "RegisterCommandsEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/RegisterCommandsEvent.java#L22",
+                "cancellable": false,
+                "description": "Commands are rebuilt whenever ReloadableServerResources is recreated. You can use this event to register your commands whenever the Commands class in constructed. The event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "RegisterGameRuleCategoryEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/RegisterGameRuleCategoryEvent.java#L19",
+                "cancellable": false,
+                "description": "Fired to allow modders to register custom GameRuleCategory gamerule categories. This event is fired on the mod-specific event bus",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "RegisterGameTestsEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/RegisterGameTestsEvent.java#L30",
+                "cancellable": false,
+                "description": "Game tests are registered on client or server startup. It is run in load(ResourceManager, List, List, java.util.concurrent.Executor) if isGametestEnabled returns true. Fired on the Mod bus, see IModBusEvent",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "RegisterStructureConversionsEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/RegisterStructureConversionsEvent.java#L35",
+                "cancellable": false,
+                "description": "Fired for registering structure conversions for pre-1.18.2 worlds. This is used by StructuresBecomeConfiguredFix for converting old structure IDs in pre-1.18.2 worlds to their new equivalents, which can be differentiated per biome. By default, structures whose old ID has a namespace which is not equal to {@value Identifier#DEFAULT_NAMESPACE} will be assumed to belong to a modded structure and will be used as the new ID. Mods may choose to register structure conversions for their structures, if they wish to override this default behavior. This event will only fire if StructuresBecomeConfiguredFix is used, as a result of converting a pre-1.18.2 world to the current version. This event is not ICancellableEvent cancelable, and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus, only on the SERVER logical server",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ServerChatEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/ServerChatEvent.java#L28",
+                "cancellable": true,
+                "description": "This event is fired whenever a ServerboundChatPacket is received from a client who has submitted their chat message. This event is ICancellableEvent cancellable, and does not HasResult have a result. If the event is cancelled, the message will not be sent to clients. This event is fired on the EVENT_BUS main Forge event bus, only on the SERVER logical server",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "SortedReloadListenerEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/SortedReloadListenerEvent.java#L28",
+                "cancellable": false,
+                "description": "Base class for AddServerReloadListenersEvent and AddClientReloadListenersEvent. This class holds the sorting logic that allows for the creation of dependency ordering",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "StatAwardEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/StatAwardEvent.java#L23",
+                "cancellable": true,
+                "description": "Fired when a Player is awarded a Stat. This event is fired in awardStat(Stat, int) This event is ICancellableEvent cancelable. This event does not have a result. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "TagsUpdatedEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/TagsUpdatedEvent.java#L14",
+                "cancellable": false,
+                "description": "Fired when tags are updated on either server or client. This event can be used to refresh data that depends on tags",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "VanillaGameEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/VanillaGameEvent.java#L27",
+                "cancellable": true,
+                "description": "VanillaGameEvent is fired on the server whenever one of Vanilla's GameEvent GameEvents fire. This allows for listening to Vanilla's events in a more structured and global way that is not tied to needing a block entity listener. This event is fired on the EVENT_BUS. Cancel this event to prevent Vanilla from posting the GameEvent to all nearby GameEventListener GameEventListeners",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            }
+        ],
+        "net.neoforged.neoforge.event.brewing": [
+            {
+                "event": "PlayerBrewedPotionEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/brewing/PlayerBrewedPotionEvent.java#L15",
+                "cancellable": false,
+                "description": "This event is called when a player picks up a potion from a brewing stand",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PotionBrewEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/brewing/PotionBrewEvent.java#L14",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PotionBrewEvent.Pre",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/brewing/PotionBrewEvent.java#L51",
+                "cancellable": true,
+                "description": "PotionBrewEvent.Pre is fired before vanilla brewing takes place. All changes made to the event's array will be made to the TileEntity if the event is canceled. The event is fired during the doBrew(Level, BlockPos, NonNullList) method invocation. stacks contains the itemstack array from the TileEntityBrewer holding all items in Brewer. This event is ICancellableEvent. If the event is not canceled, the vanilla brewing will take place instead of modded brewing. This event is fired on the EVENT_BUS. If this event is canceled, and items have been modified, PotionBrewEvent.Post will automatically be fired",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PotionBrewEvent.Post",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/brewing/PotionBrewEvent.java#L68",
+                "cancellable": false,
+                "description": "PotionBrewEvent.Post is fired when a potion is brewed in the brewing stand. The event is fired during the doBrew(Level, BlockPos, NonNullList) method invocation. stacks contains the itemstack array from the TileEntityBrewer holding all items in Brewer. This event is not ICancellableEvent. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "RegisterBrewingRecipesEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/brewing/RegisterBrewingRecipesEvent.java#L18",
+                "cancellable": false,
+                "description": "Event to register new brewing recipes. Fired on both client and server side, on the main event bus",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            }
+        ],
+        "net.neoforged.neoforge.event.enchanting": [
+            {
+                "event": "EnchantmentLevelSetEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/enchanting/EnchantmentLevelSetEvent.java#L20",
+                "cancellable": false,
+                "description": "Fired when the enchantment level is set for each of the three potential enchantments in the enchanting table. The level is set to the vanilla value and can be modified by this event handler. The enchantRow is used to determine which enchantment level is being set, 1, 2, or 3. The power is a number from 0-15 and indicates how many bookshelves surround the enchanting table. The itemStack representing the item being enchanted is also available",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "GetEnchantmentLevelEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/enchanting/GetEnchantmentLevelEvent.java#L26",
+                "cancellable": false,
+                "description": "This event is fired whenever the enchantment level of a particular item is requested for gameplay purposes. It is called from getEnchantmentLevel(Holder) and getAllEnchantments(RegistryLookup). It is not fired for interactions with NBT, which means these changes will not reflect in the item tooltip",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            }
+        ],
+        "net.neoforged.neoforge.event.entity": [
+            {
+                "event": "EntityAttributeCreationEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityAttributeCreationEvent.java#L23",
+                "cancellable": false,
+                "description": "EntityAttributeCreationEvent. Use this event to register attributes for your own EntityTypes. This event is fired after registration and before common setup. Fired on the Mod bus IModBusEvent",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EntityAttributeModificationEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityAttributeModificationEvent.java#L29",
+                "cancellable": false,
+                "description": "EntityAttributeModificationEvent. Use this event to add attributes to existing entity types. This event is fired after registration and before common setup, and after EntityAttributeCreationEvent Fired on the Mod bus IModBusEvent",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EntityEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityEvent.java#L23",
+                "cancellable": false,
+                "description": "Base class of the events involving entities",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EntityEvent.EntityConstructing",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityEvent.java#L43",
+                "cancellable": false,
+                "description": "EntityConstructing is fired when an Entity is being created. This event is fired within the constructor of the Entity. getEntity contains the entity that caused this event to occur. This event is not ICancellableEvent cancellable, and is fired on the EVENT_BUS game event bus",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EntityEvent.EnteringSection",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityEvent.java#L61",
+                "cancellable": false,
+                "description": "This event is fired on server and client after an Entity has entered a different section. Sections are 16x16x16 block grids of the world. This event does not fire when a new entity is spawned, only when an entity moves from one section to another one. Use EntityJoinLevelEvent to detect new entities joining the world. getEntity contains the entity that caused this event to occur. This event is not ICancellableEvent cancellable, and is fired on the EVENT_BUS game event bus",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EntityEvent.Size",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityEvent.java#L126",
+                "cancellable": false,
+                "description": "Fired whenever the entity's Pose changes for manipulating the resulting EntityDimensions. Note: This event is fired from the Entity constructor, and therefore the entity instance might not be fully initialized. Be cautious in using methods and fields from the instance, and check isAddedToLevel() or firstTick. getEntity contains the entity that caused this event to occur. This event is not ICancellableEvent cancellable, and is fired on the EVENT_BUS game event bus",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EntityInvulnerabilityCheckEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityInvulnerabilityCheckEvent.java#L20",
+                "cancellable": false,
+                "description": "Fired when isInvulnerableTo(DamageSource) is invoked and determines if downstream hurt logic should apply. This event is fired on both sides in isInvulnerableTo(DamageSource) Note: This event may be unable to change the invulnerable status of some entities that override isInvulnerableTo against certain damage sources",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EntityJoinLevelEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityJoinLevelEvent.java#L30",
+                "cancellable": true,
+                "description": "This event is fired whenever an Entity joins a Level. This event is fired whenever an entity is added to a level in addFreshEntity(Entity) and addNewEntity(Entity, boolean). Note: This event may be called before the underlying LevelChunk is promoted to FULL. You will cause chunk loading deadlocks if you do not delay your world interactions. This event is ICancellableEvent cancellable and does not HasResult have a result. If the event is canceled, the entity will not be added to the level. This event is fired on the EVENT_BUS main Forge event bus on both logical sides",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EntityLeaveLevelEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityLeaveLevelEvent.java#L22",
+                "cancellable": false,
+                "description": "This event is fired whenever an Entity leaves a Level. This event is fired whenever an entity is removed from the level in onTrackingEnd(Object). This event is not ICancellableEvent cancellable and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus on both logical sides",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EntityMobGriefingEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityMobGriefingEvent.java#L16",
+                "cancellable": false,
+                "description": "EntityMobGriefingEvent is fired when mob griefing is about to occur and allows an event listener to specify whether it should or not. This event is fired when ever the MOB_GRIEFING mob griefing game rule is checked",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EntityMountEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityMountEvent.java#L25",
+                "cancellable": true,
+                "description": "This event gets fired whenever a entity mounts/dismounts another entity. entityBeingMounted can be null, be sure to check for that. This event is ICancellableEvent. If this event is canceled, the entity does not mount/dismount the other entity. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EntityStruckByLightningEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityStruckByLightningEvent.java#L26",
+                "cancellable": true,
+                "description": "EntityStruckByLightningEvent is fired when an Entity is about to be struck by lightening. This event is fired whenever an EntityLightningBolt is updated to strike an Entity in tick() via onEntityStruckByLightning(Entity, LightningBolt). lightning contains the instance of EntityLightningBolt attempting to strike an entity. This event is ICancellableEvent. If this event is canceled, the Entity is not struck by the lightening. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EntityTeleportEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityTeleportEvent.java#L33",
+                "cancellable": true,
+                "description": "EntityTeleportEvent is fired when an event involving any teleportation of an Entity occurs. If a method utilizes this Event as its parameter, the method will receive every child event of this class. getTarget() contains the target destination. getPrev() contains the entity's current position. All children of this event are fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EntityTeleportEvent.TeleportCommand",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityTeleportEvent.java#L108",
+                "cancellable": true,
+                "description": "EntityTeleportEvent.TeleportCommand is fired before a living entity is teleported from use of TeleportCommand. This event is ICancellableEvent. If the event is not canceled, the entity will be teleported. This event is fired on the EVENT_BUS. This event is only fired on the SERVER side. If this event is canceled, the entity will not be teleported",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EntityTeleportEvent.SpreadPlayersCommand",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityTeleportEvent.java#L127",
+                "cancellable": true,
+                "description": "EntityTeleportEvent.SpreadPlayersCommand is fired before a living entity is teleported from use of SpreadPlayersCommand. This event is ICancellableEvent. If the event is not canceled, the entity will be teleported. This event is fired on the EVENT_BUS. This event is only fired on the SERVER side. If this event is canceled, the entity will not be teleported",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EntityTeleportEvent.EnderEntity",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityTeleportEvent.java#L145",
+                "cancellable": true,
+                "description": "EntityTeleportEvent.EnderEntity is fired before an Enderman or Shulker randomly teleports. This event is ICancellableEvent. If the event is not canceled, the entity will be teleported. This event is fired on the EVENT_BUS. This event is only fired on the SERVER side. If this event is canceled, the entity will not be teleported",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EntityTeleportEvent.EnderPearl",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityTeleportEvent.java#L170",
+                "cancellable": true,
+                "description": "EntityTeleportEvent.EnderPearl is fired before an Entity is teleported from an EnderPearlEntity. This event is ICancellableEvent. If the event is not canceled, the entity will be teleported. This event is fired on the EVENT_BUS. This event is only fired on the SERVER side. If this event is canceled, the entity will not be teleported",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EntityTeleportEvent.ItemConsumption",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityTeleportEvent.java#L219",
+                "cancellable": true,
+                "description": "EntityTeleportEvent.ChorusFruit is fired before a LivingEntity is teleported due to consuming Chorus Fruit. This event is ICancellableEvent. If the event is not canceled, the entity will be teleported. This event is fired on the EVENT_BUS. This event is only fired on the SERVER side. If this event is canceled, the entity will not be teleported",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EntityTravelToDimensionEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityTravelToDimensionEvent.java#L24",
+                "cancellable": true,
+                "description": "EntityTravelToDimensionEvent is fired before an Entity travels to a dimension. dimension contains the id of the dimension the entity is traveling to (may be the same as the entity's current dimension). This event is ICancellableEvent. If this event is canceled, the Entity does not travel to the dimension. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ProjectileImpactEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/ProjectileImpactEvent.java#L23",
+                "cancellable": true,
+                "description": "This event is fired on the EVENT_BUS. This event is fired when a projectile entity impacts something. This event is fired via onProjectileImpact(Projectile, HitResult) This event is fired for all vanilla projectiles by Forge, custom projectiles should fire this event and check the result in a similar fashion. This event is cancelable. When canceled, the impact will not be processed and the projectile will continue flying. Killing or other handling of the entity after event cancellation is up to the modder",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "RegisterSpawnPlacementsEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/RegisterSpawnPlacementsEvent.java#L42",
+                "cancellable": false,
+                "description": "This event allows each EntityType to have a SpawnPredicate registered or modified. Spawn Predicates are checked whenever an Entity of the given EntityType spawns in the world naturally. If registering your own entity's spawn placements, you should use register(EntityType, SpawnPlacementType, Heightmap.Types, SpawnPlacements.SpawnPredicate, Operation) So that you ensure that your entity has a heightmap type and placement type registered. If modifying vanilla or another mod's spawn placements, you can use three operations: REPLACE: checked first, the last mod to replace the predicate wipes out all other predicates. Listen with a low EventPriority if you need to do this. OR: checked second, only one of these predicates must pass along with the original predicate AND: checked third, these predicates must all pass along with the original predicate This event is not ICancellableEvent cancellable and does not HasResult have a result. Fired on the Mod bus IModBusEvent",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "Entity.MergedSpawnPredicate",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/RegisterSpawnPlacementsEvent.java#L102",
+                "cancellable": false,
+                "description": "Checked first, the last mod to replace the predicate wipes out all other predicates. Listen with a low EventPriority if you need to do this",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            }
+        ],
+        "net.neoforged.neoforge.event.entity.item": [
+            {
+                "event": "ItemEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/item/ItemEvent.java#L17",
+                "cancellable": false,
+                "description": "Base class for all ItemEntity events. Contains a reference to the ItemEntity of interest. For most ItemEntity events, there's little to no additional useful data from the firing method that isn't already contained within the ItemEntity instance",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ItemExpireEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/item/ItemExpireEvent.java#L21",
+                "cancellable": false,
+                "description": "Event that is fired when an ItemEntity's age has reached its maximum lifespan. Adding extra life time will prevent the ItemEntity from being flagged as dead, thus staying its removal from the world. Note that using this event, you can ony extend the lifespan up to MAX_VALUE - 1 ticks (27.5 minutes). To extend an item's lifespan above that, use either setExtendedLifetime() or setUnlimitedLifetime. This event will only be fired server-side",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ItemTossEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/item/ItemTossEvent.java#L18",
+                "cancellable": true,
+                "description": "Event that is fired whenever a player tosses (Q) an item or drag-n-drops a stack of items outside the inventory GUI screens. Canceling the event will stop the items from entering the world, but will not prevent them being removed from the inventory - and thus removed from the system",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            }
+        ],
+        "net.neoforged.neoforge.event.entity.living": [
+            {
+                "event": "AnimalTameEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/AnimalTameEvent.java#L21",
+                "cancellable": true,
+                "description": "This event is fired when an Animal is tamed. It is fired via onAnimalTame(Animal, Player). Forge fires this event for applicable vanilla animals, mods need to fire it themselves. This event is ICancellableEvent. If canceled, taming the animal will fail. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ArmorHurtEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/ArmorHurtEvent.java#L21",
+                "cancellable": true,
+                "description": "Fired on both sides when a LivingEntity's armor is dealt damage in doHurtEquipment(DamageSource, float, EquipmentSlot...) doHurtEquipment",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "BabyEntitySpawnEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/BabyEntitySpawnEvent.java#L36",
+                "cancellable": true,
+                "description": "BabyEntitySpawnEvent is fired just before a baby entity is about to be spawned. Parents will have disengaged their relationship. ICancellableEvent It is possible to change the child completely by using setChild(AgeableMob) This event is fired from spawnChildFromBreeding(ServerLevel, Animal) and spawnChildFromBreeding(ServerLevel, Animal) parentA contains the initiating parent entity. parentB contains the secondary parent entity. causedByPlayer contains the player responsible for the breading (if applicable). child contains the child that will be spawned. This event is ICancellableEvent. If this event is canceled, the child Entity is not added to the world, and the parents will no longer attempt to mate. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EffectParticleModificationEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/EffectParticleModificationEvent.java#L23",
+                "cancellable": false,
+                "description": "Fires for each effect to allow modification or replacement of the particle options (you can set it to null to reset it to default). This event is not ICancellableEvent. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EnderManAngerEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/EnderManAngerEvent.java#L20",
+                "cancellable": true,
+                "description": "This event is fired on the forge bus before an Enderman detects that a player is looking at them. It will not be fired if the detection is already prevented by isGazeDisguise This event is ICancellableEvent. If this event is canceled, the Enderman will not target the player",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "FinalizeSpawnEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/FinalizeSpawnEvent.java#L40",
+                "cancellable": true,
+                "description": "This event is fired before finalizeSpawn is called. This allows mods to control mob initialization. In vanilla code, this event is injected by a transformer and not via patch, so calls cannot be traced via call hierarchy (it is not source-visible). Canceling this event will result in finalizeSpawn not being called, and the returned value always being null, instead of propagating the SpawnGroupData. The entity will still be spawned. If you want to prevent the spawn, use setSpawnCancelled, which will cause Forge to prevent the spawn. This event is fired on EVENT_BUS, and is only fired on the logical server",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingBreatheEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingBreatheEvent.java#L22",
+                "cancellable": false,
+                "description": "LivingBreatheEvent is fired whenever a living entity ticks. This event is fired via onLivingBreathe(LivingEntity, int, int). This event is not ICancellableEvent. This event is fired on EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingChangeTargetEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingChangeTargetEvent.java#L33",
+                "cancellable": true,
+                "description": "This event allows you to change what target an entity is about to have. This event is fired via the onLivingChangeTarget(LivingEntity, LivingEntity, ILivingTargetType) getOriginalAboutToBeSetTarget() returns the target that should originally be set. The return value cannot be changed. getNewAboutToBeSetTarget() returns the new target that this entity will have. The return value can be affected by calling setNewAboutToBeSetTarget(LivingEntity). getTargetType() returns the target type that caused the change of targets. This event is ICancellableEvent. If you cancel this event, the target will stay the same to what the entity already is targeting and not be changed. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingConversionEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingConversionEvent.java#L13",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingConversionEvent.Pre",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingConversionEvent.java#L29",
+                "cancellable": true,
+                "description": "LivingConversionEvent.Pre is triggered when an entity is trying to replace itself with another entity This event may trigger every tick even if it was cancelled last tick for entities like Zombies and Hoglins. To prevent it, the conversion timer needs to be changed or reset This event is ICancellableEvent If cancelled, the replacement will not occur",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingConversionEvent.Post",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingConversionEvent.java#L68",
+                "cancellable": false,
+                "description": "LivingConversionEvent.Post is triggered when an entity is replacing itself with another entity. The old living entity is likely to be removed right after this event",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingDamageEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingDamageEvent.java#L29",
+                "cancellable": false,
+                "description": "LivingDamageEvent captures an entity's loss of health. At this stage in the damage sequence, all reduction effects have been applied. Pre allows for modification of the damage value before it is applied to the entity's health. Post contains an immutable representation of the entire damage sequence and allows for reference to the values accrued at each step",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingDamageEvent.Pre",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingDamageEvent.java#L48",
+                "cancellable": false,
+                "description": "LivingDamageEvent.Pre is fired when an Entity is set to be hurt. At this point armor, and potion modifiers have already been applied to the damage value and the entity. Absorption modifiers are handled after this event. This event is fired in actuallyHurt(DamageSource, float For custom posting of this event, the event expects to be fired after damage reductions have been calculated but before any changes to the entity health has been applied. This event expects a mutable DamageContainer. This event is fired via the onLivingDamagePre(LivingEntity, DamageContainer)",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingDamageEvent.Post",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingDamageEvent.java#L97",
+                "cancellable": false,
+                "description": "LivingDamageEvent.Post is fired after health is modified on the entity. The fields in this event represent the FINAL values of what was applied to the entity. Also note that appropriate resources (like armor durability and absorption extra hearts) have already been consumed. This event is fired whenever an Entity is damaged in actuallyHurt(DamageSource, float) This event is fired via onLivingDamagePost(LivingEntity, DamageContainer)",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingDeathEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingDeathEvent.java#L32",
+                "cancellable": true,
+                "description": "LivingDeathEvent is fired when an Entity dies. This event is fired whenever an Entity dies in die(DamageSource), die(DamageSource), and die(DamageSource). This event is fired via the onLivingDeath(LivingEntity, DamageSource). source contains the DamageSource that caused the entity to die. This event is ICancellableEvent. If this event is canceled, the Entity does not die. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingDestroyBlockEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingDestroyBlockEvent.java#L25",
+                "cancellable": true,
+                "description": "Fired when the ender dragon or wither attempts to destroy a block and when ever a zombie attempts to break a door. Basically a event version of canEntityDestroy(BlockState, BlockGetter, BlockPos, Entity) This event is ICancellableEvent. If this event is canceled, the block will not be destroyed. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingDropsEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingDropsEvent.java#L33",
+                "cancellable": true,
+                "description": "LivingDropsEvent is fired when an Entity's death causes dropped items to appear. This event is fired whenever an Entity dies and drops items in die(DamageSource). This event is fired via the onLivingDrops(LivingEntity, DamageSource, Collection, int, boolean) . source contains the DamageSource that caused the drop to occur. drops contains the ArrayList of EntityItems that will be dropped. lootingLevel contains the amount of loot that will be dropped. recentlyHit determines whether the Entity doing the drop has recently been damaged. This event is ICancellableEvent. If this event is canceled, the Entity does not drop anything. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingDrownEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingDrownEvent.java#L26",
+                "cancellable": true,
+                "description": "LivingDrownEvent is fired whenever a living entity can't breathe and its air supply is less than or equal to zero. This event is fired via onLivingBreathe(LivingEntity, int, int). This event is ICancellableEvent. Effects of cancellation are noted in setCanceled(boolean). This event does not HasResult have a result. This event is fired on EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingEntityUseItemEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingEntityUseItemEvent.java#L13",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingEntityUseItemEvent.Start",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingEntityUseItemEvent.java#L59",
+                "cancellable": true,
+                "description": "Fired when a player starts 'using' an item, typically when they hold right mouse. Examples: Drawing a bow Eating Food Drinking Potions/Milk Guarding with a sword Cancel the event, or set the duration or {@literal <=} 0 to prevent it from processing",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingEntityUseItemEvent.Tick",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingEntityUseItemEvent.java#L71",
+                "cancellable": true,
+                "description": "Fired every tick that a player is 'using' an item, see Start for info. Cancel the event, or set the duration to {@literal <=} 0 to cause the player to stop using the item",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingEntityUseItemEvent.Stop",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingEntityUseItemEvent.java#L89",
+                "cancellable": true,
+                "description": "Fired when a player stops using an item without the use duration timing out. Example: Stop eating 1/2 way through Stop defending with sword Stop drawing bow. This case would fire the arrow Duration on this event is how long the item had left in it's count down before 'finishing' Canceling this event will prevent the Item from being notified that it has stopped being used, The only vanilla item this would effect are bows, and it would cause them NOT to fire there arrow",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingEntityUseItemEvent.Finish",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingEntityUseItemEvent.java#L107",
+                "cancellable": false,
+                "description": "Fired after an item has fully finished being used. The item has been notified that it was used, and the item/result stacks reflect after that state. This means that when this is fired for a Potion, the potion effect has already been applied. item is a copy of the item BEFORE it was used. If you wish to cancel those effects, you should cancel one of the above events. The result item stack is the stack that is placed in the player's inventory in replacement of the stack that is currently being used",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingEquipmentChangeEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingEquipmentChangeEvent.java#L28",
+                "cancellable": false,
+                "description": "LivingEquipmentChangeEvent is fired when the Equipment of a Entity changes. This event is fired whenever changes in Equipment are detected in tick(). This also includes entities joining the World, as well as being cloned. This event is fired on server-side only. slot contains the affected EquipmentSlot. from contains the ItemStack that was equipped previously. to contains the ItemStack that is equipped now. This event is not ICancellableEvent. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingEvent.java#L21",
+                "cancellable": false,
+                "description": "Base class of the events specific to LivingEntities",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingEvent.LivingJumpEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingEvent.java#L49",
+                "cancellable": false,
+                "description": "LivingJumpEvent is fired when a LivingEntity jumps. This event is fired whenever a LivingEntity jumps in jumpFromGround(), jumpFromGround(), jumpFromGround(), executeRidersJump(), and executeRidersJump(). This event is fired via the onLivingJump(LivingEntity). getEntity contains the entity that caused this event to occur. This event is not ICancellableEvent cancellable, and is fired on the EVENT_BUS game event bus",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingEvent.LivingVisibilityEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingEvent.java#L67",
+                "cancellable": false,
+                "description": "LivingVisibilityEvent is fired when an LivingEntity's visibility is queried. This event is fired whenever getVisibilityPercent() is called. This event is fired via the getEntityVisibilityMultiplier(LivingEntity, Entity, double). getEntity contains the entity that caused this event to occur. This event is not ICancellableEvent cancellable, and is fired on the EVENT_BUS game event bus",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingExperienceDropEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingExperienceDropEvent.java#L18",
+                "cancellable": true,
+                "description": "Event for when an entity drops experience on its death, can be used to change the amount of experience points dropped or completely prevent dropping of experience by canceling the event",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingFallEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingFallEvent.java#L28",
+                "cancellable": true,
+                "description": "LivingFallEvent is fired when an Entity is set to be falling. This event is fired whenever an Entity is set to fall in causeFallDamage(double, float, DamageSource). This event is fired via the onLivingFall(LivingEntity, double, float). distance contains the distance the Entity is to fall. If this event is canceled, this value is set to 0.0F. This event is ICancellableEvent. If this event is canceled, the Entity does not fall. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingGetProjectileEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingGetProjectileEvent.java#L23",
+                "cancellable": false,
+                "description": "This event is fired when a living entity attempts to get a projectile with the getProjectile(ItemStack) method. The item stack given is usually the item stack of a ProjectileWeaponItem and the item stack returned is usually the item stack of a Projectile. This event is not ICancellableEvent. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingHealEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingHealEvent.java#L26",
+                "cancellable": true,
+                "description": "LivingHealEvent is fired when an Entity is set to be healed. This event is fired whenever an Entity is healed in heal(float) This event is fired via the onLivingHeal(LivingEntity, float). amount contains the amount of healing done to the Entity that was healed. This event is ICancellableEvent. If this event is canceled, the Entity is not healed. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingIncomingDamageEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingIncomingDamageEvent.java#L28",
+                "cancellable": true,
+                "description": "LivingIncomingDamageEvent is fired when a LivingEntity is about to receive damage. This event is fired in hurt(DamageSource, float) after invulnerability checks but before any damage processing/mitigation. For custom posting of this event, the event expects to be fired before any damage reductions have been calculated. This event expects a mutable DamageContainer. This event is fired via the onEntityIncomingDamage(LivingEntity, DamageContainer)",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingKnockBackEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingKnockBackEvent.java#L36",
+                "cancellable": true,
+                "description": "LivingKnockBackEvent is fired when a living entity is about to be knocked back. This event is fired whenever an Entity is knocked back in hurt(DamageSource, float), blockUsingShield(LivingEntity), doHurtTarget(Entity) and attack(Entity) This event is fired via onLivingKnockBack(LivingEntity, float, double, double) . strength contains the strength of the knock back. ratioX contains the x ratio of the knock back. ratioZ contains the z ratio of the knock back. This event is ICancellableEvent. If this event is canceled, the entity is not knocked back. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingShieldBlockEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingShieldBlockEvent.java#L26",
+                "cancellable": false,
+                "description": "LivingShieldBlockEvent is fired when an entity is hurt and vanilla checks if the entity is attempting to block with a shield. Cancelling this event will have the same impact as if the shield was not eligible to block. The damage blocked cannot be set lower than zero or greater than the original value. Note: This event fires whether the player is actively using a shield or not. Vanilla shield blocking logic is captured and passed into the event via getOriginalBlock(). If this is true, The shield item stack \"should\" be available from getUseItem() at least for players",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingSwapItemsEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingSwapItemsEvent.java#L14",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingSwapItemsEvent.Hands",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingSwapItemsEvent.java#L26",
+                "cancellable": true,
+                "description": "This event is fired when a living entity is about to swap the items in their main and offhand. This event is executed in handlePlayerAction This event is ICancellableEvent cancellable, and does not HasResult have a result",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LivingUseTotemEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/LivingUseTotemEvent.java#L25",
+                "cancellable": true,
+                "description": "Fired when an Entity attempts to use a totem to prevent its death. This event is ICancellableEvent cancellable, and does not HasResult have a result. If this event is cancelled, the totem will not prevent the entity's death. This event is fired on the EVENT_BUS Forge event bus, only on the SERVER logical server",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "MobDespawnEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/MobDespawnEvent.java#L24",
+                "cancellable": false,
+                "description": "This event is fired from checkDespawn(). It fires once per tick per mob that is attempting to despawn. It is fired for all entities, including isPersistenceRequired() persistent entities. Additionally, it may be used to keep mobs from despawning in peaceful mode. This event is only fired on the logical server",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "MobEffectEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/MobEffectEvent.java#L23",
+                "cancellable": false,
+                "description": "This event is fired when an interaction between a LivingEntity and MobEffectInstance happens. All children of this event are fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "MobEffectEvent.Remove",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/MobEffectEvent.java#L42",
+                "cancellable": true,
+                "description": "This Event is fired when a MobEffect is about to get removed from an Entity. This Event is ICancellableEvent. If canceled, the effect will not be removed. This Event does not have a result",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "MobEffectEvent.Applicable",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/MobEffectEvent.java#L81",
+                "cancellable": false,
+                "description": "This event is fired to check if a MobEffectInstance can be applied to an entity. It will be fired whenever canBeAffected(MobEffectInstance) would be invoked",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "MobEffectEvent.Added",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/MobEffectEvent.java#L158",
+                "cancellable": false,
+                "description": "This event is fired when a new MobEffectInstance is added to an entity. This event is also fired if an entity already has the effect but with a different duration or amplifier. This event is not ICancellableEvent. This event does not have a result",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "MobEffectEvent.Expired",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/MobEffectEvent.java#L199",
+                "cancellable": true,
+                "description": "This event is fired when a MobEffectInstance expires on an entity. This event is ICancellableEvent. This event does not have a result",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "MobSpawnEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/MobSpawnEvent.java#L39",
+                "cancellable": false,
+                "description": "This class holds all events relating to the entire flow of mob spawns. Currently, the events have the following flow for any given mob spawn: Before the spawn is attempted SpawnPlacementCheck is fired, to determine if the spawn may occur based on mob-specific rules. After the entity is created PositionCheck is fired, to determine if the selected position is legal for the entity. If both checks succeeded, FinalizeSpawn is fired, which performs initialization on the newly-spawned entity. Finally, if the spawn was not cancelled via setSpawnCancelled, then EntityJoinLevelEvent is fired as the entity enters the world. AllowDespawn is not related to the mob spawn event flow, as it fires when a despawn is attempted",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "MobSpawnEvent.PositionCheck",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/MobSpawnEvent.java#L236",
+                "cancellable": false,
+                "description": "This event is fired when a mob checks for a valid spawn position, after checkSpawnRules has been evaluated. Conditions validated here include the following: Obstruction - mobs inside blocks or fluids. Pathfinding - if the spawn block is valid for pathfinding. Sea Level - Ocelots check if the position is above sea level. Spawn Block - Ocelots check if the below block is grass or leaves. This event is only fired on the SERVER logical server",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "MobSplitEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/MobSplitEvent.java#L24",
+                "cancellable": true,
+                "description": "This event is fired whenever a mob is removed and splits into multiple children. It only fires on the logical server. In vanilla, this event is fired by Slimes and Magma Cubes on death, from remove(RemovalReason). Mods may elect to fire this event for any mob that splits on removal",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "SpawnClusterSizeEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/living/SpawnClusterSizeEvent.java#L15",
+                "cancellable": false,
+                "description": "This event is fired from spawnCategoryForPosition when the spawning system determines the maximum amount of the selected entity that can spawn at the same time",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            }
+        ],
+        "net.neoforged.neoforge.event.entity.player": [
+            {
+                "event": "AdvancementEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/AdvancementEvent.java#L20",
+                "cancellable": false,
+                "description": "Base class used for advancement-related events. Should not be used directly",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "AdvancementEvent.AdvancementEarnEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/AdvancementEvent.java#L45",
+                "cancellable": false,
+                "description": "Fired when the player earns an advancement. An advancement is earned once its requirements are complete. Note that advancements may be hidden from the player or used in background mechanics, such as recipe advancements for unlocking recipes in the recipe book. This event is not ICancellableEvent cancellable, and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus, only on the SERVER logical server",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "AdvancementEvent.AdvancementProgressEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/AdvancementEvent.java#L63",
+                "cancellable": false,
+                "description": "Fired when the player's progress on an advancement criterion is granted or revoked. This event is not ICancellableEvent cancellable, and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus, only on the SERVER logical server",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "AnvilCraftEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/AnvilCraftEvent.java#L26",
+                "cancellable": false,
+                "description": "The AnvilCraftEvent is fired when the player onTake picks up the result of an anvil operation, \"crafting\" it. It can be used to react to the player performing the crafting operation, and changing the side effects of doing so. It cannot be used to modify the result of the anvil operation. To do that, use AnvilUpdateEvent. This event is fired on both the logical server and logical client",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "AnvilCraftEvent.Pre",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/AnvilCraftEvent.java#L76",
+                "cancellable": true,
+                "description": "This event is fired when the player picks up the result of the anvil operation, but before any post-processing occurs. Normal post-processing includes removing the input items from the anvil, charging the player XP, and damaging the anvil block. In addition, post processing is also responsible for firing Post",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "AnvilCraftEvent.Post",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/AnvilCraftEvent.java#L97",
+                "cancellable": false,
+                "description": "This event is fired after the player picks up the result of the anvil operation, and all post-processing has occurred. By this time, the input items have been removed from the anvil, the player has been charged XP, and the anvil block has been damaged (and potentially removed from the level)",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ArrowLooseEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/ArrowLooseEvent.java#L30",
+                "cancellable": true,
+                "description": "ArrowLooseEvent is fired when a player stops using a bow. This event is fired whenever a player stops using a bow in releaseUsing(ItemStack, Level, LivingEntity, int). bow contains the ItemBow ItemStack that was used in this event. charge contains the value for how much the player had charged before stopping the shot. This event is ICancellableEvent. If this event is canceled, the player does not stop using the bow. For crossbows, the charge will always be 1; Set it to -1 in order to prevent firing the arrow. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ArrowNockEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/ArrowNockEvent.java#L27",
+                "cancellable": true,
+                "description": "ArrowNockEvent is fired when a player begins using a bow. This event is fired whenever a player begins using a bow in use(Level, Player, InteractionHand). This event is ICancellableEvent. Cancelling the event causes the action to fail with FAIL. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "AttackEntityEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/AttackEntityEvent.java#L25",
+                "cancellable": true,
+                "description": "AttackEntityEvent is fired when a player attacks an Entity. This event is fired whenever a player attacks an Entity in attack(Entity). target contains the Entity that was damaged by the player. This event is ICancellableEvent. If this event is canceled, the player does not attack the Entity. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "BonemealEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/BonemealEvent.java#L27",
+                "cancellable": true,
+                "description": "This event is called when a player attempts to use bone meal on a block. This event can be cancelled, preventing vanilla handling from occurring. If you want to perform custom logic, cancel the event and perform your own handling. Use setSuccessful(boolean) to control if handling should believe bone meal was used. This event is fired on both client and server",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "CanContinueSleepingEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/CanContinueSleepingEvent.java#L24",
+                "cancellable": false,
+                "description": "This event is fired when the game checks if a sleeping entity may continue sleeping. It can be used to overwrite the vanilla check, forcing the entity to continue or stop sleeping. This event is only fired on the logical server",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "CanPlayerSleepEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/CanPlayerSleepEvent.java#L24",
+                "cancellable": false,
+                "description": "Called from startSleepInBed(BlockPos) when a player attempts to sleep. This event receives the result of vanilla checking if the sleep attempt is valid, and permits overriding it. This event is only fired on the logical server",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ClientInformationUpdatedEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/ClientInformationUpdatedEvent.java#L18",
+                "cancellable": false,
+                "description": "ClientInformationUpdatedEvent is fired when a player changes server-synced client options, specifically those in ClientInformation. This event is fired on the EVENT_BUS",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "CriticalHitEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/CriticalHitEvent.java#L20",
+                "cancellable": false,
+                "description": "This event is fired when a player attacks an entity in attack(Entity). It can be used to change the critical hit status and the critical damage multiplier. Additionally, this event allows controlling if the critical hit will impact sweep conditions. This event is fired on both the logical client and logical server",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "FluidTooltipEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/FluidTooltipEvent.java#L16",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ItemEntityPickupEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/ItemEntityPickupEvent.java#L20",
+                "cancellable": false,
+                "description": "Parent class of the two events that fire when a Player collides with an ItemEntity",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ItemEntityPickupEvent.Pre",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/ItemEntityPickupEvent.java#L56",
+                "cancellable": false,
+                "description": "This event is fired when a player collides with an ItemEntity on the ground. It can be used to determine if the item may be picked up by the player. If the pickup is successful (either by force or by default rules) Post will be fired. This event is only fired on the logical server",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ItemEntityPickupEvent.Post",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/ItemEntityPickupEvent.java#L94",
+                "cancellable": false,
+                "description": "This event is fired when an ItemEntity on the ground has been picked up by the player and after the item is added to the player's inventory. This event only fires if part of the item was picked up by the player. If the getItem() remaining item stack is empty, the item entity will be discarded. This event is only fired on the logical server",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ItemFishedEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/ItemFishedEvent.java#L22",
+                "cancellable": true,
+                "description": "This event is called when a player fishes an item. This event is ICancellableEvent Canceling the event will cause the player to receive no items at all. The hook will still take the damage specified",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ItemTooltipEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/ItemTooltipEvent.java#L16",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PermissionsChangedEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PermissionsChangedEvent.java#L17",
+                "cancellable": true,
+                "description": "This event will fire when the player is opped or deopped. This event is cancelable which will stop the op or deop from happening",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerContainerEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerContainerEvent.java#L11",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerContainerEvent.Open",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerContainerEvent.java#L19",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerContainerEvent.Close",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerContainerEvent.java#L25",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerDestroyItemEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerDestroyItemEvent.java#L44",
+                "cancellable": false,
+                "description": "PlayerDestroyItemEvent is fired when a player destroys an item. This event is fired whenever a player destroys an item in destroyBlock(BlockPos), useItem(Player, InteractionHand), useItemOn(LocalPlayer, InteractionHand, BlockHitResult) , attack(Entity), hurtCurrentlyUsedShield(float), interactOn(Entity, InteractionHand), getCraftingRemainder(ItemStack), useItem(ServerPlayer, Level, ItemStack, InteractionHand) , useItemOn(ServerPlayer, Level, ItemStack, InteractionHand, BlockHitResult) and destroyBlock(BlockPos). original contains the original ItemStack before the item was destroyed. (@link #hand) contains the hand that the current item was held in. This event is not ICancellableEvent. This event is fired from onPlayerDestroyItem(Player, ItemStack, InteractionHand). This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerEnchantItemEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEnchantItemEvent.java#L19",
+                "cancellable": false,
+                "description": "This event fires when a player enchants an item, after applyEnchantments has been called. This event is only fired on the logical server",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java#L52",
+                "cancellable": false,
+                "description": "Base class of the events specific to Players",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerEvent.HarvestCheck",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java#L80",
+                "cancellable": false,
+                "description": "HarvestCheck is fired when a player attempts to harvest a block. This event is fired whenever a player attempts to harvest a block in hasCorrectToolForDrops(BlockState). This event is fired via the doPlayerHarvestCheck(Player, BlockState, BlockGetter, BlockPos). state contains the BlockState that is being checked for harvesting. success contains the boolean value for whether the Block will be successfully harvested. getEntity contains the player that caused this event to occur. This event is not ICancellableEvent cancellable, and is fired on the EVENT_BUS game event bus",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerEvent.BreakSpeed",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java#L134",
+                "cancellable": true,
+                "description": "BreakSpeed is fired when a player attempts to harvest a block. This event is fired whenever a player attempts to harvest a block in getDigSpeed(BlockState, BlockPos). This event is fired via the getBreakSpeed(Player, BlockState, float, BlockPos). state contains the block being broken. originalSpeed contains the original speed at which the player broke the block. newSpeed contains the newSpeed at which the player will break the block. pos contains the coordinates at which this event is occurring. Optional value. getEntity contains the player that caused this event to occur. This event is ICancellableEvent. If it is canceled, the player is unable to break the block. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerEvent.NameFormat",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java#L184",
+                "cancellable": false,
+                "description": "NameFormat is fired when a player's display name is retrieved. This event is fired whenever a player's name is retrieved in getDisplayName() or refreshDisplayName(). This event is fired via the getPlayerDisplayName(Player, Component). username contains the username of the player. displayname contains the display name of the player. This event is not ICancellableEvent cancellable, and is fired on the EVENT_BUS game event bus",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerEvent.TabListNameFormat",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java#L220",
+                "cancellable": false,
+                "description": "TabListNameFormat is fired when a player's display name for the tablist is retrieved. This event is fired whenever a player's display name for the tablist is retrieved in getTabListDisplayName() or refreshTabListName(). This event is fired via the getPlayerTabListDisplayName(Player). getDisplayName() contains the display name of the player or null if the client should determine the display name itself. This event is not ICancellableEvent cancellable, and is fired on the EVENT_BUS game event bus",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerEvent.Clone",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java#L245",
+                "cancellable": false,
+                "description": "Fired when the player is cloned, typically caused by the impl sending a RESPAWN_PLAYER event. Either caused by death, or by traveling from the End to the overworld. This event is not ICancellableEvent cancellable, and is fired on the EVENT_BUS game event bus",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerEvent.StartTracking",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java#L277",
+                "cancellable": false,
+                "description": "Fired when an Entity is started to be \"tracked\" by this player (the player receives updates about this entity, e.g. motion). This event is not ICancellableEvent cancellable, and is fired on the EVENT_BUS game event bus",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerEvent.StopTracking",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java#L299",
+                "cancellable": false,
+                "description": "Fired when an Entity is stopped to be \"tracked\" by this player (the player no longer receives updates about this entity, e.g. motion). This event is not ICancellableEvent cancellable, and is fired on the EVENT_BUS game event bus",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerEvent.LoadFromFile",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java#L325",
+                "cancellable": false,
+                "description": "The player is being loaded from the world save. Note: The player won't have been added to the world yet. Intended to allow mods to load an additional file from the players directory containing additional mod related player data. This event is not ICancellableEvent cancellable, and is fired on the EVENT_BUS game event bus",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerEvent.SaveToFile",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java#L379",
+                "cancellable": false,
+                "description": "The player is being saved to the world store. Note: The player may be in the process of logging out or otherwise departing from the world. Don't assume its association with the world. This allows mods to load an additional file from the players directory containing additional mod related player data. Use this event to save the additional mod related player data to the world. WARNING: Do not overwrite the player's .dat file here. You will corrupt the world state. This event is not ICancellableEvent cancellable, and is fired on the EVENT_BUS game event bus",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerEvent.ItemCraftedEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java#L416",
+                "cancellable": false,
+                "description": "The UUID is the standard for player related file storage. It is broken out here for convenience for quick file generation",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerEvent.ItemSmeltedEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java#L443",
+                "cancellable": false,
+                "description": "Fired when a player takes the resultant ItemStack from a furnace-like block. This event is fired via the firePlayerSmeltedEvent(Player, ItemStack, int). This event is not ICancellableEvent cancellable, and is fired on the EVENT_BUS game event bus",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerEvent.PlayerLoggedInEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java#L468",
+                "cancellable": false,
+                "description": "Fired when the player is placed into the server via placeNewPlayer(Connection, ServerPlayer, CommonListenerCookie) This event is not ICancellableEvent cancellable, and is fired on the EVENT_BUS game event bus",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerEvent.PlayerLoggedOutEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java#L480",
+                "cancellable": false,
+                "description": "Fired when the player is removed from the server via remove(ServerPlayer) This event is not ICancellableEvent cancellable, and is fired on the EVENT_BUS game event bus",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerEvent.PlayerRespawnEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java#L493",
+                "cancellable": false,
+                "description": "Fired when the player is respawned via respawn(ServerPlayer, boolean) after creating and initializing the new ServerPlayer. This event is not ICancellableEvent cancellable, and is fired on the EVENT_BUS game event bus",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerEvent.PlayerChangedDimensionEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java#L517",
+                "cancellable": false,
+                "description": "Fired when the player is teleported to a new dimension via teleport(TeleportTransition) This event is not ICancellableEvent cancellable, and is fired on the EVENT_BUS game event bus",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerEvent.PlayerChangeGameModeEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerEvent.java#L543",
+                "cancellable": true,
+                "description": "Fired when the game type of a server player is changed to a different value than what it was previously. Eg Creative to Survival, not Survival to Survival. If the event is cancelled the game mode of the player is not changed and the value of newGameMode is ignored. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerFlyableFallEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerFlyableFallEvent.java#L16",
+                "cancellable": false,
+                "description": "Occurs when a player falls, but is able to fly. Doesn't need to be cancelable, this is mainly for notification purposes",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerInteractEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerInteractEvent.java#L38",
+                "cancellable": false,
+                "description": "PlayerInteractEvent is fired when a player interacts in some way. All subclasses are fired on EVENT_BUS. See the individual documentation on each subevent for more details",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerInteractEvent.EntityInteractSpecific",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerInteractEvent.java#L60",
+                "cancellable": true,
+                "description": "This event is fired on both sides whenever a player right clicks an entity. \"Interact at\" is an interact where the local vector (which part of the entity you clicked) is known. The state of this event affects whether interactAt(Player, Vec3, InteractionHand) is called. Let result be the return value of interactAt(Player, Vec3, InteractionHand), or cancellationResult if the event is cancelled. If we are on the client and result is not SUCCESS, the client will then try EntityInteract",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerInteractEvent.EntityInteract",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerInteractEvent.java#L118",
+                "cancellable": true,
+                "description": "This event is fired on both sides when the player right clicks an entity. It is responsible for all general entity interactions. This event is fired only if the result of the above EntityInteractSpecific is not SUCCESS. This event's state affects whether interact(Player, InteractionHand) and interactLivingEntity(ItemStack, Player, LivingEntity, InteractionHand) are called. Let result be SUCCESS if interact(Player, InteractionHand) or interactLivingEntity(ItemStack, Player, LivingEntity, InteractionHand) return true, or cancellationResult if the event is cancelled. If we are on the client and result is not SUCCESS, the client will then try RightClickItem",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerInteractEvent.RightClickBlock",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerInteractEvent.java#L163",
+                "cancellable": true,
+                "description": "This event is fired on both sides whenever the player right clicks while targeting a block. This event controls which of onItemUseFirst, use(BlockState, Level, BlockPos, Player, InteractionHand, BlockHitResult), and useOn(UseOnContext) will be called. Canceling the event will cause none of the above three to be called. Let result be the first non-pass return value of the above three methods, or pass, if they all pass. Or cancellationResult if the event is cancelled. If result equals PASS, we proceed to RightClickItem. There are various results to this event, see the getters below. Note that handling things differently on the client vs server may cause desynchronizations!",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerInteractEvent.RightClickItem",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerInteractEvent.java#L249",
+                "cancellable": true,
+                "description": "This event is fired on both sides before the player triggers use(Level, Player, InteractionHand). Note that this is NOT fired if the player is targeting a block RightClickBlock or entity EntityInteract EntityInteractSpecific. Let result be the return value of use(Level, Player, InteractionHand), or cancellationResult if the event is cancelled. If we are on the client and result is not SUCCESS, the client will then continue to other hands",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerInteractEvent.RightClickEmpty",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerInteractEvent.java#L279",
+                "cancellable": false,
+                "description": "This event is fired on the client side when the player right clicks empty space with an empty hand. The server is not aware of when the client right clicks empty space with an empty hand, you will need to tell the server yourself. This event cannot be canceled",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerInteractEvent.LeftClickBlock",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerInteractEvent.java#L300",
+                "cancellable": true,
+                "description": "This event is fired when a player left clicks while targeting a block. This event controls which of attack(BlockState, Level, BlockPos, Player) and/or the item harvesting methods will be called Canceling the event will cause none of the above noted methods to be called. There are various results to this event, see the getters below. This event is fired at various points during left clicking on blocks, at both the start and end on the server, and at the start and while held down on the client. Use getAction() to check which type of action triggered this event. Note that if the event is canceled and the player holds down left mouse, the event will continue to fire. This is due to how vanilla calls the left click handler methods. Also note that creative mode directly breaks the block without running any other logic. Therefore, in creative mode, setUseBlock and setUseItem have no effect",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerInteractEvent.LeftClickEmpty",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerInteractEvent.java#L384",
+                "cancellable": false,
+                "description": "This event is fired on the client side when the player left clicks empty space with any ItemStack. The server is not aware of when the client left clicks empty space, you will need to tell the server yourself. This event cannot be canceled",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerNegotiationEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerNegotiationEvent.java#L24",
+                "cancellable": false,
+                "description": "This event is fired on the server when a connection has started the Forge handshake, Forge will wait for all enqueued work to be completed before proceeding further with the login process. This event can be used to delay the player login until any necessary work such as preloading user data has completed. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerRespawnPositionEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerRespawnPositionEvent.java#L29",
+                "cancellable": false,
+                "description": "Fired by respawn(ServerPlayer, boolean) before the server respawns a player. This may be used to change the ServerLevel the player respawns in, as well as their respawn position. This event is fired after getRespawnPosition(EntityType, LevelReader, BlockPos, float, LivingEntity) is called. This event is only fired on the logical server",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerSetSpawnEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerSetSpawnEvent.java#L20",
+                "cancellable": true,
+                "description": "This event is fired when a player's spawn point is set or reset. The event can be canceled, which will prevent the spawn point from being changed",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerSpawnPhantomsEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerSpawnPhantomsEvent.java#L22",
+                "cancellable": false,
+                "description": "This event is fired from tick when phantoms would attempt to be spawned, with one event fired per player. It allows controlling if a spawn attempt will be made for the particular player, but cannot guarantee that a Phantom will be spawned. This event is only fired on the logical server",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerWakeUpEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerWakeUpEvent.java#L15",
+                "cancellable": false,
+                "description": "This event is fired when the player is waking up. This is merely for purposes of listening for this to happen. There is nothing that can be manipulated with this event",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerXpEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerXpEvent.java#L21",
+                "cancellable": false,
+                "description": "Base class of events involving player experience",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerXpEvent.PickupXp",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerXpEvent.java#L33",
+                "cancellable": true,
+                "description": "This event is fired after the player collides with an experience orb, but before the player has been given the experience. It can be cancelled, and no further processing will be done. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerXpEvent.XpChange",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerXpEvent.java#L53",
+                "cancellable": true,
+                "description": "This event is fired when the player's experience changes through the giveExperiencePoints(int) method. It can be cancelled, and no further processing will be done. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerXpEvent.LevelChange",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/PlayerXpEvent.java#L77",
+                "cancellable": true,
+                "description": "This event is fired when the player's experience level changes through the giveExperienceLevels(int) method. It can be cancelled, and no further processing will be done. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "SweepAttackEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/SweepAttackEvent.java#L20",
+                "cancellable": true,
+                "description": "The SweepAttackEvent is fired when a Player attacks a target, after the CriticalHitEvent has been fired. This event can be used to force an attack to trigger a sweep, or to prevent a sweep from occurring. This event is fired on both the logical client and logical server",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "TradeWithVillagerEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/TradeWithVillagerEvent.java#L22",
+                "cancellable": false,
+                "description": "Fired when a player trades with an AbstractVillager. This event is not ICancellableEvent cancellable, and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus, only on the SERVER logical server",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "UseItemOnBlockEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/player/UseItemOnBlockEvent.java#L43",
+                "cancellable": true,
+                "description": "Fires on both the client and server thread when a player interacts with a block. The event fires in three phases, corresponding with the three interaction behaviors: onItemUseFirst, useItemOn, and useOn. The event fires after the interaction logic decides to run the particular interaction behavior, as opposed to RightClickBlock which fires once-per-right-click, before the behavior-choosing logic. If the event is cancelled via cancelWithResult, then the normal interaction behavior for that phase will not run, and the specified InteractionResult will be returned instead",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            }
+        ],
+        "net.neoforged.neoforge.event.furnace": [
+            {
+                "event": "FurnaceFuelBurnTimeEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/furnace/FurnaceFuelBurnTimeEvent.java#L29",
+                "cancellable": true,
+                "description": "FurnaceFuelBurnTimeEvent is fired when determining the fuel value for an ItemStack. To set the burn time of your own item, use getBurnTime(ItemStack, RecipeType, FuelValues) instead. This event is fired from getItemBurnTime(ItemStack, int, RecipeType, FuelValues). This event is ICancellableEvent to prevent later handlers from changing the value. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            }
+        ],
+        "net.neoforged.neoforge.event.level": [
+            {
+                "event": "AlterGroundEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/AlterGroundEvent.java#L35",
+                "cancellable": false,
+                "description": "This event is fired when placeBlockAt(TreeDecorator.Context, BlockPos) attempts to alter a ground block when generating a feature. An example of this would be large spruce trees converting grass blocks into podzol. This event is not ICancellableEvent cancellable. This event is fired on the EVENT_BUS main Forge event bus only on the SERVER logical server. This event is fired on worker threads, meaning it is unsafe to access external global state. Doing so may induce ConcurrentModificationException or deadlocks",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "BlockDropsEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/BlockDropsEvent.java#L30",
+                "cancellable": true,
+                "description": "Fired when a block is broken and the drops have been determined, but before they have been added to the world. This event can be used to manipulate the dropped items and experience. No guarantees can be made about the block. It will either have already been removed from the world, or will be removed after the event terminates. If you wish to edit the state of the block in-world, use BreakEvent",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "BlockEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/BlockEvent.java#L29",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "BlockEvent.EntityPlaceEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/BlockEvent.java#L59",
+                "cancellable": true,
+                "description": "Called when a block is placed. If a Block Place event is cancelled, the block will not be placed",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EntityPlaceEvent.EntityMultiPlaceEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/BlockEvent.java#L102",
+                "cancellable": true,
+                "description": "Fired when a single block placement triggers the creation of multiple blocks(e.g. placing a bed block). The block returned by state and its related methods is the block where the placed block would exist if the placement only affected a single block",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "BlockEvent.NeighborNotifyEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/BlockEvent.java#L129",
+                "cancellable": true,
+                "description": "Fired when a physics update occurs on a block. This event acts as a way for mods to detect physics updates, in the same way a BUD switch does. This event is only called on the server",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "BlockEvent.FluidPlaceBlockEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/BlockEvent.java#L166",
+                "cancellable": true,
+                "description": "Fired when a liquid places a block. Use setNewState(BlockState) to change the result of a cobblestone generator or add variants of obsidian. Alternatively, you could execute arbitrary code when lava sets blocks on fire, even preventing it. getState() will return the block that was originally going to be placed. getPos() will return the position of the block to be changed",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "BlockEvent.FarmlandTrampleEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/BlockEvent.java#L208",
+                "cancellable": true,
+                "description": "Fired when when farmland gets trampled This event is ICancellableEvent",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "BlockEvent.PortalSpawnEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/BlockEvent.java#L233",
+                "cancellable": true,
+                "description": "Fired when an attempt is made to spawn a nether portal from onPlace(BlockState, Level, BlockPos, BlockState, boolean). If cancelled, the portal will not be spawned",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "BlockEvent.BlockToolModificationEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/BlockEvent.java#L256",
+                "cancellable": true,
+                "description": "Fired when a block is right-clicked by a tool to change its state. For example: Used to determine if AXE_STRIP an axe can strip, SHOVEL_FLATTEN a shovel can path, or HOE_TILL a hoe can till. Care must be taken to ensure level-modifying events are only performed if isSimulated() returns false. This event is ICancellableEvent. If canceled, this will prevent the tool from changing the block's state",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "BlockGrowFeatureEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/BlockGrowFeatureEvent.java#L25",
+                "cancellable": true,
+                "description": "This event is fired whenever a block (like a sapling) grows into a feature (like a tree). In vanilla, this fires for saplings, fungi, mushrooms and azaleas. Mods may fire it for similar blocks. This event is only fired on the logical server",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ChunkDataEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/ChunkDataEvent.java#L20",
+                "cancellable": false,
+                "description": "ChunkDataEvent is fired when a chunk is about to be loaded from disk or saved to disk",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ChunkDataEvent.Load",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/ChunkDataEvent.java#L53",
+                "cancellable": false,
+                "description": "ChunkDataEvent.Load is fired when the chunk has been created from the provided SerializableChunkData and is about to be marked as loaded. This event is fired on the main server thread in scheduleChunkLoad(ChunkPos). Saving custom data on a chunk should be handled with data attachments. Interacting with data attachments on the provided chunk is safe in this event. This event is not ICancellableEvent cancellable. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ChunkDataEvent.Save",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/ChunkDataEvent.java#L80",
+                "cancellable": false,
+                "description": "ChunkDataEvent.Save is fired after the chunk has been serialized to the provided SerializableChunkData which is about to be handed off to a background thread to be written to disk. This event is fired during chunk saving on the main server thread in save(ChunkAccess). Saving custom data on a chunk should be handled with data attachments. Interacting with data attachments on the provided chunk is safe in this event, but any changes done to them in this event will NOT be reflected in the serialized chunk data. This event is not ICancellableEvent cancellable. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ChunkEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/ChunkEvent.java#L21",
+                "cancellable": false,
+                "description": "Base class for events involving chunks. All children of this event are fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ChunkEvent.Load",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/ChunkEvent.java#L46",
+                "cancellable": false,
+                "description": "This event is fired after Minecraft loads a LevelChunk into the level, on both the client and server. Specifically, this is fired during chunk loading in full, and when the client receives a chunk from the server. Note: On the server, this event is fired before the underlying LevelChunk is promoted to FULL. Interactions with the getLevel() level must be delayed until the next game tick to prevent deadlocking the game",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ChunkEvent.Unload",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/ChunkEvent.java#L70",
+                "cancellable": false,
+                "description": "This event is fired when Minecraft unloads a Chunk from the level, just before the side-specific unload method is called. On the server, this event is fired after the chunk has been saved, and Save has been fired",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ChunkTicketLevelUpdatedEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/ChunkTicketLevelUpdatedEvent.java#L31",
+                "cancellable": false,
+                "description": "This event is fired whenever a chunk has its ticket level changed via the server's ChunkMap. This event does not fire if the new ticket level is the same as the old level, or if both the new AND old ticket levels represent values past the max chunk distance. Due to how vanilla processes ticket level changes this event may be fired \"twice\" in one tick for the same chunk. The scenario where this happens is when increasing the level from say 31 (ticking) to 32, the way vanilla does it is by first changing it from 31 to 46, and then queuing the update from 46 to 32. However, when going from 32 to 31, vanilla is able to go directly. This event is not ICancellableEvent cancellable and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus only on the SERVER logical server",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ChunkWatchEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/ChunkWatchEvent.java#L28",
+                "cancellable": false,
+                "description": "This event is fired whenever a chunk has a watch-related action. The getPlayer() player's level may not be the same as the getLevel() level of the chunk when the player is teleporting to another dimension. This event is not ICancellableEvent cancellable and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus only on the SERVER logical server",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ChunkWatchEvent.Watch",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/ChunkWatchEvent.java#L72",
+                "cancellable": false,
+                "description": "This event is fired whenever a ServerPlayer begins watching a chunk and the chunk is queued up for sending to the client (see markChunkPendingToSend(ServerPlayer, LevelChunk)). This event must NOT be used to send additional chunk-related data to the client as the client will not be aware of the chunk yet when this event fires. Sent should be used for this purpose instead This event is not ICancellableEvent cancellable and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus only on the SERVER logical server",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ChunkWatchEvent.Sent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/ChunkWatchEvent.java#L96",
+                "cancellable": false,
+                "description": "This event is fired whenever a chunk being watched by a ServerPlayer is transmitted to their client (see sendNextChunks(ServerPlayer)). This event may be used to send additional chunk-related data to the client. This event is not ICancellableEvent cancellable and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus only on the SERVER logical server",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ChunkWatchEvent.UnWatch",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/ChunkWatchEvent.java#L122",
+                "cancellable": false,
+                "description": "This event is fired whenever a ServerPlayer stops watching a chunk. The chunk this event fires for may never have actually been known to the client if the chunk goes out of range before being sent due to slow pacing of chunk sync on slow connections or to slow clients. This event is fired when a chunk is removed from the watched chunks of an ServerPlayer in dropChunk(ServerPlayer, ChunkPos). This event is not ICancellableEvent cancellable and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus only on the SERVER logical server",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ExplosionEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/ExplosionEvent.java#L27",
+                "cancellable": false,
+                "description": "ExplosionEvent triggers when an explosion happens in the level. ExplosionEvent.Start is fired before the explosion actually occurs. ExplosionEvent.Detonate is fired once the explosion has a list of affected blocks and entities. ExplosionEvent.Start is ICancellableEvent. ExplosionEvent.Detonate can modify the affected blocks and entities. Children of this event are fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ExplosionEvent.Start",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/ExplosionEvent.java#L50",
+                "cancellable": true,
+                "description": "ExplosionEvent.Start is fired before the explosion actually occurs. Canceling this event will stop the explosion. This event is ICancellableEvent. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ExplosionEvent.Detonate",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/ExplosionEvent.java#L62",
+                "cancellable": false,
+                "description": "ExplosionEvent.Detonate is fired once the explosion has a list of affected blocks and entities. These lists can be modified to change the outcome. This event is not ICancellableEvent. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ExplosionKnockbackEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/ExplosionKnockbackEvent.java#L23",
+                "cancellable": false,
+                "description": "ExplosionKnockbackEvent is fired once the explosion has calculated the knockback velocity to add to the entity caught in blast. This event is not ICancellableEvent. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "GameRuleChangedEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/GameRuleChangedEvent.java#L22",
+                "cancellable": false,
+                "description": "Event which is fired when ever a GameRule is updated. This event is fired on the EVENT_BUS main NeoForge event bus, only on the SERVER logical server",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LevelEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/LevelEvent.java#L30",
+                "cancellable": false,
+                "description": "This event is fired whenever an event involving a LevelAccessor occurs. All children of this event are fired on the EVENT_BUS main Forge event bus",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LevelEvent.Load",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/LevelEvent.java#L54",
+                "cancellable": false,
+                "description": "This event is fired whenever a level loads. This event is fired whenever a level loads in ClientLevel's constructor and {@literal MinecraftServer#createLevels(ChunkProgressListener)}. This event is not ICancellableEvent cancellable and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus on both logical sides",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LevelEvent.Unload",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/LevelEvent.java#L72",
+                "cancellable": false,
+                "description": "This event is fired whenever a level unloads. This event is fired whenever a level unloads in setLevel(ClientLevel), stopServer(), clearLevel(Screen). This event is not ICancellableEvent cancellable and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus on both logical sides",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LevelEvent.Save",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/LevelEvent.java#L88",
+                "cancellable": false,
+                "description": "This event fires whenever a level is saved. This event is fired when a level is saved in save(ProgressListener, boolean, boolean). This event is not ICancellableEvent cancellable and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus only on the SERVER logical server",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LevelEvent.CreateSpawnPosition",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/LevelEvent.java#L106",
+                "cancellable": true,
+                "description": "This event fires whenever a ServerLevel is initialized for the first time and a spawn position needs to be chosen. This event is ICancellableEvent cancellable and does not HasResult have a result. If the event is canceled, the vanilla logic to choose a spawn position will be skipped. This event is fired on the EVENT_BUS main Forge event bus only on the SERVER logical server",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LevelEvent.PotentialSpawns",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/LevelEvent.java#L130",
+                "cancellable": true,
+                "description": "Fired when building a list of all possible entities that can spawn at the specified location. If an entry is added to the list, it needs to be a globally unique instance. The event is called in mobsAt(ServerLevel, StructureManager, ChunkGenerator, MobCategory, RandomSource, BlockPos). This event is ICancellableEvent cancellable, and does not HasResult have a result. Canceling the event will result in an empty list, meaning no entity will be spawned",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ModifyCustomSpawnersEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/ModifyCustomSpawnersEvent.java#L21",
+                "cancellable": false,
+                "description": "This event is fired on the SERVER logical server when a ServerLevel is building its CustomSpawner custom spawners. Subscribe to this event to add/remove CustomSpawner custom spawners for the level. This event is not ICancellableEvent cancellable and does not have a result",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "NoteBlockEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/NoteBlockEvent.java#L19",
+                "cancellable": false,
+                "description": "Base class for Noteblock Events",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "NoteBlockEvent.Play",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/NoteBlockEvent.java#L70",
+                "cancellable": true,
+                "description": "Fired when a Noteblock plays it's note. You can override the note and instrument Canceling this event will stop the note from playing",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "NoteBlockEvent.Change",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/NoteBlockEvent.java#L91",
+                "cancellable": true,
+                "description": "Fired when a Noteblock is changed. You can adjust the note it will change to via setNote(Note, Octave). Canceling this event will not change the note and also stop the Noteblock from playing it's note",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PistonEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/PistonEvent.java#L18",
+                "cancellable": false,
+                "description": "Base piston event, use Post and Pre",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PistonEvent.Post",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/PistonEvent.java#L68",
+                "cancellable": false,
+                "description": "Fires after the piston has moved and set surrounding states. This will not fire if Pre is cancelled",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PistonEvent.Pre",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/PistonEvent.java#L77",
+                "cancellable": true,
+                "description": "Fires before the piston has updated block states. Cancellation prevents movement",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "SleepFinishedTimeEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/SleepFinishedTimeEvent.java#L15",
+                "cancellable": true,
+                "description": "This event is fired to adjust the clock of a level after sleep",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            }
+        ],
+        "net.neoforged.neoforge.event.level.block": [
+            {
+                "event": "BreakBlockEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/block/BreakBlockEvent.java#L31",
+                "cancellable": true,
+                "description": "This event is fired when a player attempts to break a block, on both the client and server. The following conditions may cause this event to fire in a cancelled state: If blockActionRestricted is true. If the target block is a GameMasterBlock and canUseGameMasterBlocks() is false. If the the player is holding an item, and canAttackBlock is false. In the first two cases, un-cancelling the event will not permit the block to be broken. In the third case, un-cancelling will allow the break, bypassing the behavior of canAttackBlock",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "CreateFluidSourceEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/block/CreateFluidSourceEvent.java#L20",
+                "cancellable": false,
+                "description": "Fired when a fluid checks if nearby blocks can convert it to a source block. This can be used to manipulate if fluids are allowed to create sources dynamically",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "CropGrowEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/block/CropGrowEvent.java#L19",
+                "cancellable": false,
+                "description": "Parent of the two crop growth events",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "CropGrowEvent.Pre",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/block/CropGrowEvent.java#L30",
+                "cancellable": false,
+                "description": "Fired when any \"growing age\" blocks (for example cacti, chorus plants, or crops in vanilla) attempt to advance to the next growth age state during a random tick. This event is only fired on the logical server",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "CropGrowEvent.Post",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/level/block/CropGrowEvent.java#L82",
+                "cancellable": false,
+                "description": "Fired when \"growing age\" blocks (for example cacti, chorus plants, or crops in vanilla) have successfully grown. The block's original state is available, in addition to its new state. This event is only fired on the logical server",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            }
+        ],
+        "net.neoforged.neoforge.event.server": [
+            {
+                "event": "ServerAboutToStartEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/server/ServerAboutToStartEvent.java#L19",
+                "cancellable": false,
+                "description": "Called before the server begins loading anything. Called after InterModProcessEvent on the dedicated server, and after the player has hit \"Play Selected World\" in the client. Called before ServerStartingEvent. You can obtain a reference to the server with this event",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ServerLifecycleEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/server/ServerLifecycleEvent.java#L11",
+                "cancellable": false,
+                "description": "",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ServerStartedEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/server/ServerStartedEvent.java#L15",
+                "cancellable": false,
+                "description": "Called after ServerStartingEvent when the server is available and ready to play",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ServerStartingEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/server/ServerStartingEvent.java#L19",
+                "cancellable": false,
+                "description": "Called after ServerAboutToStartEvent and before ServerStartedEvent. This event allows for customizations of the server. If you need to add commands use RegisterCommandsEvent",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ServerStoppedEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/server/ServerStoppedEvent.java#L17",
+                "cancellable": false,
+                "description": "Called after ServerStoppingEvent when the server has completely shut down. Called immediately before shutting down, on the dedicated server, and before returning to the main menu on the client",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ServerStoppingEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/server/ServerStoppingEvent.java#L15",
+                "cancellable": false,
+                "description": "Called when the server begins an orderly shutdown, before ServerStoppedEvent",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            }
+        ],
+        "net.neoforged.neoforge.event.tick": [
+            {
+                "event": "EntityTickEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/tick/EntityTickEvent.java#L18",
+                "cancellable": false,
+                "description": "Base class of the two entity tick events",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EntityTickEvent.Pre",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/tick/EntityTickEvent.java#L28",
+                "cancellable": true,
+                "description": "Pre is fired once per game tick, per entity, before the entity performs work for the current tick. This event fires on both the logical server and logical client",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EntityTickEvent.Post",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/tick/EntityTickEvent.java#L51",
+                "cancellable": false,
+                "description": "Post is fired once per game tick, per entity, after the entity performs work for the current tick. If Pre was canceled for the current tick, this event will not fire. This event fires on both the logical server and logical client",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LevelTickEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/tick/LevelTickEvent.java#L19",
+                "cancellable": false,
+                "description": "Base class of the two level tick events",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LevelTickEvent.Pre",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/tick/LevelTickEvent.java#L50",
+                "cancellable": false,
+                "description": "Pre is fired once per game tick, per level, before the level performs work for the current tick. This event fires on both the logical client and logical server, for ClientLevel and ServerLevel respectively",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LevelTickEvent.Post",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/tick/LevelTickEvent.java#L61",
+                "cancellable": false,
+                "description": "Post is fired once per game tick, per level, after the level performs work for the current tick. This event fires on both the logical client and logical server, for ClientLevel and ServerLevel respectively",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerTickEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/tick/PlayerTickEvent.java#L27",
+                "cancellable": false,
+                "description": "Base class of the two player tick events. These events are separate from LivingTickEvent due to the semantics of player ticks. On the client, players tick from the usual tick() method, but on the server, they rely on doTick() which is called from tick(). Use of these events should only be necessary if you rely on this specific timing",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerTickEvent.Pre",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/tick/PlayerTickEvent.java#L39",
+                "cancellable": false,
+                "description": "Pre is fired once per game tick, per player, before the player performs work for the current tick. This event will fire on both the logical server and logical client, for subclasses of Player on their respective sides. As such, be sure to check isClientSide() before performing any operations",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayerTickEvent.Post",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/tick/PlayerTickEvent.java#L52",
+                "cancellable": false,
+                "description": "Post is fired once per game tick, per player, after the player performs work for the current tick. This event will fire on both the logical server and logical client, for subclasses of Player on their respective sides. As such, be sure to check isClientSide() before performing any operations",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ServerTickEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/tick/ServerTickEvent.java#L18",
+                "cancellable": false,
+                "description": "Base class of the two server tick events",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ServerTickEvent.Pre",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/tick/ServerTickEvent.java#L48",
+                "cancellable": false,
+                "description": "Pre is fired once per server tick, before the server performs work for the current tick. This event only fires on the logical server",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ServerTickEvent.Post",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/tick/ServerTickEvent.java#L59",
+                "cancellable": false,
+                "description": "Post is fired once per server tick, after the server performs work for the current tick. This event only fires on the logical server",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false
+            }
+        ],
+        "net.neoforged.neoforge.event.village": [
+            {
+                "event": "VillageSiegeEvent",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/village/VillageSiegeEvent.java#L24",
+                "cancellable": true,
+                "description": "VillageSiegeEvent is fired just before a zombie siege finds a successful location in tryToSetupSiege(ServerLevel), to give mods the chance to stop the siege. This event is ICancellableEvent; canceling stops the siege. This event is fired on the EVENT_BUS",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            }
+        ]
+    }
+}
