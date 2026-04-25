@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260424012822",
+    "lastupdated": "20260425012059",
     "version": "26.1.x",
-    "last_commit": "[82752b1d03ddda032cfb9420ce462dbfba7c32d6] Remove unimplemented hooks in IBaseRailBlockExtension (#3084)\n\nThis removes `IBaseRailBlockExtension#getRailMaxSpeed` and `IBaseRailBlockExtension#onMinecartPass`, as re-implementing them effectively requires redesigning them.",
+    "last_commit": "[27a63806a2781afa602e1e083dce2f178f1080c6] Add client config for skipping modded splashes when vanilla is modified (#3081)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
