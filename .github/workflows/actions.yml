@@ -16,7 +16,7 @@ jobs:
           token: ${{ secrets.MCM_PAT }}
 
       - name: setup python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
@@ -33,20 +33,15 @@ jobs:
           IS_PRODUCTION: ${{ vars.IS_PRODUCTION }}
         run: python main.py
 
-      - name: commit files
+      - name: commit and push files
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
-          FILES_CHANGED=$(git diff --cached --name-only | sed 's|^modloaders/data/||' | awk '{printf sep $0; sep=", "} END{print ""}')
+          FILES_CHANGED=$(git diff --cached --name-only | grep -v '\.min\.json$' | sed 's|^modloaders/data/||' | awk '{printf sep $0; sep=", "} END{print ""}')
           if [ -z "$FILES_CHANGED" ]; then
               echo "No changes to commit"
           else
               git commit -m "Updated: $FILES_CHANGED"
+              git push
           fi
-
-      - name: push changes
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.MCM_PAT }}
-          branch: main
