@@ -1,38 +1,123 @@
 {
-    "lastupdated": "20260425193715",
+    "lastupdated": "20260426112116",
     "version": "1.21.11",
     "last_commit": "[5ac2675f8700591a81e39d7414b24dd291818013] Fix server data packs from mods using incorrect version. Closes #10794",
     "data": {
         "net.minecraftforge.event": [
             {
                 "event": "AddReloadListenerEvent",
+                "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/AddReloadListenerEvent.java#L27",
                 "cancellable": false,
                 "description": "The main ResourceManager is recreated on each reload, just after ReloadableServerResources's creation. The event is fired on each reload and lets modders add their own ReloadListeners, for server-side resources",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "listeners",
+                        "type": "List<PreparableReloadListener>",
+                        "mutable": false
+                    },
+                    {
+                        "name": "serverResources",
+                        "type": "ReloadableServerResources",
+                        "mutable": false
+                    },
+                    {
+                        "name": "registries",
+                        "type": "HolderLookup.Provider",
+                        "mutable": false
+                    }
+                ]
             },
             {
                 "event": "AnvilUpdateEvent",
+                "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/AnvilUpdateEvent.java#L24",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "AnvilUpdateEvent is fired whenever the input stacks (left or right) or the name in an anvil changed. It is called from createResult(). If the event is canceled, vanilla behavior will not run, and the output will be set to EMPTY. If the event is not canceled, but the output is not empty, it will set the output and not run vanilla behavior. if the output is empty, and the event is not canceled, vanilla behavior will execute",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "left",
+                        "type": "ItemStack",
+                        "mutable": false
+                    },
+                    {
+                        "name": "right",
+                        "type": "ItemStack",
+                        "mutable": false
+                    },
+                    {
+                        "name": "name",
+                        "type": "String",
+                        "mutable": false
+                    },
+                    {
+                        "name": "output",
+                        "type": "ItemStack",
+                        "mutable": true
+                    },
+                    {
+                        "name": "cost",
+                        "type": "long",
+                        "mutable": true
+                    },
+                    {
+                        "name": "materialCost",
+                        "type": "int",
+                        "mutable": true
+                    },
+                    {
+                        "name": "player",
+                        "type": "Player",
+                        "mutable": false
+                    }
+                ]
             },
             {
                 "event": "AttachCapabilitiesEvent",
+                "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/AttachCapabilitiesEvent.java#L40",
                 "cancellable": false,
                 "description": "Fired whenever an object with Capabilities support {currently TileEntity/Item/Entity) is created. Allowing for the attachment of arbitrary capability providers. Please note that as this is fired for ALL object creations efficient code is recommended. And if possible use one of the sub-classes to filter your intended objects",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "obj",
+                        "type": "Object",
+                        "mutable": false
+                    },
+                    {
+                        "name": "caps",
+                        "type": "Map<Identifier, ICapabilityProvider>",
+                        "mutable": false
+                    },
+                    {
+                        "name": "view",
+                        "type": "Map<Identifier, ICapabilityProvider>",
+                        "mutable": false
+                    },
+                    {
+                        "name": "listeners",
+                        "type": "List<Runnable>",
+                        "mutable": false
+                    },
+                    {
+                        "name": "listenersView",
+                        "type": "List<Runnable>",
+                        "mutable": false
+                    }
+                ]
             },
             {
                 "event": "AttachCapabilitiesEvent.Entities",
+                "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/AttachCapabilitiesEvent.java#L47",
                 "cancellable": false,
                 "description": "",
@@ -42,6 +127,7 @@
             },
             {
                 "event": "AttachCapabilitiesEvent.BlockEntities",
+                "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/AttachCapabilitiesEvent.java#L60",
                 "cancellable": false,
                 "description": "",
@@ -51,6 +137,7 @@
             },
             {
                 "event": "AttachCapabilitiesEvent.ItemStacks",
+                "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/AttachCapabilitiesEvent.java#L73",
                 "cancellable": false,
                 "description": "",
@@ -60,6 +147,7 @@
             },
             {
                 "event": "AttachCapabilitiesEvent.Levels",
+                "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/AttachCapabilitiesEvent.java#L86",
                 "cancellable": false,
                 "description": "",
@@ -69,6 +157,7 @@
             },
             {
                 "event": "AttachCapabilitiesEvent.LevelChunks",
+                "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/AttachCapabilitiesEvent.java#L99",
                 "cancellable": false,
                 "description": "",
@@ -78,15 +167,29 @@
             },
             {
                 "event": "CommandEvent",
+                "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/CommandEvent.java#L27",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "CommandEvent is fired after a command is parsed, but before it is executed. This event is fired during the invocation of performCommand(ParseResults, String). This event is Cancellable cancellable. If the event is cancelled, the command will not be executed. This event is fired only on the SERVER logical server",
                 "side": "server",
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "parse",
+                        "type": "ParseResults<CommandSourceStack>",
+                        "mutable": true
+                    },
+                    {
+                        "name": "exception",
+                        "type": "Throwable",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "GatherComponentsEvent",
+                "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/GatherComponentsEvent.java#L58",
                 "cancellable": false,
                 "description": "Used to get additional Components for any Item Fired once for every Item instance, only once, Lazily. Recursion is not supported. Cant call components() as that would cause a loop. References in Items may not be valid at the current time",
@@ -96,109 +199,469 @@
             },
             {
                 "event": "GrindstoneEvent",
+                "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/GrindstoneEvent.java#L17",
                 "cancellable": false,
                 "description": "",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "top",
+                        "type": "ItemStack",
+                        "mutable": false
+                    },
+                    {
+                        "name": "bottom",
+                        "type": "ItemStack",
+                        "mutable": false
+                    },
+                    {
+                        "name": "xp",
+                        "type": "int",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "GrindstoneEvent.OnPlaceItem",
+                "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/GrindstoneEvent.java#L80",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "This event is Cancellable OnPlaceItem is fired when the inputs to a grindstone are changed. The following rules apply: If the event is canceled, vanilla behavior will not run, and the output will be EMPTY empty. If the event is not canceled and the output is empty, the output will be determined by vanilla. and the output is not empty, the output will be set, without running vanilla behavior. Vanilla XP calculation logic will be used unless all of the following criterias are met: the amount of experience is greater than or equal to 0; the event is not Cancellable cancelled; the getOutput() output is not empty",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "output",
+                        "type": "ItemStack",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "GrindstoneEvent.OnTakeItem",
+                "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/GrindstoneEvent.java#L117",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "This event is Cancellable OnTakeItem is fired when the output in a grindstone are is taken. It is called from GrindstoneMenu(int, Inventory). If the event is canceled, vanilla behavior will not run, and no inputs will be consumed. if the amount of experience is larger than or equal 0, the vanilla behavior for calculating experience will not run",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "newTop",
+                        "type": "ItemStack",
+                        "mutable": true
+                    },
+                    {
+                        "name": "newBottom",
+                        "type": "ItemStack",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "LootTableLoadEvent",
+                "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/LootTableLoadEvent.java#L27",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "Fired when a LootTable is loaded from JSON. Loot tables loaded from world save datapacks will not fire this event as they are considered user configuration files. This event is fired whenever server resources are loaded or reloaded. This event is Cancellable cancellable. If the event is cancelled, the loot table will be made empty. This event is fired only on the SERVER logical server",
                 "side": "server",
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "name",
+                        "type": "Identifier",
+                        "mutable": false
+                    },
+                    {
+                        "name": "table",
+                        "type": "LootTable",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "ModMismatchEvent",
+                "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/ModMismatchEvent.java#L41",
                 "cancellable": false,
                 "description": "Fires when the mod loader is in the process of loading a world that was last saved with mod versions that differ from the currently-loaded versions. This can be used to enqueue work to run at a later point, such as multi-file migration of data. Note that level and world information has not yet been fully loaded; as such, it is unsafe to access server or level information during handling of this event. This event is fired on the getModBusGroup() mod BusGroup, on both LogicalSide logical sides",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "levelDirectory",
+                        "type": "LevelStorageSource.LevelDirectory",
+                        "mutable": false
+                    },
+                    {
+                        "name": "versionDifferences",
+                        "type": "HashMap<String, MismatchedVersionInfo>",
+                        "mutable": false
+                    },
+                    {
+                        "name": "resolved",
+                        "type": "HashMap<String, ModContainer>",
+                        "mutable": false
+                    }
+                ]
             },
             {
                 "event": "PlayLevelSoundEvent",
+                "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/PlayLevelSoundEvent.java#L38",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "PlayLevelSoundEvent is fired when a sound is played on a Level. This event is fired from playSound, playSeededSound, and playSound. getLevel() contains the level the sound is being played in. getSound() contains the sound event to be played. getOriginalVolume() contains the original volume for the sound to be played at. getOriginalPitch() contains the original pitch for the sound to be played at. getNewVolume() contains the volume the sound will be played at. getNewPitch() contains the pitch the sound will be played at. This event is Cancellable cancellable. If this event is cancelled, the sound is not played",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "level",
+                        "type": "Level",
+                        "mutable": false
+                    },
+                    {
+                        "name": "originalVolume",
+                        "type": "float",
+                        "mutable": false
+                    },
+                    {
+                        "name": "originalPitch",
+                        "type": "float",
+                        "mutable": false
+                    },
+                    {
+                        "name": "sound",
+                        "type": "Holder<SoundEvent>",
+                        "mutable": true
+                    },
+                    {
+                        "name": "source",
+                        "type": "SoundSource",
+                        "mutable": true
+                    },
+                    {
+                        "name": "newVolume",
+                        "type": "float",
+                        "mutable": true
+                    },
+                    {
+                        "name": "newPitch",
+                        "type": "float",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "PlayLevelSoundEvent.AtEntity",
+                "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/PlayLevelSoundEvent.java#L151",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "PlayLevelSoundEvent.AtEntity is fired when a sound is played on the Level at an Entity Entity's position. This event is fired from playSound, playSeededSound, and playSound. This event is Cancellable cancellable. If this event is cancelled, the sound is not played. This event does not have a result. This event is fired on the EVENT_BUS",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "entity",
+                        "type": "Entity",
+                        "mutable": false
+                    }
+                ]
             },
             {
                 "event": "PlayLevelSoundEvent.AtPosition",
+                "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/PlayLevelSoundEvent.java#L180",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "PlayLevelSoundEvent.AtPosition is fired when a sound is played on the Level at a specific position. This event is fired from playSound and playSeededSound. This event is Cancellable cancellable. If this event is cancelled, the sound is not played. This event does not have a result. This event is fired on the EVENT_BUS",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "position",
+                        "type": "Vec3",
+                        "mutable": false
+                    }
+                ]
             },
             {
                 "event": "RegisterStructureConversionsEvent",
+                "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/RegisterStructureConversionsEvent.java#L38",
                 "cancellable": false,
                 "description": "Fired for registering structure conversions for pre-1.18.2 worlds. This is used by StructuresBecomeConfiguredFix for converting old structure IDs in pre-1.18.2 worlds to their new equivalents, which can be differentiated per biome. By default, structures whose old ID has a namespace which is not equal to {@value Identifier#DEFAULT_NAMESPACE} will be assumed to belong to a modded structure and will be used as the new ID. Mods may choose to register structure conversions for their structures, if they wish to override this default behavior. This event will only fire if StructuresBecomeConfiguredFix is used, as a result of converting a pre-1.18.2 world to the current version. This event is fired only on the SERVER logical server",
                 "side": "server",
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "map",
+                        "type": "Map<String, StructuresBecomeConfiguredFix.Conversion>",
+                        "mutable": false
+                    }
+                ]
             },
             {
                 "event": "ServerChatEvent",
+                "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/ServerChatEvent.java#L29",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "This event is fired whenever a ServerboundChatPacket is received from a client who has submitted their chat message. This event is Cancellable cancellable. If the event is cancelled, the message will not be sent to clients. This event is fired only on the SERVER logical server",
                 "side": "server",
                 "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "player",
+                        "type": "ServerPlayer",
+                        "mutable": false
+                    },
+                    {
+                        "name": "username",
+                        "type": "String",
+                        "mutable": false
+                    },
+                    {
+                        "name": "rawText",
+                        "type": "String",
+                        "mutable": false
+                    },
+                    {
+                        "name": "message",
+                        "type": "Component",
+                        "mutable": true
+                    }
+                ]
+            },
+            {
+                "event": "ServerTickEvent.Pre",
+                "package": "net.minecraftforge.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/TickEvent.java#L40",
+                "cancellable": false,
+                "description": "{@return the server instance}",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "haveTimeSupplier",
+                        "type": "BooleanSupplier",
+                        "mutable": false
+                    },
+                    {
+                        "name": "server",
+                        "type": "MinecraftServer",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ServerTickEvent.Post",
+                "package": "net.minecraftforge.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/TickEvent.java#L44",
+                "cancellable": false,
+                "description": "",
+                "side": "server",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "haveTimeSupplier",
+                        "type": "BooleanSupplier",
+                        "mutable": false
+                    },
+                    {
+                        "name": "server",
+                        "type": "MinecraftServer",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ClientTickEvent.Pre",
+                "package": "net.minecraftforge.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/TickEvent.java#L50",
+                "cancellable": false,
+                "description": "",
+                "side": "client",
+                "deprecated": false,
                 "hasResult": false
+            },
+            {
+                "event": "ClientTickEvent.Post",
+                "package": "net.minecraftforge.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/TickEvent.java#L55",
+                "cancellable": false,
+                "description": "",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LevelTickEvent.Pre",
+                "package": "net.minecraftforge.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/TickEvent.java#L78",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "side",
+                        "type": "LogicalSide",
+                        "mutable": false
+                    },
+                    {
+                        "name": "level",
+                        "type": "Level",
+                        "mutable": false
+                    },
+                    {
+                        "name": "haveTimeSupplier",
+                        "type": "BooleanSupplier",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "LevelTickEvent.Post",
+                "package": "net.minecraftforge.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/TickEvent.java#L82",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "side",
+                        "type": "LogicalSide",
+                        "mutable": false
+                    },
+                    {
+                        "name": "level",
+                        "type": "Level",
+                        "mutable": false
+                    },
+                    {
+                        "name": "haveTimeSupplier",
+                        "type": "BooleanSupplier",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "PlayerTickEvent.Pre",
+                "package": "net.minecraftforge.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/TickEvent.java#L90",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "player",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "side",
+                        "type": "LogicalSide",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "PlayerTickEvent.Post",
+                "package": "net.minecraftforge.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/TickEvent.java#L98",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "player",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "side",
+                        "type": "LogicalSide",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "RenderTickEvent.Pre",
+                "package": "net.minecraftforge.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/TickEvent.java#L108",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "timer",
+                        "type": "DeltaTracker",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "RenderTickEvent.Post",
+                "package": "net.minecraftforge.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/TickEvent.java#L112",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "timer",
+                        "type": "DeltaTracker",
+                        "mutable": false
+                    }
+                ]
             }
         ],
         "net.minecraftforge.event.brewing": [
             {
                 "event": "PotionBrewEvent",
+                "package": "net.minecraftforge.event.brewing",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/brewing/PotionBrewEvent.java#L19",
                 "cancellable": false,
                 "description": "",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "stacks",
+                        "type": "NonNullList<ItemStack>",
+                        "mutable": false
+                    }
+                ]
             },
             {
                 "event": "PotionBrewEvent.Pre",
+                "package": "net.minecraftforge.event.brewing",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/brewing/PotionBrewEvent.java#L58",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "PotionBrewEvent.Pre is fired before vanilla brewing takes place. All changes made to the event's array will be made to the TileEntity if the event is canceled. The event is fired during the doBrew(Level, BlockPos, NonNullList) method invocation. stacks contains the itemstack array from the TileEntityBrewer holding all items in Brewer. This event is Cancellable. If the event is not cancelled, the vanilla brewing will take place instead of modded brewing. This event is fired on the EVENT_BUS. If this event is canceled, and items have been modified, PotionBrewEvent.Post will automatically be fired",
                 "side": null,
                 "deprecated": false,
@@ -206,6 +669,7 @@
             },
             {
                 "event": "PotionBrewEvent.Post",
+                "package": "net.minecraftforge.event.brewing",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/brewing/PotionBrewEvent.java#L75",
                 "cancellable": false,
                 "description": "PotionBrewEvent.Post is fired when a potion is brewed in the brewing stand. The event is fired during the doBrew(Level, BlockPos, NonNullList) method invocation. stacks contains the itemstack array from the TileEntityBrewer holding all items in Brewer. This event is fired on the EVENT_BUS",
@@ -217,17 +681,56 @@
         "net.minecraftforge.event.enchanting": [
             {
                 "event": "EnchantmentLevelSetEvent",
+                "package": "net.minecraftforge.event.enchanting",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/enchanting/EnchantmentLevelSetEvent.java#L23",
                 "cancellable": false,
                 "description": "Fired when the enchantment level is set for each of the three potential enchantments in the enchanting table. The level is set to the vanilla value and can be modified by this event handler. The enchantRow is used to determine which enchantment level is being set, 1, 2, or 3. The power is a number from 0-15 and indicates how many bookshelves surround the enchanting table. The itemStack representing the item being enchanted is also available",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "level",
+                        "type": "Level",
+                        "mutable": false
+                    },
+                    {
+                        "name": "pos",
+                        "type": "BlockPos",
+                        "mutable": false
+                    },
+                    {
+                        "name": "enchantRow",
+                        "type": "int",
+                        "mutable": false
+                    },
+                    {
+                        "name": "power",
+                        "type": "int",
+                        "mutable": false
+                    },
+                    {
+                        "name": "itemStack",
+                        "type": "ItemStack",
+                        "mutable": false
+                    },
+                    {
+                        "name": "originalLevel",
+                        "type": "int",
+                        "mutable": false
+                    },
+                    {
+                        "name": "enchantLevel",
+                        "type": "int",
+                        "mutable": true
+                    }
+                ]
             }
         ],
         "net.minecraftforge.event.entity": [
             {
                 "event": "EntityAttributeCreationEvent",
+                "package": "net.minecraftforge.event.entity",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/EntityAttributeCreationEvent.java#L24",
                 "cancellable": false,
                 "description": "EntityAttributeCreationEvent. Use this event to register attributes for your own EntityTypes. This event is fired after registration and before common setup",
@@ -237,6 +740,7 @@
             },
             {
                 "event": "EntityAttributeModificationEvent",
+                "package": "net.minecraftforge.event.entity",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/EntityAttributeModificationEvent.java#L28",
                 "cancellable": false,
                 "description": "EntityAttributeModificationEvent. Use this event to add attributes to existing entity types. This event is fired after registration and before common setup, and after EntityAttributeCreationEvent",
@@ -245,27 +749,108 @@
                 "hasResult": false
             },
             {
+                "event": "EntityEvent.EntityConstructing",
+                "package": "net.minecraftforge.event.entity",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/EntityEvent.java#L26",
+                "cancellable": false,
+                "description": "EntityConstructing is fired when an Entity is being created. This event is fired within the constructor of the Entity",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "getEntity",
+                        "type": "Entity",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "EntityEvent.EnteringSection",
+                "package": "net.minecraftforge.event.entity",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/EntityEvent.java#L36",
+                "cancellable": false,
+                "description": "This event is fired on server and client after an Entity has entered a different section. Sections are 16x16x16 block grids of the world. This event does not fire when a new entity is spawned, only when an entity moves from one section to another one. Use EntityJoinLevelEvent to detect new entities joining the world",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "getEntity",
+                        "type": "Entity",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getPackedOldPos",
+                        "type": "long",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getPackedNewPos",
+                        "type": "long",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
                 "event": "EntityMobGriefingEvent",
+                "package": "net.minecraftforge.event.entity",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/EntityMobGriefingEvent.java#L27",
                 "cancellable": false,
                 "description": "EntityMobGriefingEvent is fired when mob griefing is about to occur and allows an event listener to specify whether it should or not. This event is fired when ever the mobGriefing game rule is checked. This event has a HasResult result: ALLOW means this instance of mob griefing is allowed. DEFAULT means the mobGriefing game rule is used to determine the behaviour. DENY means this instance of mob griefing is not allowed",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "entity",
+                        "type": "Entity",
+                        "mutable": false
+                    },
+                    {
+                        "name": "result",
+                        "type": "Result",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "EntityTeleportEvent",
+                "package": "net.minecraftforge.event.entity",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/EntityTeleportEvent.java#L27",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "EntityTeleportEvent is fired when an event involving any teleportation of an Entity occurs. getTarget() contains the target destination. getPrev() contains the entity's current position",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "entity",
+                        "type": "Entity",
+                        "mutable": false
+                    },
+                    {
+                        "name": "targetX",
+                        "type": "double",
+                        "mutable": true
+                    },
+                    {
+                        "name": "targetY",
+                        "type": "double",
+                        "mutable": true
+                    },
+                    {
+                        "name": "targetZ",
+                        "type": "double",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "EntityTeleportEvent.TeleportCommand",
+                "package": "net.minecraftforge.event.entity",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/EntityTeleportEvent.java#L67",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "EntityTeleportEvent.TeleportCommand is fired before a living entity is teleported from use of TeleportCommand. This event is Cancellable. If the event is cancelled, the entity will not be teleported. This event is only fired on the SERVER side",
                 "side": "server",
                 "deprecated": false,
@@ -273,8 +858,9 @@
             },
             {
                 "event": "EntityTeleportEvent.SpreadPlayersCommand",
+                "package": "net.minecraftforge.event.entity",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/EntityTeleportEvent.java#L83",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "EntityTeleportEvent.SpreadPlayersCommand is fired before a living entity is teleported from use of SpreadPlayersCommand. This event is Cancellable cancellable. If the event is cancelled, the entity will not be teleported. This event is only fired on the SERVER side",
                 "side": "server",
                 "deprecated": false,
@@ -282,42 +868,100 @@
             },
             {
                 "event": "EntityTeleportEvent.EnderEntity",
+                "package": "net.minecraftforge.event.entity",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/EntityTeleportEvent.java#L98",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "EntityTeleportEvent.EnderEntity is fired before an Enderman or Shulker randomly teleports. This event is Cancellable cancelable. If the event is cancelled, the entity will not be teleported. This event is only fired on the SERVER side",
                 "side": "server",
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "entityLiving",
+                        "type": "LivingEntity",
+                        "mutable": false
+                    }
+                ]
             },
             {
                 "event": "EntityTeleportEvent.EnderPearl",
+                "package": "net.minecraftforge.event.entity",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/EntityTeleportEvent.java#L120",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "EntityTeleportEvent.EnderPearl is fired before an Entity is teleported from an EnderPearlEntity. This event is Cancellable cancellable. If the event is cancelled, the entity will not be teleported. This event is only fired on the SERVER side",
                 "side": "server",
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "player",
+                        "type": "ServerPlayer",
+                        "mutable": false
+                    },
+                    {
+                        "name": "pearlEntity",
+                        "type": "ThrownEnderpearl",
+                        "mutable": false
+                    },
+                    {
+                        "name": "attackDamage",
+                        "type": "float",
+                        "mutable": true
+                    },
+                    {
+                        "name": "hitResult",
+                        "type": "HitResult",
+                        "mutable": false
+                    }
+                ]
             },
             {
                 "event": "EntityTeleportEvent.ChorusFruit",
+                "package": "net.minecraftforge.event.entity",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/EntityTeleportEvent.java#L166",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "EntityTeleportEvent.ChorusFruit is fired before a LivingEntity is teleported due to consuming Chorus Fruit. This event is Cancellable cancellable. If the event is cancelled, the entity will not be teleported. This event is only fired on the SERVER side",
                 "side": "server",
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "entityLiving",
+                        "type": "LivingEntity",
+                        "mutable": false
+                    }
+                ]
             },
             {
                 "event": "ProjectileImpactEvent",
+                "package": "net.minecraftforge.event.entity",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/ProjectileImpactEvent.java#L28",
                 "cancellable": false,
                 "description": "This event is fired on the EVENT_BUS. This event is fired when a projectile entity impacts something. This event is fired via onProjectileImpact(Projectile, HitResult) This event is fired for all vanilla projectiles by Forge, custom projectiles should fire this event and check the result in a similar fashion. You can also directly set the ImpactResult to change the impact behaviour",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "ray",
+                        "type": "HitResult",
+                        "mutable": false
+                    },
+                    {
+                        "name": "projectile",
+                        "type": "Projectile",
+                        "mutable": false
+                    },
+                    {
+                        "name": "result",
+                        "type": "ImpactResult",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "SpawnPlacementRegisterEvent",
+                "package": "net.minecraftforge.event.entity",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/SpawnPlacementRegisterEvent.java#L42",
                 "cancellable": false,
                 "description": "This event allows each EntityType to have a SpawnPredicate registered or modified. Spawn Predicates are checked whenever an Entity of the given EntityType spawns in the world naturally. If registering your own entity's spawn placements, you should use register(EntityType, SpawnPlacementType, Heightmap.Types, SpawnPlacements.SpawnPredicate, Operation) So that you ensure that your entity has a heightmap type and placement type registered. If modifying vanilla or another mod's spawn placements, you can use three operations: REPLACE: checked first, the last mod to replace the predicate wipes out all other predicates. Listen with a low Priority if you need to do this. OR: checked second, only one of these predicates must pass along with the original predicate AND: checked third, these predicates must all pass along with the original predicate",
@@ -327,93 +971,291 @@
             },
             {
                 "event": "Entity.MergedSpawnPredicate",
+                "package": "net.minecraftforge.event.entity",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/SpawnPlacementRegisterEvent.java#L113",
                 "cancellable": false,
                 "description": "Checked first, the last mod to replace the predicate wipes out all other predicates. Listen with a low EventPriority if you need to do this",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "originalPredicate",
+                        "type": "SpawnPlacements.SpawnPredicate<T>",
+                        "mutable": false
+                    },
+                    {
+                        "name": "orPredicates",
+                        "type": "List<SpawnPlacements.SpawnPredicate<T>>",
+                        "mutable": false
+                    },
+                    {
+                        "name": "andPredicates",
+                        "type": "List<SpawnPlacements.SpawnPredicate<T>>",
+                        "mutable": false
+                    },
+                    {
+                        "name": "spawnType",
+                        "type": "SpawnPlacementType",
+                        "mutable": true
+                    },
+                    {
+                        "name": "heightmapType",
+                        "type": "Heightmap.Types",
+                        "mutable": true
+                    }
+                ]
             }
         ],
         "net.minecraftforge.event.entity.item": [
             {
                 "event": "ItemExpireEvent",
+                "package": "net.minecraftforge.event.entity.item",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/item/ItemExpireEvent.java#L21",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "Event that is fired when an EntityItem's age has reached its maximum lifespan. Cancelling this event will prevent the EntityItem from being flagged as dead, thus staying its removal from the world. If cancelled, it will add more time to the entity's life equal to extraLife",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "entityItem",
+                        "type": "ItemEntity",
+                        "mutable": false
+                    },
+                    {
+                        "name": "extraLife",
+                        "type": "int",
+                        "mutable": true
+                    }
+                ]
             }
         ],
         "net.minecraftforge.event.entity.living": [
             {
                 "event": "BabyEntitySpawnEvent",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/BabyEntitySpawnEvent.java#L39",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "BabyEntitySpawnEvent is fired just before a baby entity is about to be spawned. Parents will have disengaged their relationship. Cancelable It is possible to change the child completely by using setChild(AgeableMob) This event is fired from spawnChildFromBreeding(ServerLevel, Animal) and spawnChildFromBreeding(ServerLevel, Animal) parentA contains the initiating parent entity. parentB contains the secondary parent entity. causedByPlayer contains the player responsible for the breading (if applicable). child contains the child that will be spawned. This event is Cancellable. If this event is cancelled, the child Entity is not added to the world, and the parents will no longer attempt to mate. This event is fired on the EVENT_BUS",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "parentA",
+                        "type": "Mob",
+                        "mutable": false
+                    },
+                    {
+                        "name": "parentB",
+                        "type": "Mob",
+                        "mutable": false
+                    },
+                    {
+                        "name": "causedByPlayer",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "child",
+                        "type": "AgeableMob",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "LivingBreatheEvent",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/LivingBreatheEvent.java#L20",
                 "cancellable": false,
                 "description": "LivingBreatheEvent is fired whenever a living entity ticks. This event is fired via onLivingBreathe(LivingEntity, int, int)",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "entity",
+                        "type": "LivingEntity",
+                        "mutable": false
+                    },
+                    {
+                        "name": "canBreathe",
+                        "type": "boolean",
+                        "mutable": true
+                    },
+                    {
+                        "name": "canRefillAir",
+                        "type": "boolean",
+                        "mutable": true
+                    },
+                    {
+                        "name": "consumeAirAmount",
+                        "type": "int",
+                        "mutable": true
+                    },
+                    {
+                        "name": "refillAirAmount",
+                        "type": "int",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "LivingChangeTargetEvent",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/LivingChangeTargetEvent.java#L33",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "This event allows you to change the target an entity has. This event is fired before LivingSetAttackTargetEvent. This event is fired via the onLivingChangeTarget(LivingEntity, LivingEntity, ILivingTargetType) getOriginalTarget() returns the target that should originally be set. The return value cannot be affected by calling setNewTarget(LivingEntity). getNewTarget() returns the new target that this entity will have. The return value can be affected by calling setNewTarget(LivingEntity). getTargetType() returns the target type that caused the change of targets. This event is Cancellable cancellable. If you cancel this event, the target will not be changed and it will stay the same. Cancelling this event will prevent LivingSetAttackTargetEvent from being posted",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "entity",
+                        "type": "LivingEntity",
+                        "mutable": false
+                    },
+                    {
+                        "name": "targetType",
+                        "type": "ILivingTargetType",
+                        "mutable": false
+                    },
+                    {
+                        "name": "originalTarget",
+                        "type": "LivingEntity",
+                        "mutable": false
+                    },
+                    {
+                        "name": "newTarget",
+                        "type": "LivingEntity",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "LivingConversionEvent",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/LivingConversionEvent.java#L46",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "LivingConversionEvent.Pre is triggered when an entity is trying to replace itself with another entity This event may trigger every tick even if it was cancelled last tick for entities like Zombies and Hoglins. To prevent it, the conversion timer needs to be changed or reset This event is Cancellable. If cancelled, the replacement will not occur",
                 "side": null,
                 "deprecated": false,
                 "hasResult": false
             },
             {
-                "event": "LivingDamageEvent",
-                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/LivingDamageEvent.java#L33",
+                "event": "LivingConversionEvent.Post",
+                "package": "net.minecraftforge.event.entity.living",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/LivingConversionEvent.java#L93",
                 "cancellable": false,
+                "description": "LivingConversionEvent.Post is triggered when an entity is replacing itself with another entity. The old living entity is likely to be removed right after this event",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "getEntity",
+                        "type": "LivingEntity",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getOutcome",
+                        "type": "LivingEntity",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "LivingDamageEvent",
+                "package": "net.minecraftforge.event.entity.living",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/LivingDamageEvent.java#L33",
+                "cancellable": true,
                 "description": "LivingDamageEvent is fired just before damage is applied to entity. At this point armor, potion and absorption modifiers have already been applied to damage - this is FINAL value. Also note that appropriate resources (like armor durability and absorption extra hearths) have already been consumed. This event is fired whenever an Entity is damaged in actuallyHurt(DamageSource, float) and actuallyHurt(DamageSource, float). This event is fired via the onLivingDamage(LivingEntity, DamageSource, float). source contains the DamageSource that caused this Entity to be hurt. amount contains the final amount of damage that will be dealt to entity. This event is Cancellable cancellable. If this event is cancelled, the Entity is not hurt. Used resources WILL NOT be restored",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "entity",
+                        "type": "LivingEntity",
+                        "mutable": false
+                    },
+                    {
+                        "name": "source",
+                        "type": "DamageSource",
+                        "mutable": false
+                    },
+                    {
+                        "name": "amount",
+                        "type": "float",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "LivingDrownEvent",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/LivingDrownEvent.java#L28",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "LivingDrownEvent is fired whenever a living entity can't breathe and its air supply is less than or equal to zero. This event is fired via onLivingBreathe(LivingEntity, int, int). This event is Cancellable. Cancelling the event also acts as if you called setDrowning(boolean) with a value of false",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "entity",
+                        "type": "LivingEntity",
+                        "mutable": false
+                    },
+                    {
+                        "name": "isDrowning",
+                        "type": "boolean",
+                        "mutable": true
+                    },
+                    {
+                        "name": "damageAmount",
+                        "type": "float",
+                        "mutable": true
+                    },
+                    {
+                        "name": "bubbleCount",
+                        "type": "int",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "LivingEntityUseItemEvent",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/LivingEntityUseItemEvent.java#L17",
                 "cancellable": false,
                 "description": "",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "entity",
+                        "type": "LivingEntity",
+                        "mutable": false
+                    },
+                    {
+                        "name": "item",
+                        "type": "ItemStack",
+                        "mutable": false
+                    },
+                    {
+                        "name": "duration",
+                        "type": "int",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "LivingEntityUseItemEvent.Start",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/LivingEntityUseItemEvent.java#L60",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "Fired when a player starts 'using' an item, typically when they hold right mouse. Examples: Drawing a bow Eating food Drinking potions/milk Guarding with a sword Cancel the event, or set the duration or {@literal <} 0 to prevent it from processing",
                 "side": null,
                 "deprecated": false,
@@ -421,8 +1263,9 @@
             },
             {
                 "event": "LivingEntityUseItemEvent.Tick",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/LivingEntityUseItemEvent.java#L73",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "Fired every tick that a player is 'using' an item, see Start for info. Cancel the event, or set the duration to {@literal <=} 0 to cause the player to stop using the item",
                 "side": null,
                 "deprecated": false,
@@ -430,8 +1273,9 @@
             },
             {
                 "event": "LivingEntityUseItemEvent.Stop",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/LivingEntityUseItemEvent.java#L93",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "Fired when a player stops using an item without the use duration timing out. Example: Stop eating 1/2 way through Stop defending with sword Stop drawing bow. This case would fire the arrow Duration on this event is how long the item had left in it's count down before 'finishing' Canceling this event will prevent the Item from being notified that it has stopped being used, The only vanilla item this would effect are bows, and it would cause them NOT to fire there arrow",
                 "side": null,
                 "deprecated": false,
@@ -439,123 +1283,375 @@
             },
             {
                 "event": "LivingEntityUseItemEvent.Finish",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/LivingEntityUseItemEvent.java#L113",
                 "cancellable": false,
                 "description": "Fired after an item has fully finished being used. The item has been notified that it was used, and the item/result stacks reflect after that state. This means that when this is fired for a Potion, the potion effect has already been applied. item is a copy of the item BEFORE it was used. If you wish to cancel those effects, you should cancel one of the above events. The result item stack is the stack that is placed in the player's inventory in replacement of the stack that is currently being used",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "result",
+                        "type": "ItemStack",
+                        "mutable": true
+                    }
+                ]
+            },
+            {
+                "event": "LivingEvent.LivingTickEvent",
+                "package": "net.minecraftforge.event.entity.living",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/LivingEvent.java#L34",
+                "cancellable": true,
+                "description": "LivingUpdateEvent is fired when a LivingEntity is ticked in tick(). This event is fired via the onLivingTick(LivingEntity). This event is Cancellable cancellable. If this event is cancelled, the Entity does not update",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "getEntity",
+                        "type": "LivingEntity",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "LivingEvent.LivingJumpEvent",
+                "package": "net.minecraftforge.event.entity.living",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/LivingEvent.java#L46",
+                "cancellable": false,
+                "description": "LivingJumpEvent is fired when an Entity jumps. This event is fired whenever an Entity jumps in jumpFromGround(), jumpFromGround(), and jumpFromGround(). This event is fired via the onLivingJump(LivingEntity)",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "getEntity",
+                        "type": "LivingEntity",
+                        "mutable": false
+                    }
+                ]
             },
             {
                 "event": "LivingEvent",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/LivingEvent.java#L50",
                 "cancellable": false,
-                "description": "LivingJumpEvent is fired when an Entity jumps. This event is fired whenever an Entity jumps in jumpFromGround(), jumpFromGround(), and jumpFromGround(). This event is fired via the onLivingJump(LivingEntity)",
+                "description": "",
                 "side": null,
                 "deprecated": false,
                 "hasResult": false
             },
             {
                 "event": "LivingExperienceDropEvent",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/LivingExperienceDropEvent.java#L22",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "Event for when an entity drops experience on its death, can be used to change the amount of experience points dropped or completely prevent dropping of experience by canceling the event",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "entity",
+                        "type": "LivingEntity",
+                        "mutable": false
+                    },
+                    {
+                        "name": "attackingPlayer",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "originalExperiencePoints",
+                        "type": "int",
+                        "mutable": false
+                    },
+                    {
+                        "name": "droppedExperiencePoints",
+                        "type": "int",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "LivingFallEvent",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/LivingFallEvent.java#L25",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "LivingFallEvent is fired when an Entity is set to be falling. This event is fired whenever an Entity is set to fall in causeFallDamage(double, float, DamageSource). This event is fired via the onLivingFall(LivingEntity, double, float). distance contains the distance the Entity is to fall. If this event is cancelled, this value is set to 0.0F. This event is Cancellable cancellable. If this event is cancelled, the Entity does not fall",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "entity",
+                        "type": "LivingEntity",
+                        "mutable": false
+                    },
+                    {
+                        "name": "distance",
+                        "type": "double",
+                        "mutable": true
+                    },
+                    {
+                        "name": "damageMultiplier",
+                        "type": "float",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "LivingGetProjectileEvent",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/LivingGetProjectileEvent.java#L19",
                 "cancellable": false,
                 "description": "This event is fired when a living entity attempts to get a projectile with the getProjectile(ItemStack) method. The item stack given is usually the item stack of a ProjectileWeaponItem and the item stack returned is usually the item stack of a Projectile",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "entity",
+                        "type": "LivingEntity",
+                        "mutable": false
+                    },
+                    {
+                        "name": "projectileWeaponItemStack",
+                        "type": "ItemStack",
+                        "mutable": false
+                    },
+                    {
+                        "name": "projectileItemStack",
+                        "type": "ItemStack",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "LivingHealEvent",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/LivingHealEvent.java#L26",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "LivingHealEvent is fired when an Entity is set to be healed. This event is fired whenever an Entity is healed in heal(float) This event is fired via the onLivingHeal(LivingEntity, float). amount contains the amount of healing done to the Entity that was healed. This event is Cancellable cancellable. If this event is cancelled, the Entity is not healed",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "entity",
+                        "type": "LivingEntity",
+                        "mutable": false
+                    },
+                    {
+                        "name": "amount",
+                        "type": "float",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "LivingHurtEvent",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/LivingHurtEvent.java#L30",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "LivingHurtEvent is fired when an Entity is set to be hurt. This event is fired whenever an Entity is hurt in actuallyHurt(DamageSource, float) and actuallyHurt(DamageSource, float). This event is fired via the onLivingHurt(LivingEntity, DamageSource, float). source contains the DamageSource that caused this Entity to be hurt. amount contains the amount of damage dealt to the Entity that was hurt. This event is Cancellable cancellable. If this event is cancelled, the Entity is not hurt",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "entity",
+                        "type": "LivingEntity",
+                        "mutable": false
+                    },
+                    {
+                        "name": "source",
+                        "type": "DamageSource",
+                        "mutable": false
+                    },
+                    {
+                        "name": "amount",
+                        "type": "float",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "LivingKnockBackEvent",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/LivingKnockBackEvent.java#L34",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "LivingKnockBackEvent is fired when a living entity is about to be knocked back. This event is fired whenever an Entity is knocked back in hurt(DamageSource, float), blockUsingShield(LivingEntity), doHurtTarget(Entity) and attack(Entity) This event is fired via onLivingKnockBack(LivingEntity, float, double, double) . strength contains the strength of the knock back. ratioX contains the x ratio of the knock back. ratioZ contains the z ratio of the knock back. If this event is cancelled, the entity is not knocked back",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "target",
+                        "type": "LivingEntity",
+                        "mutable": false
+                    },
+                    {
+                        "name": "strength",
+                        "type": "float",
+                        "mutable": true
+                    },
+                    {
+                        "name": "ratioX",
+                        "type": "double",
+                        "mutable": true
+                    },
+                    {
+                        "name": "ratioZ",
+                        "type": "double",
+                        "mutable": true
+                    },
+                    {
+                        "name": "originalStrength",
+                        "type": "float",
+                        "mutable": false
+                    },
+                    {
+                        "name": "originalRatioX",
+                        "type": "double",
+                        "mutable": false
+                    },
+                    {
+                        "name": "originalRatioZ",
+                        "type": "double",
+                        "mutable": false
+                    }
+                ]
             },
             {
                 "event": "LivingMakeBrainEvent",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/LivingMakeBrainEvent.java#L28",
                 "cancellable": false,
                 "description": "LivingMakeBrainEvent is fired whenever a new Brain instance is created using makeBrain(Dynamic). To access the internal BrainBuilder, call getTypedBrainBuilder(LivingEntity) using the downcasted LivingEntity obtained from getEntity(). The BrainBuilder will initially contain all the state found in the original Brain instance. After this event is posted, a fresh Brain instance will be created using the encapsulated state found in the BrainBuilder and replace the previously created Brain instance for the entity. This event is fired via the onLivingMakeBrain(LivingEntity, Brain, Dynamic)",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "entity",
+                        "type": "LivingEntity",
+                        "mutable": false
+                    },
+                    {
+                        "name": "brainBuilder",
+                        "type": "BrainBuilder<?>",
+                        "mutable": false
+                    }
+                ]
             },
             {
                 "event": "LivingPackSizeEvent",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/LivingPackSizeEvent.java#L16",
                 "cancellable": false,
                 "description": "",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "entity",
+                        "type": "Mob",
+                        "mutable": false
+                    },
+                    {
+                        "name": "maxPackSize",
+                        "type": "int",
+                        "mutable": true
+                    },
+                    {
+                        "name": "result",
+                        "type": "Result",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "LivingSwapItemsEvent",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/LivingSwapItemsEvent.java#L16",
                 "cancellable": false,
                 "description": "",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "entity",
+                        "type": "LivingEntity",
+                        "mutable": false
+                    }
+                ]
             },
             {
                 "event": "LivingSwapItemsEvent.Hands",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/LivingSwapItemsEvent.java#L35",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "This event is fired when a living entity is about to swap the items in their main and offhand. This event is executed in handlePlayerAction This event is Cancellable cancellable",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "toMainHand",
+                        "type": "ItemStack",
+                        "mutable": true
+                    },
+                    {
+                        "name": "toOffHand",
+                        "type": "ItemStack",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "LootingLevelEvent",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/LootingLevelEvent.java#L17",
                 "cancellable": false,
                 "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "entity",
+                        "type": "LivingEntity",
+                        "mutable": false
+                    },
+                    {
+                        "name": "damageSource",
+                        "type": "DamageSource",
+                        "mutable": false
+                    },
+                    {
+                        "name": "lootingLevel",
+                        "type": "int",
+                        "mutable": true
+                    }
+                ]
+            },
+            {
+                "event": "MobEffectEvent.Remove",
+                "package": "net.minecraftforge.event.entity.living",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/MobEffectEvent.java#L38",
+                "cancellable": false,
+                "description": "This event is fired when a MobEffect is about to get removed from an Entity. This event is Cancellable cancellable. If cancelled, the effect will not be removed",
                 "side": null,
                 "deprecated": false,
                 "hasResult": false
             },
             {
                 "event": "MobEffectEvent",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/MobEffectEvent.java#L79",
                 "cancellable": false,
                 "description": "This event is fired to check if a MobEffectInstance can be applied to an entity. This event HasResult has a result: ALLOW ALLOW will apply this mob effect. DENY DENY will not apply this mob effect. DEFAULT DEFAULT will run vanilla logic to determine if this mob effect is applicable in canBeAffected",
@@ -564,162 +1660,715 @@
                 "hasResult": false
             },
             {
+                "event": "MobEffectEvent.Added",
+                "package": "net.minecraftforge.event.entity.living",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/MobEffectEvent.java#L117",
+                "cancellable": false,
+                "description": "This event is fired when a new MobEffectInstance is added to an entity. This event is also fired if an entity already has the effect but with a different duration or amplifier",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "MobEffectEvent.Expired",
+                "package": "net.minecraftforge.event.entity.living",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/MobEffectEvent.java#L154",
+                "cancellable": false,
+                "description": "This event is fired when a MobEffectInstance expires on an entity",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
                 "event": "MobSpawnEvent",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/MobSpawnEvent.java#L43",
                 "cancellable": false,
                 "description": "This class holds all events relating to the entire flow of mob spawns. Currently, the events have the following flow for any given mob spawn: Before the spawn is attempted SpawnPlacementCheck is fired, to determine if the spawn may occur based on mob-specific rules. After the entity is created PositionCheck is fired, to determine if the selected position is legal for the entity. If both checks succeeded, FinalizeSpawn is fired, which performs initialization on the newly-spawned entity. Finally, if the spawn was not cancelled via setSpawnCancelled, then EntityJoinLevelEvent is fired as the entity enters the world. AllowDespawn is not related to the mob spawn event flow, as it fires when a despawn is attempted",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "entity",
+                        "type": "Mob",
+                        "mutable": false
+                    },
+                    {
+                        "name": "level",
+                        "type": "ServerLevelAccessor",
+                        "mutable": false
+                    },
+                    {
+                        "name": "x",
+                        "type": "double",
+                        "mutable": false
+                    },
+                    {
+                        "name": "y",
+                        "type": "double",
+                        "mutable": false
+                    },
+                    {
+                        "name": "z",
+                        "type": "double",
+                        "mutable": false
+                    }
+                ]
             },
             {
                 "event": "MutableEvent.SpawnPlacementCheck",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/MobSpawnEvent.java#L111",
                 "cancellable": false,
                 "description": "This event is fired checkSpawnRules when Spawn Placements (aka Spawn Rules) are checked, before a mob attempts to spawn. Spawn Placement checks include light levels, slime chunks, grass blocks for animals, and others in the same vein. The purpose of this event is to permit runtime changes to any or all spawn placement logic without having to wrap the placement for each entity. This event HasResult has a result. To change the result of this event, use setResult. Results are interpreted in the following manner: Allow - The check will succeed, and the spawn process will continue. Default - The value of the vanilla check will be used to determine success. Deny - The check will fail, and the spawn process will abort. This event is fired on the EVENT_BUS main Forge event bus, only on the SERVER logical server. This event is not fired for mob spawners which utilize CustomSpawnRules, as they do not check spawn placements",
                 "side": "server",
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "entityType",
+                        "type": "EntityType<?>",
+                        "mutable": false
+                    },
+                    {
+                        "name": "level",
+                        "type": "ServerLevelAccessor",
+                        "mutable": false
+                    },
+                    {
+                        "name": "spawnReason",
+                        "type": "EntitySpawnReason",
+                        "mutable": false
+                    },
+                    {
+                        "name": "pos",
+                        "type": "BlockPos",
+                        "mutable": false
+                    },
+                    {
+                        "name": "random",
+                        "type": "RandomSource",
+                        "mutable": false
+                    },
+                    {
+                        "name": "defaultResult",
+                        "type": "boolean",
+                        "mutable": false
+                    },
+                    {
+                        "name": "result",
+                        "type": "Result",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "MobSpawnEvent.PositionCheck",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/MobSpawnEvent.java#L220",
                 "cancellable": false,
                 "description": "This event is fired when a mob checks for a valid spawn position, after checkSpawnRules has been evaluated. Conditions validated here include the following: Obstruction - mobs inside blocks or fluids. Pathfinding - if the spawn block is valid for pathfinding. Sea Level - Ocelots check if the position is above sea level. Spawn Block - Ocelots check if the below block is grass or leaves. These checks are performed by the vanilla methods checkSpawnRules and checkSpawnObstruction. The logical-and of both methods forms the default result of this event. This event HasResult has a result. To change the result of this event, use setResult. Results are interpreted in the following manner: Allow - The position will be accepted, and the spawn process will continue. Default - The position will be accepted if checkSpawnRules and checkSpawnObstruction are both true. Deny - The position will not be accepted. The spawn process will abort, and further events will not be called. This event is fired on the EVENT_BUS main Forge event bus, only on the SERVER logical server",
                 "side": "server",
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "spawner",
+                        "type": "BaseSpawner",
+                        "mutable": false
+                    },
+                    {
+                        "name": "spawnReason",
+                        "type": "EntitySpawnReason",
+                        "mutable": false
+                    },
+                    {
+                        "name": "result",
+                        "type": "Result",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "MobSpawnEvent.FinalizeSpawn",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/MobSpawnEvent.java#L276",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "This event is fired before finalizeSpawn is called. This allows mods to control mob initialization. In vanilla code, this event is injected by a transformer and not via patch, so calls cannot be traced via call hierarchy (it is not source-visible). Canceling this event will result in finalizeSpawn not being called, and the returned value always being null, instead of propagating the SpawnGroupData. The entity will still be spawned. If you want to prevent the spawn, use setSpawnCancelled, which will cause Forge to prevent the spawn. This event is fired on EVENT_BUS, and is only fired on the logical server",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "spawnReason",
+                        "type": "EntitySpawnReason",
+                        "mutable": false
+                    },
+                    {
+                        "name": "spawner",
+                        "type": "BaseSpawner",
+                        "mutable": false
+                    },
+                    {
+                        "name": "difficulty",
+                        "type": "DifficultyInstance",
+                        "mutable": true
+                    },
+                    {
+                        "name": "spawnData",
+                        "type": "SpawnGroupData",
+                        "mutable": true
+                    },
+                    {
+                        "name": "spawnTag",
+                        "type": "ValueInput",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "MobSpawnEvent.AllowDespawn",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/MobSpawnEvent.java#L415",
                 "cancellable": false,
                 "description": "This event is fired from checkDespawn(). It fires once per tick per mob that is attempting to despawn. It is not fired if the mob is persistent (meaning it may not despawn). This event is not Cancelable cancellable, but does HasResult have a result. DEFAULT indicates that default despawn mechanics should be used. ALLOW indicates that the mob should forcefully despawn. DENY indicates that the mob should forcefully stay spawned. This event is fired on the EVENT_BUS main Forge event bus, only on the SERVER logical server",
                 "side": "server",
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "result",
+                        "type": "Result",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "ShieldBlockEvent",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/ShieldBlockEvent.java#L23",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "The ShieldBlockEvent is fired when an entity successfully blocks with a shield. Cancelling this event will have the same impact as if the shield was not eligible to block. The damage blocked cannot be set lower than zero or greater than the original value. Note: The shield item stack \"should\" be available from getUseItem() at least for players",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "blocker",
+                        "type": "LivingEntity",
+                        "mutable": false
+                    },
+                    {
+                        "name": "source",
+                        "type": "DamageSource",
+                        "mutable": false
+                    },
+                    {
+                        "name": "originalBlocked",
+                        "type": "float",
+                        "mutable": false
+                    },
+                    {
+                        "name": "dmgBlocked",
+                        "type": "float",
+                        "mutable": true
+                    },
+                    {
+                        "name": "shieldTakesDamage",
+                        "type": "boolean",
+                        "mutable": true
+                    },
+                    {
+                        "name": "blockedWith",
+                        "type": "ItemStack",
+                        "mutable": false
+                    }
+                ]
             },
             {
                 "event": "ZombieEvent",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/ZombieEvent.java#L24",
                 "cancellable": false,
                 "description": "ZombieEvent is fired whenever a zombie is spawned for aid. If a method utilizes this event as its parameter, the method will receive every child event of this class",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "zombie",
+                        "type": "Zombie",
+                        "mutable": false
+                    }
+                ]
             },
             {
                 "event": "ZombieEvent.SummonAidEvent",
+                "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/ZombieEvent.java#L61",
                 "cancellable": false,
                 "description": "SummonAidEvent is fired when a Zombie Entity is summoned. This event is fired whenever a Zombie Entity is summoned in actuallyHurt(DamageSource, float). This event is fired via the fireZombieSummonAid(Zombie, Level, int, int, int, LivingEntity, double). getCustomSummonedAid() remains null, but can be populated with a custom EntityZombie which will be spawned. getLevel() contains the world that this summoning is occurring in. getX() contains the x-coordinate at which this summoning event is occurring. getY() contains the y-coordinate at which this summoning event is occurring. getZ() contains the z-coordinate at which this summoning event is occurring. getAttacker() contains the living Entity that attacked and caused this event to fire. getSummonChance() contains the likelihood that a Zombie would successfully be summoned. This event HasResult has a result: ALLOW Zombie is summoned. DENY Zombie is not summoned. This event is fired on the EVENT_BUS",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "customSummonedAid",
+                        "type": "Zombie",
+                        "mutable": true
+                    },
+                    {
+                        "name": "level",
+                        "type": "Level",
+                        "mutable": false
+                    },
+                    {
+                        "name": "x",
+                        "type": "int",
+                        "mutable": false
+                    },
+                    {
+                        "name": "y",
+                        "type": "int",
+                        "mutable": false
+                    },
+                    {
+                        "name": "z",
+                        "type": "int",
+                        "mutable": false
+                    },
+                    {
+                        "name": "attacker",
+                        "type": "LivingEntity",
+                        "mutable": false
+                    },
+                    {
+                        "name": "summonChance",
+                        "type": "double",
+                        "mutable": false
+                    },
+                    {
+                        "name": "result",
+                        "type": "Result",
+                        "mutable": true
+                    }
+                ]
             }
         ],
         "net.minecraftforge.event.entity.player": [
             {
+                "event": "AdvancementEvent.AdvancementEarnEvent",
+                "package": "net.minecraftforge.event.entity.player",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/AdvancementEvent.java#L33",
+                "cancellable": false,
+                "description": "Fired when the player earns an advancement. An advancement is earned once its requirements are complete. Note that advancements may be hidden from the player or used in background mechanics, such as recipe advancements for unlocking recipes in the recipe book. This event is fired only on the SERVER logical server",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "getEntity",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getAdvancement",
+                        "type": "AdvancementHolder",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "AdvancementEvent.AdvancementProgressEvent",
+                "package": "net.minecraftforge.event.entity.player",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/AdvancementEvent.java#L51",
+                "cancellable": false,
+                "description": "Fired when the player's progress on an advancement criterion is granted or revoked. This event is fired only on the SERVER logical server",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
                 "event": "AnvilRepairEvent",
+                "package": "net.minecraftforge.event.entity.player",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/AnvilRepairEvent.java#L22",
                 "cancellable": false,
                 "description": "Fired when the player removes a \"repaired\" item from the Anvil's Output slot. breakChance specifies as a percentage the chance that the anvil will be \"damaged\" when used. ItemStacks are the inputs/output from the anvil. They cannot be edited",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "player",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "left",
+                        "type": "ItemStack",
+                        "mutable": false
+                    },
+                    {
+                        "name": "right",
+                        "type": "ItemStack",
+                        "mutable": false
+                    },
+                    {
+                        "name": "output",
+                        "type": "ItemStack",
+                        "mutable": false
+                    },
+                    {
+                        "name": "breakChance",
+                        "type": "float",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "ArrowLooseEvent",
+                "package": "net.minecraftforge.event.entity.player",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/ArrowLooseEvent.java#L30",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "ArrowLooseEvent is fired when a player stops using a bow. This event is fired whenever a player stops using a bow in releaseUsing(ItemStack, Level, LivingEntity, int). bow contains the ItemBow ItemStack that was used in this event. charge contains the value for how much the player had charged before stopping the shot. This event is Cancellable cancellable. If this event is cancelled, the player does not stop using the bow. For crossbows, the charge will always be 1; Set it to -1 in order to prevent firing the arrow",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "player",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "bow",
+                        "type": "ItemStack",
+                        "mutable": false
+                    },
+                    {
+                        "name": "level",
+                        "type": "Level",
+                        "mutable": false
+                    },
+                    {
+                        "name": "hasAmmo",
+                        "type": "boolean",
+                        "mutable": false
+                    },
+                    {
+                        "name": "charge",
+                        "type": "int",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "ArrowNockEvent",
+                "package": "net.minecraftforge.event.entity.player",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/ArrowNockEvent.java#L23",
                 "cancellable": false,
                 "description": "ArrowNockEvent is fired when a player begins using a bow. This event is fired whenever a player begins using a bow in use(Level, Player, InteractionHand)",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "player",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "bow",
+                        "type": "ItemStack",
+                        "mutable": false
+                    },
+                    {
+                        "name": "hand",
+                        "type": "InteractionHand",
+                        "mutable": false
+                    },
+                    {
+                        "name": "level",
+                        "type": "Level",
+                        "mutable": false
+                    },
+                    {
+                        "name": "hasAmmo",
+                        "type": "boolean",
+                        "mutable": false
+                    },
+                    {
+                        "name": "action",
+                        "type": "InteractionResult",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "BonemealEvent",
+                "package": "net.minecraftforge.event.entity.player",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/BonemealEvent.java#L31",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "This event is called when a player attempts to use Bonemeal on a block. It can be canceled to completely prevent any further processing. You can also set the result to ALLOW to mark the event as processed and use up a bonemeal from the stack but do no further processing. setResult(ALLOW) is the same as the old setHandled()",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "player",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "level",
+                        "type": "Level",
+                        "mutable": false
+                    },
+                    {
+                        "name": "pos",
+                        "type": "BlockPos",
+                        "mutable": false
+                    },
+                    {
+                        "name": "block",
+                        "type": "BlockState",
+                        "mutable": false
+                    },
+                    {
+                        "name": "stack",
+                        "type": "ItemStack",
+                        "mutable": false
+                    },
+                    {
+                        "name": "result",
+                        "type": "Result",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "CriticalHitEvent",
+                "package": "net.minecraftforge.event.entity.player",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/CriticalHitEvent.java#L26",
                 "cancellable": false,
                 "description": "This event is fired whenever a player attacks an Entity in EntityPlayer#attackTargetEntityWithCurrentItem(Entity). This event HasResult has a result: DEFAULT: means the vanilla logic will determine if this a critical hit. DENY: it will not be a critical hit but the player still will attack ALLOW: this attack is forced to be critical",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "player",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "damageModifier",
+                        "type": "float",
+                        "mutable": true
+                    },
+                    {
+                        "name": "oldDamageModifier",
+                        "type": "float",
+                        "mutable": false
+                    },
+                    {
+                        "name": "target",
+                        "type": "Entity",
+                        "mutable": false
+                    },
+                    {
+                        "name": "vanillaCritical",
+                        "type": "boolean",
+                        "mutable": false
+                    },
+                    {
+                        "name": "result",
+                        "type": "Result",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "EntityItemPickupEvent",
+                "package": "net.minecraftforge.event.entity.player",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/EntityItemPickupEvent.java#L26",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "This event is called when a player collides with a EntityItem on the ground. The event can be canceled, and no further processing will be done. You can set the result of this event to ALLOW which will trigger the processing of achievements, FML's event, play the sound, and kill the entity if all the items are picked up. setResult(ALLOW) is the same as the old setHandled()",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "player",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "item",
+                        "type": "ItemEntity",
+                        "mutable": false
+                    },
+                    {
+                        "name": "result",
+                        "type": "Result",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "FillBucketEvent",
+                "package": "net.minecraftforge.event.entity.player",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/FillBucketEvent.java#L29",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "This event is fired when a player attempts to use a Empty bucket, it can be canceled to completely prevent any further processing. If you set the result to 'ALLOW', it means that you have processed the event and wants the basic functionality of adding the new ItemStack to your inventory and reducing the stack size to process. setResult(ALLOW) is the same as the old setHandled();",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "player",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "current",
+                        "type": "ItemStack",
+                        "mutable": false
+                    },
+                    {
+                        "name": "level",
+                        "type": "Level",
+                        "mutable": false
+                    },
+                    {
+                        "name": "target",
+                        "type": "HitResult",
+                        "mutable": false
+                    },
+                    {
+                        "name": "result",
+                        "type": "ItemStack",
+                        "mutable": true
+                    },
+                    {
+                        "name": "eventResult",
+                        "type": "Result",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "ItemFishedEvent",
+                "package": "net.minecraftforge.event.entity.player",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/ItemFishedEvent.java#L26",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "This event is called when a player fishes an item. This event is Cancellable cancellable. If cancelled, the player will not receive any items, but the hook will still take the damage specified",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "player",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "stacks",
+                        "type": "NonNullList<ItemStack>",
+                        "mutable": false
+                    },
+                    {
+                        "name": "hook",
+                        "type": "FishingHook",
+                        "mutable": false
+                    },
+                    {
+                        "name": "rodDamage",
+                        "type": "int",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "ItemTooltipEvent",
+                "package": "net.minecraftforge.event.entity.player",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/ItemTooltipEvent.java#L20",
                 "cancellable": false,
                 "description": "",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "player",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "flags",
+                        "type": "TooltipFlag",
+                        "mutable": false
+                    },
+                    {
+                        "name": "itemStack",
+                        "type": "ItemStack",
+                        "mutable": false
+                    },
+                    {
+                        "name": "toolTip",
+                        "type": "List<Component>",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "PlayerContainerEvent.Open",
+                "package": "net.minecraftforge.event.entity.player",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerContainerEvent.java#L20",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "getEntity",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getContainer",
+                        "type": "AbstractContainerMenu",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "PlayerContainerEvent.Close",
+                "package": "net.minecraftforge.event.entity.player",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerContainerEvent.java#L24",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "getEntity",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getContainer",
+                        "type": "AbstractContainerMenu",
+                        "mutable": false
+                    }
+                ]
             },
             {
                 "event": "PlayerEvent",
+                "package": "net.minecraftforge.event.entity.player",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java#L51",
                 "cancellable": false,
                 "description": "HarvestCheck is fired when a player attempts to harvest a block. This event is fired whenever a player attempts to harvest a block in hasCorrectToolForDrops(BlockState). This event is fired via the doPlayerHarvestCheck(Player, BlockState, boolean). state contains the BlockState that is being checked for harvesting. success contains the boolean value for whether the Block will be successfully harvested",
@@ -728,54 +2377,424 @@
                 "hasResult": false
             },
             {
+                "event": "PlayerEvent.Clone",
+                "package": "net.minecraftforge.event.entity.player",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java#L201",
+                "cancellable": false,
+                "description": "Fired when the EntityPlayer is cloned, typically caused by the impl sending a RESPAWN_PLAYER event. Either caused by death, or by traveling from the End to the overworld",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "getEntity",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getOriginal",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "isWasDeath",
+                        "type": "boolean",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "PlayerEvent.StartTracking",
+                "package": "net.minecraftforge.event.entity.player",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java#L210",
+                "cancellable": false,
+                "description": "Fired when an Entity is started to be \"tracked\" by this player (the player receives updates about this entity, e.g. motion)",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "getEntity",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getTarget",
+                        "type": "Entity",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "PlayerEvent.StopTracking",
+                "package": "net.minecraftforge.event.entity.player",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java#L219",
+                "cancellable": false,
+                "description": "Fired when an Entity is stopped to be \"tracked\" by this player (the player no longer receives updates about this entity, e.g. motion)",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "getEntity",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getTarget",
+                        "type": "Entity",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "PlayerEvent.LoadFromFile",
+                "package": "net.minecraftforge.event.entity.player",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java#L229",
+                "cancellable": false,
+                "description": "The player is being loaded from the world save. Note that the player won't have been added to the world yet. Intended to allow mods to load an additional file from the players directory containing additional mod related player data",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "getEntity",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getPlayerDirectory",
+                        "type": "File",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getPlayerUUID",
+                        "type": "String",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "PlayerEvent.SaveToFile",
+                "package": "net.minecraftforge.event.entity.player",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java#L270",
+                "cancellable": false,
+                "description": "The player is being saved to the world store. Note that the player may be in the process of logging out or otherwise departing from the world. Don't assume it's association with the world. This allows mods to load an additional file from the players directory containing additional mod related player data. Use this event to save the additional mod related player data to the world. WARNING: Do not overwrite the player's .dat file here. You will corrupt the world state",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "getEntity",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getPlayerDirectory",
+                        "type": "File",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getPlayerUUID",
+                        "type": "String",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "PlayerEvent.ItemPickupEvent",
+                "package": "net.minecraftforge.event.entity.player",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java#L303",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "getEntity",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getOriginalEntity",
+                        "type": "ItemEntity",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getStack",
+                        "type": "ItemStack",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "PlayerEvent.ItemCraftedEvent",
+                "package": "net.minecraftforge.event.entity.player",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java#L308",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "getEntity",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getCrafting",
+                        "type": "ItemStack",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getContainer",
+                        "type": "Container",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "PlayerEvent.ItemSmeltedEvent",
+                "package": "net.minecraftforge.event.entity.player",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java#L314",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "getEntity",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getSmelting",
+                        "type": "ItemStack",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "PlayerEvent.PlayerLoggedInEvent",
+                "package": "net.minecraftforge.event.entity.player",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java#L319",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "getEntity",
+                        "type": "Player",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "PlayerEvent.PlayerLoggedOutEvent",
+                "package": "net.minecraftforge.event.entity.player",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java#L323",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "getEntity",
+                        "type": "Player",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "PlayerEvent.PlayerRespawnEvent",
+                "package": "net.minecraftforge.event.entity.player",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java#L328",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "getEntity",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "isEndConquered",
+                        "type": "boolean",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "PlayerEvent.PlayerChangedDimensionEvent",
+                "package": "net.minecraftforge.event.entity.player",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java#L340",
+                "cancellable": false,
+                "description": "Did this respawn event come from the player conquering the end?",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "getEntity",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getFrom",
+                        "type": "ResourceKey<Level>",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getTo",
+                        "type": "ResourceKey<Level>",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
                 "event": "PlayerFlyableFallEvent",
+                "package": "net.minecraftforge.event.entity.player",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerFlyableFallEvent.java#L18",
                 "cancellable": false,
                 "description": "Occurs when a player falls, but is able to fly. Doesn't need to be cancelable, this is mainly for notification purposes",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "player",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "distance",
+                        "type": "float",
+                        "mutable": true
+                    },
+                    {
+                        "name": "multiplier",
+                        "type": "float",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "PlayerInteractEvent",
+                "package": "net.minecraftforge.event.entity.player",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerInteractEvent.java#L46",
                 "cancellable": false,
                 "description": "PlayerInteractEvent is fired when a player interacts in some way. All subclasses are fired on EVENT_BUS. See the individual documentation on each subevent for more details",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "player",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "hand",
+                        "type": "InteractionHand",
+                        "mutable": false
+                    },
+                    {
+                        "name": "pos",
+                        "type": "BlockPos",
+                        "mutable": false
+                    },
+                    {
+                        "name": "face",
+                        "type": "Direction",
+                        "mutable": false
+                    },
+                    {
+                        "name": "cancellationResult",
+                        "type": "InteractionResult",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "PlayerInteractEvent.EntityInteractSpecific",
+                "package": "net.minecraftforge.event.entity.player",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerInteractEvent.java#L77",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "This event is fired on both sides whenever a player right clicks an entity. \"Specific\" is an interact where the local vector (which part of the entity you clicked) is known. The state of this event affects whether interactAt(Player, Vec3, InteractionHand) is called. Let result be the return value of interactAt(Player, Vec3, InteractionHand), or cancellationResult if the event is cancelled. If we are on the client and result is not SUCCESS, the client will then try EntityInteract",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "localPos",
+                        "type": "Vec3",
+                        "mutable": false
+                    },
+                    {
+                        "name": "target",
+                        "type": "Entity",
+                        "mutable": false
+                    }
+                ]
             },
             {
                 "event": "PlayerInteractEvent.EntityInteract",
+                "package": "net.minecraftforge.event.entity.player",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerInteractEvent.java#L117",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "This event is fired on both sides when the player right clicks an entity. It is responsible for all general entity interactions. This event is fired only if the result of the above EntityInteractSpecific is not SUCCESS. This event's state affects whether interact(Player, InteractionHand) and interactLivingEntity(ItemStack, Player, LivingEntity, InteractionHand) are called. Let result be SUCCESS if interact(Player, InteractionHand) or interactLivingEntity(ItemStack, Player, LivingEntity, InteractionHand) return true, or cancellationResult if the event is cancelled. If we are on the client and result is not SUCCESS, the client will then try RightClickItem",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "target",
+                        "type": "Entity",
+                        "mutable": false
+                    }
+                ]
             },
             {
                 "event": "PlayerInteractEvent.RightClickBlock",
+                "package": "net.minecraftforge.event.entity.player",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerInteractEvent.java#L145",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "This event is fired on both sides whenever the player right clicks while targeting a block. This event controls which of onItemUseFirst, use(BlockState, Level, BlockPos, Player, InteractionHand, BlockHitResult), and useOn(UseOnContext) will be called. Cancelling the event will cause none of the above three to be called. Let result be the first non-pass return value of the above three methods, or pass, if they all pass. Or cancellationResult if the event is cancelled. If result equals PASS, we proceed to RightClickItem. There are various results to this event, see the getters below. Note that handling things differently on the client vs server may cause desynchronizations!",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "useBlock",
+                        "type": "Result",
+                        "mutable": true
+                    },
+                    {
+                        "name": "useItem",
+                        "type": "Result",
+                        "mutable": true
+                    },
+                    {
+                        "name": "hitVec",
+                        "type": "BlockHitResult",
+                        "mutable": false
+                    }
+                ]
             },
             {
                 "event": "PlayerInteractEvent.RightClickItem",
+                "package": "net.minecraftforge.event.entity.player",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerInteractEvent.java#L205",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "This event is fired on both sides before the player triggers use(Level, Player, InteractionHand). Note that this is NOT fired if the player is targeting a block RightClickBlock or entity EntityInteract EntityInteractSpecific. Let result be the return value of use(Level, Player, InteractionHand), or cancellationResult if the event is cancelled. If we are on the client and result is not SUCCESS, the client will then continue to other hands",
                 "side": null,
                 "deprecated": false,
@@ -783,6 +2802,7 @@
             },
             {
                 "event": "PlayerInteractEvent.RightClickEmpty",
+                "package": "net.minecraftforge.event.entity.player",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerInteractEvent.java#L218",
                 "cancellable": false,
                 "description": "This event is fired on the client side when the player right clicks empty space with an empty hand. The server is not aware of when the client right clicks empty space with an empty hand, you will need to tell the server yourself. This event cannot be canceled",
@@ -792,15 +2812,34 @@
             },
             {
                 "event": "PlayerInteractEvent.LeftClickBlock",
+                "package": "net.minecraftforge.event.entity.player",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerInteractEvent.java#L241",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "This event is fired when a player left clicks while targeting a block. This event controls which of attack(BlockState, Level, BlockPos, Player) and/or the item harvesting methods will be called Canceling the event will cause none of the above noted methods to be called. There are various results to this event, see the getters below. This event is fired at various points during left clicking on blocks, at both the start and end on the server, and at the start and while held down on the client. Use getAction() to check which type of action triggered this event. Note that if the event is canceled and the player holds down left mouse, the event will continue to fire. This is due to how vanilla calls the left click handler methods. Also note that creative mode directly breaks the block without running any other logic. Therefore, in creative mode, setUseBlock and setUseItem have no effect",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "useBlock",
+                        "type": "Result",
+                        "mutable": true
+                    },
+                    {
+                        "name": "useItem",
+                        "type": "Result",
+                        "mutable": true
+                    },
+                    {
+                        "name": "action",
+                        "type": "Action",
+                        "mutable": false
+                    }
+                ]
             },
             {
                 "event": "PlayerInteractEvent.LeftClickEmpty",
+                "package": "net.minecraftforge.event.entity.player",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerInteractEvent.java#L319",
                 "cancellable": false,
                 "description": "This event is fired on the client side when the player left clicks empty space with any ItemStack. The server is not aware of when the client left clicks empty space, you will need to tell the server yourself. This event cannot be canceled",
@@ -810,35 +2849,122 @@
             },
             {
                 "event": "PlayerSetSpawnEvent",
+                "package": "net.minecraftforge.event.entity.player",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerSetSpawnEvent.java#L23",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "This event is fired when a player's spawn point is set or reset. The event can be canceled, which will prevent the spawn point from being changed",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "player",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "config",
+                        "type": "ServerPlayer.RespawnConfig",
+                        "mutable": false
+                    },
+                    {
+                        "name": "spawnLevel",
+                        "type": "ResourceKey<Level>",
+                        "mutable": false
+                    },
+                    {
+                        "name": "forced",
+                        "type": "boolean",
+                        "mutable": false
+                    },
+                    {
+                        "name": "newSpawn",
+                        "type": "BlockPos",
+                        "mutable": false
+                    }
+                ]
             },
             {
                 "event": "PlayerSleepInBedEvent",
+                "package": "net.minecraftforge.event.entity.player",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerSleepInBedEvent.java#L24",
                 "cancellable": false,
                 "description": "PlayerSleepInBedEvent is fired when a player sleeps in a bed. This event is fired whenever a player sleeps in a bed in startSleeping(BlockPos). result contains whether the player is able to sleep",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "player",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "result",
+                        "type": "BedSleepingProblem",
+                        "mutable": true
+                    },
+                    {
+                        "name": "pos",
+                        "type": "Optional<BlockPos>",
+                        "mutable": false
+                    }
+                ]
             },
             {
                 "event": "PlayerSpawnPhantomsEvent",
+                "package": "net.minecraftforge.event.entity.player",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerSpawnPhantomsEvent.java#L25",
                 "cancellable": false,
                 "description": "This event is fired from tick, once per player, when phantoms would attempt to be spawned. This event is not fired for spectating players. This event is fired before any per-player checks (but after isSpectator()), but after all global checks. The behavior of PhantomSpawner is determined by the result of this event. See setResult for documentation",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "player",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "phantomsToSpawn",
+                        "type": "int",
+                        "mutable": true
+                    },
+                    {
+                        "name": "result",
+                        "type": "Result",
+                        "mutable": true
+                    }
+                ]
+            },
+            {
+                "event": "PlayerXpEvent.PickupXp",
+                "package": "net.minecraftforge.event.entity.player",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerXpEvent.java#L28",
+                "cancellable": true,
+                "description": "This event is fired after the player collides with an experience orb, but before the player has been given the experience. It can be cancelled, and no further processing will be done",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "getEntity",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getOrb",
+                        "type": "ExperienceOrb",
+                        "mutable": false
+                    }
+                ]
             },
             {
                 "event": "PlayerXpEvent",
+                "package": "net.minecraftforge.event.entity.player",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerXpEvent.java#L36",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "This event is fired when the player's experience changes through the giveExperiencePoints(int) method. It can be cancelled, and no further processing will be done",
                 "side": null,
                 "deprecated": false,
@@ -846,57 +2972,350 @@
             },
             {
                 "event": "SleepingLocationCheckEvent",
+                "package": "net.minecraftforge.event.entity.player",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/SleepingLocationCheckEvent.java#L30",
                 "cancellable": false,
                 "description": "This event is fired when game checks, if sleeping player should be still considered \"in bed\". Failing this check will cause player to wake up. This event HasResult has a result: ALLOW: informs game that player is still \"in bed\" DEFAULT: causes game to check isBed(BlockState, BlockGetter, BlockPos, Entity) instead",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "entity",
+                        "type": "LivingEntity",
+                        "mutable": false
+                    },
+                    {
+                        "name": "sleepingLocation",
+                        "type": "BlockPos",
+                        "mutable": false
+                    },
+                    {
+                        "name": "result",
+                        "type": "Result",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "SleepingTimeCheckEvent",
+                "package": "net.minecraftforge.event.entity.player",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/SleepingTimeCheckEvent.java#L27",
                 "cancellable": false,
                 "description": "This event is fired when the game checks if players can sleep at this time. Failing this check will cause sleeping players to wake up and prevent awake players from sleeping. This event has a result. HasResult setResult(ALLOW) informs game that player can sleep at this time. setResult(DEFAULT) causes game to check canSleep() instead",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "player",
+                        "type": "Player",
+                        "mutable": false
+                    },
+                    {
+                        "name": "sleepingLocation",
+                        "type": "Optional<BlockPos>",
+                        "mutable": false
+                    },
+                    {
+                        "name": "result",
+                        "type": "Result",
+                        "mutable": true
+                    }
+                ]
             }
         ],
         "net.minecraftforge.event.furnace": [
             {
                 "event": "FurnaceFuelBurnTimeEvent",
+                "package": "net.minecraftforge.event.furnace",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/furnace/FurnaceFuelBurnTimeEvent.java#L28",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "FurnaceFuelBurnTimeEvent is fired when determining the fuel value for an ItemStack. To set the burn time of your own item, use getBurnTime(ItemStack, RecipeType) instead. This event is fired from getItemBurnTime(ItemStack, int, RecipeType). This event is Cancellable to prevent later handlers from changing the value",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "itemStack",
+                        "type": "ItemStack",
+                        "mutable": false
+                    },
+                    {
+                        "name": "recipeType",
+                        "type": "RecipeType<?>",
+                        "mutable": false
+                    },
+                    {
+                        "name": "burnTime",
+                        "type": "int",
+                        "mutable": true
+                    }
+                ]
             }
         ],
         "net.minecraftforge.event.level": [
             {
                 "event": "AlterGroundEvent",
+                "package": "net.minecraftforge.event.level",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/level/AlterGroundEvent.java#L28",
                 "cancellable": false,
                 "description": "This event is fired when placeBlockAt(TreeDecorator.Context, BlockPos) attempts to alter a ground block when generating a feature. An example of this would be large spruce trees converting grass blocks into podzol. This event is not Cancellable cancellable. This event is fired on the EVENT_BUS main Forge event bus only on the SERVER logical server",
                 "side": "server",
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "level",
+                        "type": "LevelSimulatedReader",
+                        "mutable": false
+                    },
+                    {
+                        "name": "random",
+                        "type": "RandomSource",
+                        "mutable": false
+                    },
+                    {
+                        "name": "pos",
+                        "type": "BlockPos",
+                        "mutable": false
+                    },
+                    {
+                        "name": "originalAltered",
+                        "type": "BlockState",
+                        "mutable": false
+                    },
+                    {
+                        "name": "newAltered",
+                        "type": "BlockState",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "BlockEvent",
+                "package": "net.minecraftforge.event.level",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/level/BlockEvent.java#L57",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "Event that is fired when an Block is about to be broken by a player Setting the result to DENY will prevent the Block from being broken",
                 "side": null,
                 "deprecated": false,
                 "hasResult": false
             },
             {
-                "event": "LevelEvent",
-                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/level/LevelEvent.java#L116",
+                "event": "CropGrowEvent.Pre",
+                "package": "net.minecraftforge.event.level",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/level/BlockEvent.java#L334",
                 "cancellable": false,
+                "description": "Fired when any \"growing age\" blocks (for example cacti, chorus plants, or crops in vanilla) attempt to advance to the next growth age state during a random tick. DEFAULT will pass on to the vanilla growth mechanics. ALLOW will force the plant to advance a growth stage. DENY will prevent the plant from advancing a growth stage",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "getLevel",
+                        "type": "LevelAccessor",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getPos",
+                        "type": "BlockPos",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getState",
+                        "type": "BlockState",
+                        "mutable": false
+                    },
+                    {
+                        "name": "resultHolder",
+                        "type": "Result.Holder",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "CropGrowEvent.Post",
+                "package": "net.minecraftforge.event.level",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/level/BlockEvent.java#L348",
+                "cancellable": false,
+                "description": "Fired when \"growing age\" blocks (for example cacti, chorus plants, or crops in vanilla) have successfully grown. The block's original state is available, in addition to its new state",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "getLevel",
+                        "type": "LevelAccessor",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getPos",
+                        "type": "BlockPos",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getState",
+                        "type": "BlockState",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getOriginalState",
+                        "type": "BlockState",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ChunkDataEvent.Load",
+                "package": "net.minecraftforge.event.level",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/level/ChunkDataEvent.java#L30",
+                "cancellable": false,
+                "description": "ChunkDataEvent.Load is fired when vanilla Minecraft attempts to load Chunk data. This event is fired during chunk loading in read(ServerLevel, PoiManager, ChunkPos, SerializableChunkData) which means it is async, so be careful",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "getChunk",
+                        "type": "ChunkAccess",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getData",
+                        "type": "SerializableChunkData",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getStatus",
+                        "type": "ChunkType",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ChunkDataEvent.Save",
+                "package": "net.minecraftforge.event.level",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/level/ChunkDataEvent.java#L39",
+                "cancellable": false,
+                "description": "ChunkDataEvent.Save is fired when vanilla Minecraft attempts to save Chunk data. This event is fired during chunk saving in save(ChunkAccess)",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "getChunk",
+                        "type": "ChunkAccess",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getLevel",
+                        "type": "LevelAccessor",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getData",
+                        "type": "SerializableChunkData",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ChunkWatchEvent.Watch",
+                "package": "net.minecraftforge.event.level",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/level/ChunkWatchEvent.java#L52",
+                "cancellable": false,
+                "description": "This event is fired when chunk data is sent to the ServerPlayer (see PlayerChunkSender). This event may be used to send additional chunk-related data to the client. This event is fired on the EVENT_BUS main Forge event bus only on the SERVER logical server",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "getPlayer",
+                        "type": "ServerPlayer",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getPos",
+                        "type": "ChunkPos",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getChunk",
+                        "type": "LevelChunk",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getLevel",
+                        "type": "ServerLevel",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ChunkWatchEvent.UnWatch",
+                "package": "net.minecraftforge.event.level",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/level/ChunkWatchEvent.java#L67",
+                "cancellable": false,
+                "description": "This event is fired when server sends \"forget chunk\" packet to the ServerPlayer. This event is fired on the EVENT_BUS main Forge event bus only on the SERVER logical server",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "getPlayer",
+                        "type": "ServerPlayer",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getPos",
+                        "type": "ChunkPos",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getLevel",
+                        "type": "ServerLevel",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ExplosionEvent.Start",
+                "package": "net.minecraftforge.event.level",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/level/ExplosionEvent.java#L38",
+                "cancellable": true,
+                "description": "ExplosionEvent.Start is fired before the explosion actually occurs. This event is Cancellable cancellable. Cancelling this event will stop the explosion",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "getLevel",
+                        "type": "Level",
+                        "mutable": false
+                    },
+                    {
+                        "name": "getExplosion",
+                        "type": "Explosion",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ExplosionEvent.Detonate",
+                "package": "net.minecraftforge.event.level",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/level/ExplosionEvent.java#L49",
+                "cancellable": false,
+                "description": "ExplosionEvent.Detonate is fired once the explosion has a list of affected blocks and entities. These lists can be modified to change the outcome",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "LevelEvent",
+                "package": "net.minecraftforge.event.level",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/level/LevelEvent.java#L116",
+                "cancellable": true,
                 "description": "Fired when building a list of all possible entities that can spawn at the specified location. If an entry is added to the list, it needs to be a globally unique instance. The event is called in mobsAt(ServerLevel, StructureManager, ChunkGenerator, MobCategory, BlockPos, Holder). This event is Cancellable cancellable. Cancelling the event will result in an empty list, meaning no entity will be spawned",
                 "side": null,
                 "deprecated": false,
@@ -904,53 +3323,164 @@
             },
             {
                 "event": "NoteBlockEvent",
+                "package": "net.minecraftforge.event.level",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/level/NoteBlockEvent.java#L23",
                 "cancellable": false,
                 "description": "Base class for Noteblock Events",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "world",
+                        "type": "Level",
+                        "mutable": false
+                    },
+                    {
+                        "name": "pos",
+                        "type": "BlockPos",
+                        "mutable": false
+                    },
+                    {
+                        "name": "state",
+                        "type": "BlockState",
+                        "mutable": false
+                    },
+                    {
+                        "name": "noteId",
+                        "type": "int",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "NoteBlockEvent.Play",
+                "package": "net.minecraftforge.event.level",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/level/NoteBlockEvent.java#L93",
-                "cancellable": false,
+                "cancellable": true,
                 "description": "Fired when a Noteblock plays it's note. You can override the note and instrument Canceling this event will stop the note from playing",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "instrument",
+                        "type": "NoteBlockInstrument",
+                        "mutable": true
+                    }
+                ]
+            },
+            {
+                "event": "NoteBlockEvent.Change",
+                "package": "net.minecraftforge.event.level",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/level/NoteBlockEvent.java#L116",
+                "cancellable": true,
+                "description": "Fired when a Noteblock is changed. You can adjust the note it will change to via setNote(Note, Octave). Canceling this event will not change the note and also stop the Noteblock from playing it's note",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "oldNote",
+                        "type": "Note",
+                        "mutable": false
+                    },
+                    {
+                        "name": "oldOctave",
+                        "type": "Octave",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "PistonEvent.Pre",
+                "package": "net.minecraftforge.event.level",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/level/PistonEvent.java#L64",
+                "cancellable": false,
+                "description": "Fires before the piston has updated block states. Cancellation prevents movement",
                 "side": null,
                 "deprecated": false,
                 "hasResult": false
             },
             {
-                "event": "NoteBlockEvent.Change",
-                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/level/NoteBlockEvent.java#L116",
+                "event": "PistonEvent.Post",
+                "package": "net.minecraftforge.event.level",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/level/PistonEvent.java#L81",
                 "cancellable": false,
-                "description": "Fired when a Noteblock is changed. You can adjust the note it will change to via setNote(Note, Octave). Canceling this event will not change the note and also stop the Noteblock from playing it's note",
+                "description": "Fires after the piston has moved and set surrounding states. This will not fire if Pre is cancelled",
                 "side": null,
                 "deprecated": false,
                 "hasResult": false
             },
             {
                 "event": "SaplingGrowTreeEvent",
+                "package": "net.minecraftforge.event.level",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/level/SaplingGrowTreeEvent.java#L35",
                 "cancellable": false,
                 "description": "This event is fired whenever a sapling, fungus, mushroom or azalea grows into a tree. This event is not Cancellable cancellable but does HasResult have a result. ALLOW ALLOW and DEFAULT DEFAULT will allow the sapling to grow using the features set on the event. DENY DENY will prevent the sapling from growing. This event is fired on the EVENT_BUS main Forge event bus only on the SERVER logical server",
                 "side": "server",
                 "deprecated": true,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "level",
+                        "type": "LevelAccessor",
+                        "mutable": false
+                    },
+                    {
+                        "name": "randomSource",
+                        "type": "RandomSource",
+                        "mutable": false
+                    },
+                    {
+                        "name": "pos",
+                        "type": "BlockPos",
+                        "mutable": false
+                    },
+                    {
+                        "name": "feature",
+                        "type": "Holder<ConfiguredFeature<?, ?>>",
+                        "mutable": true
+                    },
+                    {
+                        "name": "result",
+                        "type": "Result",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "SleepFinishedTimeEvent",
+                "package": "net.minecraftforge.event.level",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/level/SleepFinishedTimeEvent.java#L17",
                 "cancellable": false,
                 "description": "This event is fired when all players are asleep and the time should be set to day. setWakeUpTime(wakeUpTime) sets a new time that will be added to the dayTime",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "level",
+                        "type": "ServerLevel",
+                        "mutable": false
+                    },
+                    {
+                        "name": "newTime",
+                        "type": "long",
+                        "mutable": true
+                    },
+                    {
+                        "name": "minTime",
+                        "type": "long",
+                        "mutable": false
+                    }
+                ]
             }
         ],
         "net.minecraftforge.event.network": [
             {
                 "event": "CustomPayloadEvent",
+                "package": "net.minecraftforge.event.network",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/network/CustomPayloadEvent.java#L46",
                 "cancellable": false,
                 "description": "Context for CustomPayloadEvent",
@@ -962,12 +3492,20 @@
         "net.minecraftforge.event.village": [
             {
                 "event": "WandererTradesEvent",
+                "package": "net.minecraftforge.event.village",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/village/WandererTradesEvent.java#L28",
                 "cancellable": false,
                 "description": "WandererTradesEvent is fired during the ServerAboutToStartEvent. It is used to gather the trade lists for the wandering merchant. It is fired on the EVENT_BUS. The wandering merchant picks rolls from each Pool To add trades to the merchant, simply add new trades to the list. BasicItemListing provides a default implementation",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "pools",
+                        "type": "List<Pool>",
+                        "mutable": true
+                    }
+                ]
             }
         ]
     }

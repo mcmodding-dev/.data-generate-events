@@ -154,9 +154,125 @@ def findFallbackDescription(linesList, fromLineno):
 	return ""
 
 
+def _splitTypeAndNames(s):
+	"""Split 'Type name1[, name2]' into (type_str, [names]).
+	Finds the first top-level space where the remainder is purely identifiers/commas."""
+	s = re.sub(r'\s*=.*', '', s).strip()
+	depth = 0
+	for i, c in enumerate(s):
+		if c in '<[':
+			depth += 1
+		elif c in '>]':
+			depth -= 1
+		elif c == ' ' and depth == 0:
+			rest = s[i + 1:].strip()
+			if re.match(r'^\w[\w, ]*$', rest):
+				names = [n.strip() for n in rest.split(',') if re.match(r'^\w+$', n.strip())]
+				return s[:i].strip(), names
+	return None, []
+
+
+def _extractAllClassFields(text):
+	"""Return a dict of simple_class_name -> [field dicts] for every class in the file."""
+	lines = text.split("\n")
+
+	setter_names = set()
+	for line in lines:
+		m = re.match(r'\s*public\s+void\s+set(\w+)\s*\(', line)
+		if m:
+			n = m.group(1)
+			setter_names.add(n[0].lower() + n[1:])
+
+	result = {}
+	seen_per_class = {}
+	class_stack = []
+	brace_depth = 0
+	in_javadoc = False
+
+	for line in lines:
+		stripped = line.strip()
+		if "/**" in stripped:
+			in_javadoc = True
+			continue
+		if in_javadoc:
+			if "*/" in stripped:
+				in_javadoc = False
+			continue
+
+		brace_depth += stripped.count("{") - stripped.count("}")
+		while class_stack and class_stack[-1][1] > brace_depth:
+			class_stack.pop()
+
+		if stripped.startswith("//"):
+			continue
+
+		if re.search(r'\bclass\s+\w', stripped):
+			m = re.search(r'\bclass\s+(\w+)', stripped)
+			if m:
+				cname = m.group(1)
+				class_stack.append((cname, brace_depth))
+				if cname not in result:
+					result[cname] = []
+					seen_per_class[cname] = set()
+			continue
+
+		if not class_stack:
+			continue
+
+		m = re.match(
+			r'(public|private|protected)\s+'
+			r'((?:(?:static|final|transient|volatile)\s+)*)'
+			r'(.+)',
+			stripped
+		)
+		if not m:
+			continue
+
+		modifiers = m.group(2)
+		if 'static' in modifiers or 'transient' in modifiers:
+			continue
+
+		rest = m.group(3)
+		if ';' not in rest:
+			continue
+		rest = rest[:rest.index(';')]
+		rest = re.sub(r'^(@\w+(?:\([^)]*\))?\s*)+', '', rest).strip()
+
+		ftype, fnames = _splitTypeAndNames(rest)
+		if not ftype or not fnames:
+			continue
+
+		is_final = 'final' in modifiers
+		cname = class_stack[-1][0]
+		for fname in fnames:
+			if fname not in seen_per_class[cname]:
+				seen_per_class[cname].add(fname)
+				mutable = (not is_final) or (fname in setter_names)
+				result[cname].append({"name": fname, "type": ftype, "mutable": mutable})
+
+	return {k: v for k, v in result.items() if v}
+
+
+def extractRecordFields(line):
+	m = re.search(r'\brecord\s+\w+\s*\(([^)]*)\)', line)
+	if not m:
+		return None
+	params_str = m.group(1).strip()
+	if not params_str:
+		return None
+	fields = []
+	for param in params_str.split(","):
+		param = re.sub(r'@\w+(?:\([^)]*\))?\s*', '', param).strip()
+		parts = param.rsplit(None, 1)
+		if len(parts) == 2:
+			fields.append({"name": parts[1].strip(), "type": parts[0].strip(), "mutable": False})
+	return fields if fields else None
+
+
 def extractForgeEvents(text, name, blobUrl, isCancellable):
 	lines = text.split("\n")
 	results = []
+	allFields = _extractAllClassFields(text)
 
 	package = ""
 	outerCancellable = False
@@ -165,6 +281,8 @@ def extractForgeEvents(text, name, blobUrl, isCancellable):
 	pendingAnnotations = []
 	inJavadoc = False
 	inJavadocPre = False
+	braceDepth = 0
+	interfaceStack = []  # list of (name, depth_after_open)
 
 	for lineno, line in enumerate(lines, start=1):
 		stripped = line.strip()
@@ -193,6 +311,11 @@ def extractForgeEvents(text, name, blobUrl, isCancellable):
 					if re.search(r'<pre\b', clean, re.IGNORECASE):
 						inJavadocPre = True
 			continue
+
+		if not stripped.startswith("//"):
+			braceDepth += stripped.count("{") - stripped.count("}")
+			while interfaceStack and interfaceStack[-1][1] > braceDepth:
+				interfaceStack.pop()
 
 		if stripped.startswith("@") and not stripped.startswith("@Override"):
 			pendingAnnotations.append(stripped)
@@ -224,6 +347,7 @@ def extractForgeEvents(text, name, blobUrl, isCancellable):
 				if package:
 					entry = {
 						"event": name,
+						"package": package,
 						"url": lineUrl,
 						"cancellable": outerCancellable,
 						"description": desc,
@@ -231,6 +355,9 @@ def extractForgeEvents(text, name, blobUrl, isCancellable):
 						"deprecated": isDeprecated,
 						"hasResult": thisHasResult,
 					}
+					fields = allFields.get(name)
+					if fields:
+						entry["fields"] = fields
 					results.append((package, entry))
 
 			elif "static" in stripped:
@@ -263,6 +390,7 @@ def extractForgeEvents(text, name, blobUrl, isCancellable):
 				if package:
 					entry = {
 						"event": f"{baseClass}.{innerName}",
+						"package": package,
 						"url": lineUrl,
 						"cancellable": innerCancellable,
 						"description": desc,
@@ -270,12 +398,55 @@ def extractForgeEvents(text, name, blobUrl, isCancellable):
 						"deprecated": isDeprecated,
 						"hasResult": thisHasResult,
 					}
+					fields = allFields.get(innerName)
+					if fields:
+						entry["fields"] = fields
 					results.append((package, entry))
 
 			else:
 				pendingJavadoc = []
 				pendingAnnotations = []
 
+			continue
+
+		# Sealed interface declarations — track as context for nested records
+		if re.search(r'\binterface\s+\w', stripped) and not stripped.startswith("//"):
+			ifaceMatch = re.search(r'\binterface\s+(\w+)', stripped)
+			if ifaceMatch and "{" in stripped:
+				interfaceStack.append((ifaceMatch.group(1), braceDepth))
+			pendingJavadoc = []
+			pendingAnnotations = []
+			continue
+
+		# Record declarations inside sealed interfaces become events
+		if re.search(r'\brecord\s+\w', stripped) and not stripped.startswith("//") and interfaceStack:
+			lineUrl = f"{blobUrl}#L{lineno}"
+			annotationText = " ".join(pendingAnnotations)
+			isDeprecated = bool(re.search(r'@Deprecated\b', annotationText))
+			thisCancellable = isCancellable(annotationText) or isCancellable(stripped)
+
+			recordMatch = re.search(r'\brecord\s+(\w+)', stripped)
+			if recordMatch and package:
+				parentName = interfaceStack[-1][0]
+				desc = extractDescriptionWithDeprecated(pendingJavadoc)
+				side = inferSideFromName(parentName) or inferSideFromName(recordMatch.group(1))
+				fields = extractRecordFields(stripped)
+				entry = {
+					"event": f"{parentName}.{recordMatch.group(1)}",
+					"package": package,
+					"url": lineUrl,
+					"cancellable": thisCancellable,
+					"description": desc,
+					"side": side,
+					"deprecated": isDeprecated,
+					"hasResult": False,
+				}
+				if fields:
+					entry["fields"] = fields
+				results.append((package, entry))
+
+			pendingJavadoc = []
+			pendingAnnotations = []
 			continue
 
 		if stripped and not stripped.startswith("//") and not stripped.startswith("*"):

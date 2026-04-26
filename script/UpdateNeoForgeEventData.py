@@ -20,7 +20,7 @@ def main(mainPath, responseHeaders):
 	orgName = "neoforged"
 	repoName = "NeoForge"
 
-	isCancellable = lambda line: bool(re.search(r'\bICancellableEvent\b', line))
+	isCancellable = lambda line: bool(re.search(r'\bICancellableEvent\b', line) or re.search(r'implements[^{]*\bCancellable\b', line))
 
 	print(f"Starting to fetch {repoName} events.\n")
 	print("Path:", rootPath)

@@ -20,7 +20,7 @@ def main(mainPath, responseHeaders):
 	orgName = "MinecraftForge"
 	repoName = "MinecraftForge"
 
-	isCancellable = lambda line: bool(re.search(r'@Cancelable\b', line))
+	isCancellable = lambda line: bool(re.search(r'@Cancelable\b', line) or re.search(r'implements[^{]*\bCancellable\b', line))
 
 	print(f"Starting to fetch {repoName} events.\n")
 	print("Path:", rootPath)

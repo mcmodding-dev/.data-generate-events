@@ -1,5 +1,5 @@
 {
-    "lastupdated": "20260425193455",
+    "lastupdated": "20260426111903",
     "version": "1.20.4",
     "last_commit": "[cadc140c0c860ee9d5f65585694a85a36f084401] [1.20.4] Fix incorrect enchants being applied in the enchanting table. (#4714)\n\n* Fix incorrect enchants being applied in the enchanting table.\n\n* Bump version",
     "data": {
