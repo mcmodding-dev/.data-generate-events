@@ -1,5 +1,5 @@
 {
-    "lastupdated": "20260426112013",
+    "lastupdated": "20260426120603",
     "version": "1.8.9",
     "last_commit": "[d06e0ad71b8471923cc809dde58251de8299a143] Fix log4j configuration",
     "data": {
@@ -17,31 +17,37 @@
                     {
                         "name": "left",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "right",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "name",
                         "type": "String",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "output",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "cost",
                         "type": "int",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "materialCost",
                         "type": "int",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -59,16 +65,19 @@
                     {
                         "name": "obj",
                         "type": "Object",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "caps",
                         "type": "Map<ResourceLocation, ICapabilityProvider>",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "view",
                         "type": "Map<ResourceLocation, ICapabilityProvider>",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -86,6 +95,7 @@
                     {
                         "name": "te",
                         "type": "net.minecraft.tileentity.TileEntity",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -103,6 +113,7 @@
                     {
                         "name": "entity",
                         "type": "net.minecraft.entity.Entity",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -120,11 +131,13 @@
                     {
                         "name": "stack",
                         "type": "net.minecraft.item.ItemStack",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "item",
                         "type": "net.minecraft.item.Item",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -142,21 +155,25 @@
                     {
                         "name": "command",
                         "type": "ICommand",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "sender",
                         "type": "ICommandSender",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "parameters",
                         "type": "String[]",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "exception",
                         "type": "Throwable",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -174,21 +191,25 @@
                     {
                         "name": "message",
                         "type": "String",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "username",
                         "type": "String",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "player",
                         "type": "EntityPlayerMP",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "component",
                         "type": "ChatComponentTranslation",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -208,6 +229,7 @@
                     {
                         "name": "stacks",
                         "type": "ItemStack[]",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -245,6 +267,7 @@
                     {
                         "name": "brewingStacks",
                         "type": "ItemStack[]",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -264,6 +287,7 @@
                     {
                         "name": "entity",
                         "type": "Entity",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -291,6 +315,7 @@
                     {
                         "name": "canUpdate",
                         "type": "boolean",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -308,21 +333,25 @@
                     {
                         "name": "newChunkX",
                         "type": "int",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "newChunkZ",
                         "type": "int",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "oldChunkX",
                         "type": "int",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "oldChunkZ",
                         "type": "int",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -340,6 +369,7 @@
                     {
                         "name": "world",
                         "type": "World",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -357,21 +387,25 @@
                     {
                         "name": "entityMounting",
                         "type": "Entity",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "entityBeingMounted",
                         "type": "Entity",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "worldObj",
                         "type": "World",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "isMounting",
                         "type": "boolean",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -389,6 +423,7 @@
                     {
                         "name": "lightning",
                         "type": "EntityLightningBolt",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -406,6 +441,7 @@
                     {
                         "name": "dimension",
                         "type": "int",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -423,26 +459,31 @@
                     {
                         "name": "name",
                         "type": "String",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "volume",
                         "type": "float",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "pitch",
                         "type": "float",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "newVolume",
                         "type": "float",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "newPitch",
                         "type": "float",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -462,6 +503,7 @@
                     {
                         "name": "entityItem",
                         "type": "EntityItem",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -479,6 +521,7 @@
                     {
                         "name": "extraLife",
                         "type": "int",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -496,6 +539,7 @@
                     {
                         "name": "player",
                         "type": "EntityPlayer",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -515,21 +559,25 @@
                     {
                         "name": "targetX",
                         "type": "double",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "targetY",
                         "type": "double",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "targetZ",
                         "type": "double",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "attackDamage",
                         "type": "float",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -547,11 +595,13 @@
                     {
                         "name": "source",
                         "type": "DamageSource",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "ammount",
                         "type": "float",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -569,6 +619,7 @@
                     {
                         "name": "source",
                         "type": "DamageSource",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -586,21 +637,25 @@
                     {
                         "name": "source",
                         "type": "DamageSource",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "drops",
                         "type": "List<EntityItem>",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "lootingLevel",
                         "type": "int",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "recentlyHit",
                         "type": "boolean",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -618,6 +673,7 @@
                     {
                         "name": "entityLiving",
                         "type": "EntityLivingBase",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -665,11 +721,13 @@
                     {
                         "name": "distance",
                         "type": "float",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "damageMultiplier",
                         "type": "float",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -687,6 +745,7 @@
                     {
                         "name": "amount",
                         "type": "float",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -704,11 +763,13 @@
                     {
                         "name": "source",
                         "type": "DamageSource",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "ammount",
                         "type": "float",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -726,6 +787,7 @@
                     {
                         "name": "maxPackSize",
                         "type": "int",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -743,6 +805,7 @@
                     {
                         "name": "target",
                         "type": "EntityLivingBase",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -760,21 +823,25 @@
                     {
                         "name": "world",
                         "type": "World",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "x",
                         "type": "float",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "y",
                         "type": "float",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "z",
                         "type": "float",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -832,36 +899,43 @@
                     {
                         "name": "customSummonedAid",
                         "type": "EntityZombie",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "world",
                         "type": "World",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "x",
                         "type": "int",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "y",
                         "type": "int",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "z",
                         "type": "int",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "attacker",
                         "type": "EntityLivingBase",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "summonChance",
                         "type": "double",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -881,6 +955,7 @@
                     {
                         "name": "collider",
                         "type": "Entity",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -898,6 +973,7 @@
                     {
                         "name": "minecart",
                         "type": "EntityMinecart",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -915,6 +991,7 @@
                     {
                         "name": "player",
                         "type": "EntityPlayer",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -932,6 +1009,7 @@
                     {
                         "name": "pos",
                         "type": "BlockPos",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -951,6 +1029,7 @@
                     {
                         "name": "achievement",
                         "type": "Achievement",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -968,21 +1047,25 @@
                     {
                         "name": "left",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "right",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "output",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "breakChance",
                         "type": "float",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1000,11 +1083,13 @@
                     {
                         "name": "bow",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "charge",
                         "type": "int",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1022,6 +1107,7 @@
                     {
                         "name": "result",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1039,6 +1125,7 @@
                     {
                         "name": "target",
                         "type": "Entity",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1056,16 +1143,19 @@
                     {
                         "name": "world",
                         "type": "World",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "pos",
                         "type": "BlockPos",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "block",
                         "type": "IBlockState",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1083,6 +1173,7 @@
                     {
                         "name": "target",
                         "type": "Entity",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1100,6 +1191,7 @@
                     {
                         "name": "item",
                         "type": "EntityItem",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1117,21 +1209,25 @@
                     {
                         "name": "current",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "world",
                         "type": "World",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "target",
                         "type": "MovingObjectPosition",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "result",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1149,16 +1245,19 @@
                     {
                         "name": "showAdvancedItemTooltips",
                         "type": "boolean",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "itemStack",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "toolTip",
                         "type": "List<String>",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1176,6 +1275,7 @@
                     {
                         "name": "original",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1193,6 +1293,7 @@
                     {
                         "name": "entityPlayer",
                         "type": "EntityPlayer",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1210,6 +1311,7 @@
                     {
                         "name": "entityPlayer",
                         "type": "EntityPlayer",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1227,11 +1329,13 @@
                     {
                         "name": "block",
                         "type": "Block",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "success",
                         "type": "boolean",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1249,21 +1353,25 @@
                     {
                         "name": "state",
                         "type": "IBlockState",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "originalSpeed",
                         "type": "float",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "newSpeed",
                         "type": "float",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "pos",
                         "type": "BlockPos",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1281,11 +1389,13 @@
                     {
                         "name": "username",
                         "type": "String",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "displayname",
                         "type": "String",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1303,11 +1413,13 @@
                     {
                         "name": "original",
                         "type": "EntityPlayer",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "wasDeath",
                         "type": "boolean",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1325,6 +1437,7 @@
                     {
                         "name": "target",
                         "type": "Entity",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1342,6 +1455,7 @@
                     {
                         "name": "target",
                         "type": "Entity",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1359,11 +1473,13 @@
                     {
                         "name": "playerDirectory",
                         "type": "File",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "playerUUID",
                         "type": "String",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1381,11 +1497,13 @@
                     {
                         "name": "playerDirectory",
                         "type": "File",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "playerUUID",
                         "type": "String",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1403,11 +1521,13 @@
                     {
                         "name": "distance",
                         "type": "float",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "multipler",
                         "type": "float",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1425,36 +1545,43 @@
                     {
                         "name": "action",
                         "type": "Action",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "world",
                         "type": "World",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "pos",
                         "type": "BlockPos",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "face",
                         "type": "EnumFacing",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "localPos",
                         "type": "Vec3",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "useBlock",
                         "type": "Result",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "useItem",
                         "type": "Result",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1472,6 +1599,7 @@
                     {
                         "name": "canInteractWith",
                         "type": "boolean",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1489,6 +1617,7 @@
                     {
                         "name": "orb",
                         "type": "EntityXPOrb",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1506,11 +1635,13 @@
                     {
                         "name": "forced",
                         "type": "boolean",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "newSpawn",
                         "type": "BlockPos",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1528,11 +1659,13 @@
                     {
                         "name": "result",
                         "type": "EnumStatus",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "pos",
                         "type": "BlockPos",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1550,11 +1683,13 @@
                     {
                         "name": "item",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "duration",
                         "type": "int",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1602,6 +1737,7 @@
                     {
                         "name": "result",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1619,16 +1755,19 @@
                     {
                         "name": "wakeImmediatly",
                         "type": "boolean",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "updateWorld",
                         "type": "boolean",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "setSpawn",
                         "type": "boolean",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1646,6 +1785,7 @@
                     {
                         "name": "sleepingLocation",
                         "type": "BlockPos",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1663,16 +1803,19 @@
                     {
                         "name": "current",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "world",
                         "type": "World",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "pos",
                         "type": "BlockPos",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1692,6 +1835,7 @@
                     {
                         "name": "biome",
                         "type": "BiomeGenBase",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1709,11 +1853,13 @@
                     {
                         "name": "originalBiomeDecorator",
                         "type": "BiomeDecorator",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "newBiomeDecorator",
                         "type": "BiomeDecorator",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1731,11 +1877,13 @@
                     {
                         "name": "originalColor",
                         "type": "int",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "newColor",
                         "type": "int",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1753,11 +1901,13 @@
                     {
                         "name": "original",
                         "type": "IBlockState",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "replacement",
                         "type": "IBlockState",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1805,6 +1955,7 @@
                     {
                         "name": "chunkProvider",
                         "type": "IChunkProvider",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1822,21 +1973,25 @@
                     {
                         "name": "x",
                         "type": "int",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "z",
                         "type": "int",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "primer",
                         "type": "ChunkPrimer",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "world",
                         "type": "World",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1854,36 +2009,43 @@
                     {
                         "name": "noisefield",
                         "type": "double[]",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "posX",
                         "type": "int",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "posY",
                         "type": "int",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "posZ",
                         "type": "int",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "sizeX",
                         "type": "int",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "sizeY",
                         "type": "int",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "sizeZ",
                         "type": "int",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1901,16 +2063,19 @@
                     {
                         "name": "world",
                         "type": "World",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "rand",
                         "type": "Random",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "pos",
                         "type": "BlockPos",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1948,6 +2113,7 @@
                     {
                         "name": "type",
                         "type": "EventType",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1965,16 +2131,19 @@
                     {
                         "name": "type",
                         "type": "EventType",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "originalGen",
                         "type": "MapGenBase",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "newGen",
                         "type": "MapGenBase",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1992,16 +2161,19 @@
                     {
                         "name": "rand",
                         "type": "Random",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "originalNoiseGens",
                         "type": "NoiseGenerator[]",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "newNoiseGens",
                         "type": "NoiseGenerator[]",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -2019,16 +2191,19 @@
                     {
                         "name": "world",
                         "type": "World",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "rand",
                         "type": "Random",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "pos",
                         "type": "BlockPos",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -2066,11 +2241,13 @@
                     {
                         "name": "type",
                         "type": "EventType",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "generator",
                         "type": "WorldGenerator",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -2088,26 +2265,31 @@
                     {
                         "name": "world",
                         "type": "World",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "rand",
                         "type": "Random",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "chunkX",
                         "type": "int",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "chunkZ",
                         "type": "int",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "hasVillageGenerated",
                         "type": "boolean",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -2145,6 +2327,7 @@
                     {
                         "name": "type",
                         "type": "EventType",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -2162,11 +2345,13 @@
                     {
                         "name": "pos",
                         "type": "BlockPos",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "rand",
                         "type": "Random",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -2184,6 +2369,7 @@
                     {
                         "name": "worldType",
                         "type": "WorldType",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -2201,11 +2387,13 @@
                     {
                         "name": "originalSize",
                         "type": "int",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "newSize",
                         "type": "int",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -2223,16 +2411,19 @@
                     {
                         "name": "seed",
                         "type": "long",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "originalBiomeGens",
                         "type": "GenLayer[]",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "newBiomeGens",
                         "type": "GenLayer[]",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -2252,16 +2443,19 @@
                     {
                         "name": "world",
                         "type": "World",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "pos",
                         "type": "BlockPos",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "state",
                         "type": "IBlockState",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -2279,26 +2473,31 @@
                     {
                         "name": "fortuneLevel",
                         "type": "int",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "drops",
                         "type": "List<ItemStack>",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "isSilkTouching",
                         "type": "boolean",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "dropChance",
                         "type": "float",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "harvester",
                         "type": "EntityPlayer",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -2326,26 +2525,31 @@
                     {
                         "name": "player",
                         "type": "EntityPlayer",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "itemInHand",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "blockSnapshot",
                         "type": "BlockSnapshot",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "placedBlock",
                         "type": "IBlockState",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "placedAgainst",
                         "type": "IBlockState",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -2363,6 +2567,7 @@
                     {
                         "name": "blockSnapshots",
                         "type": "List<BlockSnapshot>",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -2380,6 +2585,7 @@
                     {
                         "name": "notifiedSides",
                         "type": "EnumSet<EnumFacing>",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -2397,6 +2603,7 @@
                     {
                         "name": "data",
                         "type": "NBTTagCompound",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -2434,6 +2641,7 @@
                     {
                         "name": "chunk",
                         "type": "Chunk",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -2471,11 +2679,13 @@
                     {
                         "name": "chunk",
                         "type": "ChunkCoordIntPair",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "player",
                         "type": "EntityPlayerMP",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -2513,11 +2723,13 @@
                     {
                         "name": "world",
                         "type": "World",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "explosion",
                         "type": "Explosion",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -2545,6 +2757,7 @@
                     {
                         "name": "entityList",
                         "type": "List<Entity>",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -2562,6 +2775,7 @@
                     {
                         "name": "noteId",
                         "type": "int",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -2579,6 +2793,7 @@
                     {
                         "name": "instrument",
                         "type": "Instrument",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -2596,11 +2811,13 @@
                     {
                         "name": "oldNote",
                         "type": "Note",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "oldOctave",
                         "type": "Octave",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -2618,6 +2835,7 @@
                     {
                         "name": "world",
                         "type": "World",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -2665,16 +2883,19 @@
                     {
                         "name": "type",
                         "type": "EnumCreatureType",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "pos",
                         "type": "BlockPos",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "list",
                         "type": "List<SpawnListEntry>",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -2692,6 +2913,7 @@
                     {
                         "name": "settings",
                         "type": "WorldSettings",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]

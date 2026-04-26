@@ -120,8 +120,6 @@ def inferSideFromName(name):
 	return None
 
 def findFallbackDescription(linesList, fromLineno):
-	"""Scan forward from fromLineno for the first non-empty javadoc description.
-	Stops at the next top-level public interface/class declaration."""
 	preJavadoc = []
 	preInJavadoc = False
 	preInJavadocPre = False
@@ -155,8 +153,6 @@ def findFallbackDescription(linesList, fromLineno):
 
 
 def _splitTypeAndNames(s):
-	"""Split 'Type name1[, name2]' into (type_str, [names]).
-	Finds the first top-level space where the remainder is purely identifiers/commas."""
 	s = re.sub(r'\s*=.*', '', s).strip()
 	depth = 0
 	for i, c in enumerate(s):
@@ -173,7 +169,6 @@ def _splitTypeAndNames(s):
 
 
 def _extractAllClassFields(text):
-	"""Return a dict of simple_class_name -> [field dicts] for every class in the file."""
 	lines = text.split("\n")
 
 	setter_names = set()
@@ -248,9 +243,17 @@ def _extractAllClassFields(text):
 			if fname not in seen_per_class[cname]:
 				seen_per_class[cname].add(fname)
 				mutable = (not is_final) or (fname in setter_names)
-				result[cname].append({"name": fname, "type": ftype, "mutable": mutable})
+				result[cname].append({"name": fname, "type": ftype, "kind": "field", "mutable": mutable})
 
 	return {k: v for k, v in result.items() if v}
+
+
+def _normalizeRecordComponentName(raw):
+	if raw.startswith("get") and len(raw) > 3 and raw[3].isupper():
+		return raw[3].lower() + raw[4:]
+	if raw.startswith("is") and len(raw) > 2 and raw[2].isupper():
+		return raw[2].lower() + raw[3:]
+	return raw
 
 
 def extractRecordFields(line):
@@ -265,7 +268,7 @@ def extractRecordFields(line):
 		param = re.sub(r'@\w+(?:\([^)]*\))?\s*', '', param).strip()
 		parts = param.rsplit(None, 1)
 		if len(parts) == 2:
-			fields.append({"name": parts[1].strip(), "type": parts[0].strip(), "mutable": False})
+			fields.append({"name": _normalizeRecordComponentName(parts[1].strip()), "type": parts[0].strip(), "kind": "record", "mutable": False})
 	return fields if fields else None
 
 
@@ -335,8 +338,35 @@ def extractForgeEvents(text, name, blobUrl, isCancellable):
 			isDeprecated = bool(re.search(r'@Deprecated\b', annotationText))
 			thisHasResult = bool(re.search(r'@(?:Event\.)?HasResult\b', annotationText))
 			thisCancellable = isCancellable(annotationText) or isCancellable(stripped)
+			classMatch = re.search(r'\bclass\s+(\w+)', stripped)
 
-			if not outerClassSeen:
+			if interfaceStack and classMatch:
+				# Class declared inside an interface body (implicitly static in Java).
+				# Treat as a member event: ParentInterface.ClassName
+				innerName = classMatch.group(1)
+				parentName = interfaceStack[-1][0]
+				desc = extractDescriptionWithDeprecated(pendingJavadoc)
+				side = extractSide(pendingJavadoc) or inferSideFromName(innerName) or inferSideFromName(parentName)
+				pendingJavadoc = []
+				pendingAnnotations = []
+
+				if package:
+					entry = {
+						"event": f"{parentName}.{innerName}",
+						"package": package,
+						"url": lineUrl,
+						"cancellable": thisCancellable,
+						"description": desc,
+						"side": side,
+						"deprecated": isDeprecated,
+						"hasResult": thisHasResult,
+					}
+					fields = allFields.get(innerName)
+					if fields:
+						entry["fields"] = fields
+					results.append((package, entry))
+
+			elif not outerClassSeen:
 				outerClassSeen = True
 				outerCancellable = thisCancellable
 				desc = extractDescriptionWithDeprecated(pendingJavadoc)
@@ -360,13 +390,7 @@ def extractForgeEvents(text, name, blobUrl, isCancellable):
 						entry["fields"] = fields
 					results.append((package, entry))
 
-			elif "static" in stripped:
-				classMatch = re.search(r'\bclass\s+(\w+)', stripped)
-				if not classMatch:
-					pendingJavadoc = []
-					pendingAnnotations = []
-					continue
-
+			elif "static" in stripped and classMatch:
 				innerName = classMatch.group(1)
 				extendsMatch = re.search(r'\bextends\s+(\w+)', stripped)
 				baseClass = extendsMatch.group(1) if extendsMatch else ""

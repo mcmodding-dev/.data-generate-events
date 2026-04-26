@@ -1,5 +1,5 @@
 {
-    "lastupdated": "20260426112116",
+    "lastupdated": "20260426120701",
     "version": "1.21.11",
     "last_commit": "[5ac2675f8700591a81e39d7414b24dd291818013] Fix server data packs from mods using incorrect version. Closes #10794",
     "data": {
@@ -17,16 +17,19 @@
                     {
                         "name": "listeners",
                         "type": "List<PreparableReloadListener>",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "serverResources",
                         "type": "ReloadableServerResources",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "registries",
                         "type": "HolderLookup.Provider",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -44,36 +47,43 @@
                     {
                         "name": "left",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "right",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "name",
                         "type": "String",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "output",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "cost",
                         "type": "long",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "materialCost",
                         "type": "int",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "player",
                         "type": "Player",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -91,26 +101,31 @@
                     {
                         "name": "obj",
                         "type": "Object",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "caps",
                         "type": "Map<Identifier, ICapabilityProvider>",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "view",
                         "type": "Map<Identifier, ICapabilityProvider>",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "listeners",
                         "type": "List<Runnable>",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "listenersView",
                         "type": "List<Runnable>",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -178,11 +193,13 @@
                     {
                         "name": "parse",
                         "type": "ParseResults<CommandSourceStack>",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "exception",
                         "type": "Throwable",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -210,16 +227,19 @@
                     {
                         "name": "top",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "bottom",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "xp",
                         "type": "int",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -237,6 +257,7 @@
                     {
                         "name": "output",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -254,11 +275,13 @@
                     {
                         "name": "newTop",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "newBottom",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -276,11 +299,13 @@
                     {
                         "name": "name",
                         "type": "Identifier",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "table",
                         "type": "LootTable",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -298,16 +323,19 @@
                     {
                         "name": "levelDirectory",
                         "type": "LevelStorageSource.LevelDirectory",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "versionDifferences",
                         "type": "HashMap<String, MismatchedVersionInfo>",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "resolved",
                         "type": "HashMap<String, ModContainer>",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -325,36 +353,43 @@
                     {
                         "name": "level",
                         "type": "Level",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "originalVolume",
                         "type": "float",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "originalPitch",
                         "type": "float",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "sound",
                         "type": "Holder<SoundEvent>",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "source",
                         "type": "SoundSource",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "newVolume",
                         "type": "float",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "newPitch",
                         "type": "float",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -372,6 +407,7 @@
                     {
                         "name": "entity",
                         "type": "Entity",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -389,6 +425,7 @@
                     {
                         "name": "position",
                         "type": "Vec3",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -406,6 +443,7 @@
                     {
                         "name": "map",
                         "type": "Map<String, StructuresBecomeConfiguredFix.Conversion>",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -423,21 +461,25 @@
                     {
                         "name": "player",
                         "type": "ServerPlayer",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "username",
                         "type": "String",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "rawText",
                         "type": "String",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "message",
                         "type": "Component",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -455,11 +497,13 @@
                     {
                         "name": "haveTimeSupplier",
                         "type": "BooleanSupplier",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
                         "name": "server",
                         "type": "MinecraftServer",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -477,11 +521,13 @@
                     {
                         "name": "haveTimeSupplier",
                         "type": "BooleanSupplier",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
                         "name": "server",
                         "type": "MinecraftServer",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -519,16 +565,19 @@
                     {
                         "name": "side",
                         "type": "LogicalSide",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
                         "name": "level",
                         "type": "Level",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
                         "name": "haveTimeSupplier",
                         "type": "BooleanSupplier",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -546,16 +595,19 @@
                     {
                         "name": "side",
                         "type": "LogicalSide",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
                         "name": "level",
                         "type": "Level",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
                         "name": "haveTimeSupplier",
                         "type": "BooleanSupplier",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -573,11 +625,13 @@
                     {
                         "name": "player",
                         "type": "Player",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
                         "name": "side",
                         "type": "LogicalSide",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -595,11 +649,13 @@
                     {
                         "name": "player",
                         "type": "Player",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
                         "name": "side",
                         "type": "LogicalSide",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -617,6 +673,7 @@
                     {
                         "name": "timer",
                         "type": "DeltaTracker",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -634,6 +691,7 @@
                     {
                         "name": "timer",
                         "type": "DeltaTracker",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -653,6 +711,7 @@
                     {
                         "name": "stacks",
                         "type": "NonNullList<ItemStack>",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -692,36 +751,43 @@
                     {
                         "name": "level",
                         "type": "Level",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "pos",
                         "type": "BlockPos",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "enchantRow",
                         "type": "int",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "power",
                         "type": "int",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "itemStack",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "originalLevel",
                         "type": "int",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "enchantLevel",
                         "type": "int",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -759,8 +825,9 @@
                 "hasResult": false,
                 "fields": [
                     {
-                        "name": "getEntity",
+                        "name": "entity",
                         "type": "Entity",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -776,18 +843,21 @@
                 "hasResult": false,
                 "fields": [
                     {
-                        "name": "getEntity",
+                        "name": "entity",
                         "type": "Entity",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getPackedOldPos",
+                        "name": "packedOldPos",
                         "type": "long",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getPackedNewPos",
+                        "name": "packedNewPos",
                         "type": "long",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -805,11 +875,13 @@
                     {
                         "name": "entity",
                         "type": "Entity",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "result",
                         "type": "Result",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -827,21 +899,25 @@
                     {
                         "name": "entity",
                         "type": "Entity",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "targetX",
                         "type": "double",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "targetY",
                         "type": "double",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "targetZ",
                         "type": "double",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -879,6 +955,7 @@
                     {
                         "name": "entityLiving",
                         "type": "LivingEntity",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -896,21 +973,25 @@
                     {
                         "name": "player",
                         "type": "ServerPlayer",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "pearlEntity",
                         "type": "ThrownEnderpearl",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "attackDamage",
                         "type": "float",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "hitResult",
                         "type": "HitResult",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -928,6 +1009,7 @@
                     {
                         "name": "entityLiving",
                         "type": "LivingEntity",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -945,16 +1027,19 @@
                     {
                         "name": "ray",
                         "type": "HitResult",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "projectile",
                         "type": "Projectile",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "result",
                         "type": "ImpactResult",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -982,26 +1067,31 @@
                     {
                         "name": "originalPredicate",
                         "type": "SpawnPlacements.SpawnPredicate<T>",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "orPredicates",
                         "type": "List<SpawnPlacements.SpawnPredicate<T>>",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "andPredicates",
                         "type": "List<SpawnPlacements.SpawnPredicate<T>>",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "spawnType",
                         "type": "SpawnPlacementType",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "heightmapType",
                         "type": "Heightmap.Types",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1021,11 +1111,13 @@
                     {
                         "name": "entityItem",
                         "type": "ItemEntity",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "extraLife",
                         "type": "int",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1045,21 +1137,25 @@
                     {
                         "name": "parentA",
                         "type": "Mob",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "parentB",
                         "type": "Mob",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "causedByPlayer",
                         "type": "Player",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "child",
                         "type": "AgeableMob",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1077,26 +1173,31 @@
                     {
                         "name": "entity",
                         "type": "LivingEntity",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "canBreathe",
                         "type": "boolean",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "canRefillAir",
                         "type": "boolean",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "consumeAirAmount",
                         "type": "int",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "refillAirAmount",
                         "type": "int",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1114,34 +1215,58 @@
                     {
                         "name": "entity",
                         "type": "LivingEntity",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "targetType",
                         "type": "ILivingTargetType",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "originalTarget",
                         "type": "LivingEntity",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "newTarget",
                         "type": "LivingEntity",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
             },
             {
-                "event": "LivingConversionEvent",
+                "event": "LivingConversionEvent.Pre",
                 "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/LivingConversionEvent.java#L46",
                 "cancellable": true,
                 "description": "LivingConversionEvent.Pre is triggered when an entity is trying to replace itself with another entity This event may trigger every tick even if it was cancelled last tick for entities like Zombies and Hoglins. To prevent it, the conversion timer needs to be changed or reset This event is Cancellable. If cancelled, the replacement will not occur",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "entity",
+                        "type": "LivingEntity",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "outcome",
+                        "type": "EntityType<? extends LivingEntity>",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "timer",
+                        "type": "IntConsumer",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
             },
             {
                 "event": "LivingConversionEvent.Post",
@@ -1154,13 +1279,15 @@
                 "hasResult": false,
                 "fields": [
                     {
-                        "name": "getEntity",
+                        "name": "entity",
                         "type": "LivingEntity",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getOutcome",
+                        "name": "outcome",
                         "type": "LivingEntity",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -1178,16 +1305,19 @@
                     {
                         "name": "entity",
                         "type": "LivingEntity",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "source",
                         "type": "DamageSource",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "amount",
                         "type": "float",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1205,21 +1335,25 @@
                     {
                         "name": "entity",
                         "type": "LivingEntity",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "isDrowning",
                         "type": "boolean",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "damageAmount",
                         "type": "float",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "bubbleCount",
                         "type": "int",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1237,16 +1371,19 @@
                     {
                         "name": "entity",
                         "type": "LivingEntity",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "item",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "duration",
                         "type": "int",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1294,6 +1431,7 @@
                     {
                         "name": "result",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1309,8 +1447,9 @@
                 "hasResult": false,
                 "fields": [
                     {
-                        "name": "getEntity",
+                        "name": "entity",
                         "type": "LivingEntity",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -1326,21 +1465,42 @@
                 "hasResult": false,
                 "fields": [
                     {
-                        "name": "getEntity",
+                        "name": "entity",
                         "type": "LivingEntity",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
             },
             {
-                "event": "LivingEvent",
+                "event": "LivingEvent.LivingVisibilityEvent",
                 "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/LivingEvent.java#L50",
                 "cancellable": false,
                 "description": "",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "livingEntity",
+                        "type": "LivingEntity",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "visibilityModifier",
+                        "type": "double",
+                        "kind": "field",
+                        "mutable": true
+                    },
+                    {
+                        "name": "lookingEntity",
+                        "type": "Entity",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
             },
             {
                 "event": "LivingExperienceDropEvent",
@@ -1355,21 +1515,25 @@
                     {
                         "name": "entity",
                         "type": "LivingEntity",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "attackingPlayer",
                         "type": "Player",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "originalExperiencePoints",
                         "type": "int",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "droppedExperiencePoints",
                         "type": "int",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1387,16 +1551,19 @@
                     {
                         "name": "entity",
                         "type": "LivingEntity",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "distance",
                         "type": "double",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "damageMultiplier",
                         "type": "float",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1414,16 +1581,19 @@
                     {
                         "name": "entity",
                         "type": "LivingEntity",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "projectileWeaponItemStack",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "projectileItemStack",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1441,11 +1611,13 @@
                     {
                         "name": "entity",
                         "type": "LivingEntity",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "amount",
                         "type": "float",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1463,16 +1635,19 @@
                     {
                         "name": "entity",
                         "type": "LivingEntity",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "source",
                         "type": "DamageSource",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "amount",
                         "type": "float",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1490,36 +1665,43 @@
                     {
                         "name": "target",
                         "type": "LivingEntity",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "strength",
                         "type": "float",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "ratioX",
                         "type": "double",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "ratioZ",
                         "type": "double",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "originalStrength",
                         "type": "float",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "originalRatioX",
                         "type": "double",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "originalRatioZ",
                         "type": "double",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1537,11 +1719,13 @@
                     {
                         "name": "entity",
                         "type": "LivingEntity",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "brainBuilder",
                         "type": "BrainBuilder<?>",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1559,16 +1743,19 @@
                     {
                         "name": "entity",
                         "type": "Mob",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "maxPackSize",
                         "type": "int",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "result",
                         "type": "Result",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1586,6 +1773,7 @@
                     {
                         "name": "entity",
                         "type": "LivingEntity",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1603,11 +1791,13 @@
                     {
                         "name": "toMainHand",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "toOffHand",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1625,16 +1815,19 @@
                     {
                         "name": "entity",
                         "type": "LivingEntity",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "damageSource",
                         "type": "DamageSource",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "lootingLevel",
                         "type": "int",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1650,14 +1843,34 @@
                 "hasResult": false
             },
             {
-                "event": "MobEffectEvent",
+                "event": "MobEffectEvent.Applicable",
                 "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/living/MobEffectEvent.java#L79",
                 "cancellable": false,
                 "description": "This event is fired to check if a MobEffectInstance can be applied to an entity. This event HasResult has a result: ALLOW ALLOW will apply this mob effect. DENY DENY will not apply this mob effect. DEFAULT DEFAULT will run vanilla logic to determine if this mob effect is applicable in canBeAffected",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "living",
+                        "type": "LivingEntity",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "effectInstance",
+                        "type": "MobEffectInstance",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "result",
+                        "type": "Result",
+                        "kind": "field",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "MobEffectEvent.Added",
@@ -1692,26 +1905,31 @@
                     {
                         "name": "entity",
                         "type": "Mob",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "level",
                         "type": "ServerLevelAccessor",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "x",
                         "type": "double",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "y",
                         "type": "double",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "z",
                         "type": "double",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1729,36 +1947,43 @@
                     {
                         "name": "entityType",
                         "type": "EntityType<?>",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "level",
                         "type": "ServerLevelAccessor",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "spawnReason",
                         "type": "EntitySpawnReason",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "pos",
                         "type": "BlockPos",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "random",
                         "type": "RandomSource",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "defaultResult",
                         "type": "boolean",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "result",
                         "type": "Result",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1776,16 +2001,19 @@
                     {
                         "name": "spawner",
                         "type": "BaseSpawner",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "spawnReason",
                         "type": "EntitySpawnReason",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "result",
                         "type": "Result",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1803,26 +2031,31 @@
                     {
                         "name": "spawnReason",
                         "type": "EntitySpawnReason",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "spawner",
                         "type": "BaseSpawner",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "difficulty",
                         "type": "DifficultyInstance",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "spawnData",
                         "type": "SpawnGroupData",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "spawnTag",
                         "type": "ValueInput",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1840,6 +2073,7 @@
                     {
                         "name": "result",
                         "type": "Result",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1857,31 +2091,37 @@
                     {
                         "name": "blocker",
                         "type": "LivingEntity",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "source",
                         "type": "DamageSource",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "originalBlocked",
                         "type": "float",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "dmgBlocked",
                         "type": "float",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "shieldTakesDamage",
                         "type": "boolean",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "blockedWith",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1899,6 +2139,7 @@
                     {
                         "name": "zombie",
                         "type": "Zombie",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -1916,41 +2157,49 @@
                     {
                         "name": "customSummonedAid",
                         "type": "Zombie",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "level",
                         "type": "Level",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "x",
                         "type": "int",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "y",
                         "type": "int",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "z",
                         "type": "int",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "attacker",
                         "type": "LivingEntity",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "summonChance",
                         "type": "double",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "result",
                         "type": "Result",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -1968,13 +2217,15 @@
                 "hasResult": false,
                 "fields": [
                     {
-                        "name": "getEntity",
+                        "name": "entity",
                         "type": "Player",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getAdvancement",
+                        "name": "advancement",
                         "type": "AdvancementHolder",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -2002,26 +2253,31 @@
                     {
                         "name": "player",
                         "type": "Player",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "left",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "right",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "output",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "breakChance",
                         "type": "float",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -2039,26 +2295,31 @@
                     {
                         "name": "player",
                         "type": "Player",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "bow",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "level",
                         "type": "Level",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "hasAmmo",
                         "type": "boolean",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "charge",
                         "type": "int",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -2076,31 +2337,37 @@
                     {
                         "name": "player",
                         "type": "Player",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "bow",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "hand",
                         "type": "InteractionHand",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "level",
                         "type": "Level",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "hasAmmo",
                         "type": "boolean",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "action",
                         "type": "InteractionResult",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -2118,31 +2385,37 @@
                     {
                         "name": "player",
                         "type": "Player",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "level",
                         "type": "Level",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "pos",
                         "type": "BlockPos",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "block",
                         "type": "BlockState",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "stack",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "result",
                         "type": "Result",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -2160,31 +2433,37 @@
                     {
                         "name": "player",
                         "type": "Player",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "damageModifier",
                         "type": "float",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "oldDamageModifier",
                         "type": "float",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "target",
                         "type": "Entity",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "vanillaCritical",
                         "type": "boolean",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "result",
                         "type": "Result",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -2202,16 +2481,19 @@
                     {
                         "name": "player",
                         "type": "Player",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "item",
                         "type": "ItemEntity",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "result",
                         "type": "Result",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -2229,31 +2511,37 @@
                     {
                         "name": "player",
                         "type": "Player",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "current",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "level",
                         "type": "Level",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "target",
                         "type": "HitResult",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "result",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "eventResult",
                         "type": "Result",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -2271,21 +2559,25 @@
                     {
                         "name": "player",
                         "type": "Player",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "stacks",
                         "type": "NonNullList<ItemStack>",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "hook",
                         "type": "FishingHook",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "rodDamage",
                         "type": "int",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -2303,21 +2595,25 @@
                     {
                         "name": "player",
                         "type": "Player",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "flags",
                         "type": "TooltipFlag",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "itemStack",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "toolTip",
                         "type": "List<Component>",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -2333,13 +2629,15 @@
                 "hasResult": false,
                 "fields": [
                     {
-                        "name": "getEntity",
+                        "name": "entity",
                         "type": "Player",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getContainer",
+                        "name": "container",
                         "type": "AbstractContainerMenu",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -2355,26 +2653,144 @@
                 "hasResult": false,
                 "fields": [
                     {
-                        "name": "getEntity",
+                        "name": "entity",
                         "type": "Player",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getContainer",
+                        "name": "container",
                         "type": "AbstractContainerMenu",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
             },
             {
-                "event": "PlayerEvent",
+                "event": "PlayerEvent.HarvestCheck",
                 "package": "net.minecraftforge.event.entity.player",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java#L51",
                 "cancellable": false,
                 "description": "HarvestCheck is fired when a player attempts to harvest a block. This event is fired whenever a player attempts to harvest a block in hasCorrectToolForDrops(BlockState). This event is fired via the doPlayerHarvestCheck(Player, BlockState, boolean). state contains the BlockState that is being checked for harvesting. success contains the boolean value for whether the Block will be successfully harvested",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "player",
+                        "type": "Player",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "state",
+                        "type": "BlockState",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "success",
+                        "type": "boolean",
+                        "kind": "field",
+                        "mutable": true
+                    }
+                ]
+            },
+            {
+                "event": "PlayerEvent.BreakSpeed",
+                "package": "net.minecraftforge.event.entity.player",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java#L88",
+                "cancellable": true,
+                "description": "BreakSpeed is fired when a player attempts to harvest a block. This event is fired whenever a player attempts to harvest a block in getDigSpeed(BlockState, BlockPos). This event is fired via the getBreakSpeed(Player, BlockState, float, BlockPos). state contains the block being broken. originalSpeed contains the original speed at which the player broke the block. newSpeed contains the newSpeed at which the player will break the block. pos contains the coordinates at which this event is occurring. Optional value. If it is cancelled, the player is unable to break the block",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "player",
+                        "type": "Player",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "state",
+                        "type": "BlockState",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "originalSpeed",
+                        "type": "float",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "newSpeed",
+                        "type": "float",
+                        "kind": "field",
+                        "mutable": true
+                    },
+                    {
+                        "name": "pos",
+                        "type": "Optional<BlockPos>",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "PlayerEvent.NameFormat",
+                "package": "net.minecraftforge.event.entity.player",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java#L127",
+                "cancellable": false,
+                "description": "NameFormat is fired when a player's display name is retrieved. This event is fired whenever a player's name is retrieved in getDisplayName() or refreshDisplayName(). This event is fired via the getPlayerDisplayName(Player, Component). username contains the username of the player. displayname contains the display name of the player",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "player",
+                        "type": "Player",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "username",
+                        "type": "Component",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "displayname",
+                        "type": "Component",
+                        "kind": "field",
+                        "mutable": true
+                    }
+                ]
+            },
+            {
+                "event": "PlayerEvent.TabListNameFormat",
+                "package": "net.minecraftforge.event.entity.player",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java#L167",
+                "cancellable": false,
+                "description": "TabListNameFormat is fired when a player's display name for the tablist is retrieved. This event is fired whenever a player's display name for the tablist is retrieved in getTabListDisplayName() or refreshTabListName(). This event is fired via the getPlayerTabListDisplayName(Player). getDisplayName() contains the display name of the player or null if the client should determine the display name itself",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "player",
+                        "type": "Player",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "displayName",
+                        "type": "Component",
+                        "kind": "field",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "PlayerEvent.Clone",
@@ -2387,18 +2803,21 @@
                 "hasResult": false,
                 "fields": [
                     {
-                        "name": "getEntity",
+                        "name": "entity",
                         "type": "Player",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getOriginal",
+                        "name": "original",
                         "type": "Player",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "isWasDeath",
+                        "name": "wasDeath",
                         "type": "boolean",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -2414,13 +2833,15 @@
                 "hasResult": false,
                 "fields": [
                     {
-                        "name": "getEntity",
+                        "name": "entity",
                         "type": "Player",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getTarget",
+                        "name": "target",
                         "type": "Entity",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -2436,13 +2857,15 @@
                 "hasResult": false,
                 "fields": [
                     {
-                        "name": "getEntity",
+                        "name": "entity",
                         "type": "Player",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getTarget",
+                        "name": "target",
                         "type": "Entity",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -2458,18 +2881,21 @@
                 "hasResult": false,
                 "fields": [
                     {
-                        "name": "getEntity",
+                        "name": "entity",
                         "type": "Player",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getPlayerDirectory",
+                        "name": "playerDirectory",
                         "type": "File",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getPlayerUUID",
+                        "name": "playerUUID",
                         "type": "String",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -2485,18 +2911,21 @@
                 "hasResult": false,
                 "fields": [
                     {
-                        "name": "getEntity",
+                        "name": "entity",
                         "type": "Player",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getPlayerDirectory",
+                        "name": "playerDirectory",
                         "type": "File",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getPlayerUUID",
+                        "name": "playerUUID",
                         "type": "String",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -2512,18 +2941,21 @@
                 "hasResult": false,
                 "fields": [
                     {
-                        "name": "getEntity",
+                        "name": "entity",
                         "type": "Player",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getOriginalEntity",
+                        "name": "originalEntity",
                         "type": "ItemEntity",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getStack",
+                        "name": "stack",
                         "type": "ItemStack",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -2539,18 +2971,21 @@
                 "hasResult": false,
                 "fields": [
                     {
-                        "name": "getEntity",
+                        "name": "entity",
                         "type": "Player",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getCrafting",
+                        "name": "crafting",
                         "type": "ItemStack",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getContainer",
+                        "name": "container",
                         "type": "Container",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -2566,13 +3001,15 @@
                 "hasResult": false,
                 "fields": [
                     {
-                        "name": "getEntity",
+                        "name": "entity",
                         "type": "Player",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getSmelting",
+                        "name": "smelting",
                         "type": "ItemStack",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -2588,8 +3025,9 @@
                 "hasResult": false,
                 "fields": [
                     {
-                        "name": "getEntity",
+                        "name": "entity",
                         "type": "Player",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -2605,8 +3043,9 @@
                 "hasResult": false,
                 "fields": [
                     {
-                        "name": "getEntity",
+                        "name": "entity",
                         "type": "Player",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -2622,13 +3061,15 @@
                 "hasResult": false,
                 "fields": [
                     {
-                        "name": "getEntity",
+                        "name": "entity",
                         "type": "Player",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "isEndConquered",
+                        "name": "endConquered",
                         "type": "boolean",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -2644,19 +3085,52 @@
                 "hasResult": false,
                 "fields": [
                     {
-                        "name": "getEntity",
+                        "name": "entity",
                         "type": "Player",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getFrom",
+                        "name": "from",
                         "type": "ResourceKey<Level>",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getTo",
+                        "name": "to",
                         "type": "ResourceKey<Level>",
+                        "kind": "record",
                         "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "PlayerEvent.PlayerChangeGameModeEvent",
+                "package": "net.minecraftforge.event.entity.player",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerEvent.java#L349",
+                "cancellable": true,
+                "description": "Fired when the game type of a server player is changed to a different value than what it was previously. Eg Creative to Survival, not Survival to Survival. If the event is cancelled the game mode of the player is not changed and the value of newGameMode is ignored",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "player",
+                        "type": "Player",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "currentGameMode",
+                        "type": "GameType",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "newGameMode",
+                        "type": "GameType",
+                        "kind": "field",
+                        "mutable": true
                     }
                 ]
             },
@@ -2673,16 +3147,19 @@
                     {
                         "name": "player",
                         "type": "Player",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "distance",
                         "type": "float",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "multiplier",
                         "type": "float",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -2700,26 +3177,31 @@
                     {
                         "name": "player",
                         "type": "Player",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "hand",
                         "type": "InteractionHand",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "pos",
                         "type": "BlockPos",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "face",
                         "type": "Direction",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "cancellationResult",
                         "type": "InteractionResult",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -2737,11 +3219,13 @@
                     {
                         "name": "localPos",
                         "type": "Vec3",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "target",
                         "type": "Entity",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -2759,6 +3243,7 @@
                     {
                         "name": "target",
                         "type": "Entity",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -2776,16 +3261,19 @@
                     {
                         "name": "useBlock",
                         "type": "Result",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "useItem",
                         "type": "Result",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "hitVec",
                         "type": "BlockHitResult",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -2823,16 +3311,19 @@
                     {
                         "name": "useBlock",
                         "type": "Result",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "useItem",
                         "type": "Result",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "action",
                         "type": "Action",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -2860,26 +3351,31 @@
                     {
                         "name": "player",
                         "type": "Player",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "config",
                         "type": "ServerPlayer.RespawnConfig",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "spawnLevel",
                         "type": "ResourceKey<Level>",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "forced",
                         "type": "boolean",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "newSpawn",
                         "type": "BlockPos",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -2897,16 +3393,19 @@
                     {
                         "name": "player",
                         "type": "Player",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "result",
                         "type": "BedSleepingProblem",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "pos",
                         "type": "Optional<BlockPos>",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -2924,16 +3423,19 @@
                     {
                         "name": "player",
                         "type": "Player",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "phantomsToSpawn",
                         "type": "int",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "result",
                         "type": "Result",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -2949,26 +3451,66 @@
                 "hasResult": false,
                 "fields": [
                     {
-                        "name": "getEntity",
+                        "name": "entity",
                         "type": "Player",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getOrb",
+                        "name": "orb",
                         "type": "ExperienceOrb",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
             },
             {
-                "event": "PlayerXpEvent",
+                "event": "PlayerXpEvent.XpChange",
                 "package": "net.minecraftforge.event.entity.player",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerXpEvent.java#L36",
                 "cancellable": true,
                 "description": "This event is fired when the player's experience changes through the giveExperiencePoints(int) method. It can be cancelled, and no further processing will be done",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "player",
+                        "type": "Player",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "amount",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": true
+                    }
+                ]
+            },
+            {
+                "event": "PlayerXpEvent.LevelChange",
+                "package": "net.minecraftforge.event.entity.player",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.11/src/main/java/net/minecraftforge/event/entity/player/PlayerXpEvent.java#L65",
+                "cancellable": true,
+                "description": "This event is fired when the player's experience level changes through the giveExperienceLevels(int) method. It can be cancelled, and no further processing will be done",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "player",
+                        "type": "Player",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "levels",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "SleepingLocationCheckEvent",
@@ -2983,16 +3525,19 @@
                     {
                         "name": "entity",
                         "type": "LivingEntity",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "sleepingLocation",
                         "type": "BlockPos",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "result",
                         "type": "Result",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -3010,16 +3555,19 @@
                     {
                         "name": "player",
                         "type": "Player",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "sleepingLocation",
                         "type": "Optional<BlockPos>",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "result",
                         "type": "Result",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -3039,16 +3587,19 @@
                     {
                         "name": "itemStack",
                         "type": "ItemStack",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "recipeType",
                         "type": "RecipeType<?>",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "burnTime",
                         "type": "int",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -3068,26 +3619,31 @@
                     {
                         "name": "level",
                         "type": "LevelSimulatedReader",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "random",
                         "type": "RandomSource",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "pos",
                         "type": "BlockPos",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "originalAltered",
                         "type": "BlockState",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "newAltered",
                         "type": "BlockState",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -3113,23 +3669,27 @@
                 "hasResult": false,
                 "fields": [
                     {
-                        "name": "getLevel",
+                        "name": "level",
                         "type": "LevelAccessor",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getPos",
+                        "name": "pos",
                         "type": "BlockPos",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getState",
+                        "name": "state",
                         "type": "BlockState",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
                         "name": "resultHolder",
                         "type": "Result.Holder",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -3145,23 +3705,27 @@
                 "hasResult": false,
                 "fields": [
                     {
-                        "name": "getLevel",
+                        "name": "level",
                         "type": "LevelAccessor",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getPos",
+                        "name": "pos",
                         "type": "BlockPos",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getState",
+                        "name": "state",
                         "type": "BlockState",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getOriginalState",
+                        "name": "originalState",
                         "type": "BlockState",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -3177,18 +3741,21 @@
                 "hasResult": false,
                 "fields": [
                     {
-                        "name": "getChunk",
+                        "name": "chunk",
                         "type": "ChunkAccess",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getData",
+                        "name": "data",
                         "type": "SerializableChunkData",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getStatus",
+                        "name": "status",
                         "type": "ChunkType",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -3204,18 +3771,21 @@
                 "hasResult": false,
                 "fields": [
                     {
-                        "name": "getChunk",
+                        "name": "chunk",
                         "type": "ChunkAccess",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getLevel",
+                        "name": "level",
                         "type": "LevelAccessor",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getData",
+                        "name": "data",
                         "type": "SerializableChunkData",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -3231,23 +3801,27 @@
                 "hasResult": false,
                 "fields": [
                     {
-                        "name": "getPlayer",
+                        "name": "player",
                         "type": "ServerPlayer",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getPos",
+                        "name": "pos",
                         "type": "ChunkPos",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getChunk",
+                        "name": "chunk",
                         "type": "LevelChunk",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getLevel",
+                        "name": "level",
                         "type": "ServerLevel",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -3263,18 +3837,21 @@
                 "hasResult": false,
                 "fields": [
                     {
-                        "name": "getPlayer",
+                        "name": "player",
                         "type": "ServerPlayer",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getPos",
+                        "name": "pos",
                         "type": "ChunkPos",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getLevel",
+                        "name": "level",
                         "type": "ServerLevel",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -3290,13 +3867,15 @@
                 "hasResult": false,
                 "fields": [
                     {
-                        "name": "getLevel",
+                        "name": "level",
                         "type": "Level",
+                        "kind": "record",
                         "mutable": false
                     },
                     {
-                        "name": "getExplosion",
+                        "name": "explosion",
                         "type": "Explosion",
+                        "kind": "record",
                         "mutable": false
                     }
                 ]
@@ -3334,21 +3913,25 @@
                     {
                         "name": "world",
                         "type": "Level",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "pos",
                         "type": "BlockPos",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "state",
                         "type": "BlockState",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "noteId",
                         "type": "int",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -3366,6 +3949,7 @@
                     {
                         "name": "instrument",
                         "type": "NoteBlockInstrument",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -3383,11 +3967,13 @@
                     {
                         "name": "oldNote",
                         "type": "Note",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "oldOctave",
                         "type": "Octave",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -3425,26 +4011,31 @@
                     {
                         "name": "level",
                         "type": "LevelAccessor",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "randomSource",
                         "type": "RandomSource",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "pos",
                         "type": "BlockPos",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "feature",
                         "type": "Holder<ConfiguredFeature<?, ?>>",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "result",
                         "type": "Result",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
@@ -3462,16 +4053,19 @@
                     {
                         "name": "level",
                         "type": "ServerLevel",
+                        "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "newTime",
                         "type": "long",
+                        "kind": "field",
                         "mutable": true
                     },
                     {
                         "name": "minTime",
                         "type": "long",
+                        "kind": "field",
                         "mutable": false
                     }
                 ]
@@ -3503,6 +4097,7 @@
                     {
                         "name": "pools",
                         "type": "List<Pool>",
+                        "kind": "field",
                         "mutable": true
                     }
                 ]
