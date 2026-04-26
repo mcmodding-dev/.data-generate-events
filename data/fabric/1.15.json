@@ -1,5 +1,5 @@
 {
-    "lastupdated": "20260426120416",
+    "lastupdated": "20260426233200",
     "version": "1.15",
     "last_commit": "[c1455e80c4899e0904c4eb338331109bc2014563] Version bump",
     "data": {
@@ -595,7 +595,7 @@
                 "variable": "STOP_TRACKING",
                 "function": "void onStopTracking(Entity trackedEntity, ServerPlayerEntity player);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.15/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/EntityTrackingEvents.java#L45",
-                "description": "Called before an entity starts getting tracked by a player",
+                "description": "An event that is called after a player has stopped tracking an entity. The client at this point was sent a packet to EntitiesDestroyS2CPacket destroy the entity on the client. The entity still exists on the server",
                 "side": null,
                 "deprecated": false
             },

@@ -259,7 +259,7 @@ def main(mainPath, responseHeaders):
 
 						variable = varInfo.get("variable", Util.toUpperSnakeCase(activeEvent))
 						urlLineno = varInfo.get("var_lineno", activeEventLineno)
-						desc = metaInfo.get("desc", "") or varInfo.get("desc", "") or Util.extractDescription(pendingJavadoc)
+						desc = varInfo.get("desc", "") or metaInfo.get("desc", "") or Util.extractDescription(pendingJavadoc)
 						side = metaInfo.get("side", "both")
 						deprecated = metaInfo.get("deprecated", False)
 
