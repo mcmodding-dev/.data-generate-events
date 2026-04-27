@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260426120735",
+    "lastupdated": "20260427014455",
     "version": "26.1.x",
-    "last_commit": "[27a63806a2781afa602e1e083dce2f178f1080c6] Add client config for skipping modded splashes when vanilla is modified (#3081)",
+    "last_commit": "[25bc5a11424c56eaf7bcea68346097cc94d64856] [26.1] Fix potential memory leak in models baked with ComposedModelState (#3125)",
     "data": {
         "net.neoforged.neoforge.event": [
             {
