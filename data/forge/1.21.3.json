@@ -1,5 +1,6 @@
 {
-    "lastupdated": "20260427155609",
+    "lastupdated": "20260427161949",
+    "commit_date": "20260318231005",
     "version": "1.21.3",
     "last_commit": "[8bdf29553b12af8d5e2d6eab9d934ea6b7553db7] Migrate the MDK to ForgeGradle 7\n\nBackport of d29524b to 1.21.3",
     "data": {

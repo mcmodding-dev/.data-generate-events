@@ -2,6 +2,7 @@
 import re
 import time
 import requests
+from datetime import datetime, timezone
 
 def naturalSort(l):
 	convert = lambda text: int(text) if text.isdigit() else text.lower()
@@ -9,8 +10,18 @@ def naturalSort(l):
 	return sorted(l, key=alphanumKey)
 
 def fetchWithRetry(url, responseHeaders=None, params=None, maxRetries=3):
+	lastErr = None
 	for attempt in range(maxRetries):
-		response = requests.get(url, headers=responseHeaders or {}, params=params)
+		try:
+			response = requests.get(url, headers=responseHeaders or {}, params=params)
+		except requests.exceptions.RequestException as e:
+			lastErr = e
+			if attempt < maxRetries - 1:
+				wait = 2 ** attempt
+				print(f"  Connection error, retrying in {wait}s... ({e})")
+				time.sleep(wait)
+				continue
+			raise
 		if response.status_code == 429 or response.status_code >= 500:
 			if attempt < maxRetries - 1:
 				wait = 2 ** attempt
@@ -19,8 +30,7 @@ def fetchWithRetry(url, responseHeaders=None, params=None, maxRetries=3):
 				continue
 		response.raise_for_status()
 		return response
-	response.raise_for_status()
-	return response
+	raise lastErr
 
 def resolveInlineTags(text):
 	def replace(m):
@@ -566,7 +576,16 @@ def getCommitIdentifier(branchData, responseHeaders):
 	commitResponse = fetchWithRetry(lastCommitUrl, responseHeaders=responseHeaders)
 	commitData = commitResponse.json()
 	commitMessage = commitData["commit"]["message"]
-	return "[" + lastCommitSha + "] " + commitMessage
+	identifier = "[" + lastCommitSha + "] " + commitMessage
+
+	rawDate = commitData.get("commit", {}).get("committer", {}).get("date", "")
+	try:
+		dt = datetime.strptime(rawDate, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+		commitDate = dt.strftime("%Y%m%d%H%M%S")
+	except Exception:
+		commitDate = ""
+
+	return identifier, commitDate
 
 def toUpperSnakeCase(s):
 	snake = re.sub(r'(?<!^)(?=[A-Z])', '_', s)

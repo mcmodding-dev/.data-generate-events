@@ -1,5 +1,6 @@
 {
-    "lastupdated": "20260427155629",
+    "lastupdated": "20260427162003",
+    "commit_date": "20260323184501",
     "version": "1.21.11",
     "last_commit": "[5ac2675f8700591a81e39d7414b24dd291818013] Fix server data packs from mods using incorrect version. Closes #10794",
     "data": {

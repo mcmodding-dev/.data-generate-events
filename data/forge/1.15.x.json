@@ -1,5 +1,6 @@
 {
-    "lastupdated": "20260427155537",
+    "lastupdated": "20260427161715",
+    "commit_date": "20250812190329",
     "version": "1.15.x",
     "last_commit": "[0e6e6ef2d84377bcc07172da9e3a4b5584b0b03a] Update ForgeGradle version and re-add evaluationDependsOn",
     "data": {

@@ -1,5 +1,6 @@
 {
-    "lastupdated": "20260427155645",
+    "lastupdated": "20260427162019",
+    "commit_date": "20250421183309",
     "version": "1.20.2",
     "last_commit": "[3d41619f0c11f71bfc26689e28cfc0a786445720] Update dependency gradle to v8.13 and NeoGradle to fix installers (#2206)\n\nCo-authored-by: Matyrobbrt <65940752+Matyrobbrt@users.noreply.github.com>",
     "data": {

@@ -53,7 +53,7 @@ def main(mainPath, responseHeaders):
 		branchResponse = Util.fetchWithRetry(branchApiUrl, responseHeaders=responseHeaders)
 		branchData = branchResponse.json()
 
-		currentCommitIdentifier = Util.getCommitIdentifier(branchData, responseHeaders)
+		currentCommitIdentifier, commitDate = Util.getCommitIdentifier(branchData, responseHeaders)
 
 		if os.path.exists(branchJsonFilePath):
 			with open(branchJsonFilePath, "r") as f:
@@ -109,6 +109,7 @@ def main(mainPath, responseHeaders):
 
 		branchDataOut = {
 			"lastupdated": datetime.now().strftime("%Y%m%d%H%M%S"),
+			"commit_date": commitDate,
 			"version": branch,
 			"last_commit": currentCommitIdentifier,
 			"data": branchEvents

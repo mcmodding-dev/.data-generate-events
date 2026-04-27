@@ -1,5 +1,6 @@
 {
-    "lastupdated": "20260427155636",
+    "lastupdated": "20260427162009",
+    "commit_date": "20260408192614",
     "version": "26.1.1",
     "last_commit": "[5e421e8b8b081ae17cd7efc6b700ec85fd920196] Add `c:tools/trident` item tag, update contents of `c:tools/melee_weapon`, remove `c:tools/spear` (#10808)\n\n- Breaking change: `c:tools/spear` has been renamed to `c:tools/trident` to match other loaders\n- The contents of the `c:tools/melee_weapon` tag now includes spears",
     "data": {

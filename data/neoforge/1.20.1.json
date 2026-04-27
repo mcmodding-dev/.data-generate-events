@@ -1,5 +1,6 @@
 {
-    "lastupdated": "20260427155642",
+    "lastupdated": "20260427162016",
+    "commit_date": "20240528173338",
     "version": "1.20.1",
     "last_commit": "[a3317fc07a2b36793b8b87c19dd4b05265135d7c] Backport #559 ShieldBlockEvent patch to fix freeze damaging in 1.20.1 (#1031)",
     "data": {

@@ -1,5 +1,6 @@
 {
-    "lastupdated": "20260427155655",
+    "lastupdated": "20260427162026",
+    "commit_date": "20260423123756",
     "version": "1.21.1",
     "last_commit": "[751c990308cb2002327d4dd473d029d47dd90528] [1.21.1] Add a data map to replace `AxeItem#STRIPPABLES` (#2941)",
     "data": {

@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/env python
+from datetime 						import datetime
 import requests
 import time
 import jwt
 import os
 import sys
+import json
+
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "script"))
 import UpdateFabricEventData
 import UpdateForgeEventData
@@ -29,6 +32,7 @@ def main():
 		"Authorization": f"Bearer {jwtToken}",
 		"Accept": "application/vnd.github+json"
 	})
+
 	resp.raise_for_status()
 	ghApiToken = resp.json()["token"]
 	responseHeaders = {"Authorization": f"token {ghApiToken}"}
@@ -38,6 +42,14 @@ def main():
 	UpdateFabricEventData.main(rootPath, responseHeaders)
 	UpdateForgeEventData.main(rootPath, responseHeaders)
 	UpdateNeoForgeEventData.main(rootPath, responseHeaders)
+
+	dataRootPath = "." if os.environ.get('IS_PRODUCTION') != "false" else rootPath
+	lastRunPath = os.path.join(dataRootPath, "data", "script", "run.json")
+	os.makedirs(os.path.dirname(lastRunPath), exist_ok=True)
+	with open(lastRunPath, "w", encoding="utf-8") as f:
+		f.write(json.dumps({"last_run": datetime.now().strftime("%Y%m%d%H%M%S")}, indent=4))
+
+	print("\nWrote run.json data.")
 
 	return
 
