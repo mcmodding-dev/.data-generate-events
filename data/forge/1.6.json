@@ -1,5 +1,5 @@
 {
-    "lastupdated": "20260426120555",
+    "lastupdated": "20260427155500",
     "version": "1.6",
     "last_commit": "[ba4637f5a3fbcf99224c5b29023c906037b701f4] Update src distro installer script. Source distro works now!",
     "data": {
@@ -1245,7 +1245,7 @@
                 ]
             },
             {
-                "event": "BlockReplacement.GetVillageBlockID",
+                "event": "BiomeEvent.GetVillageBlockID",
                 "package": "net.minecraftforge.event.terraingen",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/BiomeEvent.java#L66",
                 "cancellable": false,
@@ -1255,7 +1255,7 @@
                 "hasResult": true
             },
             {
-                "event": "BlockReplacement.GetVillageBlockMeta",
+                "event": "BiomeEvent.GetVillageBlockMeta",
                 "package": "net.minecraftforge.event.terraingen",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/BiomeEvent.java#L81",
                 "cancellable": false,
@@ -1265,7 +1265,7 @@
                 "hasResult": true
             },
             {
-                "event": "BiomeColor.GetGrassColor",
+                "event": "BiomeEvent.GetGrassColor",
                 "package": "net.minecraftforge.event.terraingen",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/BiomeEvent.java#L94",
                 "cancellable": false,
@@ -1275,7 +1275,7 @@
                 "hasResult": false
             },
             {
-                "event": "BiomeColor.GetFoliageColor",
+                "event": "BiomeEvent.GetFoliageColor",
                 "package": "net.minecraftforge.event.terraingen",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/BiomeEvent.java#L106",
                 "cancellable": false,
@@ -1285,7 +1285,7 @@
                 "hasResult": false
             },
             {
-                "event": "BiomeColor.GetWaterColor",
+                "event": "BiomeEvent.GetWaterColor",
                 "package": "net.minecraftforge.event.terraingen",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.6/common/net/minecraftforge/event/terraingen/BiomeEvent.java#L118",
                 "cancellable": false,

@@ -278,14 +278,15 @@ def extractForgeEvents(text, name, blobUrl, isCancellable):
 	allFields = _extractAllClassFields(text)
 
 	package = ""
-	outerCancellable = False
-	outerClassSeen = False
 	pendingJavadoc = []
 	pendingAnnotations = []
 	inJavadoc = False
 	inJavadocPre = False
 	braceDepth = 0
-	interfaceStack = []  # list of (name, depth_after_open)
+
+	typeStack = []
+
+	outerClassSeen = False
 
 	for lineno, line in enumerate(lines, start=1):
 		stripped = line.strip()
@@ -317,8 +318,8 @@ def extractForgeEvents(text, name, blobUrl, isCancellable):
 
 		if not stripped.startswith("//"):
 			braceDepth += stripped.count("{") - stripped.count("}")
-			while interfaceStack and interfaceStack[-1][1] > braceDepth:
-				interfaceStack.pop()
+			while typeStack and typeStack[-1]["depth"] > braceDepth:
+				typeStack.pop()
 
 		if stripped.startswith("@") and not stripped.startswith("@Override"):
 			pendingAnnotations.append(stripped)
@@ -331,146 +332,211 @@ def extractForgeEvents(text, name, blobUrl, isCancellable):
 			pendingAnnotations = []
 			continue
 
-		if re.search(r'\bclass\s+\w', stripped) and not stripped.startswith("//"):
-			lineUrl = f"{blobUrl}#L{lineno}"
+		# Interfaces
+		if re.search(r'\binterface\s+\w', stripped) and not stripped.startswith("//"):
+			ifaceMatch = re.search(r'\binterface\s+(\w+)', stripped)
+			if ifaceMatch and "{" in stripped:
+				typeStack.append({
+					"name": ifaceMatch.group(1),
+					"kind": "interface",
+					"depth": braceDepth,
+					"access": "public" if "public " in stripped else ("private" if "private " in stripped else ""),
+					"cancellable": False,
+				})
+			pendingJavadoc = []
+			pendingAnnotations = []
+			continue
 
-			annotationText = " ".join(pendingAnnotations)
-			isDeprecated = bool(re.search(r'@Deprecated\b', annotationText))
-			thisHasResult = bool(re.search(r'@(?:Event\.)?HasResult\b', annotationText))
-			thisCancellable = isCancellable(annotationText) or isCancellable(stripped)
-			classMatch = re.search(r'\bclass\s+(\w+)', stripped)
-
-			if interfaceStack and classMatch:
-				# Class declared inside an interface body (implicitly static in Java).
-				# Treat as a member event: ParentInterface.ClassName
-				innerName = classMatch.group(1)
-				parentName = interfaceStack[-1][0]
-				desc = extractDescriptionWithDeprecated(pendingJavadoc)
-				side = extractSide(pendingJavadoc) or inferSideFromName(innerName) or inferSideFromName(parentName)
-				pendingJavadoc = []
-				pendingAnnotations = []
-
-				if package:
+		# Records
+		if re.search(r'\brecord\s+\w', stripped) and not stripped.startswith("//"):
+			parentInterface = next(
+				(f for f in reversed(typeStack) if f["kind"] == "interface"),
+				None
+			)
+			if parentInterface and package:
+				lineUrl = f"{blobUrl}#L{lineno}"
+				annotationText = " ".join(pendingAnnotations)
+				isDeprecated = bool(re.search(r'@Deprecated\b', annotationText))
+				thisCancellable = isCancellable(annotationText) or isCancellable(stripped)
+				recordMatch = re.search(r'\brecord\s+(\w+)', stripped)
+				if recordMatch:
+					parentName = parentInterface["name"]
+					desc = extractDescriptionWithDeprecated(pendingJavadoc)
+					side = inferSideFromName(parentName) or inferSideFromName(recordMatch.group(1))
+					fields = extractRecordFields(stripped)
 					entry = {
-						"event": f"{parentName}.{innerName}",
+						"event": f"{parentName}.{recordMatch.group(1)}",
 						"package": package,
 						"url": lineUrl,
 						"cancellable": thisCancellable,
 						"description": desc,
 						"side": side,
 						"deprecated": isDeprecated,
-						"hasResult": thisHasResult,
+						"hasResult": False,
 					}
-					fields = allFields.get(innerName)
 					if fields:
 						entry["fields"] = fields
 					results.append((package, entry))
-
-			elif not outerClassSeen:
-				outerClassSeen = True
-				outerCancellable = thisCancellable
-				desc = extractDescriptionWithDeprecated(pendingJavadoc)
-				side = extractSide(pendingJavadoc) or inferSideFromName(name)
-				pendingJavadoc = []
-				pendingAnnotations = []
-
-				if package:
-					entry = {
-						"event": name,
-						"package": package,
-						"url": lineUrl,
-						"cancellable": outerCancellable,
-						"description": desc,
-						"side": side,
-						"deprecated": isDeprecated,
-						"hasResult": thisHasResult,
-					}
-					fields = allFields.get(name)
-					if fields:
-						entry["fields"] = fields
-					results.append((package, entry))
-
-			elif "static" in stripped and classMatch:
-				innerName = classMatch.group(1)
-				extendsMatch = re.search(r'\bextends\s+(\w+)', stripped)
-				baseClass = extendsMatch.group(1) if extendsMatch else ""
-
-				if "<" in innerName or (baseClass and "<" in baseClass):
-					pendingJavadoc = []
-					pendingAnnotations = []
-					continue
-
-				if not baseClass or baseClass == "Event" or "." in baseClass:
-					pendingJavadoc = []
-					pendingAnnotations = []
-					continue
-
-				innerCancellable = thisCancellable or (outerCancellable and baseClass == name)
-				desc = extractDescriptionWithDeprecated(pendingJavadoc)
-				side = extractSide(pendingJavadoc) or inferSideFromName(innerName) or inferSideFromName(name)
-				pendingJavadoc = []
-				pendingAnnotations = []
-
-				if package:
-					entry = {
-						"event": f"{baseClass}.{innerName}",
-						"package": package,
-						"url": lineUrl,
-						"cancellable": innerCancellable,
-						"description": desc,
-						"side": side,
-						"deprecated": isDeprecated,
-						"hasResult": thisHasResult,
-					}
-					fields = allFields.get(innerName)
-					if fields:
-						entry["fields"] = fields
-					results.append((package, entry))
-
-			else:
-				pendingJavadoc = []
-				pendingAnnotations = []
-
-			continue
-
-		# Sealed interface declarations — track as context for nested records
-		if re.search(r'\binterface\s+\w', stripped) and not stripped.startswith("//"):
-			ifaceMatch = re.search(r'\binterface\s+(\w+)', stripped)
-			if ifaceMatch and "{" in stripped:
-				interfaceStack.append((ifaceMatch.group(1), braceDepth))
 			pendingJavadoc = []
 			pendingAnnotations = []
 			continue
 
-		# Record declarations inside sealed interfaces become events
-		if re.search(r'\brecord\s+\w', stripped) and not stripped.startswith("//") and interfaceStack:
+		# Classes
+		if re.search(r'\bclass\s+\w', stripped) and not stripped.startswith("//"):
 			lineUrl = f"{blobUrl}#L{lineno}"
 			annotationText = " ".join(pendingAnnotations)
 			isDeprecated = bool(re.search(r'@Deprecated\b', annotationText))
+			thisHasResult = bool(re.search(r'@(?:Event\.)?HasResult\b', annotationText))
 			thisCancellable = isCancellable(annotationText) or isCancellable(stripped)
+			classMatch = re.search(r'\bclass\s+(\w+)', stripped)
+			extendsMatch = re.search(r'\bextends\s+([\w.]+)', stripped)
 
-			recordMatch = re.search(r'\brecord\s+(\w+)', stripped)
-			if recordMatch and package:
-				parentName = interfaceStack[-1][0]
-				desc = extractDescriptionWithDeprecated(pendingJavadoc)
-				side = inferSideFromName(parentName) or inferSideFromName(recordMatch.group(1))
-				fields = extractRecordFields(stripped)
-				entry = {
-					"event": f"{parentName}.{recordMatch.group(1)}",
-					"package": package,
-					"url": lineUrl,
+			if "public " in stripped:
+				thisAccess = "public"
+			elif "private " in stripped:
+				thisAccess = "private"
+			elif "protected " in stripped:
+				thisAccess = "protected"
+			else:
+				thisAccess = ""
+
+			if classMatch:
+				innerName = classMatch.group(1)
+				baseClass = extendsMatch.group(1) if extendsMatch else ""
+
+				baseClassSimple = baseClass.split(".")[-1] if baseClass else ""
+
+				frameDepth = braceDepth if "{" in stripped else braceDepth + 1
+				typeStack.append({
+					"name": innerName,
+					"kind": "class",
+					"depth": frameDepth,
+					"access": thisAccess,
 					"cancellable": thisCancellable,
-					"description": desc,
-					"side": side,
-					"deprecated": isDeprecated,
-					"hasResult": False,
-				}
-				if fields:
-					entry["fields"] = fields
-				results.append((package, entry))
+				})
 
-			pendingJavadoc = []
-			pendingAnnotations = []
+				if not outerClassSeen:
+					outerClassSeen = True
+					desc = extractDescriptionWithDeprecated(pendingJavadoc)
+					side = extractSide(pendingJavadoc) or inferSideFromName(innerName)
+					pendingJavadoc = []
+					pendingAnnotations = []
+					if package:
+						entry = {
+							"event": innerName,
+							"package": package,
+							"url": lineUrl,
+							"cancellable": thisCancellable,
+							"description": desc,
+							"side": side,
+							"deprecated": isDeprecated,
+							"hasResult": thisHasResult,
+						}
+						fields = allFields.get(innerName)
+						if fields:
+							entry["fields"] = fields
+						results.append((package, entry))
+
+				else:
+					if thisAccess == "private":
+						pendingJavadoc = []
+						pendingAnnotations = []
+						continue
+
+					parentClassFrame = next(
+						(f for f in reversed(typeStack[:-1]) if f["kind"] == "class"),
+						None
+					)
+					parentInterfaceFrame = next(
+						(f for f in reversed(typeStack[:-1]) if f["kind"] == "interface"),
+						None
+					)
+
+					if parentInterfaceFrame and (
+						not parentClassFrame
+						or parentInterfaceFrame["depth"] > parentClassFrame["depth"]
+					):
+						parentName = parentInterfaceFrame["name"]
+						desc = extractDescriptionWithDeprecated(pendingJavadoc)
+						side = extractSide(pendingJavadoc) or inferSideFromName(innerName) or inferSideFromName(parentName)
+						pendingJavadoc = []
+						pendingAnnotations = []
+						if package:
+							entry = {
+								"event": f"{parentName}.{innerName}",
+								"package": package,
+								"url": lineUrl,
+								"cancellable": thisCancellable,
+								"description": desc,
+								"side": side,
+								"deprecated": isDeprecated,
+								"hasResult": thisHasResult,
+							}
+							fields = allFields.get(innerName)
+							if fields:
+								entry["fields"] = fields
+							results.append((package, entry))
+
+					elif "static" in stripped:
+						if "<" in innerName:
+							pendingJavadoc = []
+							pendingAnnotations = []
+							continue
+
+						if not baseClassSimple or baseClassSimple == "Event":
+							pendingJavadoc = []
+							pendingAnnotations = []
+							continue
+
+						ancestorFrames = [f for f in typeStack[:-1] if f["kind"] == "class"]
+						matchIdx = next(
+							(i for i, f in enumerate(ancestorFrames) if f["name"] == baseClassSimple),
+							None
+						)
+						if matchIdx is not None:
+							ancestorFrames = ancestorFrames[:matchIdx + 1]
+
+						if not ancestorFrames:
+							pendingJavadoc = []
+							pendingAnnotations = []
+							continue
+
+						publicAncestorFrames = [f for f in ancestorFrames if f["access"] != "private"]
+						if not publicAncestorFrames:
+							pendingJavadoc = []
+							pendingAnnotations = []
+							continue
+
+						parentPath = ".".join(f["name"] for f in publicAncestorFrames)
+
+						parentCancellable = ancestorFrames[-1]["cancellable"]
+						innerCancellable = thisCancellable or parentCancellable
+
+						desc = extractDescriptionWithDeprecated(pendingJavadoc)
+						side = extractSide(pendingJavadoc) or inferSideFromName(innerName) or inferSideFromName(publicAncestorFrames[-1]["name"])
+						pendingJavadoc = []
+						pendingAnnotations = []
+
+						if package:
+							entry = {
+								"event": f"{parentPath}.{innerName}",
+								"package": package,
+								"url": lineUrl,
+								"cancellable": innerCancellable,
+								"description": desc,
+								"side": side,
+								"deprecated": isDeprecated,
+								"hasResult": thisHasResult,
+							}
+							fields = allFields.get(innerName)
+							if fields:
+								entry["fields"] = fields
+							results.append((package, entry))
+
+					else:
+						pendingJavadoc = []
+						pendingAnnotations = []
+
 			continue
 
 		if stripped and not stripped.startswith("//") and not stripped.startswith("*"):

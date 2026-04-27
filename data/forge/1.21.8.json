@@ -1,8 +1,2512 @@
 {
-    "lastupdated": "20260426120656",
+    "lastupdated": "20260427155621",
     "version": "1.21.8",
     "last_commit": "[451c3a1f0af67df9678837d398f20861f27caecc] Add support for multiple access transformer configs.",
     "data": {
+        "net.minecraftforge.fml.config": [
+            {
+                "event": "IConfigEvent.ConfigConfig",
+                "package": "net.minecraftforge.fml.config",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/fmlcore/src/main/java/net/minecraftforge/fml/config/IConfigEvent.java#L16",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "loading",
+                        "type": "IConfigEvent>",
+                        "kind": "record",
+                        "mutable": false
+                    },
+                    {
+                        "name": "reloading",
+                        "type": "IConfigEvent>",
+                        "kind": "record",
+                        "mutable": false
+                    },
+                    {
+                        "name": "unloading",
+                        "type": "IConfigEvent>",
+                        "kind": "record",
+                        "mutable": false
+                    }
+                ]
+            }
+        ],
+        "net.minecraftforge.client.event": [
+            {
+                "event": "ClientChatEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ClientChatEvent.java#L25",
+                "cancellable": true,
+                "description": "Fired when the client is about to send a chat message to the server. This event is Cancelable cancellable, and does not HasResult have a result. If the event is cancelled, the chat message will not be sent to the server. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "message",
+                        "type": "String",
+                        "kind": "field",
+                        "mutable": true
+                    },
+                    {
+                        "name": "originalMessage",
+                        "type": "String",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ClientChatReceivedEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ClientChatReceivedEvent.java#L33",
+                "cancellable": true,
+                "description": "Fired when a chat message is received on the client. This can be used for filtering and detecting messages with specific words or phrases, and suppressing them. This event is Cancelable cancellable, and does not HasResult have a result. If the event is cancelled, the message is not displayed in the chat message window. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "message",
+                        "type": "Component",
+                        "kind": "field",
+                        "mutable": true
+                    },
+                    {
+                        "name": "boundChatType",
+                        "type": "ChatType.Bound",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "sender",
+                        "type": "UUID",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ClientChatReceivedEvent.Player",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ClientChatReceivedEvent.java#L100",
+                "cancellable": true,
+                "description": "Fired when a player chat message is received on the client. This event is Cancelable cancellable, and does not HasResult have a result. If the event is cancelled, the message is not displayed in the chat message window. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "playerChatMessage",
+                        "type": "PlayerChatMessage",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ClientChatReceivedEvent.System",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ClientChatReceivedEvent.java#L127",
+                "cancellable": true,
+                "description": "Fired when a system message is received on the client\nDeprecated: Mojang made ChatType a registry, which isn't always accessible when the System messages are sent.",
+                "side": "client",
+                "deprecated": true,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "overlay",
+                        "type": "boolean",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ClientPauseChangeEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ClientPauseChangeEvent.java#L27",
+                "cancellable": false,
+                "description": "Fired when pause is about to change These events are fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "pause",
+                        "type": "boolean",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ClientPauseChangeEvent.Pre",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ClientPauseChangeEvent.java#L45",
+                "cancellable": true,
+                "description": "Fired when pause pause is going to change This event is Cancelable cancellable, and does not HasResult have a result. Cancelling this event will prevent the game change pause state even if the conditions match This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ClientPauseChangeEvent.Post",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ClientPauseChangeEvent.java#L61",
+                "cancellable": false,
+                "description": "Fired when pause pause is already changed This event is not Cancelable cancellable, and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ClientPlayerNetworkEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ClientPlayerNetworkEvent.java#L30",
+                "cancellable": false,
+                "description": "Fired for different client connectivity events. See the various subclasses to listen for specific events. These events are fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "multiPlayerGameMode",
+                        "type": "MultiPlayerGameMode",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "player",
+                        "type": "LocalPlayer",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "connection",
+                        "type": "Connection",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ClientPlayerNetworkEvent.LoggingIn",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ClientPlayerNetworkEvent.java#L73",
+                "cancellable": false,
+                "description": "Fired when the client player logs in to the server. The player should be initialized. This event is not Cancelable cancellable, and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ClientPlayerNetworkEvent.LoggingOut",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ClientPlayerNetworkEvent.java#L92",
+                "cancellable": false,
+                "description": "Fired when the client player logs out. This event may also fire when a new integrated server is being created. This event is not Cancelable cancellable, and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ClientPlayerNetworkEvent.Clone",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ClientPlayerNetworkEvent.java#L143",
+                "cancellable": false,
+                "description": "Fired when the client player respawns, creating a new player instance to replace the old player instance. This event is not Cancelable cancellable, and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "oldPlayer",
+                        "type": "LocalPlayer",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ComputeFovModifierEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ComputeFovModifierEvent.java#L26",
+                "cancellable": false,
+                "description": "Fired after the field of vision (FOV) modifier for the player is calculated to allow developers to adjust it further. This event is not Cancelable cancellable, and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "player",
+                        "type": "Player",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "fovModifier",
+                        "type": "float",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "scale",
+                        "type": "float",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "newFovModifier",
+                        "type": "float",
+                        "kind": "field",
+                        "mutable": true
+                    }
+                ]
+            },
+            {
+                "event": "ContainerScreenEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ContainerScreenEvent.java#L27",
+                "cancellable": false,
+                "description": "Fired for hooking into AbstractContainerScreen events. See the subclasses to listen for specific events. These events are fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "containerScreen",
+                        "type": "AbstractContainerScreen<?>",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ContainerScreenEvent.Render",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ContainerScreenEvent.java#L54",
+                "cancellable": false,
+                "description": "Fired every time an AbstractContainerScreen renders. See the two subclasses to listen for foreground or background rendering. These events are fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "guiGraphics",
+                        "type": "GuiGraphics",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "mouseX",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "mouseY",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ContainerScreenEvent.Render.Foreground",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ContainerScreenEvent.java#L102",
+                "cancellable": false,
+                "description": "Fired after the container screen's foreground layer and elements are drawn, but before rendering the tooltips and the item stack being dragged by the player. This can be used for rendering elements that must be above other screen elements, but below tooltips and the dragged stack, such as slot or item stack specific overlays. This event is not Cancelable cancellable, and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ContainerScreenEvent.Render.Background",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ContainerScreenEvent.java#L120",
+                "cancellable": false,
+                "description": "Fired after the container screen's background layer and elements are drawn. This can be used for rendering new background elements. This event is not Cancelable cancellable, and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "CreateSpecialBlockRendererEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/CreateSpecialBlockRendererEvent.java#L15",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "map",
+                        "type": "Map<Block, SpecialModelRenderer.Unbaked>",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "CustomizeGuiOverlayEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/CustomizeGuiOverlayEvent.java#L28",
+                "cancellable": true,
+                "description": "Fired when an overlay is about to be rendered to the screen to allow the user to modify it",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "window",
+                        "type": "Window",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "guiGraphics",
+                        "type": "GuiGraphics",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "partialTick",
+                        "type": "float",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "CustomizeGuiOverlayEvent.BossEventProgress",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/CustomizeGuiOverlayEvent.java#L63",
+                "cancellable": true,
+                "description": "Fired before a boss health bar is rendered to the screen. This event is Cancelable cancellable, and does not HasResult have a result. Cancelling this event will prevent the given bar from rendering. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "bossEvent",
+                        "type": "LerpingBossEvent",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "x",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "y",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "increment",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": true
+                    }
+                ]
+            },
+            {
+                "event": "CustomizeGuiOverlayEvent.DebugText",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/CustomizeGuiOverlayEvent.java#L127",
+                "cancellable": true,
+                "description": "Fired before textual information is rendered to the debug screen. This can be used to add or remove text information. This event is not Cancelable cancellable, and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "text",
+                        "type": "List<String>",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "side",
+                        "type": "Side",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "CustomizeGuiOverlayEvent.Chat",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/CustomizeGuiOverlayEvent.java#L169",
+                "cancellable": true,
+                "description": "Fired before the chat messages overlay is rendered to the screen. This event is not Cancelable cancellable, and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "posX",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": true
+                    },
+                    {
+                        "name": "posY",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": true
+                    }
+                ]
+            },
+            {
+                "event": "EntityRenderersEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/EntityRenderersEvent.java#L57",
+                "cancellable": false,
+                "description": "Fired for on different events/actions relating to EntityRenderer entity renderers. See the various subclasses for listening to different events. These events are fired on the getModEventBus() mod-specific event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EntityRenderersEvent.RegisterLayerDefinitions",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/EntityRenderersEvent.java#L67",
+                "cancellable": false,
+                "description": "Fired for registering layer definitions at the appropriate time. This event is fired on the getModEventBus() mod-specific event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EntityRenderersEvent.RegisterRenderers",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/EntityRenderersEvent.java#L97",
+                "cancellable": false,
+                "description": "Fired for registering entity and block entity renderers at the appropriate time. For registering entity renderer layers to existing entity renderers (whether vanilla or registered through this event), listen for the AddLayers event instead. This event is fired on the getModEventBus() mod-specific event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "EntityRenderersEvent.AddLayers",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/EntityRenderersEvent.java#L135",
+                "cancellable": false,
+                "description": "Fired for registering entity renderer layers at the appropriate time, after the entity and player renderers maps have been created. This event is not Cancelable cancellable, and does not HasResult have a result. This event is fired on the getModEventBus() mod-specific event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "renderers",
+                        "type": "Map<EntityType<?>, EntityRenderer<?, ?>>",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "skinMap",
+                        "type": "Map<PlayerSkin.Model, EntityRenderer<? extends Player, ?>>",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "context",
+                        "type": "EntityRendererProvider.Context",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "EntityRenderersEvent.CreateSkullModels",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/EntityRenderersEvent.java#L213",
+                "cancellable": false,
+                "description": "Fired for registering additional SkullModelBase skull models at the appropriate time. This event is not Cancelable cancellable, and does not HasResult have a result. This event is fired on the getModEventBus() mod-specific event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "builder",
+                        "type": "ImmutableMap.Builder<Type, Function<EntityModelSet, SkullModelBase>>",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "InputEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/InputEvent.java#L29",
+                "cancellable": false,
+                "description": "Fired when an input is detected from the user's input devices. See the various subclasses to listen for specific devices and inputs",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "InputEvent.MouseButton",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/InputEvent.java#L44",
+                "cancellable": false,
+                "description": "Fired when a mouse button is pressed/released. Sub-events get fired Pre before and Post after this happens. These events are fired only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "button",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "action",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "modifiers",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "InputEvent.MouseButton.Pre",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/InputEvent.java#L102",
+                "cancellable": true,
+                "description": "Fired when a mouse button is pressed/released, before being processed by vanilla. If the event is cancelled, then the mouse event will not be processed by vanilla (e.g. keymappings and screens) This event is fired only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "InputEvent.MouseButton.Post",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/InputEvent.java#L118",
+                "cancellable": false,
+                "description": "Fired when a mouse button is pressed/released, after processing. This event is fired only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "InputEvent.MouseScrollingEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/InputEvent.java#L138",
+                "cancellable": true,
+                "description": "Fired when a mouse scroll wheel is used outside of a screen and a player is loaded, before being processed by vanilla. If the event is cancelled, then the mouse scroll event will not be processed further. This event is fired only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "deltaX",
+                        "type": "double",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "deltaY",
+                        "type": "double",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "mouseX",
+                        "type": "double",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "mouseY",
+                        "type": "double",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "leftDown",
+                        "type": "boolean",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "middleDown",
+                        "type": "boolean",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "rightDown",
+                        "type": "boolean",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "InputEvent.Key",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/InputEvent.java#L215",
+                "cancellable": false,
+                "description": "Fired when a keyboard key input occurs, such as pressing, releasing, or repeating a key. This event is fired only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "key",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "scanCode",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "action",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "modifiers",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "InputEvent.InteractionKeyMappingTriggered",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/InputEvent.java#L298",
+                "cancellable": true,
+                "description": "Fired when a keymapping that by default involves clicking the mouse buttons is triggered. The key bindings that trigger this event are: Use Item - defaults to left mouse click Pick Block - defaults to middle mouse click Attack - defaults to right mouse click If this event is cancelled, then the keymapping's action is not processed further, and the hand will be swung according to shouldSwingHand(). This event is fired only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "button",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "keyMapping",
+                        "type": "KeyMapping",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "hand",
+                        "type": "InteractionHand",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "handSwing",
+                        "type": "boolean",
+                        "kind": "field",
+                        "mutable": true
+                    }
+                ]
+            },
+            {
+                "event": "ModelEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ModelEvent.java#L31",
+                "cancellable": false,
+                "description": "Houses events related to models",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ModelEvent.ModifyBakingResult",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ModelEvent.java#L51",
+                "cancellable": false,
+                "description": "Fired while the ModelManager is reloading models, after the model registry is set up, but before it's passed to the BlockModelShaper for caching. This event is fired from a worker thread and it is therefore not safe to access anything outside the model registry and ModelBakery provided in this event. The ModelManager firing this event is not fully set up with the latest data when this event fires and must therefore not be accessed in this event. This event is not Cancelable cancellable, and does not HasResult have a result. This event is fired on the getModEventBus() mod-specific event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "modelBakery",
+                        "type": "ModelBakery",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "results",
+                        "type": "ModelBakery.BakingResult",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ModelEvent.BakingCompleted",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ModelEvent.java#L91",
+                "cancellable": false,
+                "description": "Fired when the ModelManager is notified of the resource manager reloading. Called after the model registry is set up and cached in the BlockModelShaper. The model registry given by this event is unmodifiable. To modify the model registry, use ModifyBakingResult instead. This event is not Cancelable cancellable, and does not HasResult have a result. This event is fired on the getModEventBus() mod-specific event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "modelManager",
+                        "type": "ModelManager",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "modelBakery",
+                        "type": "ModelBakery",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ModelEvent.RegisterModelStateDefinitions",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ModelEvent.java#L129",
+                "cancellable": false,
+                "description": "Fired when the BlockStateModelLoader BlockStateModelLoader is notified of the resource manager reloading. Allows developers to register StateDefinition StateDefinitons for blocks that are not in the normal Block registry. This is designed to allow for extra models to be loaded in connection with a blockstates json file. This is not intended to allow overriding or modification of StateDefinitions from registered Blocks This event is fired on the getModEventBus() mod-specific event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "states",
+                        "type": "Map<ResourceLocation, StateDefinition<Block, BlockState>>",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "view",
+                        "type": "Map<ResourceLocation, StateDefinition<Block, BlockState>>",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ModelEvent.RegisterGeometryLoaders",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ModelEvent.java#L161",
+                "cancellable": false,
+                "description": "Allows users to register their own IGeometryLoader geometry loaders for use in block/item models. This event is fired on the getModEventBus() mod-specific event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "loaders",
+                        "type": "Map<ResourceLocation, IGeometryLoader>",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "MovementInputUpdateEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/MovementInputUpdateEvent.java#L24",
+                "cancellable": false,
+                "description": "Fired after the player's movement inputs are updated. This event is not Cancelable cancellable, and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "input",
+                        "type": "ClientInput",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "RegisterClientReloadListenersEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/RegisterClientReloadListenersEvent.java#L29",
+                "cancellable": false,
+                "description": "Fired to allow mods to register their reload listeners on the client-side resource manager. This event is fired once during the construction of the Minecraft instance. For registering reload listeners on the server-side resource manager, see AddReloadListenerEvent. This event is fired on the getModEventBus() mod-specific event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "resourceManager",
+                        "type": "ReloadableResourceManager",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "RegisterClientTooltipComponentFactoriesEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/RegisterClientTooltipComponentFactoriesEvent.java#L28",
+                "cancellable": false,
+                "description": "Allows users to register custom ClientTooltipComponent factories for their TooltipComponent types. This event is fired on the getModEventBus() mod-specific event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "factories",
+                        "type": "Map<Class<? extends TooltipComponent>, Function<TooltipComponent, ClientTooltipComponent>>",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "RegisterColorHandlersEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/RegisterColorHandlersEvent.java#L34",
+                "cancellable": false,
+                "description": "Fired for registering block and item color handlers at the appropriate time. See the two subclasses for registering block or item color handlers. These events are fired on the getModEventBus() mod-specific event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "RegisterColorHandlersEvent.Block",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/RegisterColorHandlersEvent.java#L46",
+                "cancellable": false,
+                "description": "Fired for registering block color handlers. This event is not Cancelable cancellable, and does not HasResult have a result. This event is fired on the getModEventBus() mod-specific event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "blockColors",
+                        "type": "BlockColors",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "RegisterColorHandlersEvent.ColorResolvers",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/RegisterColorHandlersEvent.java#L84",
+                "cancellable": false,
+                "description": "Allows registration of custom ColorResolver implementations to be used with getBlockTint(BlockPos, ColorResolver)",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "builder",
+                        "type": "ArrayList<ColorResolver>",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "RegisterDimensionSpecialEffectsEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/RegisterDimensionSpecialEffectsEvent.java#L28",
+                "cancellable": false,
+                "description": "Allows users to register custom DimensionSpecialEffects for their dimensions. This event is fired on the getModEventBus() mod-specific event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "effects",
+                        "type": "Map<ResourceLocation, DimensionSpecialEffects>",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "RegisterEntitySpectatorShadersEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/RegisterEntitySpectatorShadersEvent.java#L29",
+                "cancellable": false,
+                "description": "Allows users to register custom shaders to be used when the player spectates a certain kind of entity. Vanilla examples of this are the green effect for creepers and the invert effect for endermen. This event is fired on the getModEventBus() mod-specific event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "shaders",
+                        "type": "Map<EntityType<?>, ResourceLocation>",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "RegisterItemDecorationsEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/RegisterItemDecorationsEvent.java#L30",
+                "cancellable": false,
+                "description": "Allows users to register custom IItemDecorator IItemDecorator to Items. This event is fired on the getModEventBus() mod-specific event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "decorators",
+                        "type": "Map<Item, List<IItemDecorator>>",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "RegisterKeyMappingsEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/RegisterKeyMappingsEvent.java#L25",
+                "cancellable": false,
+                "description": "Allows users to register custom KeyMapping key mappings. This event is fired on the getModEventBus() mod-specific event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "options",
+                        "type": "Options",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "RegisterNamedRenderTypesEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/RegisterNamedRenderTypesEvent.java#L29",
+                "cancellable": false,
+                "description": "Allows users to register custom named RenderType render types. This event is fired only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "renderTypes",
+                        "type": "Map<ResourceLocation, RenderTypeGroup>",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "RegisterParticleProvidersEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/RegisterParticleProvidersEvent.java#L32",
+                "cancellable": false,
+                "description": "Fired for registering particle providers at the appropriate time. ParticleTypes must be registered during RegisterEvent as usual; this event is only for the ParticleProviders. This event is not Cancelable cancellable, and does not HasResult have a result. This event is fired on the getModEventBus() mod-specific event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "particleEngine",
+                        "type": "ParticleEngine",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "RegisterPictureInPictureRendererEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/RegisterPictureInPictureRendererEvent.java#L28",
+                "cancellable": false,
+                "description": "Used for registering custom picture in picture renderers. Fired at the beginning of the loading screen when starting minecraft. Cannot be used to replace vanilla picture in picture renderers. This event is fired only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "renderers",
+                        "type": "List<PictureInPictureRenderer<?>>",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "bufferSource",
+                        "type": "MultiBufferSource.BufferSource",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "builder",
+                        "type": "ImmutableMap.Builder<Class<? extends PictureInPictureRenderState>, PictureInPictureRenderer<?>>",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "RegisterPresetEditorsEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/RegisterPresetEditorsEvent.java#L31",
+                "cancellable": false,
+                "description": "Event for registering PresetEditor screen factories for world presets. This event is fired on the getModEventBus() mod-specific event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "editors",
+                        "type": "Map<ResourceKey<WorldPreset>, PresetEditor>",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "RegisterTextureAtlasSpriteLoadersEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/RegisterTextureAtlasSpriteLoadersEvent.java#L28",
+                "cancellable": false,
+                "description": "Allows users to register custom ITextureAtlasSpriteLoader texture atlas sprite loaders. This event is fired on the getModEventBus() mod-specific event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "loaders",
+                        "type": "BiMap<ResourceLocation, ITextureAtlasSpriteLoader>",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "RenderHighlightEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/RenderHighlightEvent.java#L30",
+                "cancellable": true,
+                "description": "Fired before a selection highlight is rendered. See the two subclasses to listen for blocks or entities",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "levelRenderer",
+                        "type": "LevelRenderer",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "camera",
+                        "type": "Camera",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "target",
+                        "type": "HitResult",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "partialTick",
+                        "type": "float",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "poseStack",
+                        "type": "PoseStack",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "multiBufferSource",
+                        "type": "MultiBufferSource",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "RenderHighlightEvent.Block",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/RenderHighlightEvent.java#L101",
+                "cancellable": true,
+                "description": "Fired before a block's selection highlight is rendered. This event is Cancelable cancellable, and does not HasResult have a result. If the event is cancelled, then the selection highlight will not be rendered. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "RenderHighlightEvent.Entity",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/RenderHighlightEvent.java#L126",
+                "cancellable": true,
+                "description": "Fired before an entity's selection highlight is rendered. This event is not Cancelable cancellable, and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "RenderLivingEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/RenderLivingEvent.java#L38",
+                "cancellable": false,
+                "description": "Fired when a LivingEntity is rendered. See the two subclasses to listen for before and after rendering. Despite this event's use of generic type parameters, this is not a GenericEvent, and should not be treated as such (such as using generic-specific listeners, which may cause a ClassCastException)",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "state",
+                        "type": "S",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "renderer",
+                        "type": "LivingEntityRenderer<T, S, M>",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "poseStack",
+                        "type": "PoseStack",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "multiBufferSource",
+                        "type": "MultiBufferSource",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "packedLight",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "RenderLivingEvent.Pre",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/RenderLivingEvent.java#L107",
+                "cancellable": true,
+                "description": "Fired before an entity is rendered. This can be used to render additional effects or suppress rendering. This event is Cancelable cancelable, and does not HasResult have a result. If this event is cancelled, then the entity will not be rendered and the corresponding Post will not be fired. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "RenderLivingEvent.Post",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/RenderLivingEvent.java#L127",
+                "cancellable": false,
+                "description": "Fired after an entity is rendered, if the corresponding Post is not cancelled. This event is not Cancelable cancelable, and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "RenderNameTagEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/RenderNameTagEvent.java#L36",
+                "cancellable": false,
+                "description": "Fired before an entity renderer renders the nameplate of an entity. This event is not Cancelable cancellable, and HasResult has a result. ALLOW - the nameplate will be forcibly rendered. DEFAULT - the vanilla logic will be used. DENY - the nameplate will not be rendered. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "nameplateContent",
+                        "type": "Component",
+                        "kind": "field",
+                        "mutable": true
+                    },
+                    {
+                        "name": "state",
+                        "type": "EntityRenderState",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "originalContent",
+                        "type": "Component",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "entityRenderer",
+                        "type": "EntityRenderer<?, ?>",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "poseStack",
+                        "type": "PoseStack",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "multiBufferSource",
+                        "type": "MultiBufferSource",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "packedLight",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "result",
+                        "type": "Result",
+                        "kind": "field",
+                        "mutable": true
+                    }
+                ]
+            },
+            {
+                "event": "RenderPlayerEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/RenderPlayerEvent.java#L30",
+                "cancellable": false,
+                "description": "Fired when a player is being rendered. See the two subclasses for listening for before and after rendering",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "state",
+                        "type": "PlayerRenderState",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "renderer",
+                        "type": "PlayerRenderer",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "poseStack",
+                        "type": "PoseStack",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "multiBufferSource",
+                        "type": "MultiBufferSource",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "packedLight",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "RenderPlayerEvent.Pre",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/RenderPlayerEvent.java#L93",
+                "cancellable": true,
+                "description": "Fired before the player is rendered. This can be used for rendering additional effects or suppressing rendering. This event is Cancelable cancellable, and does not HasResult have a result. If this event is cancelled, then the player will not be rendered and the corresponding Post will not be fired. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "RenderPlayerEvent.Post",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/RenderPlayerEvent.java#L110",
+                "cancellable": false,
+                "description": "Fired after the player is rendered, if the corresponding Pre is not cancelled. This event is not Cancelable cancellable, and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "RenderTooltipEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/RenderTooltipEvent.java#L39",
+                "cancellable": false,
+                "description": "Fired during tooltip rendering. See the various subclasses for listening to specific events",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "itemStack",
+                        "type": "ItemStack",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "graphics",
+                        "type": "GuiGraphics",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "x",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": true
+                    },
+                    {
+                        "name": "y",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": true
+                    },
+                    {
+                        "name": "font",
+                        "type": "Font",
+                        "kind": "field",
+                        "mutable": true
+                    },
+                    {
+                        "name": "components",
+                        "type": "List<ClientTooltipComponent>",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "RenderTooltipEvent.GatherComponents",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/RenderTooltipEvent.java#L125",
+                "cancellable": true,
+                "description": "Fired when a tooltip gathers the TooltipComponents to be rendered, before any text wrapping or processing. The list of components and the maximum width of the tooltip can be modified through this event. This event is Cancellable cancellable. If this event is cancelled, then the list of components will be empty, causing the tooltip to not be rendered and the corresponding Pre to not be fired. Fired only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "itemStack",
+                        "type": "ItemStack",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "screenWidth",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "screenHeight",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "tooltipElements",
+                        "type": "List<Either<FormattedText, TooltipComponent>>",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "maxWidth",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": true
+                    }
+                ]
+            },
+            {
+                "event": "RenderTooltipEvent.Pre",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/RenderTooltipEvent.java#L212",
+                "cancellable": true,
+                "description": "Fired before the tooltip is rendered. This can be used to modify the positioning, font, and background of the tooltip. This event is Cancellable cancellable. If this event is cancelled, then the tooltip will not be rendered. Fired only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "screenWidth",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "screenHeight",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "positioner",
+                        "type": "ClientTooltipPositioner",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "background",
+                        "type": "ResourceLocation",
+                        "kind": "field",
+                        "mutable": true
+                    },
+                    {
+                        "name": "originalBackground",
+                        "type": "ResourceLocation",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "RenderTooltipEvent.Background",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/RenderTooltipEvent.java#L321",
+                "cancellable": false,
+                "description": "Fired when the tooltip background prefix is determined. This can be used to modify the textures to be used for the tooltip background. This event is not Cancellable cancellable. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client\nDeprecated: Behavior will be merged into Pre.",
+                "side": "client",
+                "deprecated": true,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "originalBackground",
+                        "type": "ResourceLocation",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "background",
+                        "type": "ResourceLocation",
+                        "kind": "field",
+                        "mutable": true
+                    }
+                ]
+            },
+            {
+                "event": "ScreenEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L42",
+                "cancellable": false,
+                "description": "Fired on different events/actions when a Screen is active and visible. See the various subclasses for listening to different events. These events are fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "screen",
+                        "type": "Screen",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ScreenEvent.Init",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L70",
+                "cancellable": false,
+                "description": "Fired when a screen is being initialized. See the two subclasses for listening before and after the initialization. Listeners added through this event may also be marked as renderable or narratable, if they inherit from Renderable and NarratableEntry respectively",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "add",
+                        "type": "Consumer<GuiEventListener>",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "remove",
+                        "type": "Consumer<GuiEventListener>",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "listenerList",
+                        "type": "List<GuiEventListener>",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ScreenEvent.Init.Pre",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L119",
+                "cancellable": true,
+                "description": "Fired before the screen's overridable initialization method is fired. This event is Cancelable cancellable, and does not HasResult have a result. If the event is cancelled, the initialization method will not be called, and the widgets and children lists will not be cleared. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ScreenEvent.Init.Post",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L136",
+                "cancellable": false,
+                "description": "Fired after the screen's overridable initialization method is called. This event is not Cancelable cancellable, and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "handled",
+                        "type": "boolean",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "result",
+                        "type": "Result",
+                        "kind": "field",
+                        "mutable": true
+                    }
+                ]
+            },
+            {
+                "event": "ScreenEvent.Render",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L153",
+                "cancellable": false,
+                "description": "Fired when a screen is being drawn. See the two subclasses for listening before and after drawing",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "guiGraphics",
+                        "type": "GuiGraphics",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "mouseX",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "mouseY",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "partialTick",
+                        "type": "float",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ScreenEvent.Render.Pre",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L205",
+                "cancellable": true,
+                "description": "Fired before the screen is drawn. This event is Cancelable cancellable, and does not HasResult have a result. If the event is cancelled, the screen will not be drawn. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ScreenEvent.Render.Post",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L222",
+                "cancellable": false,
+                "description": "Fired after the screen is drawn. This event is not Cancelable cancellable, and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "handled",
+                        "type": "boolean",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "result",
+                        "type": "Result",
+                        "kind": "field",
+                        "mutable": true
+                    }
+                ]
+            },
+            {
+                "event": "ScreenEvent.BackgroundRendered",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L241",
+                "cancellable": false,
+                "description": "Fired directly after the background of the screen is drawn. Can be used for drawing above the background but below the tooltips. This event is not Cancelable cancellable, and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "guiGraphics",
+                        "type": "GuiGraphics",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ScreenEvent.RenderInventoryMobEffects",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L271",
+                "cancellable": true,
+                "description": "Fired ahead of rendering any active mob effects in the EffectsInInventory inventory screen. Can be used to select the size of the effects display (full or compact) or even hide or replace vanilla's rendering entirely. This event can also be used to modify the horizontal position of the stack of effects being rendered. This event is Cancelable cancellable and does not HasResult have a result. Cancelling this event will prevent vanilla rendering. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "availableSpace",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "compact",
+                        "type": "boolean",
+                        "kind": "field",
+                        "mutable": true
+                    },
+                    {
+                        "name": "horizontalOffset",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": true
+                    }
+                ]
+            },
+            {
+                "event": "ScreenEvent.MouseButtonPressed",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L371",
+                "cancellable": false,
+                "description": "Fired when a mouse button is pressed. See the two subclasses for listening before and after the normal handling",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "button",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ScreenEvent.MouseButtonPressed.Pre",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L400",
+                "cancellable": true,
+                "description": "Fired before the mouse click is handled by the screen. This event is Cancelable cancellable, and does not HasResult have a result. If the event is cancelled, the screen's mouse click handler will be bypassed and the corresponding Post will not be fired. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ScreenEvent.MouseButtonPressed.Post",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L424",
+                "cancellable": false,
+                "description": "Fired after the mouse click is handled, if the corresponding Pre was not cancelled. This event is not Cancelable cancellable, HasResult has a result. ALLOW - forcibly sets the mouse click as handled DEFAULT - defaults to the return value of mouseClicked(double, double, int) from the screen (see wasHandled(). DENY - forcibly sets the mouse click as not handled. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "handled",
+                        "type": "boolean",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "result",
+                        "type": "Result",
+                        "kind": "field",
+                        "mutable": true
+                    }
+                ]
+            },
+            {
+                "event": "ScreenEvent.MouseButtonReleased",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L462",
+                "cancellable": false,
+                "description": "Fired when a mouse button is released. See the two subclasses for listening before and after the normal handling",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "button",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ScreenEvent.MouseButtonReleased.Pre",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L491",
+                "cancellable": true,
+                "description": "Fired before the mouse release is handled by the screen. This event is Cancelable cancellable, and does not HasResult have a result. If the event is cancelled, the screen's mouse release handler will be bypassed and the corresponding Post will not be fired. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ScreenEvent.MouseButtonReleased.Post",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L515",
+                "cancellable": false,
+                "description": "Fired after the mouse release is handled, if the corresponding Pre was not cancelled. This event is not Cancelable cancellable, HasResult has a result. ALLOW - forcibly sets the mouse release as handled DEFAULT - defaults to the return value of mouseReleased(double, double, int) from the screen (see wasHandled(). DENY - forcibly sets the mouse release as not handled. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "handled",
+                        "type": "boolean",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "result",
+                        "type": "Result",
+                        "kind": "field",
+                        "mutable": true
+                    }
+                ]
+            },
+            {
+                "event": "ScreenEvent.MouseDragged",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L553",
+                "cancellable": false,
+                "description": "Fired when the mouse was dragged while a button is being held down. See the two subclasses for listening before and after the normal handling",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "mouseButton",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "dragX",
+                        "type": "double",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "dragY",
+                        "type": "double",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ScreenEvent.MouseDragged.Pre",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L600",
+                "cancellable": true,
+                "description": "Fired before the mouse drag is handled by the screen. This event is Cancelable cancellable, and does not HasResult have a result. If the event is cancelled, the screen's mouse drag handler will be bypassed and the corresponding Post will not be fired. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ScreenEvent.MouseDragged.Post",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L619",
+                "cancellable": false,
+                "description": "Fired after the mouse drag is handled, if not handled by the screen and the corresponding Pre is not cancelled. This event is not Cancelable cancellable, and does not HasResult have a result. If the event is cancelled, the mouse drag will be set as handled. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "handled",
+                        "type": "boolean",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "result",
+                        "type": "Result",
+                        "kind": "field",
+                        "mutable": true
+                    }
+                ]
+            },
+            {
+                "event": "ScreenEvent.MouseScrolled",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L636",
+                "cancellable": false,
+                "description": "Fired when the mouse was dragged while a button is being held down. See the two subclasses for listening before and after the normal handling",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "deltaX",
+                        "type": "double",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "deltaY",
+                        "type": "double",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ScreenEvent.MouseScrolled.Pre",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L671",
+                "cancellable": true,
+                "description": "Fired before the mouse scroll is handled by the screen. This event is Cancelable cancellable, and does not HasResult have a result. If the event is cancelled, the screen's mouse scroll handler will be bypassed and the corresponding Post will not be fired. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ScreenEvent.MouseScrolled.Post",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L690",
+                "cancellable": false,
+                "description": "Fired after the mouse scroll is handled, if not handled by the screen and the corresponding Pre is not cancelled. This event is not Cancelable cancellable, and does not HasResult have a result. If the event is cancelled, the mouse scroll will be set as handled. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "handled",
+                        "type": "boolean",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "result",
+                        "type": "Result",
+                        "kind": "field",
+                        "mutable": true
+                    }
+                ]
+            },
+            {
+                "event": "ScreenEvent.KeyPressed",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L769",
+                "cancellable": false,
+                "description": "Fired when a keyboard key is pressed. See the two subclasses for listening before and after the normal handling",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ScreenEvent.KeyPressed.Pre",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L785",
+                "cancellable": true,
+                "description": "Fired before the key press is handled by the screen. This event is Cancelable cancellable and does not HasResult have a result. If the event is cancelled, the screen's key press handler will be bypassed and the corresponding Post will not be fired. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ScreenEvent.KeyPressed.Post",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L804",
+                "cancellable": true,
+                "description": "Fired after the key press is handled, if not handled by the screen and the corresponding Pre is not cancelled. This event is Cancelable cancellable, and does not HasResult have a result. If the event is cancelled, the key press will be set as handled. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "handled",
+                        "type": "boolean",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "result",
+                        "type": "Result",
+                        "kind": "field",
+                        "mutable": true
+                    }
+                ]
+            },
+            {
+                "event": "ScreenEvent.KeyReleased",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L821",
+                "cancellable": false,
+                "description": "Fired when a keyboard key is released. See the two subclasses for listening before and after the normal handling",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ScreenEvent.KeyReleased.Pre",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L837",
+                "cancellable": true,
+                "description": "Fired before the key release is handled by the screen. This event is Cancelable cancellable, and does not HasResult have a result. If the event is cancelled, the screen's key release handler will be bypassed and the corresponding Post will not be fired. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ScreenEvent.KeyReleased.Post",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L856",
+                "cancellable": true,
+                "description": "Fired after the key release is handled, if not handled by the screen and the corresponding Pre is not cancelled. This event is Cancelable cancellable, and does not HasResult have a result. If the event is cancelled, the key release will be set as handled. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "handled",
+                        "type": "boolean",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "result",
+                        "type": "Result",
+                        "kind": "field",
+                        "mutable": true
+                    }
+                ]
+            },
+            {
+                "event": "ScreenEvent.CharacterTyped",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L874",
+                "cancellable": false,
+                "description": "Fired when a keyboard key corresponding to a character is typed. See the two subclasses for listening before and after the normal handling",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "codePoint",
+                        "type": "char",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "modifiers",
+                        "type": "int",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ScreenEvent.CharacterTyped.Pre",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L917",
+                "cancellable": true,
+                "description": "Fired before the character input is handled by the screen. This event is Cancelable cancellable, and does not HasResult have a result. If the event is cancelled, the screen's character input handler will be bypassed and the corresponding Post will not be fired. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ScreenEvent.CharacterTyped.Post",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L936",
+                "cancellable": false,
+                "description": "Fired after the character input is handled, if not handled by the screen and the corresponding Pre is not cancelled. This event is Cancelable cancellable, and does not HasResult have a result. If the event is cancelled, the character input will be set as handled. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "handled",
+                        "type": "boolean",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "result",
+                        "type": "Result",
+                        "kind": "field",
+                        "mutable": true
+                    }
+                ]
+            },
+            {
+                "event": "ScreenEvent.Opening",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L958",
+                "cancellable": true,
+                "description": "Fired before any Screen is opened, to allow changing it or preventing it from being opened. All screen layers on the screen are closed before this event is fired. This event is Cancelable cancellable, and does not HasResult have a result. If this event is cancelled, then the Screen shall be prevented from opening and any previous screen will remain open. However, cancelling this event will not prevent the closing of screen layers which happened before this event fired. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "currentScreen",
+                        "type": "Screen",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "newScreen",
+                        "type": "Screen",
+                        "kind": "field",
+                        "mutable": true
+                    }
+                ]
+            },
+            {
+                "event": "ScreenEvent.Closing",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenEvent.java#L1007",
+                "cancellable": false,
+                "description": "Fired before a Screen is closed. All screen layers on the screen are closed before this event is fired. This event is not Cancelable cancellable, and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ScreenshotEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ScreenshotEvent.java#L34",
+                "cancellable": true,
+                "description": "Fired when a screenshot is taken, but before it is written to disk. This event is Cancelable cancellable, and does not HasResult have a result. If this event is cancelled, then the screenshot is not written to disk, and the message in the event will be posted to the player's chat. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "image",
+                        "type": "NativeImage",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "screenshotFile",
+                        "type": "File",
+                        "kind": "field",
+                        "mutable": true
+                    },
+                    {
+                        "name": "resultMessage",
+                        "type": "Component",
+                        "kind": "field",
+                        "mutable": true
+                    }
+                ]
+            },
+            {
+                "event": "SystemMessageReceivedEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/SystemMessageReceivedEvent.java#L21",
+                "cancellable": true,
+                "description": "Fired when a system message is received on the client. This can be used for filtering and detecting messages with specific words or phrases, and suppressing them. If the event is cancelled, the message is not displayed in the chat message window",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "message",
+                        "type": "Component",
+                        "kind": "field",
+                        "mutable": true
+                    },
+                    {
+                        "name": "overlay",
+                        "type": "boolean",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "TextureStitchEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/TextureStitchEvent.java#L22",
+                "cancellable": false,
+                "description": "Fired after a texture atlas is stitched together",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "atlas",
+                        "type": "TextureAtlas",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "TextureStitchEvent.Post",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/TextureStitchEvent.java#L80",
+                "cancellable": false,
+                "description": "Fired after a texture atlas is stitched together and all textures therein has been loaded. This event is not Cancelable cancellable, and does not HasResult have a result. This event is fired on the getModEventBus() mod-specific event bus}, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ViewportEvent",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ViewportEvent.java#L36",
+                "cancellable": false,
+                "description": "Fired for hooking into the entity view rendering in GameRenderer. These can be used for customizing the visual features visible to the player. See the various subclasses for listening to different features. These events are fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "renderer",
+                        "type": "GameRenderer",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "camera",
+                        "type": "Camera",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "partialTick",
+                        "type": "double",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ViewportEvent.RenderFog",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ViewportEvent.java#L80",
+                "cancellable": true,
+                "description": "Fired for rendering custom fog. The plane distances are based on the player's render distance. This event is Cancelable cancellable, and HasResult has a result. The event must be cancelled for any changes to the plane distances to take effect. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "type",
+                        "type": "FogType",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "data",
+                        "type": "FogData",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "color",
+                        "type": "Vector4f",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ViewportEvent.ComputeFogColor",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ViewportEvent.java#L172",
+                "cancellable": false,
+                "description": "Fired for customizing the color of the fog visible to the player. This event is not Cancelable cancellable, and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "red",
+                        "type": "float",
+                        "kind": "field",
+                        "mutable": true
+                    },
+                    {
+                        "name": "green",
+                        "type": "float",
+                        "kind": "field",
+                        "mutable": true
+                    },
+                    {
+                        "name": "blue",
+                        "type": "float",
+                        "kind": "field",
+                        "mutable": true
+                    }
+                ]
+            },
+            {
+                "event": "ViewportEvent.ComputeCameraAngles",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ViewportEvent.java#L246",
+                "cancellable": false,
+                "description": "Fired to allow altering the angles of the player's camera. This can be used to alter the player's view for different effects, such as applying roll. This event is not Cancelable cancellable, and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "yaw",
+                        "type": "float",
+                        "kind": "field",
+                        "mutable": true
+                    },
+                    {
+                        "name": "pitch",
+                        "type": "float",
+                        "kind": "field",
+                        "mutable": true
+                    },
+                    {
+                        "name": "roll",
+                        "type": "float",
+                        "kind": "field",
+                        "mutable": true
+                    }
+                ]
+            },
+            {
+                "event": "ViewportEvent.ComputeFov",
+                "package": "net.minecraftforge.client.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/ViewportEvent.java#L321",
+                "cancellable": false,
+                "description": "Fired for altering the raw field of view (FOV). This is after the FOV settings are applied, and before modifiers such as the Nausea effect. This event is not Cancelable cancellable, and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "usedConfiguredFov",
+                        "type": "boolean",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "fov",
+                        "type": "float",
+                        "kind": "field",
+                        "mutable": true
+                    }
+                ]
+            }
+        ],
+        "net.minecraftforge.client.event.sound": [
+            {
+                "event": "PlaySoundEvent",
+                "package": "net.minecraftforge.client.event.sound",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/sound/PlaySoundEvent.java#L30",
+                "cancellable": false,
+                "description": "Fired when a sound is about to be played by the sound engine. This fires before the sound is played and before any checks on the sound (such as a zeroed volume, an empty Sound, and others). This can be used to change or prevent (by passing null) a sound from being played through setSound(SoundInstance)). This event is not Cancellable cancellable, and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "name",
+                        "type": "String",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "originalSound",
+                        "type": "SoundInstance",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "sound",
+                        "type": "SoundInstance",
+                        "kind": "field",
+                        "mutable": true
+                    }
+                ]
+            },
+            {
+                "event": "PlaySoundSourceEvent",
+                "package": "net.minecraftforge.client.event.sound",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/sound/PlaySoundSourceEvent.java#L29",
+                "cancellable": false,
+                "description": "Fired when a non-streaming sound is being played. A non-streaming sound is loaded fully into memory in a buffer before being played, and used for most sounds of short length such as sound effects for clicking buttons. This event is not Cancelable cancellable, and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PlayStreamingSourceEvent",
+                "package": "net.minecraftforge.client.event.sound",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/sound/PlayStreamingSourceEvent.java#L29",
+                "cancellable": false,
+                "description": "Fired when a streaming sound is being played. A streaming sound is streamed directly from its source (such as a file), and used for sounds of long length which are unsuitable to keep fully loaded in-memory in a buffer (as is done for regular non-streaming sounds), such as background music or music discs. This event is not Cancelable cancellable, and does not HasResult have a result. This event is fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "SoundEngineLoadEvent",
+                "package": "net.minecraftforge.client.event.sound",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/sound/SoundEngineLoadEvent.java#L24",
+                "cancellable": false,
+                "description": "Fired when the SoundEngine is constructed or (re)loaded, such as during game initialization or when the sound output device is changed. This event is fired on the getModEventBus() mod-specific event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "SoundEvent",
+                "package": "net.minecraftforge.client.event.sound",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/sound/SoundEvent.java#L28",
+                "cancellable": false,
+                "description": "Superclass for sound related events. These events are fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "engine",
+                        "type": "SoundEngine",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "SoundEvent.SoundSourceEvent",
+                "package": "net.minecraftforge.client.event.sound",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/client/event/sound/SoundEvent.java#L54",
+                "cancellable": false,
+                "description": "Superclass for when a sound has started to play on an audio channel. These events are fired on the EVENT_BUS main Forge event bus, only on the CLIENT logical client",
+                "side": "client",
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "sound",
+                        "type": "SoundInstance",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "channel",
+                        "type": "Channel",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "name",
+                        "type": "String",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            }
+        ],
+        "net.minecraftforge.common.capabilities": [
+            {
+                "event": "RegisterCapabilitiesEvent",
+                "package": "net.minecraftforge.common.capabilities",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/common/capabilities/RegisterCapabilitiesEvent.java#L25",
+                "cancellable": false,
+                "description": "This event fires when it is time to register your capabilities\nDeprecated: Use AutoRegisterCapability annotation on your class.",
+                "side": null,
+                "deprecated": true,
+                "hasResult": false
+            }
+        ],
+        "net.minecraftforge.data.event": [
+            {
+                "event": "GatherDataEvent",
+                "package": "net.minecraftforge.data.event",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/data/event/GatherDataEvent.java#L29",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "dataGenerator",
+                        "type": "DataGenerator",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "config",
+                        "type": "DataGeneratorConfig",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "existingFileHelper",
+                        "type": "ExistingFileHelper",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "modContainer",
+                        "type": "ModContainer",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            }
+        ],
         "net.minecraftforge.event": [
             {
                 "event": "AddPackFindersEvent",
@@ -271,7 +2775,7 @@
                 ]
             },
             {
-                "event": "GatherComponentsEvent",
+                "event": "Item",
                 "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/event/GatherComponentsEvent.java#L58",
                 "cancellable": false,
@@ -635,22 +3139,22 @@
                 ]
             },
             {
-                "event": "ServerTickEvent.Pre",
+                "event": "TickEvent.ServerTickEvent.Pre",
                 "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/event/TickEvent.java#L84",
                 "cancellable": false,
                 "description": "{@return the server instance}",
-                "side": null,
+                "side": "server",
                 "deprecated": false,
                 "hasResult": false
             },
             {
-                "event": "ServerTickEvent.Post",
+                "event": "TickEvent.ServerTickEvent.Post",
                 "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/event/TickEvent.java#L92",
                 "cancellable": false,
                 "description": "",
-                "side": null,
+                "side": "server",
                 "deprecated": false,
                 "hasResult": false
             },
@@ -665,22 +3169,22 @@
                 "hasResult": false
             },
             {
-                "event": "ClientTickEvent.Pre",
+                "event": "TickEvent.ClientTickEvent.Pre",
                 "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/event/TickEvent.java#L112",
                 "cancellable": false,
                 "description": "Deprecated: Use Pre or Post instead",
-                "side": null,
+                "side": "client",
                 "deprecated": false,
                 "hasResult": false
             },
             {
-                "event": "ClientTickEvent.Post",
+                "event": "TickEvent.ClientTickEvent.Post",
                 "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/event/TickEvent.java#L121",
                 "cancellable": false,
                 "description": "",
-                "side": null,
+                "side": "client",
                 "deprecated": false,
                 "hasResult": false
             },
@@ -709,7 +3213,7 @@
                 ]
             },
             {
-                "event": "LevelTickEvent.Pre",
+                "event": "TickEvent.LevelTickEvent.Pre",
                 "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/event/TickEvent.java#L157",
                 "cancellable": false,
@@ -719,7 +3223,7 @@
                 "hasResult": false
             },
             {
-                "event": "LevelTickEvent.Post",
+                "event": "TickEvent.LevelTickEvent.Post",
                 "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/event/TickEvent.java#L165",
                 "cancellable": false,
@@ -747,7 +3251,7 @@
                 ]
             },
             {
-                "event": "PlayerTickEvent.Pre",
+                "event": "TickEvent.PlayerTickEvent.Pre",
                 "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/event/TickEvent.java#L188",
                 "cancellable": false,
@@ -757,7 +3261,7 @@
                 "hasResult": false
             },
             {
-                "event": "PlayerTickEvent.Post",
+                "event": "TickEvent.PlayerTickEvent.Post",
                 "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/event/TickEvent.java#L196",
                 "cancellable": false,
@@ -785,7 +3289,7 @@
                 ]
             },
             {
-                "event": "RenderTickEvent.Pre",
+                "event": "TickEvent.RenderTickEvent.Pre",
                 "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/event/TickEvent.java#L223",
                 "cancellable": false,
@@ -795,7 +3299,7 @@
                 "hasResult": false
             },
             {
-                "event": "RenderTickEvent.Post",
+                "event": "TickEvent.RenderTickEvent.Post",
                 "package": "net.minecraftforge.event",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/event/TickEvent.java#L231",
                 "cancellable": false,
@@ -1317,7 +3821,7 @@
                 ]
             },
             {
-                "event": "Entity.MergedSpawnPredicate",
+                "event": "SpawnPlacementRegisterEvent.MergedSpawnPredicate",
                 "package": "net.minecraftforge.event.entity",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/event/entity/SpawnPlacementRegisterEvent.java#L111",
                 "cancellable": false,
@@ -2325,7 +4829,7 @@
                 ]
             },
             {
-                "event": "MutableEvent.SpawnPlacementCheck",
+                "event": "MobSpawnEvent.SpawnPlacementCheck",
                 "package": "net.minecraftforge.event.entity.living",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/event/entity/living/MobSpawnEvent.java#L112",
                 "cancellable": false,
@@ -4063,7 +6567,7 @@
                 ]
             },
             {
-                "event": "EntityPlaceEvent.EntityMultiPlaceEvent",
+                "event": "BlockEvent.EntityMultiPlaceEvent",
                 "package": "net.minecraftforge.event.level",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/event/level/BlockEvent.java#L170",
                 "cancellable": true,
@@ -4145,7 +6649,7 @@
                 "hasResult": false
             },
             {
-                "event": "CropGrowEvent.Pre",
+                "event": "BlockEvent.CropGrowEvent.Pre",
                 "package": "net.minecraftforge.event.level",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/event/level/BlockEvent.java#L313",
                 "cancellable": false,
@@ -4163,7 +6667,7 @@
                 ]
             },
             {
-                "event": "CropGrowEvent.Post",
+                "event": "BlockEvent.CropGrowEvent.Post",
                 "package": "net.minecraftforge.event.level",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/event/level/BlockEvent.java#L342",
                 "cancellable": false,
@@ -4793,14 +7297,34 @@
         ],
         "net.minecraftforge.event.network": [
             {
-                "event": "CustomPayloadEvent",
+                "event": "Context",
                 "package": "net.minecraftforge.event.network",
                 "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/event/network/CustomPayloadEvent.java#L46",
                 "cancellable": false,
                 "description": "Context for CustomPayloadEvent",
                 "side": null,
                 "deprecated": false,
-                "hasResult": false
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "connection",
+                        "type": "Connection",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "client",
+                        "type": "boolean",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "packetHandled",
+                        "type": "boolean",
+                        "kind": "field",
+                        "mutable": true
+                    }
+                ]
             },
             {
                 "event": "GatherLoginConfigurationTasksEvent",
@@ -4937,6 +7461,350 @@
                         "type": "List<Pool>",
                         "kind": "field",
                         "mutable": true
+                    }
+                ]
+            }
+        ],
+        "net.minecraftforge.fml.event.config": [
+            {
+                "event": "ModConfigEvent",
+                "package": "net.minecraftforge.fml.event.config",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/fml/event/config/ModConfigEvent.java#L14",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "config",
+                        "type": "ModConfig",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ModConfigEvent.Loading",
+                "package": "net.minecraftforge.fml.event.config",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/fml/event/config/ModConfigEvent.java#L30",
+                "cancellable": false,
+                "description": "Fired during mod and server loading, depending on Type of config file. Any Config objects associated with this will be valid and can be queried directly",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ModConfigEvent.Reloading",
+                "package": "net.minecraftforge.fml.event.config",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/fml/event/config/ModConfigEvent.java#L46",
+                "cancellable": false,
+                "description": "Fired when the configuration is changed. This can be caused by a change to the config from a UI or from editing the file itself. IMPORTANT: this can fire at any time and may not even be on the server or client threads. Ensure you properly synchronize any resultant changes",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ModConfigEvent.Unloading",
+                "package": "net.minecraftforge.fml.event.config",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/fml/event/config/ModConfigEvent.java#L62",
+                "cancellable": false,
+                "description": "Fired when a config is unloaded. This only happens when the server closes, which is probably only really relevant on the client, to reset internal mod state when the server goes away, though it will fire on the dedicated server as well. The config file will be saved after this event has fired",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            }
+        ],
+        "net.minecraftforge.fml.event.lifecycle": [
+            {
+                "event": "FMLClientSetupEvent",
+                "package": "net.minecraftforge.fml.event.lifecycle",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/fml/event/lifecycle/FMLClientSetupEvent.java#L29",
+                "cancellable": false,
+                "description": "This is the second of four commonly called events during mod lifecycle startup. Called before InterModEnqueueEvent Called after FMLCommonSetupEvent Called on CLIENT - the game client. Alternative to FMLDedicatedServerSetupEvent. Do client only setup with this event, such as KeyBindings. This is a parallel dispatch event",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "FMLCommonSetupEvent",
+                "package": "net.minecraftforge.fml.event.lifecycle",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/fml/event/lifecycle/FMLCommonSetupEvent.java#L34",
+                "cancellable": false,
+                "description": "This is the first of four commonly called events during mod initialization. Called after RegisterEvent events have been fired and before FMLClientSetupEvent or FMLDedicatedServerSetupEvent during mod startup. Either register your listener using AutomaticEventSubscriber and SubscribeEvent or addListener(Consumer) in your constructor. Most non-specific mod setup will be performed here. Note that this is a parallel dispatched event - you cannot interact with game state in this event",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "FMLConstructModEvent",
+                "package": "net.minecraftforge.fml.event.lifecycle",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/fml/event/lifecycle/FMLConstructModEvent.java#L19",
+                "cancellable": false,
+                "description": "Supplied as a param to your mod's constructor to get access to the mod EventBus and various mod-specific objects",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "FMLDedicatedServerSetupEvent",
+                "package": "net.minecraftforge.fml.event.lifecycle",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/fml/event/lifecycle/FMLDedicatedServerSetupEvent.java#L33",
+                "cancellable": false,
+                "description": "This is the second of four commonly called events during mod core startup. Called before InterModEnqueueEvent Called after FMLCommonSetupEvent Called on DEDICATED_SERVER - the dedicated game server. Alternative to FMLClientSetupEvent. Do dedicated server specific activities with this event. This event is fired before construction of the dedicated server. Use FMLServerAboutToStartEvent or FMLServerStartingEvent to do stuff with the server, in both dedicated and integrated server contexts This is a parallel dispatch event",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "FMLLoadCompleteEvent",
+                "package": "net.minecraftforge.fml.event.lifecycle",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/fml/event/lifecycle/FMLLoadCompleteEvent.java#L21",
+                "cancellable": false,
+                "description": "This is a mostly internal event fired to mod containers that indicates that loading is complete. Mods should not in general override or otherwise attempt to implement this event",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "InterModEnqueueEvent",
+                "package": "net.minecraftforge.fml.event.lifecycle",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/fml/event/lifecycle/InterModEnqueueEvent.java#L25",
+                "cancellable": false,
+                "description": "This is the third of four commonly called events during mod core startup. Called before InterModProcessEvent Called after FMLClientSetupEvent or FMLDedicatedServerSetupEvent Enqueue InterModComms messages to other mods with this event. This is a parallel dispatch event",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "InterModProcessEvent",
+                "package": "net.minecraftforge.fml.event.lifecycle",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/fml/event/lifecycle/InterModProcessEvent.java#L29",
+                "cancellable": false,
+                "description": "This is the fourth of four commonly called events during mod core startup. Called after InterModEnqueueEvent Retrieve InterModComms IMCMessage suppliers and process them as you wish with this event. This is a parallel dispatch event",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "ModLifecycleEvent",
+                "package": "net.minecraftforge.fml.event.lifecycle",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/fml/event/lifecycle/ModLifecycleEvent.java#L19",
+                "cancellable": false,
+                "description": "Parent type to all ModLifecycle events. This is based on Forge EventBus. They fire through the ModContainer's eventbus instance",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "container",
+                        "type": "ModContainer",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "ParallelDispatchEvent",
+                "package": "net.minecraftforge.fml.event.lifecycle",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/fml/event/lifecycle/ParallelDispatchEvent.java#L16",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "modLoadingStage",
+                        "type": "ModLoadingStage",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            }
+        ],
+        "net.minecraftforge.registries": [
+            {
+                "event": "DataPackRegistryEvent",
+                "package": "net.minecraftforge.registries",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/registries/DataPackRegistryEvent.java#L23",
+                "cancellable": false,
+                "description": "",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "DataPackRegistryEvent.NewRegistry",
+                "package": "net.minecraftforge.registries",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/registries/DataPackRegistryEvent.java#L38",
+                "cancellable": false,
+                "description": "Fired when datapack registries can be registered. Datapack registries are registries which can only load entries through JSON files from datapacks. Data JSONs will be loaded from data//modid/registryname/, where modid is the namespace of the registry key. This event is not Cancelable cancellable, and does not HasResult have a result. This event is fired on the getModEventBus() mod-specific event bus, on both LogicalSide logical sides",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "registryDataList",
+                        "type": "List<DataPackRegistryData<?>>",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "IdMappingEvent",
+                "package": "net.minecraftforge.registries",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/registries/IdMappingEvent.java#L30",
+                "cancellable": false,
+                "description": "Called whenever the ID mapping might have changed. If you register for this event, you will be called back whenever the client or server loads an ID set. This includes both when the ID maps are loaded from disk, as well as when the ID maps revert to the initial state. Note: you cannot change the IDs that have been allocated, but you might want to use this event to update caches or other in-mod artifacts that might be impacted by an ID change",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "remaps",
+                        "type": "Map<ResourceLocation, ImmutableList<ModRemapping>>",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "keys",
+                        "type": "ImmutableSet<ResourceLocation>",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "isFrozen",
+                        "type": "boolean",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "MissingMappingsEvent",
+                "package": "net.minecraftforge.registries",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/registries/MissingMappingsEvent.java#L22",
+                "cancellable": false,
+                "description": "Fired on the EVENT_BUS forge bus",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "key",
+                        "type": "ResourceKey<? extends Registry<?>>",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "registry",
+                        "type": "IForgeRegistry<?>",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "mappings",
+                        "type": "List<Mapping<?>>",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "NewRegistryEvent",
+                "package": "net.minecraftforge.registries",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/registries/NewRegistryEvent.java#L26",
+                "cancellable": false,
+                "description": "Register new registries when you receive this event through RegistryBuilder and create(RegistryBuilder)",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "registries",
+                        "type": "List<RegistryData<?>>",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "RegisterEvent",
+                "package": "net.minecraftforge.registries",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/registries/RegisterEvent.java#L29",
+                "cancellable": false,
+                "description": "This event fires for each forge and vanilla registry when all registries are ready to have modded objects registered. Fired on the IModBusEvent mod bus",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "registryKey",
+                        "type": "ResourceKey<? extends Registry<?>>",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "forgeRegistry",
+                        "type": "ForgeRegistry<?>",
+                        "kind": "field",
+                        "mutable": false
+                    },
+                    {
+                        "name": "vanillaRegistry",
+                        "type": "Registry<?>",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            }
+        ],
+        "net.minecraftforge.server.permission.events": [
+            {
+                "event": "PermissionGatherEvent",
+                "package": "net.minecraftforge.server.permission.events",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/server/permission/events/PermissionGatherEvent.java#L29",
+                "cancellable": false,
+                "description": "Fired to gather information for the permissions API, such as the IPermissionHandler and PermissionNodes. Handler allows to set a new PermissionHandler Nodes allows you to register new PermissionNodes Note: All PermissionNodes that you want to use, must be registered!",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false
+            },
+            {
+                "event": "PermissionGatherEvent.Handler",
+                "package": "net.minecraftforge.server.permission.events",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/server/permission/events/PermissionGatherEvent.java#L37",
+                "cancellable": false,
+                "description": "Used to register a new PermissionHandler, a server config value exists to choose which one to use. Note: Create a new instance when registering a PermissionHandler. If you cache it, make sure that your PermissionHandler is actually used after this event",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "availableHandlers",
+                        "type": "Map<ResourceLocation, IPermissionHandlerFactory>",
+                        "kind": "field",
+                        "mutable": false
+                    }
+                ]
+            },
+            {
+                "event": "PermissionGatherEvent.Nodes",
+                "package": "net.minecraftforge.server.permission.events",
+                "url": "https://github.com/MinecraftForge/MinecraftForge/blob/1.21.8/src/main/java/net/minecraftforge/server/permission/events/PermissionGatherEvent.java#L63",
+                "cancellable": false,
+                "description": "Used to register your PermissionNodes, every node that you want to use, must be registered!",
+                "side": null,
+                "deprecated": false,
+                "hasResult": false,
+                "fields": [
+                    {
+                        "name": "nodes",
+                        "type": "Set<PermissionNode<?>>",
+                        "kind": "field",
+                        "mutable": false
                     }
                 ]
             }

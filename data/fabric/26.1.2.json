@@ -1,7 +1,7 @@
 {
-    "lastupdated": "20260426233345",
+    "lastupdated": "20260427154431",
     "version": "26.1.2",
-    "last_commit": "[05ed2daee8dab2367d68aacd75bf86d2277ec177] Add constant interfaces to Contributing Guidelines (#5327)\n\n* Add constant interfaces to Contributing Guidelines\n\n* add example of utility class\n\n* Update CONTRIBUTING.md",
+    "last_commit": "[edfffd808c5a2af7d0310b57be33be53cdffc586] Bump version",
     "data": {
         "fabric-command-api-v2": [
             {
@@ -847,8 +847,19 @@
                 "interface": "Load",
                 "variable": "ENTITY_LOAD",
                 "function": "void onLoad(Entity entity, ServerLevel level);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerEntityEvents.java#L37",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerEntityEvents.java#L43",
                 "description": "Called when an Entity is loaded into a ServerLevel. When this event is called, the entity is already in the level",
+                "side": "server",
+                "deprecated": false
+            },
+            {
+                "file": "ServerEntityEvents.java",
+                "package": "net.fabricmc.fabric.api.event.lifecycle.v1",
+                "interface": "AllowLoad",
+                "variable": "ALLOW_LOAD",
+                "function": "boolean onAllowLoad(Entity entity, ServerLevel level, @Nullable EntitySpawnReason spawnReason, boolean isLoadedFromDisk);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerEntityEvents.java#L52",
+                "description": "Called right before an Entity is loaded into a ServerLevel. Mods can cancel this to prevent the entity from loading in",
                 "side": "server",
                 "deprecated": false
             },
@@ -858,7 +869,7 @@
                 "interface": "Unload",
                 "variable": "ENTITY_UNLOAD",
                 "function": "void onUnload(Entity entity, ServerLevel level);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerEntityEvents.java#L48",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerEntityEvents.java#L67",
                 "description": "Called when an Entity is unloaded from a ServerLevel. This event is called before the entity is removed from the level",
                 "side": "server",
                 "deprecated": false
@@ -869,7 +880,7 @@
                 "interface": "EquipmentChange",
                 "variable": "EQUIPMENT_CHANGE",
                 "function": "void onChange(LivingEntity livingEntity, EquipmentSlot equipmentSlot, ItemStack previousStack, ItemStack currentStack);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.1.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerEntityEvents.java#L60",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerEntityEvents.java#L79",
                 "description": "Called during tick() if the Entity's equipment has been changed or mutated. This event is also called when the entity joins the level. A change in equipment is determined by matches(ItemStack, ItemStack)",
                 "side": "server",
                 "deprecated": false

@@ -1,5 +1,5 @@
 {
-    "lastupdated": "20260426233219",
+    "lastupdated": "20260427124005",
     "version": "1.19.1",
     "last_commit": "[417b986df14c7cdd5f16b0a340d28645910f8aa6] Add development guidelines (CONTRIBUTING.md) (#2377)\n\n* Add development guidelines (CONTRIBUTING.md)\r\n\r\n* Fix typos\r\n\r\nCo-authored-by: apple502j <33279053+apple502j@users.noreply.github.com>\r\n\r\n* Address remaining TODOs, a few formatting changes\r\n\r\n* Apply feedback\r\n\r\n- Add links to sections in summary\r\n- Add note about thread-safe caching\r\n- Functionalities added by vanilla MC don't need to be ported to new module versions\r\n- Do not use deprecated to generate compiler/IDE warnings\r\n- TAW updates\r\n- Interface injection indents\r\n- A few more fixes\r\n\r\nCo-authored-by: Juuxel <6596629+Juuxel@users.noreply.github.com>\r\nCo-authored-by: liach <7806504+liach@users.noreply.github.com>\r\n\r\n* Apply suggestions from code review\r\n\r\nCo-authored-by: Juuxel <6596629+Juuxel@users.noreply.github.com>\r\n\r\n* Apply suggestions from Juuz\r\n\r\n* Remove mention of self types\r\n\r\nCo-authored-by: apple502j <33279053+apple502j@users.noreply.github.com>\r\nCo-authored-by: Juuxel <6596629+Juuxel@users.noreply.github.com>\r\nCo-authored-by: liach <7806504+liach@users.noreply.github.com>",
     "data": {

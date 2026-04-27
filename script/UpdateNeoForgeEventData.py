@@ -27,7 +27,7 @@ def main(mainPath, responseHeaders):
 
 	branchesApiUrl = f"https://api.github.com/repos/{orgName}/{repoName}/branches"
 
-	rootEventSrcFolder = f"src/main/java/net/{orgName.lower()}/{repoName.lower()}/event"
+	neoforgedPkg = f"net/{orgName.lower()}/{repoName.lower()}"
 	retroRootEventSrcFolder = f"src/main/java/net/minecraftforge/event"
 
 	branchesData = Util.fetchAllBranches(branchesApiUrl, responseHeaders)
@@ -63,8 +63,6 @@ def main(mainPath, responseHeaders):
 
 		branchEvents = {}
 
-		eventSrcFolder = retroRootEventSrcFolder if branch == "1.20.1" else rootEventSrcFolder
-
 		zipUrl = f"https://github.com/{orgName}/{repoName}/archive/refs/heads/{branch}.zip"
 		print(f"[{branch}] Downloading zip {zipUrl}")
 		try:
@@ -79,8 +77,12 @@ def main(mainPath, responseHeaders):
 					continue
 
 				normalised = filePath.replace("\\", "/")
-				if "/" + eventSrcFolder + "/" not in "/" + normalised:
-					continue
+				if branch == "1.20.1":
+					if "/" + retroRootEventSrcFolder + "/" not in "/" + normalised:
+						continue
+				else:
+					if "/" + neoforgedPkg + "/" not in "/" + normalised:
+						continue
 
 				try:
 					with z.open(filePath) as f:
