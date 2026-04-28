@@ -1,8 +1,8 @@
 {
-    "lastupdated": "20260427162013",
-    "commit_date": "20260423213651",
+    "lastupdated": "20260428015216",
+    "commit_date": "20260427174507",
     "version": "26.1.2",
-    "last_commit": "[3bbdbacb811023db8577c62f92cfe64f1290ddf1] Fix being considered in water when not. Closes #10813",
+    "last_commit": "[ec73fd52406011d1c83590223dae156cb621e328] Fix base bucket model not being flipped for gasses. Closes #10814",
     "data": {
         "net.minecraftforge.fml.config": [
             {
