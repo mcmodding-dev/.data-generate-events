@@ -1,8 +1,8 @@
 {
-    "lastupdated": "20260427161643",
-    "commit_date": "20260427124755",
+    "lastupdated": "20260429015410",
+    "commit_date": "20260428154206",
     "version": "26.2",
-    "last_commit": "[0356ae42fc61a110568a004ef2cb0467415f9260] Add constant interfaces to Contributing Guidelines (#5327)\n\n* Add constant interfaces to Contributing Guidelines\n\n* add example of utility class\n\n* Update CONTRIBUTING.md",
+    "last_commit": "[11e1c9a3e45ed8cabcc9044f2facabb1e0f0e59b] 26.2 snapshot 5 (#5364)\n\n* 26.2-snapshot-5 runs\n\n* Test fixes\n\n* Gen resources\n\n* Bump version",
     "data": {
         "fabric-command-api-v2": [
             {
@@ -1762,7 +1762,7 @@
                 "interface": "StartMain",
                 "variable": "START_MAIN",
                 "function": "void startMain(LevelTerrainRenderContext context);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.2/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java#L47",
+                "url": "https://github.com/FabricMC/fabric/blob/26.2/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java#L46",
                 "description": "Called at the start of the main pass, after the sky is drawn to the appropriate framebuffers and all chunks to be rendered are uploaded to GPU, and before any chunks are drawn to the appropriate framebuffers",
                 "side": "client",
                 "deprecated": false
@@ -1773,7 +1773,7 @@
                 "interface": "AfterOpaqueTerrain",
                 "variable": "AFTER_OPAQUE_TERRAIN",
                 "function": "void afterOpaqueTerrain(LevelTerrainRenderContext context);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.2/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java#L59",
+                "url": "https://github.com/FabricMC/fabric/blob/26.2/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java#L58",
                 "description": "Called after OPAQUE opaque terrain is drawn to the appropriate framebuffers, and before any submit nodes are added to the submit node storage. Use this event to render additional opaque terrain-like geometry",
                 "side": "client",
                 "deprecated": false
@@ -1784,7 +1784,7 @@
                 "interface": "CollectSubmits",
                 "variable": "COLLECT_SUBMITS",
                 "function": "void collectSubmits(LevelRenderContext context);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.2/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java#L72",
+                "url": "https://github.com/FabricMC/fabric/blob/26.2/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java#L71",
                 "description": "Called after OPAQUE opaque terrain is drawn to the appropriate framebuffers and all submit nodes from entities, block entities, and particles are added to the submit node storage, and before any submit geometry is drawn to the appropriate framebuffers. Use this event to add additional submits to submitNodeCollector()",
                 "side": "client",
                 "deprecated": false
@@ -1795,7 +1795,7 @@
                 "interface": "AfterSolidFeatures",
                 "variable": "AFTER_SOLID_FEATURES",
                 "function": "void afterSolidFeatures(LevelRenderContext context);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.2/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java#L82",
+                "url": "https://github.com/FabricMC/fabric/blob/26.2/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java#L81",
                 "description": "Called after the solid geometry of submits collected from entities, block entities, and particles are drawn to the appropriate framebuffers",
                 "side": "client",
                 "deprecated": false
@@ -1806,7 +1806,7 @@
                 "interface": "AfterTranslucentFeatures",
                 "variable": "AFTER_TRANSLUCENT_FEATURES",
                 "function": "void afterTranslucentFeatures(LevelRenderContext context);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.2/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java#L92",
+                "url": "https://github.com/FabricMC/fabric/blob/26.2/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java#L91",
                 "description": "Called after the translucent geometry of submits collected from entities and block entities are drawn to the appropriate framebuffers. Note that this excludes translucent particle geometry, which is rendered much later",
                 "side": "client",
                 "deprecated": false
@@ -1817,7 +1817,7 @@
                 "interface": "BeforeBlockOutline",
                 "variable": "BEFORE_BLOCK_OUTLINE",
                 "function": "boolean beforeBlockOutline(LevelRenderContext context, BlockOutlineRenderState outlineRenderState);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.2/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java#L115",
+                "url": "https://github.com/FabricMC/fabric/blob/26.2/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java#L114",
                 "description": "Called after block outline render checks are made and before the default block outline is drawn to the appropriate framebuffers. This will NOT be called if the default outline render state was set to null in AFTER_BLOCK_OUTLINE_EXTRACTION. Use this to replace the default block outline rendering for specific blocks that need special outline rendering or to add information that doesn't replace the block outline. Subscribers cannot affect each other or detect if another subscriber is also handling a specific block. If two subscribers render for the same block, both renders will appear. Returning false from any event subscriber will cancel the default block outline render. This has no effect on other subscribers to this event - all subscribers will always be called. Canceling is appropriate when the subscriber replacing the default block outline render for a specific block",
                 "side": "client",
                 "deprecated": false
@@ -1828,7 +1828,7 @@
                 "interface": "BeforeGizmos",
                 "variable": "BEFORE_GIZMOS",
                 "function": "void beforeGizmos(LevelRenderContext context);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.2/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java#L132",
+                "url": "https://github.com/FabricMC/fabric/blob/26.2/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java#L131",
                 "description": "Called after all geometry of submits collected from entities, block entities, and particles (except translucent particle geometry), the block breaking overlay, and the block outline for solid blocks are drawn to the appropriate framebuffers, and before gizmos are collected",
                 "side": "client",
                 "deprecated": false
@@ -1839,7 +1839,7 @@
                 "interface": "BeforeTranslucentTerrain",
                 "variable": "BEFORE_TRANSLUCENT_TERRAIN",
                 "function": "void beforeTranslucentTerrain(LevelRenderContext context);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.2/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java#L143",
+                "url": "https://github.com/FabricMC/fabric/blob/26.2/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java#L142",
                 "description": "Called after opaque terrain, entities, block entities, solid particles, overlays, and gizmos are drawn to the appropriate framebuffers, and before TRANSLUCENT translucent terrain and translucent particles are drawn to the appropriate framebuffers",
                 "side": "client",
                 "deprecated": false
@@ -1850,7 +1850,7 @@
                 "interface": "AfterTranslucentTerrain",
                 "variable": "AFTER_TRANSLUCENT_TERRAIN",
                 "function": "void afterTranslucentTerrain(LevelRenderContext context);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.2/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java#L155",
+                "url": "https://github.com/FabricMC/fabric/blob/26.2/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java#L154",
                 "description": "Called after terrain, entities, block entities, solid particles, overlays, and gizmos are drawn to the appropriate framebuffers, and before translucent particles are drawn to the appropriate framebuffers. Use this event to render additional translucent terrain-like geometry",
                 "side": "client",
                 "deprecated": false
@@ -1861,8 +1861,8 @@
                 "interface": "EndMain",
                 "variable": "END_MAIN",
                 "function": "void endMain(LevelRenderContext context);",
-                "url": "https://github.com/FabricMC/fabric/blob/26.2/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java#L170",
-                "description": "Called at the end of the main render pass, after terrain, entities, block entities, and particles are drawn to the appropriate framebuffers, and before clouds, weather, and late debug are drawn to the appropriate framebuffers and before fabulous translucent framebuffers are combined. Warning: after rendering things in this event, consumers should call endFrame() context.bufferSource().endFrame()}, otherwise you may get strange rendering bugs!",
+                "url": "https://github.com/FabricMC/fabric/blob/26.2/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/level/LevelRenderEvents.java#L165",
+                "description": "Called at the end of the main render pass, after terrain, entities, block entities, and particles are drawn to the appropriate framebuffers, and before clouds, weather, and late debug are drawn to the appropriate framebuffers and before fabulous translucent framebuffers are combined",
                 "side": "client",
                 "deprecated": false
             }
