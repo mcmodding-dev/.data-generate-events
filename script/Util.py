@@ -35,9 +35,17 @@ def fetchWithRetry(url, responseHeaders=None, params=None, maxRetries=3):
 def resolveInlineTags(text):
 	def replace(m):
 		content = m.group(1).strip()
-		if '#' in content:
-			return content.split('#')[-1]
-		return content.split('.')[-1]
+
+		parts = content.split(None, 1)
+		if len(parts) == 2:
+			return parts[1].strip()
+
+		ref = parts[0]
+		if '#' in ref:
+			return ref.split('#')[-1]
+			
+		return ref.split('.')[-1]
+
 	return re.sub(r'\{@(?:link|linkplain|code)\s+([^}]+)\}', replace, text)
 
 def cleanJavadoc(lines):

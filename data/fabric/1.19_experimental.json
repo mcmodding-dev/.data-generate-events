@@ -1,5 +1,5 @@
 {
-    "lastupdated": "20260427161524",
+    "lastupdated": "20260429200851",
     "commit_date": "20220303185006",
     "version": "1.19_experimental",
     "last_commit": "[6dd0135f54b9b85a225f0963590fdf5278d323c0] Bump version.",
@@ -80,7 +80,7 @@
                 "variable": "ALLOW_BED",
                 "function": "ActionResult allowBed(LivingEntity entity, BlockPos sleepingPos, BlockState state, boolean vanillaResult);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.19_experimental/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/EntitySleepEvents.java#L108",
-                "description": "An event that is called to check whether a block is valid for sleeping. Used for checking whether the block at the current sleeping position is a valid bed block. If false, the player wakes up. This event is only checked during sleeping, so an entity can sleep(BlockPos) start sleeping on any block, but will immediately wake up if this check fails",
+                "description": "An event that is called to check whether a block is valid for sleeping. Used for checking whether the block at the current sleeping position is a valid bed block. If false, the player wakes up. This event is only checked during sleeping, so an entity can start sleeping on any block, but will immediately wake up if this check fails",
                 "side": null,
                 "deprecated": false
             },
@@ -223,7 +223,7 @@
                 "variable": "ALLOW_DEATH",
                 "function": "boolean allowDeath(ServerPlayerEntity player, DamageSource damageSource, float damageAmount);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.19_experimental/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/ServerPlayerEvents.java#L65",
-                "description": "An event that is called when a player takes fatal damage. Mods can cancel this to keep the player alive. Vanilla checks for player health a minigame mod teleporting the player into a 'respawn room' and setting their health to 20.0 a mod that changes death mechanics switching the player over to the mod's play-mode, where death doesn't apply",
+                "description": "An event that is called when a player takes fatal damage. Mods can cancel this to keep the player alive. Vanilla checks for player health 0 each tick (with isDead()), and kills if true - so the player will still die next tick if this event is cancelled. It's assumed that the listener will do something to prevent this, for example: a minigame mod teleporting the player into a 'respawn room' and setting their health to 20.0 a mod that changes death mechanics switching the player over to the mod's play-mode, where death doesn't apply",
                 "side": "server",
                 "deprecated": false
             }
@@ -594,7 +594,7 @@
                 "variable": "SERVER_STARTING",
                 "function": "void onServerStarting(MinecraftServer server);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.19_experimental/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerLifecycleEvents.java#L35",
-                "description": "Called when a Minecraft server is starting. This occurs before the PlayerManager player manager and any worlds are loaded",
+                "description": "Called when a Minecraft server is starting. This occurs before the player manager and any worlds are loaded",
                 "side": "server",
                 "deprecated": false
             },
@@ -627,7 +627,7 @@
                 "variable": "SERVER_STOPPED",
                 "function": "void onServerStopped(MinecraftServer server);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.19_experimental/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerLifecycleEvents.java#L73",
-                "description": "Called when a Minecraft server has stopped. All worlds have been closed and all (block)entities and players have been unloaded. For example, an CLIENT integrated server will begin stopping, but it's client may continue to run. Meanwhile for a SERVER dedicated server, this will be the last event called",
+                "description": "Called when a Minecraft server has stopped. All worlds have been closed and all (block)entities and players have been unloaded. For example, an integrated server will begin stopping, but it's client may continue to run. Meanwhile for a dedicated server, this will be the last event called",
                 "side": "server",
                 "deprecated": false
             },
@@ -715,7 +715,7 @@
                 "variable": "UNLOAD",
                 "function": "void onWorldUnload(MinecraftServer server, ServerWorld world);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.19_experimental/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerWorldEvents.java#L44",
-                "description": "Called before a world is unloaded by a Minecraft server. This typically occurs after a server has SERVER_STOPPING started shutting down. Mods which allow dynamic world (un)registration should call this event so mods can let go of world handles when a world is removed",
+                "description": "Called before a world is unloaded by a Minecraft server. This typically occurs after a server has started shutting down. Mods which allow dynamic world (un)registration should call this event so mods can let go of world handles when a world is removed",
                 "side": "server",
                 "deprecated": false
             }
@@ -774,7 +774,7 @@
                 "variable": "QUERY_START",
                 "function": "void onLoginQueryStart(ClientLoginNetworkHandler handler, MinecraftClient client);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.19_experimental/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/client/networking/v1/ClientLoginConnectionEvents.java#L60",
-                "description": "An event for when the client has started receiving login queries. A client can only start receiving login queries when a server has sent the first login query. Vanilla servers will typically never make the client enter this login phase, but it is not a guarantee that the connected server is a vanilla server since a modded server or proxy may have no login queries to send to the client and therefore bypass the login query phase. If this event is fired then it is a sign that a server is not a vanilla server or the server is behind a proxy which is capable of handling login queries. This event may be used to LoginQueryRequestHandler register login query handlers which may be used to send a response to a server. No packets should be sent when this event is invoked",
+                "description": "An event for when the client has started receiving login queries. A client can only start receiving login queries when a server has sent the first login query. Vanilla servers will typically never make the client enter this login phase, but it is not a guarantee that the connected server is a vanilla server since a modded server or proxy may have no login queries to send to the client and therefore bypass the login query phase. If this event is fired then it is a sign that a server is not a vanilla server or the server is behind a proxy which is capable of handling login queries. This event may be used to register login query handlers which may be used to send a response to a server. No packets should be sent when this event is invoked",
                 "side": "client",
                 "deprecated": false
             },
@@ -829,7 +829,7 @@
                 "variable": "START_TRACKING",
                 "function": "void onStartTracking(Entity trackedEntity, ServerPlayerEntity player);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.19_experimental/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/EntityTrackingEvents.java#L34",
-                "description": "An event that is called before player starts tracking an entity. Typically this occurs when an entity enters a client's view distance. This event is called before the player's client is sent the entity's createSpawnPacket() spawn packet",
+                "description": "An event that is called before player starts tracking an entity. Typically this occurs when an entity enters a client's view distance. This event is called before the player's client is sent the entity's spawn packet",
                 "side": null,
                 "deprecated": false
             },
@@ -840,7 +840,7 @@
                 "variable": "STOP_TRACKING",
                 "function": "void onStopTracking(Entity trackedEntity, ServerPlayerEntity player);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.19_experimental/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/EntityTrackingEvents.java#L45",
-                "description": "An event that is called after a player has stopped tracking an entity. The client at this point was sent a packet to EntitiesDestroyS2CPacket destroy the entity on the client. The entity still exists on the server",
+                "description": "An event that is called after a player has stopped tracking an entity. The client at this point was sent a packet to destroy the entity on the client. The entity still exists on the server",
                 "side": null,
                 "deprecated": false
             },
@@ -884,7 +884,7 @@
                 "variable": "QUERY_START",
                 "function": "void onLoginStart(ServerLoginNetworkHandler handler, MinecraftServer server, PacketSender sender, ServerLoginNetworking.LoginSynchronizer synchronizer);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.19_experimental/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/ServerLoginConnectionEvents.java#L49",
-                "description": "An event for the start of login queries of the server login network handler. This event may be used to register LoginQueryResponseHandler login query response handlers using registerReceiver(ServerLoginNetworkHandler, Identifier, ServerLoginNetworking.LoginQueryResponseHandler) since this event is fired just before the first login query response is processed. You may send login queries to the connected client using the provided PacketSender",
+                "description": "An event for the start of login queries of the server login network handler. This event may be used to register login query response handlers using Identifier, ServerLoginNetworking.LoginQueryResponseHandler) since this event is fired just before the first login query response is processed. You may send login queries to the connected client using the provided PacketSender",
                 "side": "server",
                 "deprecated": false
             },
@@ -1035,7 +1035,7 @@
                 "variable": "EVENT",
                 "function": "void registerRenderers(EntityType<? extends LivingEntity> entityType, LivingEntityRenderer<?, ?> entityRenderer, RegistrationHelper registrationHelper, EntityRendererFactory.Context context);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.19_experimental/fabric-rendering-v1/src/main/java/net/fabricmc/fabric/api/client/rendering/v1/LivingEntityFeatureRendererRegistrationCallback.java#L54",
-                "description": "Called when FeatureRenderer feature renderers for a LivingEntityRenderer living entity renderer are registered. Feature renderers are typically used for rendering additional objects on an entity, such as armor, an elytra or Deadmau5FeatureRenderer Deadmau5's ears. This callback lets developers add additional feature renderers for use in entity rendering. Listeners should filter out the specific entity renderer they want to hook into, usually through instanceof checks or filtering by entity type. Once listeners find a suitable entity renderer, they should register their feature renderer via the registration helper. For example, to register a feature renderer for a player model, the example below may used:\n```\n<blockquote>\nLivingEntityFeatureRendererRegistrationCallback.EVENT.register((entityType, entityRenderer, registrationHelper) -> {\n\tif (entityRenderer instanceof PlayerEntityModel) {\n\t\tregistrationHelper.register(new MyFeatureRenderer((PlayerEntityModel) entityRenderer));\n\t}\n});\n</blockquote>\n```",
+                "description": "Called when feature renderers for a living entity renderer are registered. Feature renderers are typically used for rendering additional objects on an entity, such as armor, an elytra or Deadmau5's ears. This callback lets developers add additional feature renderers for use in entity rendering. Listeners should filter out the specific entity renderer they want to hook into, usually through instanceof checks or filtering by entity type. Once listeners find a suitable entity renderer, they should register their feature renderer via the registration helper. For example, to register a feature renderer for a player model, the example below may used:\n```\n<blockquote>\nLivingEntityFeatureRendererRegistrationCallback.EVENT.register((entityType, entityRenderer, registrationHelper) -> {\n\tif (entityRenderer instanceof PlayerEntityModel) {\n\t\tregistrationHelper.register(new MyFeatureRenderer((PlayerEntityModel) entityRenderer));\n\t}\n});\n</blockquote>\n```",
                 "side": "client",
                 "deprecated": false
             },
@@ -1169,7 +1169,7 @@
                 "variable": "BEFORE_INIT",
                 "function": "void beforeInit(MinecraftClient client, Screen screen, int scaledWidth, int scaledHeight);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.19_experimental/fabric-screen-api-v1/src/main/java/net/fabricmc/fabric/api/client/screen/v1/ScreenEvents.java#L74",
-                "description": "An event that is called before init(MinecraftClient, int, int) a screen is initialized to it's default state. It should be noted some of the methods in Screens such as a screen's getTextRenderer(Screen) text renderer may not be initialized yet, and as such their use is discouraged. Typically this event is used to register screen events such as listening to when child elements are added to the screen. ------ Uncomment when child add/remove event is added for elements--> You can still use AFTER_INIT to register events such as keyboard and mouse events. The ScreenExtensions provided by the info parameter may be used to register tick, render events, keyboard, mouse, additional and removal of child elements (including buttons). For example, to register an event on inventory like screens after render, the following code could be used:\n```\n{@code\n&#64;Override\npublic void onInitializeClient() {\n\tScreenEvents.BEFORE_INIT.register((client, screen, scaledWidth, scaledHeight) -> {\n\t\tif (screen instanceof AbstractInventoryScreen) {\n\t\t\tScreenEvents.getAfterRenderEvent(screen).register((matrices, mouseX, mouseY, tickDelta) -> {\n\t\t\t\t...\n\t\t\t});\n\t\t}\n\t});\n}\n}\n```\nThis event indicates a screen has been resized, and therefore is being re-initialized. This event can also indicate that the previous screen has been changed",
+                "description": "An event that is called before int, int) a screen is initialized to it's default state. It should be noted some of the methods in Screens such as a screen's text renderer may not be initialized yet, and as such their use is discouraged. Typically this event is used to register screen events such as listening to when child elements are added to the screen. ------ Uncomment when child add/remove event is added for elements--> You can still use AFTER_INIT to register events such as keyboard and mouse events. The ScreenExtensions provided by the info parameter may be used to register tick, render events, keyboard, mouse, additional and removal of child elements (including buttons). For example, to register an event on inventory like screens after render, the following code could be used:\n```\n{@code\n&#64;Override\npublic void onInitializeClient() {\n\tScreenEvents.BEFORE_INIT.register((client, screen, scaledWidth, scaledHeight) -> {\n\t\tif (screen instanceof AbstractInventoryScreen) {\n\t\t\tScreenEvents.getAfterRenderEvent(screen).register((matrices, mouseX, mouseY, tickDelta) -> {\n\t\t\t\t...\n\t\t\t});\n\t\t}\n\t});\n}\n}\n```\nThis event indicates a screen has been resized, and therefore is being re-initialized. This event can also indicate that the previous screen has been changed",
                 "side": "client",
                 "deprecated": false
             },
@@ -1180,7 +1180,7 @@
                 "variable": "AFTER_INIT",
                 "function": "void afterInit(MinecraftClient client, Screen screen, int scaledWidth, int scaledHeight);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.19_experimental/fabric-screen-api-v1/src/main/java/net/fabricmc/fabric/api/client/screen/v1/ScreenEvents.java#L101",
-                "description": "An event that is called after init(MinecraftClient, int, int) a screen is initialized to it's default state. Typically this event is used to modify a screen after the screen has been initialized. Modifications such as changing sizes of buttons, removing buttons and adding/removing child elements to the screen can be done safely using this event. For example, to add a button to the title screen, the following code could be used:\n```\n{@code\nScreenEvents.AFTER_INIT.register((client, screen, scaledWidth, scaledHeight) -> {\n\tif (screen instanceof TitleScreen) {\n\t\tScreens.getButtons(screen).add(new ButtonWidget(...));\n\t}\n});\n}\n```\nNote that by adding an element to a screen, the element is not automatically TickableElement ticked or Drawable drawn. Unless the element is button, you need to call the specific tick() tick and render(MatrixStack, int, int, float) render methods in the corresponding screen events. This event can also indicate that the previous screen has been closed",
+                "description": "An event that is called after int, int) a screen is initialized to it's default state. Typically this event is used to modify a screen after the screen has been initialized. Modifications such as changing sizes of buttons, removing buttons and adding/removing child elements to the screen can be done safely using this event. For example, to add a button to the title screen, the following code could be used:\n```\n{@code\nScreenEvents.AFTER_INIT.register((client, screen, scaledWidth, scaledHeight) -> {\n\tif (screen instanceof TitleScreen) {\n\t\tScreens.getButtons(screen).add(new ButtonWidget(...));\n\t}\n});\n}\n```\nNote that by adding an element to a screen, the element is not automatically ticked or drawn. Unless the element is button, you need to call the specific tick and int, int, float) render methods in the corresponding screen events. This event can also indicate that the previous screen has been closed",
                 "side": "client",
                 "deprecated": false
             },
@@ -1191,7 +1191,7 @@
                 "variable": "REMOVE",
                 "function": "void onRemove(Screen screen);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.19_experimental/fabric-screen-api-v1/src/main/java/net/fabricmc/fabric/api/client/screen/v1/ScreenEvents.java#L178",
-                "description": "An event that is called after removed() is called. This event signifies that the screen is now closed. This event is typically used to undo any screen specific state changes such as setting the keyboard to receive setRepeatEvents(boolean) repeat events or terminate threads spawned by a screen. This event may precede initialization events BEFORE_INIT but there is no guarantee that event will be called immediately afterwards",
+                "description": "An event that is called after removed() is called. This event signifies that the screen is now closed. This event is typically used to undo any screen specific state changes such as setting the keyboard to receive repeat events or terminate threads spawned by a screen. This event may precede initialization events BEFORE_INIT but there is no guarantee that event will be called immediately afterwards",
                 "side": "client",
                 "deprecated": false
             },

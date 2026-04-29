@@ -1,5 +1,5 @@
 {
-    "lastupdated": "20260427161442",
+    "lastupdated": "20260429200808",
     "commit_date": "20210119193647",
     "version": "1.14",
     "last_commit": "[4ea477294e573899dfc5901b05bce2d048e5591d] Version bump",
@@ -350,7 +350,7 @@
                 "variable": "SERVER_STARTING",
                 "function": "void onServerStarting(MinecraftServer server);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.14/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerLifecycleEvents.java#L35",
-                "description": "Called when a Minecraft server is starting. This occurs before the PlayerManager player manager and any worlds are loaded",
+                "description": "Called when a Minecraft server is starting. This occurs before the player manager and any worlds are loaded",
                 "side": "server",
                 "deprecated": false
             },
@@ -383,7 +383,7 @@
                 "variable": "SERVER_STOPPED",
                 "function": "void onServerStopped(MinecraftServer server);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.14/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerLifecycleEvents.java#L73",
-                "description": "Called when a Minecraft server has stopped. All worlds have been closed and all (block)entities and players have been unloaded. For example, an CLIENT integrated server will begin stopping, but it's client may continue to run. Meanwhile for a SERVER dedicated server, this will be the last event called",
+                "description": "Called when a Minecraft server has stopped. All worlds have been closed and all (block)entities and players have been unloaded. For example, an integrated server will begin stopping, but it's client may continue to run. Meanwhile for a dedicated server, this will be the last event called",
                 "side": "server",
                 "deprecated": false
             },
@@ -471,7 +471,7 @@
                 "variable": "UNLOAD",
                 "function": "void onWorldUnload(MinecraftServer server, ServerWorld world);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.14/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerWorldEvents.java#L44",
-                "description": "Called before a world is unloaded by a Minecraft server. This typically occurs after a server has SERVER_STOPPING started shutting down. Mods which allow dynamic world (un)registration should use this event so mods can let go of world handles when a world is removed",
+                "description": "Called before a world is unloaded by a Minecraft server. This typically occurs after a server has started shutting down. Mods which allow dynamic world (un)registration should use this event so mods can let go of world handles when a world is removed",
                 "side": "server",
                 "deprecated": false
             }
@@ -530,7 +530,7 @@
                 "variable": "QUERY_START",
                 "function": "void onLoginQueryStart(ClientLoginNetworkHandler handler, MinecraftClient client);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.14/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/client/networking/v1/ClientLoginConnectionEvents.java#L60",
-                "description": "An event for when the client has started receiving login queries. A client can only start receiving login queries when a server has sent the first login query. Vanilla servers will typically never make the client enter this login phase, but it is not a guarantee that the connected server is a vanilla server since a modded server or proxy may have no login queries to send to the client and therefore bypass the login query phase. If this event is fired then it is a sign that a server is not a vanilla server or the server is behind a proxy which is capable of handling login queries. This event may be used to LoginQueryRequestHandler register login query handlers which may be used to send a response to a server. No packets should be sent when this event is invoked",
+                "description": "An event for when the client has started receiving login queries. A client can only start receiving login queries when a server has sent the first login query. Vanilla servers will typically never make the client enter this login phase, but it is not a guarantee that the connected server is a vanilla server since a modded server or proxy may have no login queries to send to the client and therefore bypass the login query phase. If this event is fired then it is a sign that a server is not a vanilla server or the server is behind a proxy which is capable of handling login queries. This event may be used to register login query handlers which may be used to send a response to a server. No packets should be sent when this event is invoked",
                 "side": "client",
                 "deprecated": false
             },
@@ -585,7 +585,7 @@
                 "variable": "START_TRACKING",
                 "function": "void onStartTracking(Entity trackedEntity, ServerPlayerEntity player);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.14/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/EntityTrackingEvents.java#L34",
-                "description": "An event that is called before player starts tracking an entity. Typically this occurs when an entity enters a client's view distance. This event is called before the player's client is sent the entity's createSpawnPacket() spawn packet",
+                "description": "An event that is called before player starts tracking an entity. Typically this occurs when an entity enters a client's view distance. This event is called before the player's client is sent the entity's spawn packet",
                 "side": null,
                 "deprecated": false
             },
@@ -596,7 +596,7 @@
                 "variable": "STOP_TRACKING",
                 "function": "void onStopTracking(Entity trackedEntity, ServerPlayerEntity player);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.14/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/EntityTrackingEvents.java#L45",
-                "description": "An event that is called after a player has stopped tracking an entity. The client at this point was sent a packet to EntitiesDestroyS2CPacket destroy the entity on the client. The entity still exists on the server",
+                "description": "An event that is called after a player has stopped tracking an entity. The client at this point was sent a packet to destroy the entity on the client. The entity still exists on the server",
                 "side": null,
                 "deprecated": false
             },
@@ -640,7 +640,7 @@
                 "variable": "QUERY_START",
                 "function": "void onLoginStart(ServerLoginNetworkHandler handler, MinecraftServer server, PacketSender sender, ServerLoginNetworking.LoginSynchronizer synchronizer);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.14/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/ServerLoginConnectionEvents.java#L49",
-                "description": "An event for the start of login queries of the server login network handler. This event may be used to register LoginQueryResponseHandler login query response handlers using registerReceiver(ServerLoginNetworkHandler, Identifier, ServerLoginNetworking.LoginQueryResponseHandler) since this event is fired just before the first login query response is processed. You may send login queries to the connected client using the provided PacketSender",
+                "description": "An event for the start of login queries of the server login network handler. This event may be used to register login query response handlers using Identifier, ServerLoginNetworking.LoginQueryResponseHandler) since this event is fired just before the first login query response is processed. You may send login queries to the connected client using the provided PacketSender",
                 "side": "server",
                 "deprecated": false
             },

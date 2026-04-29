@@ -1,5 +1,5 @@
 {
-    "lastupdated": "20260427161451",
+    "lastupdated": "20260429200816",
     "commit_date": "20200825195317",
     "version": "1.16.1",
     "last_commit": "[9cc3d8a20869176e34ffe0178ff1cb4744b103ca] Bump version",
@@ -350,7 +350,7 @@
                 "variable": "SERVER_STARTING",
                 "function": "void onServerStarting(MinecraftServer server);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.16.1/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerLifecycleEvents.java#L35",
-                "description": "Called when a Minecraft server is starting. This occurs before the PlayerManager player manager and any worlds are loaded",
+                "description": "Called when a Minecraft server is starting. This occurs before the player manager and any worlds are loaded",
                 "side": "server",
                 "deprecated": false
             },
@@ -383,7 +383,7 @@
                 "variable": "SERVER_STOPPED",
                 "function": "void onServerStopped(MinecraftServer server);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.16.1/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerLifecycleEvents.java#L73",
-                "description": "Called when a Minecraft server has stopped. All worlds have been closed and all (block)entities and players have been unloaded. For example, an CLIENT integrated server will begin stopping, but it's client may continue to run. Meanwhile for a SERVER dedicated server, this will be the last event called",
+                "description": "Called when a Minecraft server has stopped. All worlds have been closed and all (block)entities and players have been unloaded. For example, an integrated server will begin stopping, but it's client may continue to run. Meanwhile for a dedicated server, this will be the last event called",
                 "side": "server",
                 "deprecated": false
             },
@@ -471,7 +471,7 @@
                 "variable": "UNLOAD",
                 "function": "void onWorldUnload(MinecraftServer server, ServerWorld world);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.16.1/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerWorldEvents.java#L44",
-                "description": "Called before a world is unloaded by a Minecraft server. This typically occurs after a server has SERVER_STOPPING started shutting down. Mods which allow dynamic world (un)registration should use this event so mods can let go of world handles when a world is removed",
+                "description": "Called before a world is unloaded by a Minecraft server. This typically occurs after a server has started shutting down. Mods which allow dynamic world (un)registration should use this event so mods can let go of world handles when a world is removed",
                 "side": "server",
                 "deprecated": false
             }
@@ -545,7 +545,7 @@
                 "variable": "EVENT",
                 "function": "void registerRenderers(EntityType<? extends LivingEntity> entityType, LivingEntityRenderer<?, ?> entityRenderer, RegistrationHelper registrationHelper);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.16.1/fabric-renderer-registries-v1/src/main/java/net/fabricmc/fabric/api/client/rendereregistry/v1/LivingEntityFeatureRendererRegistrationCallback.java#L51",
-                "description": "Called when FeatureRenderer feature renderers for a LivingEntityRenderer living entity renderer are registered. Feature renderers are typically used for rendering additional objects on an entity, such as armor, an elytra or Deadmau5FeatureRenderer Deadmau5's ears. This callback lets developers add additional feature renderers for use in entity rendering. Listeners should filter out the specific entity renderer they want to hook into, usually through instanceof checks or filtering by entity type. Once listeners find a suitable entity renderer, they should register their feature renderer via the registration helper. For example, to register a feature renderer for a player model, the example below may used:\n```\n<blockquote>\nLivingEntityFeatureRendererRegistrationCallback.EVENT.register((entityType, entityRenderer, registrationHelper) -> {\n\tif (entityRenderer instanceof PlayerEntityModel) {\n\t\tregistrationHelper.register(new MyFeatureRenderer((PlayerEntityModel) entityRenderer));\n\t}\n});\n</blockquote>\n```",
+                "description": "Called when feature renderers for a living entity renderer are registered. Feature renderers are typically used for rendering additional objects on an entity, such as armor, an elytra or Deadmau5's ears. This callback lets developers add additional feature renderers for use in entity rendering. Listeners should filter out the specific entity renderer they want to hook into, usually through instanceof checks or filtering by entity type. Once listeners find a suitable entity renderer, they should register their feature renderer via the registration helper. For example, to register a feature renderer for a player model, the example below may used:\n```\n<blockquote>\nLivingEntityFeatureRendererRegistrationCallback.EVENT.register((entityType, entityRenderer, registrationHelper) -> {\n\tif (entityRenderer instanceof PlayerEntityModel) {\n\t\tregistrationHelper.register(new MyFeatureRenderer((PlayerEntityModel) entityRenderer));\n\t}\n});\n</blockquote>\n```",
                 "side": "client",
                 "deprecated": false
             }

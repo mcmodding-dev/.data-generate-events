@@ -1,5 +1,5 @@
 {
-    "lastupdated": "20260427161601",
+    "lastupdated": "20260429200922",
     "commit_date": "20241021174526",
     "version": "1.21.2",
     "last_commit": "[3a1ceae83c5978911c336462ac8489dcddcd7dcd] 1.21.2-rc2",
@@ -36,7 +36,7 @@
                 "variable": "MODIFY",
                 "function": "void modifyLootTable(RegistryKey<LootTable> key, LootTable.Builder tableBuilder, LootTableSource source);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/deprecated/fabric-loot-api-v2/src/main/java/net/fabricmc/fabric/api/loot/v2/LootTableEvents.java#L95",
-                "description": "This event can be used to modify loot tables. The main use case is to add items to vanilla or mod loot tables (e.g. modded seeds to grass). You can also modify loot tables that are created by REPLACE. They have the loot table source REPLACED. Example: adding diamonds to the cobblestone loot table We'll add a new diamond LootPool loot pool to the cobblestone loot table that will be dropped alongside the original cobblestone loot pool. If you want only one of the items to drop, you can use modifyPools(java.util.function.Consumer) to add the new item to the original loot pool instead.\n```\n{@code\nLootTableEvents.MODIFY.register((key, tableBuilder, source) -> {\n    // If the loot table is for the cobblestone block and it is not overridden by a user:\n    if (Blocks.COBBLESTONE.getLootTableKey() == key && source.isBuiltin()) {\n        // Create a new loot pool that will hold the diamonds.\n        LootPool.Builder pool = LootPool.builder()\n            // Add diamonds...\n            .with(ItemEntry.builder(Items.DIAMOND))\n            // ...only if the block would survive a potential explosion.\n            .conditionally(SurvivesExplosionLootCondition.builder());\n        // Add the loot pool to the loot table\n        tableBuilder.pool(pool);\n    }\n});\n}\n```\nDeprecated: Please use MODIFY instead.",
+                "description": "This event can be used to modify loot tables. The main use case is to add items to vanilla or mod loot tables (e.g. modded seeds to grass). You can also modify loot tables that are created by REPLACE. They have the loot table source REPLACED. Example: adding diamonds to the cobblestone loot table We'll add a new diamond loot pool to the cobblestone loot table that will be dropped alongside the original cobblestone loot pool. If you want only one of the items to drop, you can use modifyPools(java.util.function.Consumer) to add the new item to the original loot pool instead.\n```\n{@code\nLootTableEvents.MODIFY.register((key, tableBuilder, source) -> {\n    // If the loot table is for the cobblestone block and it is not overridden by a user:\n    if (Blocks.COBBLESTONE.getLootTableKey() == key && source.isBuiltin()) {\n        // Create a new loot pool that will hold the diamonds.\n        LootPool.Builder pool = LootPool.builder()\n            // Add diamonds...\n            .with(ItemEntry.builder(Items.DIAMOND))\n            // ...only if the block would survive a potential explosion.\n            .conditionally(SurvivesExplosionLootCondition.builder());\n        // Add the loot pool to the loot table\n        tableBuilder.pool(pool);\n    }\n});\n}\n```\nDeprecated: Please use MODIFY instead.",
                 "side": null,
                 "deprecated": true
             },
@@ -152,7 +152,7 @@
                 "variable": "ALLOW_BED",
                 "function": "ActionResult allowBed(LivingEntity entity, BlockPos sleepingPos, BlockState state, boolean vanillaResult);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/EntitySleepEvents.java#L108",
-                "description": "An event that is called to check whether a block is valid for sleeping. Used for checking whether the block at the current sleeping position is a valid bed block. If false, the player wakes up. This event is only checked during sleeping, so an entity can sleep(BlockPos) start sleeping on any block, but will immediately wake up if this check fails",
+                "description": "An event that is called to check whether a block is valid for sleeping. Used for checking whether the block at the current sleeping position is a valid bed block. If false, the player wakes up. This event is only checked during sleeping, so an entity can start sleeping on any block, but will immediately wake up if this check fails",
                 "side": null,
                 "deprecated": false
             },
@@ -295,7 +295,7 @@
                 "variable": "ALLOW_DEATH",
                 "function": "boolean allowDeath(LivingEntity entity, DamageSource damageSource, float damageAmount);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/ServerLivingEntityEvents.java#L75",
-                "description": "An event that is called when an entity takes fatal damage. Mods can cancel this to keep the entity alive. Vanilla checks for entity health a minigame mod teleporting the player into a 'respawn room' and setting their health to 20.0 a mod that changes death mechanics switching the player over to the mod's play-mode, where death doesn't apply",
+                "description": "An event that is called when an entity takes fatal damage. Mods can cancel this to keep the entity alive. Vanilla checks for entity health 0 each tick (with isDead()), and kills if true - so the entity will still die next tick if this event is cancelled. It's assumed that the listener will do something to prevent this, for example, if the entity is a player: a minigame mod teleporting the player into a 'respawn room' and setting their health to 20.0 a mod that changes death mechanics switching the player over to the mod's play-mode, where death doesn't apply",
                 "side": "server",
                 "deprecated": false
             },
@@ -350,7 +350,7 @@
                 "variable": "ALLOW_DEATH",
                 "function": "boolean allowDeath(ServerPlayerEntity player, DamageSource damageSource, float damageAmount);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-entity-events-v1/src/main/java/net/fabricmc/fabric/api/entity/event/v1/ServerPlayerEvents.java#L55",
-                "description": "An event that is called when a player takes fatal damage\nDeprecated: Use the more general ALLOW_DEATH event instead and check for instanceof ServerPlayerEntity.",
+                "description": "An event that is called when a player takes fatal damage\nDeprecated: Use the more general ALLOW_DEATH event instead and check for ServerPlayerEntity.",
                 "side": "server",
                 "deprecated": true
             }
@@ -374,7 +374,7 @@
                 "variable": "EVENT",
                 "function": "ItemStack pick(PlayerEntity player, HitResult result);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-events-interaction-v0/src/client/java/net/fabricmc/fabric/api/event/client/player/ClientPickBlockGatherCallback.java#L39",
-                "description": "This event is emitted at the beginning of the block picking process in order to find any applicable ItemStack. The first non-empty ItemStack will be returned, overriding vanilla behavior. Note that this is called any time the pick key is pressed, even if there is no target block. The HitResult could be a BlockHitResult or an EntityHitResult. If the hit missed, it will be a BlockHitResult with getType() type MISS, so make sure to check for that",
+                "description": "This event is emitted at the beginning of the block picking process in order to find any applicable ItemStack. The first non-empty ItemStack will be returned, overriding vanilla behavior. Note that this is called any time the pick key is pressed, even if there is no target block. The HitResult could be a BlockHitResult or an EntityHitResult. If the hit missed, it will be a BlockHitResult with type MISS, so make sure to check for that",
                 "side": "client",
                 "deprecated": false
             },
@@ -396,7 +396,7 @@
                 "variable": "EVENT",
                 "function": "boolean onClientPlayerPreAttack(MinecraftClient client, ClientPlayerEntity player, int clickCount);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-events-interaction-v0/src/client/java/net/fabricmc/fabric/api/event/client/player/ClientPreAttackCallback.java#L42",
-                "description": "This event fires every tick when the attack key (left mouse button by default) is pressed (including clicking and holding the attack key). If the callback returns true, the vanilla handling (block breaking, entity attacking, hand swing) will be cancelled, and the later callbacks of this event are also cancelled. This event is client-only, which means handling it may require sending custom packets. The event fires both when clicking and holding attack key. To check whether the attack key is just clicked, use clickCount != 0 The vanilla attack cooldown and player game mode does not affect this event. The mod probably needs to check attackCooldown and the game mode. ItemCooldownManager can be used for custom item cooldown handling",
+                "description": "This event fires every tick when the attack key (left mouse button by default) is pressed (including clicking and holding the attack key). If the callback returns true, the vanilla handling (block breaking, entity attacking, hand swing) will be cancelled, and the later callbacks of this event are also cancelled. This event is client-only, which means handling it may require sending custom packets. The event fires both when clicking and holding attack key. To check whether the attack key is just clicked, use != 0 The vanilla attack cooldown and player game mode does not affect this event. The mod probably needs to check attackCooldown and the game mode. ItemCooldownManager can be used for custom item cooldown handling",
                 "side": "client",
                 "deprecated": false
             },
@@ -473,7 +473,7 @@
                 "variable": "EVENT",
                 "function": "ActionResult interact(PlayerEntity player, World world, Hand hand, Entity entity, @Nullable EntityHitResult hitResult);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-events-interaction-v0/src/main/java/net/fabricmc/fabric/api/event/player/UseEntityCallback.java#L54",
-                "description": "Callback for right-clicking (\"using\") an entity. Is hooked in before the spectator check, so make sure to check for the player's game mode as well! On the logical client, the return values have the following meaning: SUCCESS/SUCCESS_NO_ITEM_USED cancels further processing, causes a hand swing, and sends a packet to the server. CONSUME cancels further processing, and sends a packet to the server. It does NOT cause a hand swing. PASS falls back to further processing. FAIL cancels further processing and does not send a packet to the server. On the logical server, the return values have the following meaning: PASS falls back to further processing. Any other value cancels further processing. Note that on the server, the EntityHitResult may be null if the client successfully interacted using the interact(Entity, Hand) position-less overload. On the client, the EntityHitResult will never be null",
+                "description": "Callback for right-clicking (\"using\") an entity. Is hooked in before the spectator check, so make sure to check for the player's game mode as well! On the logical client, the return values have the following meaning: SUCCESS/SUCCESS_NO_ITEM_USED cancels further processing, causes a hand swing, and sends a packet to the server. CONSUME cancels further processing, and sends a packet to the server. It does NOT cause a hand swing. PASS falls back to further processing. FAIL cancels further processing and does not send a packet to the server. On the logical server, the return values have the following meaning: PASS falls back to further processing. Any other value cancels further processing. Note that on the server, the EntityHitResult may be null if the client successfully interacted using the Hand) position-less overload. On the client, the EntityHitResult will never be null",
                 "side": null,
                 "deprecated": false
             },
@@ -530,7 +530,7 @@
                 "variable": "ALLOW_ENCHANTING",
                 "function": ");",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-item-api-v1/src/main/java/net/fabricmc/fabric/api/item/v1/EnchantmentEvents.java#L53",
-                "description": "An event that allows overriding whether an Enchantment can be applied to an ItemStack. This should only be used to modify the behavior of external items with regards to external enchantments, where 'external' means either vanilla or from another mod. For instance, a mod might allow enchanting a pickaxe with Sharpness (and only Sharpness) under certain specific conditions. To modify the behavior of your own modded enchantments, specify a custom tag for supportedItems() instead. To modify the behavior of your own modded items, add to the applicable tags instead, when that suffices. Note that this event triggers before canBeEnchantedWith(ItemStack, RegistryEntry, EnchantingContext), and that method will only be called if no listeners override it. Note that allowing an enchantment using this event does not guarantee the item will receive that enchantment, only that it isn't forbidden from doing so",
+                "description": "An event that allows overriding whether an Enchantment can be applied to an ItemStack. This should only be used to modify the behavior of external items with regards to external enchantments, where 'external' means either vanilla or from another mod. For instance, a mod might allow enchanting a pickaxe with Sharpness (and only Sharpness) under certain specific conditions. To modify the behavior of your own modded enchantments, specify a custom tag for supportedItems() instead. To modify the behavior of your own modded items, add to the applicable tags instead, when that suffices. Note that this event triggers before RegistryEntry, EnchantingContext), and that method will only be called if no listeners override it. Note that allowing an enchantment using this event does not guarantee the item will receive that enchantment, only that it isn't forbidden from doing so",
                 "side": null,
                 "deprecated": false
             },
@@ -541,7 +541,7 @@
                 "variable": "MODIFY",
                 "function": ");",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-item-api-v1/src/main/java/net/fabricmc/fabric/api/item/v1/EnchantmentEvents.java#L80",
-                "description": "An event that allows an Enchantment to be modified without needing to fully override an enchantment. This should only be used to modify the behavior of external enchantments, where 'external' means either vanilla or from another mod. For instance, a mod might add a bleed effect to Sharpness (and only Sharpness). For your own enchantments, you should simply define them in your mod's data pack. See the Enchantment Definition page on the Minecraft Wiki for more information. Note: If you wish to modify the exclusive set of the enchantment, consider extending the EnchantmentTags relevant tag through your mod's data pack instead",
+                "description": "An event that allows an Enchantment to be modified without needing to fully override an enchantment. This should only be used to modify the behavior of external enchantments, where 'external' means either vanilla or from another mod. For instance, a mod might add a bleed effect to Sharpness (and only Sharpness). For your own enchantments, you should simply define them in your mod's data pack. See the Enchantment Definition page on the Minecraft Wiki for more information. Note: If you wish to modify the exclusive set of the enchantment, consider extending the relevant tag through your mod's data pack instead",
                 "side": null,
                 "deprecated": false
             }
@@ -787,7 +787,7 @@
                 "variable": "EQUIPMENT_CHANGE",
                 "function": "void onChange(LivingEntity livingEntity, EquipmentSlot equipmentSlot, ItemStack previousStack, ItemStack currentStack);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerEntityEvents.java#L60",
-                "description": "Called during tick() if the Entity's equipment has been changed or mutated. This event is also called when the entity joins the world. A change in equipment is determined by areEqual(ItemStack, ItemStack)",
+                "description": "Called during tick() if the Entity's equipment has been changed or mutated. This event is also called when the entity joins the world. A change in equipment is determined by ItemStack)",
                 "side": "server",
                 "deprecated": false
             },
@@ -798,7 +798,7 @@
                 "variable": "SERVER_STARTING",
                 "function": "void onServerStarting(MinecraftServer server);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerLifecycleEvents.java#L36",
-                "description": "Called when a Minecraft server is starting. This occurs before the PlayerManager player manager and any worlds are loaded",
+                "description": "Called when a Minecraft server is starting. This occurs before the player manager and any worlds are loaded",
                 "side": "server",
                 "deprecated": false
             },
@@ -831,7 +831,7 @@
                 "variable": "SERVER_STOPPED",
                 "function": "void onServerStopped(MinecraftServer server);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerLifecycleEvents.java#L74",
-                "description": "Called when a Minecraft server has stopped. All worlds have been closed and all (block)entities and players have been unloaded. For example, an CLIENT integrated server will begin stopping, but its client may continue to run. Meanwhile, for a SERVER dedicated server, this will be the last event called",
+                "description": "Called when a Minecraft server has stopped. All worlds have been closed and all (block)entities and players have been unloaded. For example, an integrated server will begin stopping, but its client may continue to run. Meanwhile, for a dedicated server, this will be the last event called",
                 "side": "server",
                 "deprecated": false
             },
@@ -952,7 +952,7 @@
                 "variable": "UNLOAD",
                 "function": "void onWorldUnload(MinecraftServer server, ServerWorld world);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-lifecycle-events-v1/src/main/java/net/fabricmc/fabric/api/event/lifecycle/v1/ServerWorldEvents.java#L44",
-                "description": "Called before a world is unloaded by a Minecraft server. This typically occurs after a server has SERVER_STOPPING started shutting down. Mods which allow dynamic world (un)registration should call this event so mods can let go of world handles when a world is removed",
+                "description": "Called before a world is unloaded by a Minecraft server. This typically occurs after a server has started shutting down. Mods which allow dynamic world (un)registration should call this event so mods can let go of world handles when a world is removed",
                 "side": "server",
                 "deprecated": false
             }
@@ -976,7 +976,7 @@
                 "variable": "MODIFY",
                 "function": "void modifyLootTable(RegistryKey<LootTable> key, LootTable.Builder tableBuilder, LootTableSource source, RegistryWrapper.WrapperLookup registries);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-loot-api-v3/src/main/java/net/fabricmc/fabric/api/loot/v3/LootTableEvents.java#L84",
-                "description": "This event can be used to modify loot tables. The main use case is to add items to vanilla or mod loot tables (e.g. modded seeds to grass). You can also modify loot tables that are created by REPLACE. They have the loot table source REPLACED. Example: adding diamonds to the cobblestone loot table We'll add a new diamond LootPool loot pool to the cobblestone loot table that will be dropped alongside the original cobblestone loot pool. If you want only one of the items to drop, you can use modifyPools(java.util.function.Consumer) to add the new item to the original loot pool instead. {@snippet : LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> { // If the loot table is for the cobblestone block and it is not overridden by a user: if (Blocks.COBBLESTONE.getLootTableKey() == key && source.isBuiltin()) { // Create a new loot pool that will hold the diamonds. LootPool.Builder pool = LootPool.builder() // Add diamonds... .with(ItemEntry.builder(Items.DIAMOND)) // ...only if the block would survive a potential explosion. .conditionally(SurvivesExplosionLootCondition.builder()); // Add the loot pool to the loot table tableBuilder.pool(pool); } }); }",
+                "description": "This event can be used to modify loot tables. The main use case is to add items to vanilla or mod loot tables (e.g. modded seeds to grass). You can also modify loot tables that are created by REPLACE. They have the loot table source REPLACED. Example: adding diamonds to the cobblestone loot table We'll add a new diamond loot pool to the cobblestone loot table that will be dropped alongside the original cobblestone loot pool. If you want only one of the items to drop, you can use modifyPools(java.util.function.Consumer) to add the new item to the original loot pool instead. {@snippet : LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> { // If the loot table is for the cobblestone block and it is not overridden by a user: if (Blocks.COBBLESTONE.getLootTableKey() == key && source.isBuiltin()) { // Create a new loot pool that will hold the diamonds. LootPool.Builder pool = LootPool.builder() // Add diamonds... .with(ItemEntry.builder(Items.DIAMOND)) // ...only if the block would survive a potential explosion. .conditionally(SurvivesExplosionLootCondition.builder()); // Add the loot pool to the loot table tableBuilder.pool(pool); } }); }",
                 "side": null,
                 "deprecated": false
             },
@@ -1011,7 +1011,7 @@
                 "variable": "ALLOW_GAME",
                 "function": "boolean allowReceiveGameMessage(Text message, boolean overlay);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-message-api-v1/src/client/java/net/fabricmc/fabric/api/client/message/v1/ClientReceiveMessageEvents.java#L70",
-                "description": "An event triggered when the client receives a game message, which is any message sent by the server. Mods can use this to block the message or toggle overlay. If a listener returned false, the message will not be displayed, the remaining listeners will not be called (if any), and GAME_CANCELED will be triggered instead of MODIFY_GAME. Overlay is whether the message will be displayed in the action bar. To toggle overlay, return false and call sendMessage(Text, boolean) ClientPlayerEntity.sendMessage(message, overlay)",
+                "description": "An event triggered when the client receives a game message, which is any message sent by the server. Mods can use this to block the message or toggle overlay. If a listener returned false, the message will not be displayed, the remaining listeners will not be called (if any), and GAME_CANCELED will be triggered instead of MODIFY_GAME. Overlay is whether the message will be displayed in the action bar. To toggle overlay, return false and call boolean) ClientPlayerEntity.sendMessage(message, overlay)",
                 "side": "client",
                 "deprecated": false
             },
@@ -1022,7 +1022,7 @@
                 "variable": "MODIFY_GAME",
                 "function": "Text modifyReceivedGameMessage(Text message, boolean overlay);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-message-api-v1/src/client/java/net/fabricmc/fabric/api/client/message/v1/ClientReceiveMessageEvents.java#L90",
-                "description": "An event triggered when the client receives a game message, which is any message sent by the server. Is not called when ALLOW_GAME game messages are blocked. Mods can use this to modify the message. Use GAME if not modifying the message. Overlay is whether the message will be displayed in the action bar. Use ALLOW_GAME to toggle overlay",
+                "description": "An event triggered when the client receives a game message, which is any message sent by the server. Is not called when game messages are blocked. Mods can use this to modify the message. Use GAME if not modifying the message. Overlay is whether the message will be displayed in the action bar. Use to toggle overlay",
                 "side": "client",
                 "deprecated": false
             },
@@ -1033,7 +1033,7 @@
                 "variable": "CHAT",
                 "function": "void onReceiveChatMessage(Text message, @Nullable SignedMessage signedMessage, @Nullable GameProfile sender, MessageType.Parameters params, Instant receptionTimestamp);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-message-api-v1/src/client/java/net/fabricmc/fabric/api/client/message/v1/ClientReceiveMessageEvents.java#L107",
-                "description": "An event triggered when the client receives a chat message, which is any message sent by a player. Is not called when ALLOW_CHAT chat messages are blocked. Mods can use this to listen to the message. If mods want to modify the message, they should use ALLOW_CHAT and manually add the new message to the chat hud using addMessage(Text)",
+                "description": "An event triggered when the client receives a chat message, which is any message sent by a player. Is not called when chat messages are blocked. Mods can use this to listen to the message. If mods want to modify the message, they should use ALLOW_CHAT and manually add the new message to the chat hud using addMessage(Text)",
                 "side": "client",
                 "deprecated": false
             },
@@ -1044,7 +1044,7 @@
                 "variable": "GAME",
                 "function": "void onReceiveGameMessage(Text message, boolean overlay);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-message-api-v1/src/client/java/net/fabricmc/fabric/api/client/message/v1/ClientReceiveMessageEvents.java#L122",
-                "description": "An event triggered when the client receives a game message, which is any message sent by the server. Is not called when ALLOW_GAME game messages are blocked. Mods can use this to listen to the message. Overlay is whether the message will be displayed in the action bar. Use ALLOW_GAME to toggle overlay",
+                "description": "An event triggered when the client receives a game message, which is any message sent by the server. Is not called when game messages are blocked. Mods can use this to listen to the message. Overlay is whether the message will be displayed in the action bar. Use to toggle overlay",
                 "side": "client",
                 "deprecated": false
             },
@@ -1099,7 +1099,7 @@
                 "variable": "MODIFY_CHAT",
                 "function": "String modifySendChatMessage(String message);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-message-api-v1/src/client/java/net/fabricmc/fabric/api/client/message/v1/ClientSendMessageEvents.java#L75",
-                "description": "An event triggered when the client sends a chat message, typically from a client GUI. Is not called when ALLOW_CHAT chat messages are blocked. Mods can use this to modify the message. Use CHAT if not modifying the message",
+                "description": "An event triggered when the client sends a chat message, typically from a client GUI. Is not called when chat messages are blocked. Mods can use this to modify the message. Use CHAT if not modifying the message",
                 "side": "client",
                 "deprecated": false
             },
@@ -1110,7 +1110,7 @@
                 "variable": "MODIFY_COMMAND",
                 "function": "String modifySendCommandMessage(String command);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-message-api-v1/src/client/java/net/fabricmc/fabric/api/client/message/v1/ClientSendMessageEvents.java#L92",
-                "description": "An event triggered when the client sends a command, which is whenever the player executes a command including client commands registered with fabric-command-api. Is not called when ALLOW_COMMAND command messages are blocked. The command string does not include a slash at the beginning. Mods can use this to modify the command. Use COMMAND if not modifying the command",
+                "description": "An event triggered when the client sends a command, which is whenever the player executes a command including client commands registered with fabric-command-api. Is not called when command messages are blocked. The command string does not include a slash at the beginning. Mods can use this to modify the command. Use COMMAND if not modifying the command",
                 "side": "client",
                 "deprecated": false
             },
@@ -1121,7 +1121,7 @@
                 "variable": "CHAT",
                 "function": "void onSendChatMessage(String message);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-message-api-v1/src/client/java/net/fabricmc/fabric/api/client/message/v1/ClientSendMessageEvents.java#L106",
-                "description": "An event triggered when the client sends a chat message, typically from a client GUI. Is not called when ALLOW_CHAT chat messages are blocked. Mods can use this to listen to the message",
+                "description": "An event triggered when the client sends a chat message, typically from a client GUI. Is not called when chat messages are blocked. Mods can use this to listen to the message",
                 "side": "client",
                 "deprecated": false
             },
@@ -1132,7 +1132,7 @@
                 "variable": "COMMAND",
                 "function": "void onSendCommandMessage(String command);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-message-api-v1/src/client/java/net/fabricmc/fabric/api/client/message/v1/ClientSendMessageEvents.java#L120",
-                "description": "An event triggered when the client sends a command, which is whenever the player executes a command including client commands registered with fabric-command-api. Is not called when ALLOW_COMMAND command messages are blocked. The command string does not include a slash at the beginning. Mods can use this to listen to the command",
+                "description": "An event triggered when the client sends a command, which is whenever the player executes a command including client commands registered with fabric-command-api. Is not called when command messages are blocked. The command string does not include a slash at the beginning. Mods can use this to listen to the command",
                 "side": "client",
                 "deprecated": false
             },
@@ -1198,7 +1198,7 @@
                 "variable": "CHAT_MESSAGE",
                 "function": "void onChatMessage(SignedMessage message, ServerPlayerEntity sender, MessageType.Parameters params);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-message-api-v1/src/main/java/net/fabricmc/fabric/api/message/v1/ServerMessageEvents.java#L101",
-                "description": "An event triggered when the server broadcasts a chat message sent by a player, typically from a client GUI or a player-executed command. Is not called when ALLOW_CHAT_MESSAGE chat messages are blocked. If the message is from a player-executed command, this will be called only if ALLOW_COMMAND_MESSAGE event did not block the message, and after triggering COMMAND_MESSAGE event",
+                "description": "An event triggered when the server broadcasts a chat message sent by a player, typically from a client GUI or a player-executed command. Is not called when chat messages are blocked. If the message is from a player-executed command, this will be called only if ALLOW_COMMAND_MESSAGE event did not block the message, and after triggering COMMAND_MESSAGE event",
                 "side": "server",
                 "deprecated": false
             },
@@ -1209,7 +1209,7 @@
                 "variable": "GAME_MESSAGE",
                 "function": "void onGameMessage(MinecraftServer server, Text message, boolean overlay);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-message-api-v1/src/main/java/net/fabricmc/fabric/api/message/v1/ServerMessageEvents.java#L112",
-                "description": "An event triggered when the server broadcasts a game message to all players. Game messages include death messages, join/leave messages, and advancement messages. Is not called when ALLOW_GAME_MESSAGE game messages are blocked",
+                "description": "An event triggered when the server broadcasts a game message to all players. Game messages include death messages, join/leave messages, and advancement messages. Is not called when game messages are blocked",
                 "side": "server",
                 "deprecated": false
             },
@@ -1220,7 +1220,7 @@
                 "variable": "COMMAND_MESSAGE",
                 "function": "void onCommandMessage(SignedMessage message, ServerCommandSource source, MessageType.Parameters params);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-message-api-v1/src/main/java/net/fabricmc/fabric/api/message/v1/ServerMessageEvents.java#L127",
-                "description": "An event triggered when the server broadcasts a command message to all players, such as one from /me and /say (but not ones that specify the recipients like /msg). Is not called when ALLOW_COMMAND_MESSAGE command messages are blocked. If the command is executed by a player, ALLOW_CHAT_MESSAGE and CHAT_MESSAGE events will also be triggered after this event",
+                "description": "An event triggered when the server broadcasts a command message to all players, such as one from /me and /say (but not ones that specify the recipients like /msg). Is not called when command messages are blocked. If the command is executed by a player, ALLOW_CHAT_MESSAGE and CHAT_MESSAGE events will also be triggered after this event",
                 "side": "server",
                 "deprecated": false
             }
@@ -1343,7 +1343,7 @@
                 "variable": "QUERY_START",
                 "function": "void onLoginQueryStart(ClientLoginNetworkHandler handler, MinecraftClient client);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-networking-api-v1/src/client/java/net/fabricmc/fabric/api/client/networking/v1/ClientLoginConnectionEvents.java#L57",
-                "description": "An event for when the client has started receiving login queries. A client can only start receiving login queries when a server has sent the first login query. Vanilla servers will typically never make the client enter this login phase, but it is not a guarantee that the connected server is a vanilla server since a modded server or proxy may have no login queries to send to the client and therefore bypass the login query phase. If this event is fired then it is a sign that a server is not a vanilla server or the server is behind a proxy which is capable of handling login queries. This event may be used to LoginQueryRequestHandler register login query handlers which may be used to send a response to a server. No packets should be sent when this event is invoked",
+                "description": "An event for when the client has started receiving login queries. A client can only start receiving login queries when a server has sent the first login query. Vanilla servers will typically never make the client enter this login phase, but it is not a guarantee that the connected server is a vanilla server since a modded server or proxy may have no login queries to send to the client and therefore bypass the login query phase. If this event is fired then it is a sign that a server is not a vanilla server or the server is behind a proxy which is capable of handling login queries. This event may be used to register login query handlers which may be used to send a response to a server. No packets should be sent when this event is invoked",
                 "side": "client",
                 "deprecated": false
             },
@@ -1398,7 +1398,7 @@
                 "variable": "START_TRACKING",
                 "function": "void onStartTracking(Entity trackedEntity, ServerPlayerEntity player);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/EntityTrackingEvents.java#L34",
-                "description": "An event that is called before player starts tracking an entity. Typically, this occurs when an entity enters a client's view distance. This event is called before the player's client is sent the entity's createSpawnPacket spawn packet",
+                "description": "An event that is called before player starts tracking an entity. Typically, this occurs when an entity enters a client's view distance. This event is called before the player's client is sent the entity's spawn packet",
                 "side": null,
                 "deprecated": false
             },
@@ -1409,7 +1409,7 @@
                 "variable": "STOP_TRACKING",
                 "function": "void onStopTracking(Entity trackedEntity, ServerPlayerEntity player);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/EntityTrackingEvents.java#L45",
-                "description": "An event that is called after a player has stopped tracking an entity. The client at this point was sent a packet to EntitiesDestroyS2CPacket destroy the entity on the client. The entity still exists on the server",
+                "description": "An event that is called after a player has stopped tracking an entity. The client at this point was sent a packet to destroy the entity on the client. The entity still exists on the server",
                 "side": null,
                 "deprecated": false
             },
@@ -1464,7 +1464,7 @@
                 "variable": "CONFIGURE",
                 "function": "void onSendConfiguration(ServerConfigurationNetworkHandler handler, MinecraftServer server);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/ServerConfigurationConnectionEvents.java#L59",
-                "description": "Event fired during vanilla configuration. This event is executed on EventLoop netty's event loops. An example usage of this:\n```\n{@code\nServerConfigurationConnectionEvents.CONFIGURE.register((handler, server) -> {\n\tif (ServerConfigurationNetworking.canSend(handler, ConfigurationPacket.PACKET_TYPE)) {\n handler.addTask(new TestConfigurationTask(\"Example data\"));\n\t} else {\n\t  // You can opt to disconnect the client if it cannot handle the configuration task\n\t  handler.disconnect(Text.literal(\"Network test configuration not supported by client\"));\n\t  }\n});\n}\n```",
+                "description": "Event fired during vanilla configuration. This event is executed on netty's event loops. An example usage of this:\n```\n{@code\nServerConfigurationConnectionEvents.CONFIGURE.register((handler, server) -> {\n\tif (ServerConfigurationNetworking.canSend(handler, ConfigurationPacket.PACKET_TYPE)) {\n handler.addTask(new TestConfigurationTask(\"Example data\"));\n\t} else {\n\t  // You can opt to disconnect the client if it cannot handle the configuration task\n\t  handler.disconnect(Text.literal(\"Network test configuration not supported by client\"));\n\t  }\n});\n}\n```",
                 "side": "server",
                 "deprecated": false
             },
@@ -1497,7 +1497,7 @@
                 "variable": "QUERY_START",
                 "function": "void onLoginStart(ServerLoginNetworkHandler handler, MinecraftServer server, LoginPacketSender sender, ServerLoginNetworking.LoginSynchronizer synchronizer);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-networking-api-v1/src/main/java/net/fabricmc/fabric/api/networking/v1/ServerLoginConnectionEvents.java#L49",
-                "description": "An event for the start of login queries of the server login network handler. This event may be used to register LoginQueryResponseHandler login query response handlers using registerReceiver(ServerLoginNetworkHandler, Identifier, ServerLoginNetworking.LoginQueryResponseHandler) since this event is fired just before the first login query response is processed. You may send login queries to the connected client using the provided LoginPacketSender",
+                "description": "An event for the start of login queries of the server login network handler. This event may be used to register login query response handlers using Identifier, ServerLoginNetworking.LoginQueryResponseHandler) since this event is fired just before the first login query response is processed. You may send login queries to the connected client using the provided LoginPacketSender",
                 "side": "server",
                 "deprecated": false
             },
@@ -1554,7 +1554,7 @@
                 "variable": "ALLOW_BLOCK_DUST_TINT",
                 "function": "boolean allowBlockDustTint(BlockState state, ClientWorld world, BlockPos pos);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-particles-v1/src/client/java/net/fabricmc/fabric/api/client/particle/v1/ParticleRenderEvents.java#L40",
-                "description": "An event that checks if a BlockDustParticle block dust particle can be tinted using the corresponding block's BlockColorProvider color provider. The default return value of this event is true. If any callback returns false for a given call, further iteration will be canceled and the event invoker will return false",
+                "description": "An event that checks if a block dust particle can be tinted using the corresponding block's color provider. The default return value of this event is true. If any callback returns false for a given call, further iteration will be canceled and the event invoker will return false",
                 "side": "client",
                 "deprecated": false
             }
@@ -1600,7 +1600,7 @@
                 "variable": "EVENT",
                 "function": "void registerRenderers(EntityType<? extends LivingEntity> entityType, LivingEntityRenderer<?, ?, ?> entityRenderer, RegistrationHelper registrationHelper, EntityRendererFactory.Context context);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-rendering-v1/src/client/java/net/fabricmc/fabric/api/client/rendering/v1/LivingEntityFeatureRendererRegistrationCallback.java#L52",
-                "description": "Called when FeatureRenderer feature renderers for a LivingEntityRenderer living entity renderer are registered. Feature renderers are typically used for rendering additional objects on an entity, such as armor, an elytra or Deadmau5FeatureRenderer Deadmau5's ears. This callback lets developers add additional feature renderers for use in entity rendering. Listeners should filter out the specific entity renderer they want to hook into, usually through instanceof checks or filtering by entity type. Once listeners find a suitable entity renderer, they should register their feature renderer via the registration helper. For example, to register a feature renderer for a player model, the example below may be used:\n```\n<blockquote>\nLivingEntityFeatureRendererRegistrationCallback.EVENT.register((entityType, entityRenderer, registrationHelper) -> {\n\tif (entityRenderer instanceof PlayerEntityModel) {\n\t\tregistrationHelper.register(new MyFeatureRenderer((PlayerEntityModel) entityRenderer));\n\t}\n});\n</blockquote>\n```",
+                "description": "Called when feature renderers for a living entity renderer are registered. Feature renderers are typically used for rendering additional objects on an entity, such as armor, an elytra or Deadmau5's ears. This callback lets developers add additional feature renderers for use in entity rendering. Listeners should filter out the specific entity renderer they want to hook into, usually through instanceof checks or filtering by entity type. Once listeners find a suitable entity renderer, they should register their feature renderer via the registration helper. For example, to register a feature renderer for a player model, the example below may be used:\n```\n<blockquote>\nLivingEntityFeatureRendererRegistrationCallback.EVENT.register((entityType, entityRenderer, registrationHelper) -> {\n\tif (entityRenderer instanceof PlayerEntityModel) {\n\t\tregistrationHelper.register(new MyFeatureRenderer((PlayerEntityModel) entityRenderer));\n\t}\n});\n</blockquote>\n```",
                 "side": "client",
                 "deprecated": false
             },
@@ -1734,7 +1734,7 @@
                 "variable": "BEFORE_INIT",
                 "function": "void beforeInit(MinecraftClient client, Screen screen, int scaledWidth, int scaledHeight);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-screen-api-v1/src/client/java/net/fabricmc/fabric/api/client/screen/v1/ScreenEvents.java#L72",
-                "description": "An event that is called before init(MinecraftClient, int, int) a screen is initialized to its default state. It should be noted some methods in Screens such as a screen's getTextRenderer(Screen) text renderer may not be initialized yet, and as such their use is discouraged. Typically this event is used to register screen events such as listening to when child elements are added to the screen. ------ Uncomment when child add/remove event is added for elements--> You can still use AFTER_INIT to register events such as keyboard and mouse events. The ScreenExtensions provided by the info parameter may be used to register tick, render events, keyboard, mouse, additional and removal of child elements (including buttons). For example, to register an event on inventory like screens after render, the following code could be used:\n```\n{@code\n&#64;Override\npublic void onInitializeClient() {\n\tScreenEvents.BEFORE_INIT.register((client, screen, scaledWidth, scaledHeight) -> {\n\t\tif (screen instanceof AbstractInventoryScreen) {\n\t\t\tScreenEvents.afterRender(screen).register((screen1, matrices, mouseX, mouseY, tickDelta) -> {\n\t\t\t\t...\n\t\t\t});\n\t\t}\n\t});\n}\n}\n```\nThis event indicates a screen has been resized, and therefore is being re-initialized. This event can also indicate that the previous screen has been changed",
+                "description": "An event that is called before int, int) a screen is initialized to its default state. It should be noted some methods in Screens such as a screen's text renderer may not be initialized yet, and as such their use is discouraged. Typically this event is used to register screen events such as listening to when child elements are added to the screen. ------ Uncomment when child add/remove event is added for elements--> You can still use AFTER_INIT to register events such as keyboard and mouse events. The ScreenExtensions provided by the info parameter may be used to register tick, render events, keyboard, mouse, additional and removal of child elements (including buttons). For example, to register an event on inventory like screens after render, the following code could be used:\n```\n{@code\n&#64;Override\npublic void onInitializeClient() {\n\tScreenEvents.BEFORE_INIT.register((client, screen, scaledWidth, scaledHeight) -> {\n\t\tif (screen instanceof AbstractInventoryScreen) {\n\t\t\tScreenEvents.afterRender(screen).register((screen1, matrices, mouseX, mouseY, tickDelta) -> {\n\t\t\t\t...\n\t\t\t});\n\t\t}\n\t});\n}\n}\n```\nThis event indicates a screen has been resized, and therefore is being re-initialized. This event can also indicate that the previous screen has been changed",
                 "side": "client",
                 "deprecated": false
             },
@@ -1745,7 +1745,7 @@
                 "variable": "AFTER_INIT",
                 "function": "void afterInit(MinecraftClient client, Screen screen, int scaledWidth, int scaledHeight);",
                 "url": "https://github.com/FabricMC/fabric/blob/1.21.2/fabric-screen-api-v1/src/client/java/net/fabricmc/fabric/api/client/screen/v1/ScreenEvents.java#L99",
-                "description": "An event that is called after init(MinecraftClient, int, int) a screen is initialized to its default state. Typically this event is used to modify a screen after the screen has been initialized. Modifications such as changing sizes of buttons, removing buttons and adding/removing child elements to the screen can be done safely using this event. For example, to add a button to the title screen, the following code could be used:\n```\n{@code\nScreenEvents.AFTER_INIT.register((client, screen, scaledWidth, scaledHeight) -> {\n\tif (screen instanceof TitleScreen) {\n\t\tScreens.getButtons(screen).add(new ButtonWidget(...));\n\t}\n});\n}\n```\nNote that by adding an element to a screen, the element is not automatically Drawable drawn. Unless the element is button, you need to call the specific render(DrawContext, int, int, float) render methods in the corresponding screen events. This event can also indicate that the previous screen has been closed",
+                "description": "An event that is called after int, int) a screen is initialized to its default state. Typically this event is used to modify a screen after the screen has been initialized. Modifications such as changing sizes of buttons, removing buttons and adding/removing child elements to the screen can be done safely using this event. For example, to add a button to the title screen, the following code could be used:\n```\n{@code\nScreenEvents.AFTER_INIT.register((client, screen, scaledWidth, scaledHeight) -> {\n\tif (screen instanceof TitleScreen) {\n\t\tScreens.getButtons(screen).add(new ButtonWidget(...));\n\t}\n});\n}\n```\nNote that by adding an element to a screen, the element is not automatically drawn. Unless the element is button, you need to call the specific int, int, float) render methods in the corresponding screen events. This event can also indicate that the previous screen has been closed",
                 "side": "client",
                 "deprecated": false
             },
