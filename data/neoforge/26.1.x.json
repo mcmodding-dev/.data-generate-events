@@ -1,8 +1,8 @@
 {
-    "lastupdated": "20260429201218",
-    "commit_date": "20260426223403",
+    "lastupdated": "20260501015600",
+    "commit_date": "20260430142826",
     "version": "26.1.x",
-    "last_commit": "[25bc5a11424c56eaf7bcea68346097cc94d64856] [26.1] Fix potential memory leak in models baked with ComposedModelState (#3125)",
+    "last_commit": "[4fd7ab0e52e4507b05919b2eb53d352852faf891] [ci skip] New Crowdin updates (#3126)",
     "data": {
         "net.neoforged.neoforge.client.event": [
             {
@@ -5412,7 +5412,7 @@
             {
                 "event": "EntityTeleportEvent",
                 "package": "net.neoforged.neoforge.event.entity",
-                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityTeleportEvent.java#L33",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityTeleportEvent.java#L35",
                 "cancellable": true,
                 "description": "EntityTeleportEvent is fired when an event involving any teleportation of an Entity occurs. If a method utilizes this Event as its parameter, the method will receive every child event of this class. getTarget() contains the target destination. getPrev() contains the entity's current position. All children of this event are fired on the EVENT_BUS",
                 "side": null,
@@ -5448,7 +5448,7 @@
             {
                 "event": "EntityTeleportEvent.TeleportCommand",
                 "package": "net.neoforged.neoforge.event.entity",
-                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityTeleportEvent.java#L108",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityTeleportEvent.java#L110",
                 "cancellable": true,
                 "description": "EntityTeleportEvent.TeleportCommand is fired before a living entity is teleported from use of TeleportCommand. This event is ICancellableEvent. If the event is not canceled, the entity will be teleported. This event is fired on the EVENT_BUS. This event is only fired on the SERVER side. If this event is canceled, the entity will not be teleported",
                 "side": "server",
@@ -5458,7 +5458,7 @@
             {
                 "event": "EntityTeleportEvent.SpreadPlayersCommand",
                 "package": "net.neoforged.neoforge.event.entity",
-                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityTeleportEvent.java#L127",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityTeleportEvent.java#L129",
                 "cancellable": true,
                 "description": "EntityTeleportEvent.SpreadPlayersCommand is fired before a living entity is teleported from use of SpreadPlayersCommand. This event is ICancellableEvent. If the event is not canceled, the entity will be teleported. This event is fired on the EVENT_BUS. This event is only fired on the SERVER side. If this event is canceled, the entity will not be teleported",
                 "side": "server",
@@ -5468,10 +5468,10 @@
             {
                 "event": "EntityTeleportEvent.EnderEntity",
                 "package": "net.neoforged.neoforge.event.entity",
-                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityTeleportEvent.java#L145",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityTeleportEvent.java#L143",
                 "cancellable": true,
-                "description": "EntityTeleportEvent.EnderEntity is fired before an Enderman or Shulker randomly teleports. This event is ICancellableEvent. If the event is not canceled, the entity will be teleported. This event is fired on the EVENT_BUS. This event is only fired on the SERVER side. If this event is canceled, the entity will not be teleported",
-                "side": "server",
+                "description": "",
+                "side": null,
                 "deprecated": false,
                 "hasResult": false,
                 "fields": [
@@ -5486,7 +5486,7 @@
             {
                 "event": "EntityTeleportEvent.EnderPearl",
                 "package": "net.neoforged.neoforge.event.entity",
-                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityTeleportEvent.java#L170",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityTeleportEvent.java#L168",
                 "cancellable": true,
                 "description": "EntityTeleportEvent.EnderPearl is fired before an Entity is teleported from an EnderPearlEntity. This event is ICancellableEvent. If the event is not canceled, the entity will be teleported. This event is fired on the EVENT_BUS. This event is only fired on the SERVER side. If this event is canceled, the entity will not be teleported",
                 "side": "server",
@@ -5522,7 +5522,7 @@
             {
                 "event": "EntityTeleportEvent.ItemConsumption",
                 "package": "net.neoforged.neoforge.event.entity",
-                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityTeleportEvent.java#L219",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/entity/EntityTeleportEvent.java#L217",
                 "cancellable": true,
                 "description": "EntityTeleportEvent.ChorusFruit is fired before a LivingEntity is teleported due to consuming Chorus Fruit. This event is ICancellableEvent. If the event is not canceled, the entity will be teleported. This event is fired on the EVENT_BUS. This event is only fired on the SERVER side. If this event is canceled, the entity will not be teleported",
                 "side": "server",
