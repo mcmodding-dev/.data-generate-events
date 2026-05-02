@@ -1,8 +1,8 @@
 {
-    "lastupdated": "20260501015600",
-    "commit_date": "20260430142826",
+    "lastupdated": "20260502014454",
+    "commit_date": "20260501215232",
     "version": "26.1.x",
-    "last_commit": "[4fd7ab0e52e4507b05919b2eb53d352852faf891] [ci skip] New Crowdin updates (#3126)",
+    "last_commit": "[0d82fe18ede737e1596eb146fc457e6a49472bc4] [26.1] Add optional `--uncached` flag to datagen (#2939)",
     "data": {
         "net.neoforged.neoforge.client.event": [
             {
@@ -4002,7 +4002,7 @@
             {
                 "event": "AddServerReloadListenersEvent",
                 "package": "net.neoforged.neoforge.event",
-                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/AddServerReloadListenersEvent.java#L23",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/AddServerReloadListenersEvent.java#L25",
                 "cancellable": false,
                 "description": "The main ResourceManager is recreated on each reload, just after ReloadableServerResources's creation. The event is fired on each reload and lets modders add their own ReloadListeners, for server-side resources. The event is fired on the EVENT_BUS",
                 "side": null,
@@ -4498,7 +4498,7 @@
             {
                 "event": "ModifyDefaultComponentsEvent",
                 "package": "net.neoforged.neoforge.event",
-                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/ModifyDefaultComponentsEvent.java#L42",
+                "url": "https://github.com/neoforged/NeoForge/blob/26.1.x/src/main/java/net/neoforged/neoforge/event/ModifyDefaultComponentsEvent.java#L44",
                 "cancellable": false,
                 "description": "",
                 "side": null,
@@ -4507,13 +4507,13 @@
                 "fields": [
                     {
                         "name": "modifiersByItem",
-                        "type": "Map<Item, Consumer<DataComponentMap.Builder>>",
+                        "type": "Map<Item, Initializer>",
                         "kind": "field",
                         "mutable": false
                     },
                     {
                         "name": "modifiersByPredicate",
-                        "type": "List<Pair<ItemWithComponentsPredicate, Consumer<DataComponentMap.Builder>>>",
+                        "type": "List<Pair<ItemWithComponentsPredicate, Initializer>>",
                         "kind": "field",
                         "mutable": false
                     }
