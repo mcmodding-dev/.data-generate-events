@@ -1,8 +1,8 @@
 {
-    "lastupdated": "20260502014454",
-    "commit_date": "20260501215232",
+    "lastupdated": "20260503014821",
+    "commit_date": "20260502041138",
     "version": "26.1.x",
-    "last_commit": "[0d82fe18ede737e1596eb146fc457e6a49472bc4] [26.1] Add optional `--uncached` flag to datagen (#2939)",
+    "last_commit": "[21f20b20008ed732ef765ccffaae17bf03fd840f] Allow non immediately resolvable custom HolderSets to skip content validation similar to how HolderSet.Named already behaves (#3143)",
     "data": {
         "net.neoforged.neoforge.client.event": [
             {

@@ -1,8 +1,8 @@
 {
-    "lastupdated": "20260429201141",
-    "commit_date": "20260427174507",
+    "lastupdated": "20260503014815",
+    "commit_date": "20260502234824",
     "version": "26.1.2",
-    "last_commit": "[ec73fd52406011d1c83590223dae156cb621e328] Fix base bucket model not being flipped for gasses. Closes #10814",
+    "last_commit": "[d9665f64472ba9fb67b8715d0e0bf4e3a4f9c73c] Fix IForgeBlockStateModel#getModelData is never called Fixes #10817",
     "data": {
         "net.minecraftforge.fml.config": [
             {
