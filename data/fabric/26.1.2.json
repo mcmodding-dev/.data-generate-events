@@ -1,8 +1,8 @@
 {
-    "lastupdated": "20260429201006",
-    "commit_date": "20260427122229",
+    "lastupdated": "20260504014831",
+    "commit_date": "20260503141832",
     "version": "26.1.2",
-    "last_commit": "[edfffd808c5a2af7d0310b57be33be53cdffc586] Bump version",
+    "last_commit": "[e7499f60253b03f900968ec3c2047f1b66084763] Bump version",
     "data": {
         "fabric-command-api-v2": [
             {
@@ -420,6 +420,39 @@
             }
         ],
         "fabric-events-interaction-v0": [
+            {
+                "file": "ClientHotbarScrollEvents.java",
+                "package": "net.fabricmc.fabric.api.event.client.player",
+                "interface": "Allow",
+                "variable": "ALLOW",
+                "function": "boolean allowScroll(Inventory inventory, int currentSlot, int newSlot, double xOffset, double yOffset);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1.2/fabric-events-interaction-v0/src/client/java/net/fabricmc/fabric/api/event/client/player/ClientHotbarScrollEvents.java#L34",
+                "description": "An event that checks whether the player's scrolling will change the selected hotbar slot. Returning false cancels the hotbar selection change without running anymore registered callbacks",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "ClientHotbarScrollEvents.java",
+                "package": "net.fabricmc.fabric.api.event.client.player",
+                "interface": "Before",
+                "variable": "BEFORE",
+                "function": "void beforeScroll(Inventory inventory, int currentSlot, int newSlot, double xOffset, double yOffset);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1.2/fabric-events-interaction-v0/src/client/java/net/fabricmc/fabric/api/event/client/player/ClientHotbarScrollEvents.java#L51",
+                "description": "An event that is invoked before player scrolling changes the selected hotbar slot. This event is only fired if the result of ALLOW is true",
+                "side": "client",
+                "deprecated": false
+            },
+            {
+                "file": "ClientHotbarScrollEvents.java",
+                "package": "net.fabricmc.fabric.api.event.client.player",
+                "interface": "After",
+                "variable": "AFTER",
+                "function": "void afterScroll(Inventory inventory, int currentSlot, int newSlot, double xOffset, double yOffset);",
+                "url": "https://github.com/FabricMC/fabric/blob/26.1.2/fabric-events-interaction-v0/src/client/java/net/fabricmc/fabric/api/event/client/player/ClientHotbarScrollEvents.java#L62",
+                "description": "An event that is invoked after player scrolling changes the selected hotbar slot. This event is only fired if the result of ALLOW is true",
+                "side": "client",
+                "deprecated": false
+            },
             {
                 "file": "ClientPlayerBlockBreakEvents.java",
                 "package": "net.fabricmc.fabric.api.event.client.player",
