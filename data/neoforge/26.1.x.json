@@ -1,8 +1,8 @@
 {
-    "lastupdated": "20260503014821",
-    "commit_date": "20260502041138",
+    "lastupdated": "20260505015005",
+    "commit_date": "20260504162315",
     "version": "26.1.x",
-    "last_commit": "[21f20b20008ed732ef765ccffaae17bf03fd840f] Allow non immediately resolvable custom HolderSets to skip content validation similar to how HolderSet.Named already behaves (#3143)",
+    "last_commit": "[960b8976273c897d732300aca5cbf49464368bc1] [26.1] Fix missing block model rendering with \"random\" texture (#3139)",
     "data": {
         "net.neoforged.neoforge.client.event": [
             {

@@ -1,8 +1,8 @@
 {
-    "lastupdated": "20260503014815",
-    "commit_date": "20260502234824",
+    "lastupdated": "20260505014954",
+    "commit_date": "20260504162636",
     "version": "26.1.2",
-    "last_commit": "[d9665f64472ba9fb67b8715d0e0bf4e3a4f9c73c] Fix IForgeBlockStateModel#getModelData is never called Fixes #10817",
+    "last_commit": "[6665cdcf4e137380770df4264247ef6beb373cc6] Fix misaligned ClientLevel load patch",
     "data": {
         "net.minecraftforge.fml.config": [
             {
